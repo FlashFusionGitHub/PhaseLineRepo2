@@ -9,13 +9,7 @@ public class Cursor : MonoBehaviour
 {
     public InputDevice m_controller;
 
-    GraphicRaycaster m_Raycaster;
-    PointerEventData m_PointerEventData;
-    EventSystem m_EventSystem;
-
     public GameObject cursor;
-
-    public float m_minX, m_maxX, m_minY, m_maxY;
 
     // Use this for initialization
     void Start ()
@@ -29,8 +23,8 @@ public class Cursor : MonoBehaviour
 
         transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0) * 5;
 
-        float markerXPos = Mathf.Clamp(transform.position.x, m_minX, m_maxX);
-        float markerYPos = Mathf.Clamp(transform.position.y, m_minY, m_maxY);
+        float markerXPos = Mathf.Clamp(transform.position.x, 0, Screen.width);
+        float markerYPos = Mathf.Clamp(transform.position.y, 0, Screen.height);
 
         transform.position = new Vector3(markerXPos, markerYPos, 0);
 
@@ -54,12 +48,7 @@ public class Cursor : MonoBehaviour
 
             if(m_controller.Action1.WasPressed)
             {
-                ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerDownHandler);
-            }
-
-            if (m_controller.Action1.WasReleased)
-            {
-                ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerUpHandler);
+                ExecuteEvents.Execute<IPointerClickHandler>(cur.gameObject, pointer, ExecuteEvents.pointerClickHandler);
             }
         }
     }
