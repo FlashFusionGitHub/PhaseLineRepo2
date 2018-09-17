@@ -39,6 +39,7 @@ public class CameraController : MonoBehaviour {
 				transform.position += new Vector3(0, -m_controller.RightStickY * cameraSpeed, m_controller.RightStickY * cameraSpeed/4);
 
                 float zoomY = Mathf.Clamp(transform.position.y, m_MinZoomY, m_MaxZoomY);
+                //slide issue, could be solved by changing the zoomZ to change based on the position.z when the trigger is pressed
                 float zoomZ = Mathf.Clamp(transform.position.z, m_MinZoomZ, m_MaxZoomZ);
                 transform.position = new Vector3(transform.position.x, zoomY, zoomZ);
             }

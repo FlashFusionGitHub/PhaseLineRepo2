@@ -437,7 +437,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549349656298378}
   m_LocalRotation: {x: -0, y: -0.9174253, z: -0, w: -0.39790824}
-  m_LocalPosition: {x: 224.34644, y: 62.378735, z: 85.349396}
+  m_LocalPosition: {x: 236.64642, y: 62.378735, z: 213.8494}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4978308154136594}
@@ -884,11 +884,11 @@ MonoBehaviour:
   vulnerabilities: 000000000100000002000000
   rankState: 3
   myGeneral: {fileID: 0}
-  placementDirection: 0
+  placementDirection: 1
   numOfRows: 0
   maxNumOfColumns: 3
-  positionOffset: {x: -6, y: 0, z: 0}
-  distanceBetweenPoints: {x: 1, y: 4}
+  positionOffset: {x: 0, y: 0, z: 0}
+  distanceBetweenPoints: {x: 10, y: 10}
   formationPositions: []
   oldPos: {fileID: 0}
   pd: 0

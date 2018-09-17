@@ -663,4 +663,57 @@ public class TroopActor : MonoBehaviour {
         if (ta.team == Team.TEAM2)
             op.team2Generals.Add(ta);
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //BUFFS\\
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    public void AddHealth(float percentIncrease)
+    {
+        currentHealth += maxHealth * (percentIncrease / 100);
+        if (currentHealth > maxHealth)
+        {
+            maxHealth = currentHealth;
+        }
+    }
+
+    public void AddRange(float percentIncrease)
+    {
+        foreach (GunSettings gun in guns)
+        {
+            gun.attackRangeMax += gun.attackRangeMax * (percentIncrease / 100);
+        }
+    }
+
+    public void AddInfluence(float percentIncrease)
+    {
+        influenceRadius += influenceRadius * (percentIncrease / 100);
+    }
+
+    public void AddDamage(float percentIncrease)
+    {
+        foreach (GunSettings gun in guns)
+        {
+            gun.damage += gun.damage * (percentIncrease / 100);
+        }
+    }
+
+    public void AddRandomBuff(float percentIncrease)
+    {
+        int selection = Random.Range(0, 3 + 1);
+        if (selection == 0)
+        {
+            AddHealth(percentIncrease);
+        }
+        else if (selection == 1)
+        {
+            AddRange(percentIncrease);
+        }
+        else if (selection == 2)
+        {
+            AddInfluence(percentIncrease);
+        }
+        else if (selection == 3)
+        {
+            AddDamage(percentIncrease);
+        }
+    }
 }
