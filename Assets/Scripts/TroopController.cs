@@ -28,6 +28,7 @@ public class TroopController : MonoBehaviour {
 
     public int tankSize;
 
+    public float paddingX, paddingZ;
     // Use this for initialization
     protected virtual void Start () {
 
@@ -37,7 +38,7 @@ public class TroopController : MonoBehaviour {
             m_generals = op.team2Generals;
 
         m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
-        cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z - 10);
+        cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z);
     }
 
     // Update is called once per frame
@@ -51,6 +52,8 @@ public class TroopController : MonoBehaviour {
             }
         }
 
+        if(m_generals[index].team == Team.TEAM1)
+            Debug.Log(m_generals[index].name);
         if (m_generals.Count == 0)
             Destroy(m_currentSelectionCircle);
 

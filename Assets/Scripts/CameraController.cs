@@ -5,7 +5,8 @@ using InControl;
 
 public class CameraController : MonoBehaviour {
 
-    public float m_MinZoom = 10.0f, m_MaxZoom = 50.0f;
+    public float m_MinZoomY = 10.0f, m_MaxZoomY = 50.0f;
+    public float m_MinZoomZ = 10.0f, m_MaxZoomZ = 50.0f;
     public float m_MinPanX = -50.0f, m_MaxPanX = 50.0f;
     public float m_MinPanZ = -50.0f, m_MaxPanZ = 50.0f;
 
@@ -35,11 +36,11 @@ public class CameraController : MonoBehaviour {
         {
             if (m_controller.RightTrigger.IsPressed)
             {
-				transform.position += new Vector3(0, -m_controller.RightStickY * cameraSpeed, 0);
+				transform.position += new Vector3(0, -m_controller.RightStickY * cameraSpeed, m_controller.RightStickY * cameraSpeed/4);
 
-                float zoom = Mathf.Clamp(transform.position.y, m_MinZoom, m_MaxZoom);
-
-                transform.position = new Vector3(transform.position.x, zoom, transform.position.z);
+                float zoomY = Mathf.Clamp(transform.position.y, m_MinZoomY, m_MaxZoomY);
+                float zoomZ = Mathf.Clamp(transform.position.z, m_MinZoomZ, m_MaxZoomZ);
+                transform.position = new Vector3(transform.position.x, zoomY, zoomZ);
             }
             else
             {
