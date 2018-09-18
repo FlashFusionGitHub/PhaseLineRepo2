@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33165691200757306}
   - component: {fileID: 23593342991426358}
   - component: {fileID: 95543963834124850}
-  - component: {fileID: 136810365740615388}
+  - component: {fileID: 208780306369468448}
   m_Layer: 10
   m_Name: rockasset_2
   m_TagString: Untagged
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1289305874447286}
   m_LocalRotation: {x: 0.043924507, y: -0.30232397, z: 0.03804711, w: 0.9514322}
-  m_LocalPosition: {x: -60.7, y: -59.5, z: 45.1}
-  m_LocalScale: {x: 4.2663593, y: 4.2663584, z: 4.2663584}
+  m_LocalPosition: {x: 24.164768, y: -8.191654, z: 34.284355}
+  m_LocalScale: {x: 0.31067315, y: 0.31067303, z: 0.31067306}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,16 +101,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!136 &136810365740615388
-CapsuleCollider:
+--- !u!208 &208780306369468448
+NavMeshObstacle:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1289305874447286}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 3.4093978
-  m_Height: 8.346674
-  m_Direction: 1
-  m_Center: {x: 0.32607877, y: 1.7899244, z: -0.11960365}
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.4090002, y: 4.1730003, z: 3.039}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.326, y: 1.7900001, z: -0.120000005}
+  m_TimeToStationary: 0.5
