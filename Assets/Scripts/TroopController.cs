@@ -29,6 +29,9 @@ public class TroopController : MonoBehaviour {
     public int tankSize;
 
     public float paddingX, paddingZ;
+
+    bool moveToSwitch;
+
     // Use this for initialization
     protected virtual void Start () {
 
@@ -52,10 +55,13 @@ public class TroopController : MonoBehaviour {
             }
         }
 
-        if(m_generals[index].team == Team.TEAM1)
-            Debug.Log(m_generals[index].name);
         if (m_generals.Count == 0)
             Destroy(m_currentSelectionCircle);
+
+        if (m_controller.RightStickButton.WasPressed)
+        {
+            QuickSelect();
+        }
 
         if (m_controller.DPadLeft.WasPressed && m_generals.Count > 1) {
             //destory the currect circle
@@ -89,6 +95,20 @@ public class TroopController : MonoBehaviour {
 
         if (m_currentSelectionCircle != null && index >= 0 && m_generals.Count > 0)
             m_currentSelectionCircle.transform.position = m_generals[index].transform.position;
+    }
+
+    void QuickSelect()
+    {
+        if (moveToSwitch)
+        {
+            moveToSwitch = false;
+            cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z);
+        }
+        else
+        {
+            moveToSwitch = true;
+            cameraController.MoveCameraTo(m_navigationArrowActor.m_currentMarker.transform.position.x, m_navigationArrowActor.m_currentMarker.transform.position.z);
+        }
     }
 
     void CheckGeneralState(bool increase, bool decrease) {

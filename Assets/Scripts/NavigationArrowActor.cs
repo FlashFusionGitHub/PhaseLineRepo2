@@ -42,9 +42,6 @@ public class NavigationArrowActor : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-
-        Debug.Log(AirStrikeCount);
-
         m_controller = InputManager.Devices[playerIndex];
 
         float markerXPos = Mathf.Clamp(m_currentMarker.transform.position.x, m_minXPos, maxXPos);
