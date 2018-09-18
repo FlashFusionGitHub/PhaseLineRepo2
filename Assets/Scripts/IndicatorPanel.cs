@@ -21,12 +21,10 @@ public class IndicatorPanel : MonoBehaviour {
 
         Vector3 screenPos = m_camera.WorldToScreenPoint(m_navMarker.m_currentMarker.transform.position);
 
-        //float relation = ??;
-
-        if (screenPos.z > 0 && screenPos.x > 0 && screenPos.x < Screen.width
-            && screenPos.y > 0 && screenPos.y < Screen.height)
+        if (screenPos.z > 0 && screenPos.x > 0 && screenPos.x < panel.transform.GetComponent<RectTransform>().rect.width
+            && screenPos.y > 0 && screenPos.y < panel.transform.GetComponent<RectTransform>().rect.height)
         {
-            m_arrow.enabled = false;
+            m_arrow.gameObject.SetActive(false);
         }
         else
         {
