@@ -6442,10 +6442,10 @@ MonoBehaviour:
     type: 2}
   m_airStrike: {fileID: 1904398139681808, guid: 9dd11daeb0e87294680e09a7ee5f4d7d,
     type: 2}
-  m_minXPos: -100
-  maxXPos: 100
-  m_minZPos: -100
-  maxZPos: 100
+  m_minXPos: -500
+  maxXPos: 500
+  m_minZPos: -500
+  maxZPos: 500
   m_markerSpeed: 2
   m_team: 1
   m_currentMarker: {fileID: 0}
@@ -27733,10 +27733,10 @@ MonoBehaviour:
     type: 2}
   m_airStrike: {fileID: 1600409885509780, guid: 41564ddcffd2a174abefd965ee803e69,
     type: 2}
-  m_minXPos: -100
-  maxXPos: 100
-  m_minZPos: -100
-  maxZPos: 100
+  m_minXPos: -500
+  maxXPos: 500
+  m_minZPos: -500
+  maxZPos: 500
   m_markerSpeed: 2
   m_team: 2
   m_currentMarker: {fileID: 0}
