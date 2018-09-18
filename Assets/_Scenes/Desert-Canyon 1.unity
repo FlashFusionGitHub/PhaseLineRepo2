@@ -5974,7 +5974,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -10223,6 +10223,7 @@ GameObject:
   - component: {fileID: 495343476}
   - component: {fileID: 495343475}
   - component: {fileID: 495343473}
+  - component: {fileID: 495343474}
   m_Layer: 9
   m_Name: Camera - Player2
   m_TagString: MainCamera
@@ -10251,6 +10252,18 @@ MonoBehaviour:
   changePosition: 0
   m_playerIndex: 1
   cameraSpeed: 50
+--- !u!114 &495343474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 495343472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 7e1db7de4b250d140b40184e6fa9adae, type: 2}
 --- !u!124 &495343475
 Behaviour:
   m_ObjectHideFlags: 0
@@ -15750,6 +15763,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.4154629
       objectReference: {fileID: 0}
+    - target: {fileID: 114303017915524798, guid: afa3bed05df97f54a846836ee919e8ed,
+        type: 2}
+      propertyPath: waveOriginPosition.y
+      value: 91.65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afa3bed05df97f54a846836ee919e8ed, type: 2}
   m_IsPrefabParent: 0
@@ -19938,6 +19956,7 @@ GameObject:
   - component: {fileID: 942662140}
   - component: {fileID: 942662139}
   - component: {fileID: 942662143}
+  - component: {fileID: 942662144}
   m_Layer: 8
   m_Name: Camera - Player1
   m_TagString: MainCamera
@@ -20029,6 +20048,18 @@ MonoBehaviour:
   changePosition: 0
   m_playerIndex: 0
   cameraSpeed: 50
+--- !u!114 &942662144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942662138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 7e1db7de4b250d140b40184e6fa9adae, type: 2}
 --- !u!1001 &943780531
 Prefab:
   m_ObjectHideFlags: 0
