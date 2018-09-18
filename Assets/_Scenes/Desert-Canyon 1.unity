@@ -29659,13 +29659,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271742cbaf23b094f89f16909e524bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinZoomY: 10
-  m_MaxZoomY: 50
-  m_MinZoomZ: 10
-  m_MaxZoomZ: 50
-  m_MinPanX: -500
-  m_MaxPanX: 500
-  m_MinPanZ: -270
+  m_MinZoomY: 50
+  m_MaxZoomY: 1200
+  m_MinZoomZ: -600
+  m_MaxZoomZ: 600
+  m_MinPanX: -600
+  m_MaxPanX: 600
+  m_MinPanZ: -600
   m_MaxPanZ: 600
   slerpSpeed: 200
   changePosition: 0
@@ -35499,14 +35499,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271742cbaf23b094f89f16909e524bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinZoomY: 10
-  m_MaxZoomY: 50
-  m_MinZoomZ: 10
-  m_MaxZoomZ: 50
-  m_MinPanX: -500
-  m_MaxPanX: 274
+  m_MinZoomY: 50
+  m_MaxZoomY: 1200
+  m_MinZoomZ: -600
+  m_MaxZoomZ: 600
+  m_MinPanX: -600
+  m_MaxPanX: 600
   m_MinPanZ: -600
-  m_MaxPanZ: 2
+  m_MaxPanZ: 600
   slerpSpeed: 200
   changePosition: 0
   m_playerIndex: 0
