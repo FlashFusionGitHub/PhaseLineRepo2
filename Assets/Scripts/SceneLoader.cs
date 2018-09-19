@@ -13,15 +13,16 @@ public class SceneLoader : MonoBehaviour {
 
     public Text m_textBox;
 
+    public GameObject lobby;
+
     public void LoadScene(int scene)
     {
-        if(scene == (int)Scenes.SPLITSCREEN && InputManager.Devices.Count < 2)
-        {
-            StartCoroutine(FlashText("Player 2 Missing"));
-            return;
-        }
-
         SceneManager.LoadScene(scene);
+    }
+
+    public void DestoryLobby()
+    {
+        Destroy(lobby);
     }
 
     public IEnumerator FlashText(string warning)

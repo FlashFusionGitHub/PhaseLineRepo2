@@ -22,24 +22,21 @@ public class Pause : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //m_controller[0] = InputManager.Devices[0];
-        //m_controller[1] = InputManager.Devices[1];
+        m_controller[0] = InputManager.Devices[0];
+        m_controller[1] = InputManager.Devices[1];
 
-        //if (m_controller[0].MenuWasPressed)
-        //    playerIndex = 1;
-        //if (m_controller[1].MenuWasPressed)
-        //    playerIndex = 2;
+        if (m_controller[0].MenuWasPressed)
+            playerIndex = 1;
+        if (m_controller[1].MenuWasPressed)
+            playerIndex = 2;
 
-        //if(m_controller.MenuWasPressed)
-        //{
-        if (Input.GetKeyDown(KeyCode.P))
+        if(m_controller[playerIndex].MenuWasPressed)
         {
             if (Time.timeScale == 1)
             {
                 PauseGame();
             }
         }
-        //}
 	}
 
     void PauseGame()
