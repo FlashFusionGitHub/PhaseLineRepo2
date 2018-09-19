@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.43668348, g: 0.4842807, b: 0.56452984, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -666,7 +666,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 32540524}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: ca46c590ad560da46863f6107938cff1, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &32540526
@@ -6157,13 +6157,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285494499}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -504.77942, y: -22.800003, z: -508.5989}
+  m_LocalRotation: {x: 0.7127781, y: -0, z: -0, w: 0.7013897}
+  m_LocalPosition: {x: 0, y: 175.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.923004, y: -0.000015258789, z: -0.000015258789}
 --- !u!4 &291075243 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4109258753048072, guid: 2dc8ddc7a359290459934d7d870c8d76,
@@ -9851,7 +9851,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 455523374}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 01baa9637061411459344a20d2eea3d5, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &455523376
@@ -10631,7 +10631,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 495343472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
@@ -13244,7 +13244,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 629401908}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 7a575a8f93b67a949a8aefb7eac25be8, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &629401910
@@ -17034,7 +17034,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 783527614}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 7a575a8f93b67a949a8aefb7eac25be8, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &783527616
@@ -20645,7 +20645,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 942662138}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
@@ -22925,7 +22925,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1053850256}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 7a575a8f93b67a949a8aefb7eac25be8, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1053850258
@@ -23093,7 +23093,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1059828469}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 152797083b90e2b419cccf5a4aa9914f, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1059828471
@@ -31732,7 +31732,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1459031852}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 7a575a8f93b67a949a8aefb7eac25be8, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1459031854
@@ -37085,7 +37085,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1696599030}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 7a575a8f93b67a949a8aefb7eac25be8, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1696599032

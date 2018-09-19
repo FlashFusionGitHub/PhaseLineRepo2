@@ -40,10 +40,10 @@ MonoBehaviour:
         stationaryBlending: 0.95
         motionBlending: 0.85
   ambientOcclusion:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       intensity: 4
-      radius: 0.3
+      radius: 11.95
       sampleCount: 10
       downsampling: 1
       forceForwardCompatibility: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
       screenEdgeMask:
         intensity: 0.03
   depthOfField:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       focusDistance: 10
       aperture: 5.6
@@ -97,7 +97,7 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       bloom:
         intensity: 0.2
@@ -109,23 +109,23 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
         tonemapper: 2
-        neutralBlackIn: 0.02
-        neutralWhiteIn: 10
-        neutralBlackOut: 0
-        neutralWhiteOut: 10
+        neutralBlackIn: 0.0647
+        neutralWhiteIn: 1
+        neutralBlackOut: 0.0227
+        neutralWhiteOut: 17.07
         neutralWhiteLevel: 5.3
-        neutralWhiteClip: 10
+        neutralWhiteClip: 9.28
       basic:
-        postExposure: 0
-        temperature: 0
-        tint: 0
+        postExposure: 0.4
+        temperature: 6
+        tint: 12.9
         hueShift: 0
-        saturation: 1
-        contrast: 1
+        saturation: 1.169
+        contrast: 0.841
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -134,9 +134,9 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 0, g: 0, b: 0, a: 0}
-          power: {r: 0, g: 0, b: 0, a: 0}
-          offset: {r: 0, g: 0, b: 0, a: 0}
+          slope: {r: 1, g: 1, b: 1, a: 0}
+          power: {r: 1, g: 1, b: 1, a: 0}
+          offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
           lift: {r: 0, g: 0, b: 0, a: 0}
           gamma: {r: 0, g: 0, b: 0, a: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -286,24 +286,24 @@ MonoBehaviour:
       spectralTexture: {fileID: 0}
       intensity: 0.1
   grain:
-    m_Enabled: 0
-    m_Settings:
-      colored: 1
-      intensity: 0.147
-      size: 1
-      luminanceContribution: 0.8
-  vignette:
     m_Enabled: 1
     m_Settings:
+      colored: 1
+      intensity: 0.284
+      size: 1.7
+      luminanceContribution: 0.905
+  vignette:
+    m_Enabled: 0
+    m_Settings:
       mode: 0
-      color: {r: 0, g: 0, b: 0, a: 1}
+      color: {r: 1, g: 1, b: 1, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.257
-      smoothness: 0.2
+      intensity: 1
+      smoothness: 1
       roundness: 1
       mask: {fileID: 0}
       opacity: 1
-      rounded: 0
+      rounded: 1
   dithering:
     m_Enabled: 0
   monitors:
