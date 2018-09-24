@@ -31,7 +31,6 @@ public class Cursor : MonoBehaviour
         QuickUpdate();
     }
 
-
     void QuickUpdate()
     {
         PointerEventData pointer = new PointerEventData(EventSystem.current);
@@ -46,7 +45,7 @@ public class Cursor : MonoBehaviour
         {
             ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerExitHandler);
 
-            if(m_controller.Action1.WasPressed)
+            if (m_controller.Action1.WasPressed)
             {
                 ExecuteEvents.Execute<IPointerClickHandler>(cur.gameObject, pointer, ExecuteEvents.pointerClickHandler);
             }
