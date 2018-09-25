@@ -33,9 +33,12 @@ public class Cursor : MonoBehaviour
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> parent of dd25736... Merge branch 'master' of https://github.com/FlashFusionGitHub/PhaseLineRepo2
+=======
+>>>>>>> parent of f30d963... meh.
 =======
 >>>>>>> parent of f30d963... meh.
     void QuickUpdate()
