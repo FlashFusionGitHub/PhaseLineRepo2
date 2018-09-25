@@ -31,6 +31,10 @@ public class Cursor : MonoBehaviour
         QuickUpdate();
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of dd25736... Merge branch 'master' of https://github.com/FlashFusionGitHub/PhaseLineRepo2
     void QuickUpdate()
     {
         PointerEventData pointer = new PointerEventData(EventSystem.current);
@@ -45,7 +49,7 @@ public class Cursor : MonoBehaviour
         {
             ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerExitHandler);
 
-            if (m_controller.Action1.WasPressed)
+            if(m_controller.Action1.WasPressed)
             {
                 ExecuteEvents.Execute<IPointerClickHandler>(cur.gameObject, pointer, ExecuteEvents.pointerClickHandler);
             }
