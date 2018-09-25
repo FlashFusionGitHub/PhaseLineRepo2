@@ -9,45 +9,73 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1953140604497076}
+  m_RootGameObject: {fileID: 1213351117033966}
   m_IsPrefabParent: 1
---- !u!1 &1953140604497076
+--- !u!1 &1213351117033966
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4236361034868256}
-  - component: {fileID: 33425542886138146}
-  - component: {fileID: 23421051095498704}
-  - component: {fileID: 95081160833996184}
+  - component: {fileID: 4817639920567000}
   m_Layer: 0
-  m_Name: wheel
+  m_Name: placement_explosive_barrel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 58
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4236361034868256
+--- !u!1 &1357016755105292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4557577588212826}
+  - component: {fileID: 33672180964248434}
+  - component: {fileID: 23234026078740250}
+  m_Layer: 0
+  m_Name: explosive_barel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4557577588212826
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1953140604497076}
-  m_LocalRotation: {x: 0.41887373, y: -0.56725603, z: 0.42119694, w: -0.57040215}
-  m_LocalPosition: {x: 44.967743, y: -51.589005, z: -555.43823}
+  m_GameObject: {fileID: 1357016755105292}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 4817639920567000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4817639920567000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213351117033966}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 407.7, y: 59.76, z: -371.1}
+  m_LocalScale: {x: 0.84, y: 0.8400001, z: 0.8400001}
+  m_Children:
+  - {fileID: 4557577588212826}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -270.317, z: -72.886}
---- !u!23 &23421051095498704
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23234026078740250
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1953140604497076}
+  m_GameObject: {fileID: 1357016755105292}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -56,7 +84,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fde215dc0a6b434459638225dea650c0, type: 2}
+  - {fileID: 2100000, guid: 73f3e66576110e7489df5ecf0ae8adbc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,27 +104,10 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33425542886138146
+--- !u!33 &33672180964248434
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1953140604497076}
-  m_Mesh: {fileID: 4300000, guid: 53a13f82de4e9674c8e7d1b9f66f57c8, type: 3}
---- !u!95 &95081160833996184
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1953140604497076}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 53a13f82de4e9674c8e7d1b9f66f57c8, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_GameObject: {fileID: 1357016755105292}
+  m_Mesh: {fileID: 4300000, guid: af0718108aaabb34caf8177431c80460, type: 3}
