@@ -31,7 +31,6 @@ public class Cursor : MonoBehaviour
         QuickUpdate();
     }
 
-    GameObject a_cur;
     void QuickUpdate()
     {
         PointerEventData pointer = new PointerEventData(EventSystem.current);
@@ -44,11 +43,11 @@ public class Cursor : MonoBehaviour
 
         foreach (RaycastResult cur in raycastResults)
         {
-            ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
+            ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerExitHandler);
 
             if (m_controller.Action1.WasPressed)
             {
-                ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerClickHandler);
+                ExecuteEvents.Execute<IPointerClickHandler>(cur.gameObject, pointer, ExecuteEvents.pointerClickHandler);
             }
         }
     }
