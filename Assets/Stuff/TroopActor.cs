@@ -6,81 +6,86 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
+[System.Serializable]
+public enum UnitClasses
+{
+    Tank,
+    AntAir,
+    Helicopter
+}
+
+[System.Serializable]
+public enum RankState
+{
+    LookingForGeneral,
+    FollowingGeneral,
+    IsGeneral,
+    dead
+}
+
+[System.Serializable]
+public enum MovementTypes
+{
+    Air,
+    Ground
+}
+
+[System.Serializable]
+public enum PlacementDirection
+{
+    left,
+    right
+}
+
+[System.Serializable]
+public class GunSettings
+{
+    [Header("Gun Stuff")]
+    public float damage;
+    public float TimeBetweenShots;
+    public float m_gunTimerRandomiser;
+    public float m_gunTimer;
+    public float attackRangeMin;
+    public float attackRangeMax;
+    public TroopActor attackTarget;
+
+    [Header("Turret Settings")]
+    public Transform turret;
+    public float turretAimSpeed;
+
+    [Header("Barrel Settings")]
+    public Transform barrel;
+    public UnityEvent onShoot;
+    public UnityEvent onKillShot;
+    public float barrelAimSpeed;
+}
+
+[System.Serializable]
+public class FormationPosition
+{
+    public Transform fromPos;
+    public TroopActor assignedUnit;
+    public bool taken;
+}
+
 public class TroopActor : MonoBehaviour
 {
-    [System.Serializable]
-    public enum UnitClasses
-    {
-        Tank,
-        AntAir,
-        Helicopter
-    }
-
-    [System.Serializable]
-    public enum RankState
-    {
-        LookingForGeneral,
-        FollowingGeneral,
-        IsGeneral,
-        dead
-    }
-
-    [System.Serializable]
-    public enum MovementTypes
-    {
-        Air,
-        Ground
-    }
-
-    [System.Serializable]
-    public class GunSettings
-    {
-        [Header("Gun Stuff")]
-        public float damage;
-        public float TimeBetweenShots;
-        public float m_gunTimerRandomiser;
-        public float m_gunTimer;
-        public float attackRangeMin;
-        public float attackRangeMax;
-        public TroopActor attackTarget;
-
-        [Header("Turret Settings")]
-        public Transform turret;
-        public float turretAimSpeed;
-
-        [Header("Barrel Settings")]
-        public Transform barrel;
-        public UnityEvent onShoot;
-        public UnityEvent onKillShot;
-        public float barrelAimSpeed;
-    }
-    [System.Serializable]
-    public class FormationPosition
-    {
-        public Transform fromPos;
-        public TroopActor assignedUnit;
-        public bool taken;
-    }
-    [System.Serializable]
-    public enum PlacementDirection
-    {
-        left,
-        right
-    }
-
     [Header("Unit Settings")]
-    [SerializeField] public UnitClasses unitClass;
+    [SerializeField]
+    public UnitClasses unitClass;
     [SerializeField] public Team team;
     [SerializeField] private UnitClasses[] strengths;
     [SerializeField] private UnitClasses[] vulnerabilities;
 
     [Header("Rank Settings")]
-    [SerializeField] public RankState rankState;
+    [SerializeField]
+    public RankState rankState;
     [SerializeField] public TroopActor myGeneral;
     float killMeAfter = 0.5f;
 
     [Header("Formation Settings")]
-    [SerializeField] private PlacementDirection placementDirection;
+    [SerializeField]
+    private PlacementDirection placementDirection;
     [SerializeField] private float numOfRows;
     [SerializeField] private float maxNumOfColumns;
     [SerializeField] private Vector3 positionOffset;
@@ -92,7 +97,8 @@ public class TroopActor : MonoBehaviour
 
 
     [Header("Promotion Settings")]
-    [SerializeField] private int rank;
+    [SerializeField]
+    private int rank;
     [SerializeField] private UnityEvent OnGainExperience;
     [SerializeField] private UnityEvent OnPromotion;
     [SerializeField] private UnityEvent OnBecomeGeneral;
@@ -103,7 +109,8 @@ public class TroopActor : MonoBehaviour
     [SerializeField] private float influenceRadius;
 
     [Header("Name Settings")]
-    [SerializeField] public string unitName;
+    [SerializeField]
+    public string unitName;
     [SerializeField] private string[] possibleNames;
 
     [Header("Health Settings")]
@@ -114,7 +121,8 @@ public class TroopActor : MonoBehaviour
     public Image m_healthBar;
 
     [Header("Movement Settings")]
-    [SerializeField] private bool moving;
+    [SerializeField]
+    private bool moving;
     [SerializeField] private UnityEvent OnMove;
     public Transform moveTarget;
     [SerializeField] private MovementTypes movementType;
@@ -124,17 +132,21 @@ public class TroopActor : MonoBehaviour
     public GameObject generalMoveTargetPrefab;
 
     [Header("Air Movement Settings")]
-    [SerializeField] private float hoverHeight;
+    [SerializeField]
+    private float hoverHeight;
     [SerializeField] private float verticleSpeed;
 
     [Header("Ground Movement Settings")]
-    [SerializeField] private NavMeshAgent m_navAgent;
+    [SerializeField]
+    private NavMeshAgent m_navAgent;
 
     [Header("Object Avoidance Settings")]
-    [SerializeField] private float avoidanceRange;
+    [SerializeField]
+    private float avoidanceRange;
 
     [Header("Attack Settings")]
-    [SerializeField] private GunSettings[] guns;
+    [SerializeField]
+    private GunSettings[] guns;
 
     [Header("Important Optimisation List")]
     public ObjectPool op;
@@ -142,11 +154,12 @@ public class TroopActor : MonoBehaviour
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      / START FUNCTION BELOW \
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    void Start () {
+    void Start()
+    {
         op = FindObjectOfType<ObjectPool>();
         SetHealth(maxHealth);
         NameUnit();
-	}
+    }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                     \ START FUNCTION ABOVE /
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -164,7 +177,7 @@ public class TroopActor : MonoBehaviour
         }
         else
         {
-            unitName = "Unit_" + Random.Range (0, 1000);
+            unitName = "Unit_" + Random.Range(0, 1000);
         }
         name = unitName;
     }
@@ -218,7 +231,7 @@ public class TroopActor : MonoBehaviour
         rankState = RankState.FollowingGeneral;
         myGeneral = ta;
         if (moveTarget)
-        Destroy(moveTarget.gameObject);
+            Destroy(moveTarget.gameObject);
         moveTarget = ta.AllocateTarget(this);
     }
 
@@ -242,7 +255,7 @@ public class TroopActor : MonoBehaviour
             GameObject newFormPos = new GameObject("dad");
             GameObject trackedFormPos = Instantiate(newFormPos, NextFormPos() + positionOffset, transform.rotation);
             Destroy(newFormPos);
-            trackedFormPos.name = "Formation Position " + formationPositions.Count +1;
+            trackedFormPos.name = "Formation Position " + formationPositions.Count + 1;
             if (!moveTarget)
             {
                 CreateMoveTarget();
@@ -303,7 +316,7 @@ public class TroopActor : MonoBehaviour
 
     void AttackClosestEnemy()
     {
-        
+
         foreach (GunSettings gun in guns)
         {
             if (ClosestEnemy(gun))
@@ -324,11 +337,11 @@ public class TroopActor : MonoBehaviour
             }
 
         }
-       
+
     }
     void ResetGunTimer(GunSettings gun)
     {
-        gun.m_gunTimer = Random.Range ((gun.TimeBetweenShots - (gun.TimeBetweenShots * gun.m_gunTimerRandomiser)),(gun.TimeBetweenShots + (gun.TimeBetweenShots * gun.m_gunTimerRandomiser)));
+        gun.m_gunTimer = Random.Range((gun.TimeBetweenShots - (gun.TimeBetweenShots * gun.m_gunTimerRandomiser)), (gun.TimeBetweenShots + (gun.TimeBetweenShots * gun.m_gunTimerRandomiser)));
     }
 
     void Fire(GunSettings gun)
@@ -381,7 +394,7 @@ public class TroopActor : MonoBehaviour
     TroopActor ClosestEnemy(GunSettings gun)
     {
         float dis = 0f;
-        TroopActor closestEnemy = null; 
+        TroopActor closestEnemy = null;
         foreach (TroopActor ta in op.allTroopActors)
         {
             if (ta.rankState != RankState.dead)
@@ -402,11 +415,11 @@ public class TroopActor : MonoBehaviour
         foreach (TroopActor ta in op.allTroopActors)
         {
             if (ta.rankState != RankState.dead)
-            if ((dis == 0f || Vector3.Distance(ta.transform.position, transform.position) < dis) && Vector3.Distance(ta.transform.position, transform.position) < influenceRadius && ta != this && ta.team == team &&ta.rankState != RankState.IsGeneral)
-            {
-                dis = Vector3.Distance(ta.transform.position, transform.position);
-                closestAlly = ta;
-            }
+                if ((dis == 0f || Vector3.Distance(ta.transform.position, transform.position) < dis) && Vector3.Distance(ta.transform.position, transform.position) < influenceRadius && ta != this && ta.team == team && ta.rankState != RankState.IsGeneral)
+                {
+                    dis = Vector3.Distance(ta.transform.position, transform.position);
+                    closestAlly = ta;
+                }
         }
         return closestAlly;
     }
@@ -417,11 +430,11 @@ public class TroopActor : MonoBehaviour
         foreach (TroopActor ta in op.allTroopActors)
         {
             if (ta.rankState != RankState.dead)
-            if ((dis == 0f || Vector3.Distance(ta.transform.position, transform.position) < dis) && ta != this && ta.team == team && ta.rankState == RankState.IsGeneral)
-            {
-                dis = Vector3.Distance(ta.transform.position, transform.position);
-                closestAlly = ta;
-            }
+                if ((dis == 0f || Vector3.Distance(ta.transform.position, transform.position) < dis) && ta != this && ta.team == team && ta.rankState == RankState.IsGeneral)
+                {
+                    dis = Vector3.Distance(ta.transform.position, transform.position);
+                    closestAlly = ta;
+                }
         }
         return closestAlly;
     }
@@ -468,7 +481,7 @@ public class TroopActor : MonoBehaviour
                 else
                     moving = false;
             }
-           
+
             LookAtMoveTarget();
         }
         if (movementType == MovementTypes.Air)
@@ -493,7 +506,7 @@ public class TroopActor : MonoBehaviour
         }
     }
 
- 
+
     void CreateMoveTarget()
     {
         if (!moveTargetPrefab && !generalMoveTargetPrefab)
@@ -547,7 +560,7 @@ public class TroopActor : MonoBehaviour
         Vector3 lookRotation = transform.position - previousPos;
 
         if (moveTarget && moving)
-            if(lookRotation != Vector3.zero)
+            if (lookRotation != Vector3.zero)
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation((transform.position - previousPos)), turnSpeed * Time.deltaTime);
 
         previousPos = transform.position;
@@ -595,10 +608,10 @@ public class TroopActor : MonoBehaviour
         if (ta.rankState == RankState.IsGeneral)
         {
             if (ClosestAlly())
-            ta.PromoteToGeneral(ClosestAlly());
+                ta.PromoteToGeneral(ClosestAlly());
             ta.rankState = RankState.dead;
             if (moveTarget)
-            Destroy(moveTarget.gameObject);
+                Destroy(moveTarget.gameObject);
         }
         ta.rankState = RankState.dead;
 
@@ -612,7 +625,7 @@ public class TroopActor : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
-        
+
         foreach (GunSettings gun in guns)
         {
             Gizmos.color = Color.grey;

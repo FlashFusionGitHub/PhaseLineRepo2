@@ -37,7 +37,7 @@ public class ObjectPool : MonoBehaviour {
 
         foreach (TroopActor troop in allTroopActors)
         {
-            if (troop.team == Team.TEAM1 && troop.rankState == TroopActor.RankState.IsGeneral)
+            if (troop.team == Team.TEAM1 && troop.rankState == RankState.IsGeneral)
             {
                 team1Generals.Add(troop);
             }
@@ -47,7 +47,7 @@ public class ObjectPool : MonoBehaviour {
                 team1Troops.Add(troop);
             }
 
-            if (troop.team == Team.TEAM2 && troop.rankState == TroopActor.RankState.IsGeneral)
+            if (troop.team == Team.TEAM2 && troop.rankState == RankState.IsGeneral)
             {
                 team2Generals.Add(troop);
             }

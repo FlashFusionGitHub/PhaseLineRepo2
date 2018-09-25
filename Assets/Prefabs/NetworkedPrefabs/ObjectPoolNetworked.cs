@@ -54,12 +54,12 @@ public class ObjectPoolNetworked : MonoBehaviour {
 
         foreach (TroopActorNetworked troop in allTroopActors)
         {
-            if (troop.team == Team.TEAM1 && troop.rank == TroopActorNetworked.Rank.IsGeneral)
+            if (troop.team == Team.TEAM1 && troop.rankState == RankState.IsGeneral)
             {
                 team1Generals.Add(troop);
             }
 
-            if (troop.team == Team.TEAM2 && troop.rank == TroopActorNetworked.Rank.IsGeneral)
+            if (troop.team == Team.TEAM2 && troop.rankState == RankState.IsGeneral)
             {
                 team2Generals.Add(troop);
             }

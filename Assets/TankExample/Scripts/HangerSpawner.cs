@@ -23,7 +23,7 @@ public class HangerSpawner : MonoBehaviour {
     }
 
     [Header("Spawn Stuff")]
-    public TroopActor.UnitClasses spawnClass;
+    public UnitClasses spawnClass;
     public Team team;
     public Transform spawnPoint;
     public GameObject lastSpawnedObject;
@@ -133,7 +133,7 @@ public class HangerSpawner : MonoBehaviour {
     {
         foreach (TroopActor ta in objectPool.allTroopActors)
         {
-            if (ta.rankState == TroopActor.RankState.dead && ta.team == team && ta.unitClass == spawnClass)
+            if (ta.rankState == RankState.dead && ta.team == team && ta.unitClass == spawnClass)
             {
                 return ta;
             }
@@ -149,7 +149,7 @@ public class HangerSpawner : MonoBehaviour {
             ta.gameObject.SetActive(true);
         }
         ta.SetHealth(ta.maxHealth);
-        ta.rankState = TroopActor.RankState.LookingForGeneral;
+        ta.rankState = RankState.LookingForGeneral;
         ta.transform.position = spawnPoint.position;
 
     }

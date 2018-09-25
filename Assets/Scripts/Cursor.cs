@@ -9,17 +9,21 @@ public class Cursor : MonoBehaviour
 {
     public InputDevice m_controller;
 
-    public GameObject cursor;
+    public GameObject m_cursor;
+
+    public int controllerIndex;
+
+    PointerEventData pointer;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    void Update()
     {
-        m_controller = InputManager.Devices[0];
+        m_controller = InputManager.Devices[controllerIndex];
 
         transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0) * 5;
 
@@ -31,34 +35,47 @@ public class Cursor : MonoBehaviour
         QuickUpdate();
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+    // objects that were under the cursor last frame
+    List<GameObject> oldRaycasts = new List<GameObject>();
 
->>>>>>> parent of dd25736... Merge branch 'master' of https://github.com/FlashFusionGitHub/PhaseLineRepo2
-=======
->>>>>>> parent of f30d963... meh.
-=======
->>>>>>> parent of f30d963... meh.
     void QuickUpdate()
     {
-        PointerEventData pointer = new PointerEventData(EventSystem.current);
+        pointer = new PointerEventData(EventSystem.current);
 
-        pointer.position = cursor.transform.position;
+        pointer.position = m_cursor.transform.position;
 
         List<RaycastResult> raycastResults = new List<RaycastResult>();
 
         EventSystem.current.RaycastAll(pointer, raycastResults);
 
+        List<GameObject> raycasts = new List<GameObject>();
         foreach (RaycastResult cur in raycastResults)
         {
-            ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerExitHandler);
+            // its new this frame!
+            if (oldRaycasts.Contains(cur.gameObject) == false)
+                ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
+            // store the game objects under the cursor this frame
+            raycasts.Add(cur.gameObject);
 
-            if(m_controller.Action1.WasPressed)
+            // button presses
+            if (m_controller.Action1.WasPressed)
             {
-                ExecuteEvents.Execute<IPointerClickHandler>(cur.gameObject, pointer, ExecuteEvents.pointerClickHandler);
+                ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerClickHandler);
             }
         }
+
+        // iterate over everythign that was under the cursor last frame...
+        foreach (GameObject obj in oldRaycasts)
+        {
+            // is it no longer under the cursor?
+            if (raycasts.Contains(obj) == false)
+            {
+                // the cursor has left us this frame - fire off event
+                ExecuteEvents.Execute(obj, pointer, ExecuteEvents.pointerExitHandler);
+            }
+        }
+
+        // store this for comparison next frame
+        oldRaycasts = raycasts;
     }
 }
