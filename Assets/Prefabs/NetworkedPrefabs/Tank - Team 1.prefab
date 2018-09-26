@@ -313,6 +313,8 @@ GameObject:
   - component: {fileID: 195344838398510780}
   - component: {fileID: 114095903355139986}
   - component: {fileID: 114313742357861618}
+  - component: {fileID: 114094578574979924}
+  - component: {fileID: 114843573165503552}
   m_Layer: 0
   m_Name: Tank - Team 1
   m_TagString: Untagged
@@ -772,6 +774,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114094578574979924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981296321558518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d924bd4f3e7b2e34bae6cf64d7720bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114095903355139986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -783,10 +796,120 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd45f267ea075004ba1ba06ab4d1fb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
-  rank: 2
   currentHealth: 100
   healthBar: {fileID: 224478633495297380}
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  unitName: 
+  possibleNames: []
+  rankState: 2
+  myGeneral: {fileID: 0}
+  moving: 0
+  OnMove:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  moveTarget: {fileID: 0}
+  movementType: 0
+  moveSpeed: 0
+  turnSpeed: 0
+  moveTargetPrefab: {fileID: 0}
+  generalMoveTargetPrefab: {fileID: 0}
+  placementDirection: 0
+  numOfRows: 0
+  maxNumOfColumns: 0
+  positionOffset: {x: 0, y: 0, z: 0}
+  distanceBetweenPoints: {x: 0, y: 0}
+  formationPositions: []
+  oldPos: {fileID: 0}
+  pd: 0
+  count: 0
+  unitClass: 0
+  team: 1
+  strengths: 
+  vulnerabilities: 
+  rank: 0
+  OnGainExperience:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114843573165503552}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnPromotion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114843573165503552}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnBecomeGeneral:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114094578574979924}
+        m_MethodName: turnOnObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1713692416262166}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  rankTitles: []
+  experienceRequiredForNextRank: 0
+  currentExperience: 0
+  percentageIncreasePerRank: 0
+  influenceRadius: 0
+  hoverHeight: 0
+  verticleSpeed: 0
+  m_navAgent: {fileID: 0}
+  avoidanceRange: 0
+  guns:
+  - {fileID: 0}
+  op: {fileID: 0}
+  previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114158023848323224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -950,6 +1073,17 @@ MonoBehaviour:
     i15: 224
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114843573165503552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981296321558518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7348475cfd95da47bee6dfa3e33a544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &195344838398510780
 NavMeshAgent:
   m_ObjectHideFlags: 1

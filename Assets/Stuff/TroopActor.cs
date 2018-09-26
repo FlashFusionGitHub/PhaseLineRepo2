@@ -169,6 +169,7 @@ public class TroopActor : MonoBehaviour
 
         m_healthBar.fillAmount = currentHealth / maxHealth;
     }
+
     void NameUnit()
     {
         if (possibleNames.Length > 0)
@@ -226,6 +227,7 @@ public class TroopActor : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
     void AssignToGeneral(TroopActor ta)
     {
         rankState = RankState.FollowingGeneral;
@@ -267,7 +269,6 @@ public class TroopActor : MonoBehaviour
             formationPositions.Add(newFP);
             return newFP.fromPos;
         }
-
     }
 
     Vector3 NextFormPos()
@@ -316,7 +317,6 @@ public class TroopActor : MonoBehaviour
 
     void AttackClosestEnemy()
     {
-
         foreach (GunSettings gun in guns)
         {
             if (ClosestEnemy(gun))
@@ -337,8 +337,8 @@ public class TroopActor : MonoBehaviour
             }
 
         }
-
     }
+
     void ResetGunTimer(GunSettings gun)
     {
         gun.m_gunTimer = Random.Range((gun.TimeBetweenShots - (gun.TimeBetweenShots * gun.m_gunTimerRandomiser)), (gun.TimeBetweenShots + (gun.TimeBetweenShots * gun.m_gunTimerRandomiser)));
@@ -623,6 +623,7 @@ public class TroopActor : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
     private void OnDrawGizmosSelected()
     {
 

@@ -145,6 +145,8 @@ GameObject:
   - component: {fileID: 195281820745870324}
   - component: {fileID: 114324555732157166}
   - component: {fileID: 114489127093400072}
+  - component: {fileID: 114257496479138054}
+  - component: {fileID: 114757598754995810}
   m_Layer: 0
   m_Name: Tank - Team 2
   m_TagString: Untagged
@@ -788,6 +790,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114257496479138054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514819380856810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d924bd4f3e7b2e34bae6cf64d7720bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114277729715941176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -820,10 +833,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd45f267ea075004ba1ba06ab4d1fb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 2
-  rank: 2
   currentHealth: 100
   healthBar: {fileID: 224057220384025438}
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  unitName: 
+  possibleNames: []
+  rankState: 2
+  myGeneral: {fileID: 0}
+  moving: 0
+  OnMove:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  moveTarget: {fileID: 0}
+  movementType: 0
+  moveSpeed: 0
+  turnSpeed: 0
+  moveTargetPrefab: {fileID: 0}
+  generalMoveTargetPrefab: {fileID: 0}
+  placementDirection: 0
+  numOfRows: 0
+  maxNumOfColumns: 0
+  positionOffset: {x: 0, y: 0, z: 0}
+  distanceBetweenPoints: {x: 0, y: 0}
+  formationPositions: []
+  oldPos: {fileID: 0}
+  pd: 0
+  count: 0
+  unitClass: 0
+  team: 2
+  strengths: 
+  vulnerabilities: 
+  rank: 0
+  OnGainExperience:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnPromotion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnBecomeGeneral:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  rankTitles: []
+  experienceRequiredForNextRank: 0
+  currentExperience: 0
+  percentageIncreasePerRank: 0
+  influenceRadius: 0
+  hoverHeight: 0
+  verticleSpeed: 0
+  m_navAgent: {fileID: 0}
+  avoidanceRange: 0
+  guns: []
+  op: {fileID: 0}
+  previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114428541210906004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -929,6 +1007,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114757598754995810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514819380856810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7348475cfd95da47bee6dfa3e33a544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114875022555173516
 MonoBehaviour:
   m_ObjectHideFlags: 1

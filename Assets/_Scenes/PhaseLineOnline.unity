@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_Name
       value: Tank - Team 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: rankState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
   m_IsPrefabParent: 0
@@ -166,6 +171,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4657683494039088, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
       propertyPath: m_LocalPosition.x
       value: -29.1
@@ -198,9 +208,76 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 415436112}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 415436110}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 415436111}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: OnBecomeGeneral.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallCmdEnableObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &415436110 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114843573165503552, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 415436109}
+  m_Script: {fileID: 11500000, guid: f7348475cfd95da47bee6dfa3e33a544, type: 3}
+--- !u!114 &415436111 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114094578574979924, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 415436109}
+  m_Script: {fileID: 11500000, guid: d924bd4f3e7b2e34bae6cf64d7720bb3, type: 3}
+--- !u!198 &415436112 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198914940726027448, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 415436109}
 --- !u!1 &515386426
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +821,11 @@ Prefab:
       propertyPath: m_Name
       value: Tank - Team 1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: rankState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
   m_IsPrefabParent: 0
@@ -790,6 +872,11 @@ Prefab:
       propertyPath: m_Name
       value: Tank - Team 1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: rankState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
   m_IsPrefabParent: 0
@@ -835,6 +922,11 @@ Prefab:
     - target: {fileID: 1981296321558518, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
       propertyPath: m_Name
       value: Tank - Team 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: rankState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
@@ -960,6 +1052,16 @@ Prefab:
       propertyPath: m_Name
       value: Tank - Team 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: rankState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195344838398510780, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
   m_IsPrefabParent: 0
@@ -1005,6 +1107,11 @@ Prefab:
     - target: {fileID: 1981296321558518, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
       propertyPath: m_Name
       value: Tank - Team 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: rankState
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
@@ -1052,6 +1159,11 @@ Prefab:
       propertyPath: m_Name
       value: Tank - Team 1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: rankState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
   m_IsPrefabParent: 0
@@ -1097,6 +1209,11 @@ Prefab:
     - target: {fileID: 1981296321558518, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
       propertyPath: m_Name
       value: Tank - Team 1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095903355139986, guid: f51a4fb3eb58c2f42abf56679b6755e0,
+        type: 2}
+      propertyPath: rankState
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
