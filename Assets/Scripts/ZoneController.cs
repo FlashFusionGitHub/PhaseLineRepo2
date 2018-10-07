@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ZoneController : MonoBehaviour {
 
-
     public List<CaptureZoneActor> zones;
 
     public Image progressBar;

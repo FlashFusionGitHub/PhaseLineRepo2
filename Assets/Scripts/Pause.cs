@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour {
 
-    InputDevice[] m_controller;
+    InputDevice[] m_controller = { InputManager.Devices[0], InputManager.Devices[1] };
 
     public GameObject m_pausePanel;
 

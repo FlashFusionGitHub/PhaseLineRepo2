@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.AI;
 
 [System.Serializable]
-public class FormationPositionNetworked: NetworkBehaviour
+public class FormationPositionNetworked
 {
     public Transform fromPos;
     public TroopActorNetworked assignedUnit;
@@ -15,7 +15,7 @@ public class FormationPositionNetworked: NetworkBehaviour
 }
 
 [System.Serializable]
-public class GunSettingsNetworked : NetworkBehaviour
+public class GunSettingsNetworked
 {
     [Header("Gun Stuff")]
     public int damage;
@@ -61,7 +61,7 @@ public class TroopActorNetworked : NetworkBehaviour
     [SerializeField]
     bool moving;
     [SerializeField] UnityEvent OnMove;
-    public Transform moveTarget;
+    public GameObject moveTarget;
     [SerializeField] MovementTypes movementType;
     [SerializeField] float moveSpeed;
     [SerializeField] float turnSpeed;
@@ -124,25 +124,47 @@ public class TroopActorNetworked : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*Host Sync position and rotation of tranform on server*/
-        if (isLocalPlayer)
-            CmdSyncPos(transform.localPosition, transform.localRotation);
-        
         //Keep Troop state updated each frame 
         RankAction();
-        
+
         if (rankState != RankState.dead)
         {
             Move();
             AttackClosestEnemy();
         }
+
+        CmdUpdateMoveTargetPosition(moveTarget.transform.position, moveTarget.transform.rotation); 
     }
 
     [Command]
-    protected void CmdSyncPos(Vector3 localPos, Quaternion localRotation)
+    void CmdUpdateMoveTargetPosition(Vector3 pos, Quaternion rot)
     {
-        transform.localPosition = localPos;
-        transform.localRotation = localRotation;
+        moveTarget.transform.position = pos;
+        moveTarget.transform.rotation = rot;
+    }
+
+    public void CreateMoveTarget()
+    {
+        Destroy(moveTarget);
+
+        if (generalMoveTargetPrefab)
+        {
+            moveTarget = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
+            moveTarget.name = gameObject.name + "'s MoveTarget";
+            moveTarget.AddComponent<NetworkIdentity>();
+            moveTarget.AddComponent<NetworkTransform>();
+            moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
+            moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+        }
+        else
+        {
+            moveTarget = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
+            moveTarget.name = gameObject.name + "'s MoveTarget";
+            moveTarget.AddComponent<NetworkIdentity>();
+            moveTarget.AddComponent<NetworkTransform>();
+            moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
+            moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+        }
     }
 
     public void TakeDamage(int damageToTake)
@@ -203,8 +225,8 @@ public class TroopActorNetworked : NetworkBehaviour
         rankState = RankState.FollowingGeneral;
         myGeneral = ta;
         if (moveTarget)
-            Destroy(moveTarget.gameObject);
-        moveTarget = ta.AllocateTarget(this);
+            Destroy(moveTarget);
+        moveTarget = ta.AllocateTarget(this).gameObject;
     }
 
     public void Die(TroopActorNetworked ta)
@@ -310,31 +332,6 @@ public class TroopActorNetworked : NetworkBehaviour
             newFP.assignedUnit = ta;
             formationPositions.Add(newFP);
             return newFP.fromPos;
-        }
-
-    }
-
-    void CreateMoveTarget()
-    {
-        if (!moveTargetPrefab && !generalMoveTargetPrefab)
-        {
-            GameObject killMePls = new GameObject("Kill me pls");
-            killMePls.name = gameObject.name + "'s MoveTarget";
-            killMePls.transform.position = transform.position;
-            killMePls.transform.rotation = transform.rotation;
-            moveTarget = killMePls.transform;
-        }
-        else if (generalMoveTargetPrefab)
-        {
-            GameObject keepThisAlive = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
-            keepThisAlive.name = gameObject.name + "'s MoveTarget";
-            moveTarget = keepThisAlive.transform;
-        }
-        else if (!generalMoveTargetPrefab && moveTargetPrefab)
-        {
-            GameObject keepThisAlive = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
-            keepThisAlive.name = gameObject.name + "'s MoveTarget";
-            moveTarget = keepThisAlive.transform;
         }
     }
 
@@ -447,7 +444,7 @@ public class TroopActorNetworked : NetworkBehaviour
         if (!oldPos)
         {
             oldPos = new GameObject("oldPos " + gameObject.name).transform;
-            oldPos.parent = moveTarget;
+            oldPos.parent = moveTarget.transform;
             oldPos.localPosition = Vector3.zero;
             oldPos.localPosition -= new Vector3(0, 0, distanceBetweenPoints.y);
             count = 0;
@@ -455,7 +452,7 @@ public class TroopActorNetworked : NetworkBehaviour
         }
         else if (oldPos.parent != moveTarget)
         {
-            oldPos.parent = moveTarget;
+            oldPos.parent = moveTarget.transform;
             oldPos.localPosition = Vector3.zero;
             oldPos.localPosition -= new Vector3(0, 0, distanceBetweenPoints.y);
             count = 0;
@@ -500,12 +497,11 @@ public class TroopActorNetworked : NetworkBehaviour
             }
             else if (m_navAgent && moveTarget)
             {
-                Debug.DrawLine(transform.position, moveTarget.position, Color.red);
-                m_navAgent.SetDestination(moveTarget.position);
-                if (Vector3.Distance(new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z), transform.position) > moveSpeed * Time.deltaTime)
+                Debug.DrawLine(transform.position, moveTarget.transform.position, Color.red);
+                m_navAgent.SetDestination(moveTarget.transform.position);
 
+                if (Vector3.Distance(new Vector3(moveTarget.transform.position.x, transform.position.y, moveTarget.transform.position.z), transform.position) > moveSpeed * Time.deltaTime)
                     moving = true;
-
                 else
                     moving = false;
             }
@@ -540,7 +536,7 @@ public class TroopActorNetworked : NetworkBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, (moveTarget.position - transform.position), out hit, avoidanceRange))
+        if (Physics.Raycast(transform.position, (moveTarget.transform.position - transform.position), out hit, avoidanceRange))
         {
             if (hit.transform != moveTarget)
             {
@@ -549,13 +545,13 @@ public class TroopActorNetworked : NetworkBehaviour
             }
             else
             {
-                Debug.DrawLine(transform.position, moveTarget.position, Color.grey);
+                Debug.DrawLine(transform.position, moveTarget.transform.position, Color.grey);
                 return true;
             }
         }
         else
         {
-            Debug.DrawLine(transform.position, moveTarget.position, Color.grey);
+            Debug.DrawLine(transform.position, moveTarget.transform.position, Color.grey);
             return true;
         }
     }
@@ -581,14 +577,14 @@ public class TroopActorNetworked : NetworkBehaviour
 
     void MoveTowardsMoveTarget()
     {
-        if (Vector3.Distance(new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z), transform.position) > avoidanceRange)
+        if (Vector3.Distance(new Vector3(moveTarget.transform.position.x, transform.position.y, moveTarget.transform.position.z), transform.position) > avoidanceRange)
         {
-            transform.position += (new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z) - transform.position).normalized * moveSpeed * Time.deltaTime;
+            transform.position += (new Vector3(moveTarget.transform.position.x, transform.position.y, moveTarget.transform.position.z) - transform.position).normalized * moveSpeed * Time.deltaTime;
             moving = true;
         }
-        else if (Vector3.Distance(new Vector3(moveTarget.position.x, moveTarget.position.y + hoverHeight, moveTarget.position.z), transform.position) > moveSpeed * Time.deltaTime)
+        else if (Vector3.Distance(new Vector3(moveTarget.transform.position.x, moveTarget.transform.position.y + hoverHeight, moveTarget.transform.position.z), transform.position) > moveSpeed * Time.deltaTime)
         {
-            transform.position += (new Vector3(moveTarget.position.x, moveTarget.position.y + hoverHeight, moveTarget.position.z) - transform.position).normalized * verticleSpeed * Time.deltaTime;
+            transform.position += (new Vector3(moveTarget.transform.position.x, moveTarget.transform.position.y + hoverHeight, moveTarget.transform.position.z) - transform.position).normalized * verticleSpeed * Time.deltaTime;
             moving = true;
         }
         else

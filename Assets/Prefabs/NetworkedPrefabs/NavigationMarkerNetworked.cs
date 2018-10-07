@@ -8,7 +8,6 @@ public class NavigationMarkerNetworked : MonoBehaviour {
     public GameObject m_navMarker;
     public GameObject m_currentMarker;
 
-
     public float m_markerSpeed = 2;
     public float m_minXPos = -100, maxXPos = 100;
     public float m_minZPos = -100, maxZPos = 100;
