@@ -51,7 +51,6 @@ public class TroopControllerNetworked : NetworkBehaviour {
         if (m_controller.Action1.WasPressed)
         {
             m_generals[tankIndex].moveTarget.transform.position = m_nmn.m_currentMarker.transform.position;
-            //m_generals[tankIndex].moveTarget.transform.position = m_nmn.m_currentMarker.transform.position;
         }
 
         if (m_controller.DPadLeft.WasPressed && m_generals.Count > 1)
