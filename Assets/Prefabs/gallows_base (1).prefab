@@ -145,6 +145,8 @@ GameObject:
   - component: {fileID: 33963288861130296}
   - component: {fileID: 23021549888519994}
   - component: {fileID: 95726222815311828}
+  - component: {fileID: 65633471789911344}
+  - component: {fileID: 208231577220849312}
   m_Layer: 0
   m_Name: gallows_base (1)
   m_TagString: Untagged
@@ -533,8 +535,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1355505611237772}
-  m_LocalRotation: {x: -0, y: 0.51540375, z: -0, w: 0.85694754}
-  m_LocalPosition: {x: -117.8, y: 37, z: -117.6}
+  m_LocalRotation: {x: -0, y: 0.8843351, z: -0, w: -0.46685278}
+  m_LocalPosition: {x: 121.4, y: 38.8, z: 143.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4846873827422380}
@@ -542,7 +544,7 @@ Transform:
   - {fileID: 4389992791355564}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 62.049004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 235.66, z: 0}
 --- !u!4 &4895717786704872
 Transform:
   m_ObjectHideFlags: 1
@@ -611,6 +613,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1355505611237772}
   m_Mesh: {fileID: 4300000, guid: 829eec60ce7e7c844a6b3ed205f64e0e, type: 3}
+--- !u!65 &65633471789911344
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355505611237772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 44.97811, y: 38.691895, z: 24.004866}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95140438839782530
 Animator:
   serializedVersion: 3
@@ -826,3 +840,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -2.6545224, y: -3.8534126, z: -0.06560397}
     m_Extent: {x: 3.4206042, y: 4.5764923, z: 2.328325}
   m_DirtyAABB: 0
+--- !u!208 &208231577220849312
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355505611237772}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 22.489, y: 19.346, z: 12.002001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
