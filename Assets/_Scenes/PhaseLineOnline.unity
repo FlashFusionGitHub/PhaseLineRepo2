@@ -197,39 +197,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &417602799 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1863403286638528, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-    type: 2}
-  m_PrefabInternal: {fileID: 1481575482}
---- !u!114 &417602803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 417602799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36407106282928f41bd33737e1039dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inPos: {x: 0, y: 0, z: 0}
-  outPos: {x: 0, y: 0, z: 0}
-  curveType: 0
-  duration: 0
-  inScale: 1
-  outScale: 1
-  isIn: 1
-  onTweenBegin:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onTweenEnd:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &501307808
 Prefab:
   m_ObjectHideFlags: 0
@@ -972,12 +939,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1405130878 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114362295902105000, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-    type: 2}
-  m_PrefabInternal: {fileID: 1481575482}
-  m_Script: {fileID: 11500000, guid: 22dfcf904f063e54f9e17c916a526986, type: 3}
 --- !u!1 &1425179835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,11 +1024,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114362295902105000, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: displaySubtitle.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224369504003199322, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1158,53 +1114,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1702856842275342, guid: 3f6b28b1ae16c6e41be1348e878f75dd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224492510739354486, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -275.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114705524938843916, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1040493530785998, guid: 3f6b28b1ae16c6e41be1348e878f75dd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718897129100818, guid: 3f6b28b1ae16c6e41be1348e878f75dd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362295902105000, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: displaySubtitle.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362295902105000, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: displaySubtitle.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362295902105000, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: displaySubtitle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2033519864}
-    - target: {fileID: 114362295902105000, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: displaySubtitle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleInOut
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362295902105000, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: displaySubtitle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f6b28b1ae16c6e41be1348e878f75dd, type: 2}
   m_IsPrefabParent: 0
@@ -1291,58 +1200,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51a4fb3eb58c2f42abf56679b6755e0, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2033519860 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1609342319302726, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-    type: 2}
-  m_PrefabInternal: {fileID: 1481575482}
---- !u!114 &2033519864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2033519860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36407106282928f41bd33737e1039dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inPos: {x: -530.1, y: -174.4772, z: 0}
-  outPos: {x: -275.8, y: -174.4772, z: 0}
-  curveType: 0
-  duration: 0
-  inScale: 1
-  outScale: 1
-  isIn: 1
-  onTweenBegin:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1405130878}
-        m_MethodName: DisplaySubtitles
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onTweenEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1405130878}
-        m_MethodName: DisplaySubtitles
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null

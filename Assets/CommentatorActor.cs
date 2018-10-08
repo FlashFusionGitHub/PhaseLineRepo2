@@ -76,19 +76,18 @@ public class CommentatorActor : MonoBehaviour {
     public Image portrait;
     AudioSource audioSource;
 
-    TweenAnimator tweenAnimator;
+    public TweenAnimator tweenAnimator;
 
     public UnityEvent displaySubtitle;
 
     // Use this for initialization
     void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.A))
         {
             DisplaySubtitles();
         }
@@ -101,14 +100,35 @@ public class CommentatorActor : MonoBehaviour {
 
     void CycleSpriteSheet()
     {
-        //Cycle through sprite sheet
+        if (currentReaction.spriteSheet.sprites.Length > 0)
+        {
+            portrait.sprite = currentReaction.spriteSheet.sprites[currentReaction.spriteSheet.index];
+        }
+
+        if (currentReaction.spriteSheet.cycleTimer <= 0 && !currentReaction.spriteSheet.animationFinished)
+        {
+
+            if (currentReaction.spriteSheet.index + 1 < currentReaction.spriteSheet.sprites.Length)
+            {
+                currentReaction.spriteSheet.index++;
+            }
+            else
+            {
+                currentReaction.spriteSheet.animationFinished = true;
+            }
+
+            currentReaction.spriteSheet.cycleTimer = currentReaction.spriteSheet.cycleSpeed;
+        }
+        else if (currentReaction.spriteSheet.cycleTimer > 0 && !currentReaction.spriteSheet.animationFinished)
+        {
+            currentReaction.spriteSheet.cycleTimer -= Time.deltaTime;
+        }
     }
 
     public void DisplaySubtitles()
     {
         //Text change
         //Pop out text panel displaying text
-
-        displaySubtitle.Invoke();
+        tweenAnimator.ToggleInOut();
     }
 }
