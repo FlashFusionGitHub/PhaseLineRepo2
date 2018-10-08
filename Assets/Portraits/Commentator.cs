@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 [RequireComponent(typeof(AudioSource))]
 public class Commentator : MonoBehaviour {
+
     [System.Serializable]
     public enum ReactionType
     {
         Event,
         Idol
     }
+
     [System.Serializable]
     public enum ReactionCatagory
     {
@@ -20,6 +23,7 @@ public class Commentator : MonoBehaviour {
         AFK,
         Defeat
     }
+
     [System.Serializable]
     public enum SpeakingState
     {
@@ -42,6 +46,7 @@ public class Commentator : MonoBehaviour {
         public Animation spriteSheet;
 
     }
+
     [System.Serializable]
     public class Txt
     {
@@ -51,6 +56,7 @@ public class Commentator : MonoBehaviour {
         public float subtitleTimer;
         public bool subtitlesFinished;
     }
+
     [System.Serializable]
     public class Animation
     {
@@ -60,6 +66,7 @@ public class Commentator : MonoBehaviour {
         public float cycleTimer = 0f;
         public bool animationFinished = false;
     }
+
     [System.Serializable]
     public class Audio
     {
@@ -88,6 +95,7 @@ public class Commentator : MonoBehaviour {
         attempts = reactions.Length;
         audioSource = GetComponent<AudioSource>();
     }
+
     public void ReactPositively()
     {
         if (speakingState != SpeakingState.Speaking)
@@ -105,6 +113,7 @@ public class Commentator : MonoBehaviour {
             idolState = ReactionCatagory.Negative;
         }
     }
+
     int attempts;
     void ChooseAReaction(ReactionType rt, ReactionCatagory rc)
     {
@@ -173,6 +182,7 @@ public class Commentator : MonoBehaviour {
             }
         }
     }
+
     void NextIdolState()
     {
         if (idolState == ReactionCatagory.Positive)
@@ -274,21 +284,17 @@ public class Commentator : MonoBehaviour {
     {
         if (currentReaction.spriteSheet.animationFinished && currentReaction.audio.audioFinished && currentReaction.text.subtitlesFinished)
         {
-
             speakingState = SpeakingState.Idol;
         }
     }
-
-
-
 
     //private void OnDrawGizmos()
     //{
     //    foreach (VoiceLine vl in reactions)
     //    {
-     //       string vlName = (vl.text.subtitles.Length < 20) ? (vl.reactionType.ToString() + " " + vl.reactionCatagory.ToString() + " (" + vl.text.subtitles + ")") : (vl.reactionType.ToString() + " " + vl.reactionCatagory.ToString() + " (" + vl.text.subtitles.Substring(0, 20) + "...)");
+    //       string vlName = (vl.text.subtitles.Length < 20) ? (vl.reactionType.ToString() + " " + vl.reactionCatagory.ToString() + " (" + vl.text.subtitles + ")") : (vl.reactionType.ToString() + " " + vl.reactionCatagory.ToString() + " (" + vl.text.subtitles.Substring(0, 20) + "...)");
     //        if (vl.VoiceLineName != vlName)
-     //           vl.VoiceLineName = vlName;
-     //   }
-   // }
+    //           vl.VoiceLineName = vlName;
+    //    }
+    // }
 }
