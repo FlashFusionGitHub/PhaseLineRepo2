@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
@@ -10,11 +11,11 @@ public class Commentator : MonoBehaviour {
     public enum ReactionType
     {
         Event,
-        Idol
+        Idle
     }
 
     [System.Serializable]
-    public enum ReactionCatagory
+    public enum ReactionCategory
     {
         Victory,
         Positive,
@@ -27,8 +28,8 @@ public class Commentator : MonoBehaviour {
     [System.Serializable]
     public enum SpeakingState
     {
-        Idol,
-        IdolSpeaking,
+        Idle,
+        IdleSpeaking,
         Speaking,
     }
 
@@ -40,7 +41,7 @@ public class Commentator : MonoBehaviour {
         [HideInInspector]
         public string VoiceLineName;
         public ReactionType reactionType;
-        public ReactionCatagory reactionCatagory;
+        public ReactionCategory reactionCatagory;
         public Txt text;
         public Audio audio;
         public Animation spriteSheet;
@@ -81,7 +82,7 @@ public class Commentator : MonoBehaviour {
     public VoiceLine[] reactions;
 
     [Header("Boredum Level")]
-    public ReactionCatagory idolState;
+    public ReactionCategory idleState;
     public float timeUntilNextBoredumLevel;
     public float boredumLevelTimer;
 
@@ -89,6 +90,10 @@ public class Commentator : MonoBehaviour {
     public Text subtitleField;
     public Image portrait;
     AudioSource audioSource;
+
+    public TweenAnimator tweenAnimator;
+
+    public UnityEvent displaySubtitle;
 
     private void Start()
     {
@@ -100,8 +105,8 @@ public class Commentator : MonoBehaviour {
     {
         if (speakingState != SpeakingState.Speaking)
         {
-            ChooseAReaction(ReactionType.Event, ReactionCatagory.Positive);
-            idolState = ReactionCatagory.Positive;
+            ChooseAReaction(ReactionType.Event, ReactionCategory.Positive);
+            idleState = ReactionCategory.Positive;
         }
     }
 
@@ -109,13 +114,13 @@ public class Commentator : MonoBehaviour {
     {
         if (speakingState != SpeakingState.Speaking)
         {
-            ChooseAReaction(ReactionType.Event, ReactionCatagory.Negative);
-            idolState = ReactionCatagory.Negative;
+            ChooseAReaction(ReactionType.Event, ReactionCategory.Negative);
+            idleState = ReactionCategory.Negative;
         }
     }
 
     int attempts;
-    void ChooseAReaction(ReactionType rt, ReactionCatagory rc)
+    void ChooseAReaction(ReactionType rt, ReactionCategory rc)
     {
         currentReaction = reactions[Random.Range(0, reactions.Length)];
         if ((currentReaction.reactionType != rt || currentReaction.reactionCatagory != rc) && attempts >= 0)
@@ -145,22 +150,23 @@ public class Commentator : MonoBehaviour {
         currentReaction.audio.audioFinished = false;
         currentReaction.text.subtitlesFinished = false;
         currentReaction.text.subtitleTimer = 0;
-        speakingState = (rt == ReactionType.Event) ? SpeakingState.Speaking : SpeakingState.IdolSpeaking;
+        speakingState = (rt == ReactionType.Event) ? SpeakingState.Speaking : SpeakingState.IdleSpeaking;
     }
 
     private void Update()
     {
         if (currentReaction == null)
         {
-            speakingState = SpeakingState.Idol;
+            speakingState = SpeakingState.Idle;
         }
-        if (speakingState == SpeakingState.Idol)
+        
+        if (speakingState == SpeakingState.Idle)
         {
-            ChooseAReaction(ReactionType.Idol, idolState);
+            ChooseAReaction(ReactionType.Idle, idleState);
         }
-
-
-        if ((speakingState != SpeakingState.Idol) && currentReaction != null)
+        
+        
+        if ((speakingState != SpeakingState.Idle) && currentReaction != null)
         {
             PlayAudio();
             CycleSpriteSheet();
@@ -174,7 +180,7 @@ public class Commentator : MonoBehaviour {
             {
                 NextIdolState();
                 attempts = reactions.Length;
-                ChooseAReaction(ReactionType.Idol, idolState);
+                ChooseAReaction(ReactionType.Idle, idleState);
             }
             else
             {
@@ -185,28 +191,30 @@ public class Commentator : MonoBehaviour {
 
     void NextIdolState()
     {
-        if (idolState == ReactionCatagory.Positive)
+        if (idleState == ReactionCategory.Positive)
         {
-            idolState = ReactionCatagory.Nuetral;
+            idleState = ReactionCategory.Nuetral;
         }
-        else if (idolState == ReactionCatagory.Nuetral)
+        else if (idleState == ReactionCategory.Nuetral)
         {
-            idolState = ReactionCatagory.Negative;
+            idleState = ReactionCategory.Negative;
         }
-        else if (idolState == ReactionCatagory.Negative)
+        else if (idleState == ReactionCategory.Negative)
         {
-            idolState = ReactionCatagory.AFK;
+            idleState = ReactionCategory.AFK;
         }
-        else if (idolState == ReactionCatagory.AFK)
+        else if (idleState == ReactionCategory.AFK)
         {
-            idolState = ReactionCatagory.AFK;
+            idleState = ReactionCategory.AFK;
         }
         else
         {
-            idolState = ReactionCatagory.Nuetral;
+            idleState = ReactionCategory.Nuetral;
         }
+
         boredumLevelTimer = timeUntilNextBoredumLevel;
     }
+
     bool isInList(VoiceLine[] list, VoiceLine checkThis)
     {
         foreach (VoiceLine vl in list)
@@ -218,6 +226,7 @@ public class Commentator : MonoBehaviour {
         }
         return false;
     }
+
     void PlayAudio()
     {
         if (currentReaction.audio.audioClip != null)
@@ -238,23 +247,32 @@ public class Commentator : MonoBehaviour {
         {
             currentReaction.audio.audioFinished = true;
         }
-
     }
+
     void DisplaySubtitles()
     {
+        //is the current not subtitle finshed
         if (!currentReaction.text.subtitlesFinished)
         {
+            //advance subtitle counter
             currentReaction.text.subtitleTimer += Time.deltaTime;
+            //is the previous subtitle different to the current subtitle
             if (subtitleField.text != currentReaction.text.subtitles)
             {
+                tweenAnimator.TweenToOutPos();
+                //set the previous subtitle to the new subtitle
                 subtitleField.text = currentReaction.text.subtitles;
             }
+            // if the current has reached its allocated timer
             if (currentReaction.text.subtitleTimer > currentReaction.text.subtitleDisplayTime)
             {
+                tweenAnimator.TweenToInPos();
+                //set the current reaction state the finished
                 currentReaction.text.subtitlesFinished = true;
             }
         }
     }
+
     void CycleSpriteSheet()
     {
         if (currentReaction.spriteSheet.sprites.Length > 0)
@@ -280,21 +298,14 @@ public class Commentator : MonoBehaviour {
             currentReaction.spriteSheet.cycleTimer -= Time.deltaTime;
         }
     }
+
     void CheckFinished()
     {
         if (currentReaction.spriteSheet.animationFinished && currentReaction.audio.audioFinished && currentReaction.text.subtitlesFinished)
         {
-            speakingState = SpeakingState.Idol;
+            speakingState = SpeakingState.Idle;
         }
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    foreach (VoiceLine vl in reactions)
-    //    {
-    //       string vlName = (vl.text.subtitles.Length < 20) ? (vl.reactionType.ToString() + " " + vl.reactionCatagory.ToString() + " (" + vl.text.subtitles + ")") : (vl.reactionType.ToString() + " " + vl.reactionCatagory.ToString() + " (" + vl.text.subtitles.Substring(0, 20) + "...)");
-    //        if (vl.VoiceLineName != vlName)
-    //           vl.VoiceLineName = vlName;
-    //    }
-    // }
+
 }
