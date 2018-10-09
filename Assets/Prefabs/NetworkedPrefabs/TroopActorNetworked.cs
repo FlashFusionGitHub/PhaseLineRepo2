@@ -133,7 +133,8 @@ public class TroopActorNetworked : NetworkBehaviour
             AttackClosestEnemy();
         }
 
-        CmdUpdateMoveTargetPosition(moveTarget.transform.position, moveTarget.transform.rotation); 
+        if(!isClient)
+            CmdUpdateMoveTargetPosition(moveTarget.transform.position, moveTarget.transform.rotation); 
     }
 
     [Command]
@@ -151,19 +152,29 @@ public class TroopActorNetworked : NetworkBehaviour
         {
             moveTarget = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
             moveTarget.name = gameObject.name + "'s MoveTarget";
-            moveTarget.AddComponent<NetworkIdentity>();
-            moveTarget.AddComponent<NetworkTransform>();
-            moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
-            moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+
+            if(!isClient)
+            {
+                moveTarget.AddComponent<NetworkIdentity>();
+                moveTarget.AddComponent<NetworkTransform>();
+                moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
+                moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+            }
+
         }
         else
         {
             moveTarget = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
             moveTarget.name = gameObject.name + "'s MoveTarget";
-            moveTarget.AddComponent<NetworkIdentity>();
-            moveTarget.AddComponent<NetworkTransform>();
-            moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
-            moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+
+            if (!isClient)
+            {
+                moveTarget.AddComponent<NetworkIdentity>();
+                moveTarget.AddComponent<NetworkTransform>();
+                moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
+                moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+            }
+
         }
     }
 

@@ -7,6 +7,8 @@ using UnityEngine.Networking;
 
 public class TroopControllerNetworked : NetworkBehaviour {
 
+    public Transform gizmo;
+
     [SerializeField] ObjectPoolNetworked m_op;
     [SerializeField] NavigationMarkerNetworked m_nmn;
 
@@ -51,6 +53,7 @@ public class TroopControllerNetworked : NetworkBehaviour {
         if (m_controller.Action1.WasPressed)
         {
             m_generals[tankIndex].moveTarget.transform.position = m_nmn.m_currentMarker.transform.position;
+            gizmo.position = m_nmn.m_currentMarker.transform.position;
         }
 
         if (m_controller.DPadLeft.WasPressed && m_generals.Count > 1)

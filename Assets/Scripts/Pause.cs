@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using InControl;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Pause : MonoBehaviour {
 
-    InputDevice[] m_controller = { InputManager.Devices[0], InputManager.Devices[1] };
+    InputDevice m_controller;
 
     public GameObject m_pausePanel;
 
     public Text m_title;
 
     int playerIndex = 99;
+
+    UnityEvent pauseEvent;
 
 	// Use this for initialization
 	void Start () {
@@ -21,39 +24,35 @@ public class Pause : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        m_controller = InputManager.Devices[0];
 
-        m_controller[0] = InputManager.Devices[0];
-        m_controller[1] = InputManager.Devices[1];
-
-        if (m_controller[0].MenuWasPressed)
-            playerIndex = 1;
-        if (m_controller[1].MenuWasPressed)
-            playerIndex = 2;
-
-        if(m_controller[playerIndex].MenuWasPressed)
+        if(m_controller.MenuWasPressed)
         {
             if (Time.timeScale == 1)
             {
                 PauseGame();
+            }
+            else
+            {
+                UnpauseGame();
             }
         }
 	}
 
     void PauseGame()
     {
+        m_pausePanel.GetComponent<TweenAnimator>().ToggleInOut();
+
         Time.timeScale = 0;
 
-        m_pausePanel.SetActive(true);
-
-        //Pause Panel 
         m_title.text = "Player " + playerIndex + " Paused";
 
     }
 
     public void UnpauseGame()
     {
-        Time.timeScale = 1;
+        m_pausePanel.GetComponent<TweenAnimator>().ToggleInOut();
 
-        m_pausePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }
