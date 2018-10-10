@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 436d042962817c745b56f7951168f5a5
+timeCreated: 1539135442
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Vampire_Helicopter_Door_01_GEO
+    100004: Vampire_Helicopter_Door_01_GEO1
+    100006: Vampire_Left_Gun_03_GEO
+    100008: Vampire_Left_Gun_03_GEO1
+    100010: Vampire_Left_Gun_03_GEO2
+    100012: Vampire_Left_Gun_03_GEO3
+    100014: Vampire_Main_GunGEO
+    100016: Vampire_Main_GunGEO1
+    100018: Vampire_Main_GunGEO2
+    100020: Vampire_Main_GunGEO3
+    100022: Vampire_Main_GunGEO4
+    100024: Vampire_Pivot_Gun_02_GEO
+    100026: Vampire_Pivot_Gun_02_GEO1
+    100028: Vampire_Pivot_Gun_02_GEO2
+    100030: Vampire_Pivot_Gun_02_GEO3
+    100032: Vampire_Pivot_Gun_02_GEO4
+    100034: Vampire_Pivot_Gun_02_GEO5
+    400000: //RootNode
+    400002: Vampire_Helicopter_Door_01_GEO
+    400004: Vampire_Helicopter_Door_01_GEO1
+    400006: Vampire_Left_Gun_03_GEO
+    400008: Vampire_Left_Gun_03_GEO1
+    400010: Vampire_Left_Gun_03_GEO2
+    400012: Vampire_Left_Gun_03_GEO3
+    400014: Vampire_Main_GunGEO
+    400016: Vampire_Main_GunGEO1
+    400018: Vampire_Main_GunGEO2
+    400020: Vampire_Main_GunGEO3
+    400022: Vampire_Main_GunGEO4
+    400024: Vampire_Pivot_Gun_02_GEO
+    400026: Vampire_Pivot_Gun_02_GEO1
+    400028: Vampire_Pivot_Gun_02_GEO2
+    400030: Vampire_Pivot_Gun_02_GEO3
+    400032: Vampire_Pivot_Gun_02_GEO4
+    400034: Vampire_Pivot_Gun_02_GEO5
+    2100000: lambert8
+    2300000: //RootNode
+    2300002: Vampire_Helicopter_Door_01_GEO
+    2300004: Vampire_Helicopter_Door_01_GEO1
+    2300006: Vampire_Left_Gun_03_GEO
+    2300008: Vampire_Left_Gun_03_GEO1
+    2300010: Vampire_Left_Gun_03_GEO2
+    2300012: Vampire_Left_Gun_03_GEO3
+    2300014: Vampire_Main_GunGEO
+    2300016: Vampire_Main_GunGEO1
+    2300018: Vampire_Main_GunGEO2
+    2300020: Vampire_Main_GunGEO3
+    2300022: Vampire_Main_GunGEO4
+    2300024: Vampire_Pivot_Gun_02_GEO
+    2300026: Vampire_Pivot_Gun_02_GEO1
+    2300028: Vampire_Pivot_Gun_02_GEO2
+    2300030: Vampire_Pivot_Gun_02_GEO3
+    2300032: Vampire_Pivot_Gun_02_GEO4
+    2300034: Vampire_Pivot_Gun_02_GEO5
+    3300000: //RootNode
+    3300002: Vampire_Helicopter_Door_01_GEO
+    3300004: Vampire_Helicopter_Door_01_GEO1
+    3300006: Vampire_Left_Gun_03_GEO
+    3300008: Vampire_Left_Gun_03_GEO1
+    3300010: Vampire_Left_Gun_03_GEO2
+    3300012: Vampire_Left_Gun_03_GEO3
+    3300014: Vampire_Main_GunGEO
+    3300016: Vampire_Main_GunGEO1
+    3300018: Vampire_Main_GunGEO2
+    3300020: Vampire_Main_GunGEO3
+    3300022: Vampire_Main_GunGEO4
+    3300024: Vampire_Pivot_Gun_02_GEO
+    3300026: Vampire_Pivot_Gun_02_GEO1
+    3300028: Vampire_Pivot_Gun_02_GEO2
+    3300030: Vampire_Pivot_Gun_02_GEO3
+    3300032: Vampire_Pivot_Gun_02_GEO4
+    3300034: Vampire_Pivot_Gun_02_GEO5
+    4300000: Vampire_GEO
+    4300002: Vampire_Main_GunGEO
+    4300004: Vampire_Helicopter_Door_01_GEO
+    4300006: Vampire_Left_Gun_03_GEO
+    4300008: Vampire_Pivot_Gun_02_GEO
+    4300010: Vampire_Main_GunGEO1
+    4300012: Vampire_Main_GunGEO2
+    4300014: Vampire_Main_GunGEO3
+    4300016: Vampire_Main_GunGEO4
+    4300018: Vampire_Left_Gun_03_GEO1
+    4300020: Vampire_Left_Gun_03_GEO2
+    4300022: Vampire_Left_Gun_03_GEO3
+    4300024: Vampire_Pivot_Gun_02_GEO1
+    4300026: Vampire_Pivot_Gun_02_GEO2
+    4300028: Vampire_Pivot_Gun_02_GEO3
+    4300030: Vampire_Pivot_Gun_02_GEO4
+    4300032: Vampire_Pivot_Gun_02_GEO5
+    4300034: Vampire_Helicopter_Door_01_GEO1
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
