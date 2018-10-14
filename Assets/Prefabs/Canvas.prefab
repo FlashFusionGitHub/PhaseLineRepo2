@@ -785,7 +785,7 @@ MonoBehaviour:
     tried: 0
     VoiceLineName: 
     reactionType: 0
-    reactionCatagory: 0
+    reactionCategory: 0
     text:
       subtitles: -Insert-Subtitles-Here-
       subtitleDisplayTime: 2
@@ -804,11 +804,11 @@ MonoBehaviour:
   reactions:
   - tried: 0
     VoiceLineName: 
-    reactionType: 1
-    reactionCatagory: 0
+    reactionType: 0
+    reactionCategory: 0
     text:
       subtitles: Victory
-      subtitleDisplayTime: 2
+      subtitleDisplayTime: 0
       subtitleTimer: 0
       subtitlesFinished: 0
     audio:
@@ -823,10 +823,10 @@ MonoBehaviour:
       animationFinished: 0
   - tried: 0
     VoiceLineName: 
-    reactionType: 1
-    reactionCatagory: 1
+    reactionType: 0
+    reactionCategory: 1
     text:
-      subtitles: Positive
+      subtitles: Postive
       subtitleDisplayTime: 2
       subtitleTimer: 0
       subtitlesFinished: 0
@@ -842,10 +842,10 @@ MonoBehaviour:
       animationFinished: 0
   - tried: 0
     VoiceLineName: 
-    reactionType: 1
-    reactionCatagory: 2
+    reactionType: 0
+    reactionCategory: 2
     text:
-      subtitles: Netural
+      subtitles: Nuetral
       subtitleDisplayTime: 2
       subtitleTimer: 0
       subtitlesFinished: 0
@@ -861,8 +861,8 @@ MonoBehaviour:
       animationFinished: 0
   - tried: 0
     VoiceLineName: 
-    reactionType: 1
-    reactionCatagory: 3
+    reactionType: 0
+    reactionCategory: 3
     text:
       subtitles: Negative
       subtitleDisplayTime: 2
@@ -880,11 +880,30 @@ MonoBehaviour:
       animationFinished: 0
   - tried: 0
     VoiceLineName: 
-    reactionType: 1
-    reactionCatagory: 4
+    reactionType: 0
+    reactionCategory: 4
     text:
       subtitles: AFK
-      subtitleDisplayTime: 10
+      subtitleDisplayTime: 2
+      subtitleTimer: 0
+      subtitlesFinished: 0
+    audio:
+      audioStarted: 0
+      audioClip: {fileID: 0}
+      audioFinished: 0
+    spriteSheet:
+      sprites: []
+      index: 0
+      cycleSpeed: 0
+      cycleTimer: 0
+      animationFinished: 0
+  - tried: 0
+    VoiceLineName: 
+    reactionType: 0
+    reactionCategory: 5
+    text:
+      subtitles: Defeat
+      subtitleDisplayTime: 2
       subtitleTimer: 0
       subtitlesFinished: 0
     audio:
@@ -1241,7 +1260,7 @@ MonoBehaviour:
     tried: 0
     VoiceLineName: 
     reactionType: 0
-    reactionCatagory: 0
+    reactionCategory: 0
     text:
       subtitles: -Insert-Subtitles-Here-
       subtitleDisplayTime: 2
@@ -1261,7 +1280,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: 
     reactionType: 1
-    reactionCatagory: 0
+    reactionCategory: 0
     text:
       subtitles: Victory
       subtitleDisplayTime: 2
@@ -1280,7 +1299,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: 
     reactionType: 1
-    reactionCatagory: 1
+    reactionCategory: 0
     text:
       subtitles: Positive
       subtitleDisplayTime: 2
@@ -1299,7 +1318,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: 
     reactionType: 1
-    reactionCatagory: 2
+    reactionCategory: 0
     text:
       subtitles: Netural
       subtitleDisplayTime: 2
@@ -1318,7 +1337,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: 
     reactionType: 1
-    reactionCatagory: 3
+    reactionCategory: 0
     text:
       subtitles: Negative
       subtitleDisplayTime: 2
@@ -1337,7 +1356,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: 
     reactionType: 1
-    reactionCatagory: 4
+    reactionCategory: 0
     text:
       subtitles: AFK
       subtitleDisplayTime: 10
@@ -1447,7 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_navMarker: {fileID: 0}
-  m_arrow: {fileID: 114242452943204162}
+  m_arrow: {fileID: 1522104294586726}
   m_camera: {fileID: 0}
   panel: {fileID: 1239427633371842}
   player1: 1
@@ -1598,7 +1617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f92f7efd2536ba49a6cc91e6b116bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_textBox: {fileID: 0}
   lobby: {fileID: 0}
 --- !u!114 &114769960518727784
 MonoBehaviour:
@@ -1740,7 +1758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_navMarker: {fileID: 0}
-  m_arrow: {fileID: 114374544446244162}
+  m_arrow: {fileID: 1119073485974760}
   m_camera: {fileID: 0}
   panel: {fileID: 1306543232573838}
   player1: 0
@@ -2381,9 +2399,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -478, y: -267.4}
+  m_AnchoredPosition: {x: -428, y: -217.4}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!224 &224587405381002886
 RectTransform:
   m_ObjectHideFlags: 1
@@ -2475,6 +2493,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 477.5737, y: 268.8}
+  m_AnchoredPosition: {x: 427.57373, y: 218.79999}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}

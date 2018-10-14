@@ -132,12 +132,17 @@ public class TroopActorNetworked : NetworkBehaviour
             Move();
             AttackClosestEnemy();
         }
+    }
 
-        RpcUpdateMoveTargetPosition(moveTarget.transform.position, moveTarget.transform.rotation); 
+    [Command]
+    public void CmdUpdateMoveTargetPosition(Vector3 pos, Quaternion rot)
+    {
+        moveTarget.transform.position = pos;
+        moveTarget.transform.rotation = rot;
     }
 
     [ClientRpc]
-    void RpcUpdateMoveTargetPosition(Vector3 pos, Quaternion rot)
+    public void RpcUpdateMoveTargetPosition(Vector3 pos, Quaternion rot)
     {
         moveTarget.transform.position = pos;
         moveTarget.transform.rotation = rot;
@@ -153,21 +158,19 @@ public class TroopActorNetworked : NetworkBehaviour
 
         moveTarget.AddComponent<NetworkIdentity>();
         moveTarget.AddComponent<NetworkTransform>();
-
-        moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
-
-        moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
     }
 
     public void TakeDamage(int damageToTake)
     {
-        //onTakeDamage.Invoke();
+        onTakeDamage.Invoke();
         currentHealth -= damageToTake;
 
         if (currentHealth <= 0)
         {
             Die(this);
         }
+
+        OnChangeHealth(currentHealth);
     }
 
     void NameUnit()
