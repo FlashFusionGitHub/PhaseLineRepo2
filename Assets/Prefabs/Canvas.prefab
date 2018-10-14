@@ -898,7 +898,7 @@ MonoBehaviour:
       cycleTimer: 0
       animationFinished: 0
   idleState: 0
-  timeUntilNextBoredumLevel: 5
+  timeUntilNextBoredumLevel: 20
   boredumLevelTimer: 0
   subtitleField: {fileID: 114326723941150570}
   portrait: {fileID: 114524159230206566}
@@ -1354,7 +1354,7 @@ MonoBehaviour:
       cycleTimer: 0
       animationFinished: 0
   idleState: 0
-  timeUntilNextBoredumLevel: 5
+  timeUntilNextBoredumLevel: 20
   boredumLevelTimer: 0
   subtitleField: {fileID: 114784580937902742}
   portrait: {fileID: 114338024268782136}

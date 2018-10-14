@@ -392,11 +392,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114464119210750098, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
-        type: 2}
-      propertyPath: reactions.Array.data[4].text.subtitleTimer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f6b28b1ae16c6e41be1348e878f75dd, type: 2}
   m_IsPrefabParent: 0

@@ -133,12 +133,11 @@ public class TroopActorNetworked : NetworkBehaviour
             AttackClosestEnemy();
         }
 
-        if(!isClient)
-            CmdUpdateMoveTargetPosition(moveTarget.transform.position, moveTarget.transform.rotation); 
+        RpcUpdateMoveTargetPosition(moveTarget.transform.position, moveTarget.transform.rotation); 
     }
 
-    [Command]
-    void CmdUpdateMoveTargetPosition(Vector3 pos, Quaternion rot)
+    [ClientRpc]
+    void RpcUpdateMoveTargetPosition(Vector3 pos, Quaternion rot)
     {
         moveTarget.transform.position = pos;
         moveTarget.transform.rotation = rot;
@@ -147,35 +146,17 @@ public class TroopActorNetworked : NetworkBehaviour
     public void CreateMoveTarget()
     {
         Destroy(moveTarget);
+        moveTarget = generalMoveTargetPrefab ? Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation) :
+            Instantiate(moveTargetPrefab, transform.position, transform.rotation);
 
-        if (generalMoveTargetPrefab)
-        {
-            moveTarget = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
-            moveTarget.name = gameObject.name + "'s MoveTarget";
+        moveTarget.name = gameObject.name + "'s MoveTarget";
 
-            if(!isClient)
-            {
-                moveTarget.AddComponent<NetworkIdentity>();
-                moveTarget.AddComponent<NetworkTransform>();
-                moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
-                moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
-            }
+        moveTarget.AddComponent<NetworkIdentity>();
+        moveTarget.AddComponent<NetworkTransform>();
 
-        }
-        else
-        {
-            moveTarget = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
-            moveTarget.name = gameObject.name + "'s MoveTarget";
+        moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
 
-            if (!isClient)
-            {
-                moveTarget.AddComponent<NetworkIdentity>();
-                moveTarget.AddComponent<NetworkTransform>();
-                moveTarget.GetComponent<NetworkIdentity>().localPlayerAuthority = true;
-                moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
-            }
-
-        }
+        moveTarget.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
     }
 
     public void TakeDamage(int damageToTake)
