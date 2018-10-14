@@ -25,7 +25,7 @@ public class Cursor : MonoBehaviour
     {
         m_controller = InputManager.Devices[controllerIndex];
 
-        transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0) * 5;
+        transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0)  * Time.deltaTime * 5;
 
         float markerXPos = Mathf.Clamp(transform.position.x, 0, Screen.width);
         float markerYPos = Mathf.Clamp(transform.position.y, 0, Screen.height);

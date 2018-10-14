@@ -7,8 +7,6 @@ using UnityEngine.Networking;
 
 public class TroopControllerNetworked : NetworkBehaviour {
 
-    public Transform gizmo;
-
     [SerializeField] ObjectPoolNetworked m_op;
     [SerializeField] NavigationMarkerNetworked m_nmn;
 
@@ -50,10 +48,20 @@ public class TroopControllerNetworked : NetworkBehaviour {
             QuickSelect();
         }
 
-        if (m_controller.Action1.WasPressed)
+        if (isClient && !isServer)
         {
-            m_generals[tankIndex].moveTarget.transform.position = m_nmn.m_currentMarker.transform.position;
-            gizmo.position = m_nmn.m_currentMarker.transform.position;
+            if (m_controller.Action1.WasPressed)
+            {
+                m_generals[tankIndex].moveTarget.transform.position = m_nmn.m_currentMarker.transform.position;
+                m_generals[tankIndex].CmdUpdateMoveTargetPosition(m_nmn.m_currentMarker.transform.position, m_nmn.m_currentMarker.transform.rotation);
+            }
+        }
+        else
+        {
+            if (m_controller.Action1.WasPressed)
+            {
+                m_generals[tankIndex].RpcUpdateMoveTargetPosition(m_nmn.m_currentMarker.transform.position, m_nmn.m_currentMarker.transform.rotation);
+            }
         }
 
         if (m_controller.DPadLeft.WasPressed && m_generals.Count > 1)

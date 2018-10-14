@@ -14,6 +14,10 @@ public class NavigationMarkerNetworked : MonoBehaviour {
 
     InputDevice m_controller;
 
+    public float floatValue = 1f;
+
+    public LayerMask terrainMask;
+
     // Use this for initialization
     void Start () {
         m_currentMarker = Instantiate(m_navMarker, new Vector3(0, 4, 0), Quaternion.identity);
@@ -28,6 +32,20 @@ public class NavigationMarkerNetworked : MonoBehaviour {
 
         m_currentMarker.transform.position = new Vector3(markerXPos, m_currentMarker.transform.position.y, markerZPos);
 
-        m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * m_markerSpeed;
+        var objPos = m_currentMarker.transform.position;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(new Vector3(objPos.x, 500, objPos.z), Vector3.down, out hit, 800f, terrainMask))
+        {
+            Debug.DrawLine(new Vector3(objPos.x, 500, objPos.z), hit.point);
+            m_currentMarker.transform.Translate(0, (floatValue - hit.distance), 0);
+            m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * m_markerSpeed * Time.deltaTime;
+            m_currentMarker.transform.position = new Vector3(m_currentMarker.transform.position.x, hit.point.y, m_currentMarker.transform.position.z);
+        }
+        else
+        {
+            m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * m_markerSpeed * Time.deltaTime;
+        }
     }
 }

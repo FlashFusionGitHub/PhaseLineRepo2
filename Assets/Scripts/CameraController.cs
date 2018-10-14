@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour {
 
             if (m_controller.RightTrigger.IsPressed)
             {
-				transform.position += new Vector3(0, -m_controller.RightStickY * cameraSpeed, m_controller.RightStickY * cameraSpeed/4);
+				transform.position += new Vector3(0, -m_controller.RightStickY * Time.deltaTime  * cameraSpeed, m_controller.RightStickY * Time.deltaTime * cameraSpeed);
 
                 float zoomY = Mathf.Clamp(transform.position.y, m_MinZoomY, m_MaxZoomY);
 
@@ -47,7 +47,7 @@ public class CameraController : MonoBehaviour {
             }
             else
             {
-				this.transform.position += new Vector3(m_controller.RightStickX  * cameraSpeed, 0, m_controller.RightStickY  * cameraSpeed);
+				this.transform.position += new Vector3(m_controller.RightStickX * Time.deltaTime * cameraSpeed, 0, m_controller.RightStickY * Time.deltaTime * cameraSpeed);
 
                 float panX = Mathf.Clamp(transform.position.x, m_MinPanX, m_MaxPanX);
                 float panZ = Mathf.Clamp(transform.position.z, m_MinPanZ, m_MaxPanZ);

@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/* Commentator Class - Written By Michael Matthews */
+/* Commented and Modified by Rowen Govender */
+
 [RequireComponent(typeof(AudioSource))]
 public class Commentator : MonoBehaviour {
 
+    //Reaction Types used to distinguish the available reaction types
     [System.Serializable]
     public enum ReactionType
     {
@@ -14,6 +18,7 @@ public class Commentator : MonoBehaviour {
         Idle
     }
 
+    //Reaction Category used in 'reaction creation' to give the created reaction a category
     [System.Serializable]
     public enum ReactionCategory
     {
@@ -25,6 +30,7 @@ public class Commentator : MonoBehaviour {
         Defeat
     }
 
+    //The current Speaking State of the commentator
     [System.Serializable]
     public enum SpeakingState
     {
@@ -33,21 +39,7 @@ public class Commentator : MonoBehaviour {
         Speaking,
     }
 
-    [System.Serializable]
-    public class VoiceLine
-    {
-        [HideInInspector]
-        public bool tried;
-        [HideInInspector]
-        public string VoiceLineName;
-        public ReactionType reactionType;
-        public ReactionCategory reactionCatagory;
-        public Txt text;
-        public Audio audio;
-        public Animation spriteSheet;
-
-    }
-
+    //Used to set the parameters for a text output for the commentator
     [System.Serializable]
     public class Txt
     {
@@ -58,6 +50,7 @@ public class Commentator : MonoBehaviour {
         public bool subtitlesFinished;
     }
 
+    //Used to set the paramenters for an Animation event
     [System.Serializable]
     public class Animation
     {
@@ -68,12 +61,29 @@ public class Commentator : MonoBehaviour {
         public bool animationFinished = false;
     }
 
+    //Used to set the parameters for an Audio event
     [System.Serializable]
     public class Audio
     {
         public bool audioStarted = false;
         public AudioClip audioClip;
         public bool audioFinished = false;
+    }
+
+    //Used in VoiceLine creation to specify all the parameter needed for a voiceline
+    [System.Serializable]
+    public class VoiceLine
+    {
+        [HideInInspector]
+        public bool tried; /*Has this VoiceLine been tired before?*/
+        [HideInInspector]
+        public string VoiceLineName;
+        public ReactionType reactionType;
+        public ReactionCategory reactionCategory;
+        public Txt text;
+        public Audio audio;
+        public Animation spriteSheet;
+
     }
 
     [Header("Reactions")]
@@ -97,89 +107,31 @@ public class Commentator : MonoBehaviour {
 
     private void Start()
     {
-        attempts = reactions.Length;
         audioSource = GetComponent<AudioSource>();
-    }
 
-    public void ReactPositively()
-    {
-        if (speakingState != SpeakingState.Speaking)
-        {
-            ChooseAReaction(ReactionType.Event, ReactionCategory.Positive);
-            idleState = ReactionCategory.Positive;
-        }
-    }
-
-    public void ReactNegatively()
-    {
-        if (speakingState != SpeakingState.Speaking)
-        {
-            ChooseAReaction(ReactionType.Event, ReactionCategory.Negative);
-            idleState = ReactionCategory.Negative;
-        }
-    }
-
-    int attempts;
-    void ChooseAReaction(ReactionType rt, ReactionCategory rc)
-    {
-        currentReaction = reactions[Random.Range(0, reactions.Length)];
-        if ((currentReaction.reactionType != rt || currentReaction.reactionCatagory != rc) && attempts >= 0)
-        {
-            if (!currentReaction.tried)
-            {
-                currentReaction.tried = true;
-                attempts--;
-            }
-            ChooseAReaction(rt, rc);
-            return;
-        }
-        else if (attempts <= 0)
-        {
-            if (reactions.Length > 0)
-            currentReaction = reactions[0];
-        }
-        attempts = reactions.Length;
-        foreach (VoiceLine vl in reactions)
-        {
-            vl.tried = false;
-        }
-        boredumLevelTimer = (rt == ReactionType.Event) ? timeUntilNextBoredumLevel: boredumLevelTimer;
-        currentReaction.spriteSheet.animationFinished = false;
-        currentReaction.spriteSheet.index = 0;
-        currentReaction.audio.audioStarted = false;
-        currentReaction.audio.audioFinished = false;
-        currentReaction.text.subtitlesFinished = false;
-        currentReaction.text.subtitleTimer = 0;
-        speakingState = (rt == ReactionType.Event) ? SpeakingState.Speaking : SpeakingState.IdleSpeaking;
-    }
-
-    private void Update()
-    {
         if (currentReaction == null)
         {
             speakingState = SpeakingState.Idle;
         }
-        
-        if (speakingState == SpeakingState.Idle)
+    }
+
+    private void Update()
+    {     
+        /*If the speaking state is Idle, reset the boredum timer, and start a commentator Event*/
+        /*if the commentator is then in an idle state begin boredum timer, cycling through boredum reactions until another Commentator event is triggered*/
+        if ((speakingState != SpeakingState.Idle))
         {
-            ChooseAReaction(ReactionType.Idle, idleState);
-        }
-        
-        
-        if ((speakingState != SpeakingState.Idle) && currentReaction != null)
-        {
+            boredumLevelTimer = timeUntilNextBoredumLevel;
             PlayAudio();
             CycleSpriteSheet();
             DisplaySubtitles();
             CheckFinished();
         }
-
-        if (speakingState != SpeakingState.Speaking)
+        else
         {
             if (boredumLevelTimer < 0)
             {
-                NextIdolState();
-                attempts = reactions.Length;
+                NextIdleState();
                 ChooseAReaction(ReactionType.Idle, idleState);
             }
             else
@@ -189,7 +141,64 @@ public class Commentator : MonoBehaviour {
         }
     }
 
-    void NextIdolState()
+    int attempts;
+    void ChooseAReaction(ReactionType rt, ReactionCategory rc)
+    {
+        VoiceLine tempReaction = reactions[Random.Range(0, reactions.Length)];
+
+        if(tempReaction == currentReaction)
+        {
+            ChooseAReaction(rt, rc);
+        }
+        else
+        {
+            currentReaction = tempReaction;
+        }
+
+        boredumLevelTimer = (rt == ReactionType.Event) ? timeUntilNextBoredumLevel : boredumLevelTimer;
+
+        currentReaction.spriteSheet.animationFinished = false;
+        currentReaction.spriteSheet.index = 0;
+        currentReaction.audio.audioStarted = false;
+        currentReaction.audio.audioFinished = false;
+        currentReaction.text.subtitlesFinished = false;
+        currentReaction.text.subtitleTimer = 0;
+
+        speakingState = (rt == ReactionType.Event) ? SpeakingState.Speaking : SpeakingState.IdleSpeaking;
+
+        /*foreach (VoiceLine vl in reactions)
+        {
+            vl.tried = false;
+        }*/
+    }
+
+    //Used for Unity Event, attach to any Positive Tank Event
+    public void ReactPositively()
+    {
+        // If a speaking event is not currently active, choose a random postive reaction
+        if (speakingState != SpeakingState.Speaking)
+        {
+            attempts = reactions.Length;
+            ChooseAReaction(ReactionType.Event, ReactionCategory.Positive);
+            idleState = ReactionCategory.Positive;
+        }
+    }
+
+    //Used for Unity Event, attach to any Negative Tank Event
+    public void ReactNegatively()
+    {
+        // If a speaking event is not currently active, choose a random negative reaction
+        if (speakingState != SpeakingState.Speaking)
+        {
+            attempts = reactions.Length;
+            ChooseAReaction(ReactionType.Event, ReactionCategory.Negative);
+            idleState = ReactionCategory.Negative;
+        }
+    }
+
+    //Select an idle state
+    //Cycle through all avaivable IdleStates until the default is hit
+    void NextIdleState()
     {
         if (idleState == ReactionCategory.Positive)
         {
@@ -215,6 +224,7 @@ public class Commentator : MonoBehaviour {
         boredumLevelTimer = timeUntilNextBoredumLevel;
     }
 
+    //Check if the Voice Line is in the list
     bool isInList(VoiceLine[] list, VoiceLine checkThis)
     {
         foreach (VoiceLine vl in list)
@@ -227,6 +237,7 @@ public class Commentator : MonoBehaviour {
         return false;
     }
 
+    //Play Audio
     void PlayAudio()
     {
         if (currentReaction.audio.audioClip != null)
@@ -273,6 +284,7 @@ public class Commentator : MonoBehaviour {
         }
     }
 
+    //Cycle through a sprite sheet
     void CycleSpriteSheet()
     {
         if (currentReaction.spriteSheet.sprites.Length > 0)
@@ -301,6 +313,7 @@ public class Commentator : MonoBehaviour {
 
     void CheckFinished()
     {
+        //If all the parametres that distinguish an 'Event' return a finished state, set speaking state to Idle
         if (currentReaction.spriteSheet.animationFinished && currentReaction.audio.audioFinished && currentReaction.text.subtitlesFinished)
         {
             speakingState = SpeakingState.Idle;

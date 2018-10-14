@@ -6,7 +6,7 @@ public class IndicatorPanel : MonoBehaviour {
 
     public NavigationArrowActor m_navMarker;
 
-    public MarkerIndicatorArrow m_arrow;
+    public GameObject m_arrow;
 
     public Camera m_camera;
 
