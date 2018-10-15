@@ -378,6 +378,11 @@ public class TroopActorNetworked : NetworkBehaviour
         }
     }
 
+    public void SetHealth(int health)
+    {
+
+    }
+
     void ResetGunTimer(GunSettingsNetworked gun)
     {
         gun.m_gunTimer = Random.Range((gun.TimeBetweenShots - (gun.TimeBetweenShots * gun.m_gunTimerRandomiser)), (gun.TimeBetweenShots + (gun.TimeBetweenShots * gun.m_gunTimerRandomiser)));
@@ -387,14 +392,17 @@ public class TroopActorNetworked : NetworkBehaviour
     {
         gun.onShoot.Invoke();
 
-        if (EnemyInSights(gun) && CanHitTarget(gun.attackTarget))
-        {
-            if (gun.attackTarget.currentHealth - gun.damage <= 0)
-            {
-                gun.onKillShot.Invoke();
-            }
+        RaycastHit hit;
 
-            gun.attackTarget.TakeDamage(gun.damage);
+        if (gun.attackTarget.currentHealth - gun.damage <= 0)
+        {
+            gun.onKillShot.Invoke();
+        }
+
+        if (Physics.Raycast(transform.position, (gun.attackTarget.transform.position - transform.position), out hit, Vector3.Distance(transform.position, gun.attackTarget.transform.position)))
+        {
+            if(hit.transform.gameObject.GetComponent<TroopActorNetworked>() != null)
+                hit.transform.gameObject.GetComponent<TroopActorNetworked>().TakeDamage(10);
         }
     }
 

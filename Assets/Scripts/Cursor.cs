@@ -9,10 +9,6 @@ public class Cursor : MonoBehaviour
 {
     public InputDevice m_controller;
 
-    public GameObject m_cursor;
-
-    public int controllerIndex;
-
     PointerEventData pointer;
 
     // Use this for initialization
@@ -23,9 +19,9 @@ public class Cursor : MonoBehaviour
 
     void Update()
     {
-        m_controller = InputManager.Devices[controllerIndex];
+        m_controller = InputManager.Devices[0];
 
-        transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0)  * Time.deltaTime * 5;
+        transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0) * Time.deltaTime * 1000;
 
         float markerXPos = Mathf.Clamp(transform.position.x, 0, Screen.width);
         float markerYPos = Mathf.Clamp(transform.position.y, 0, Screen.height);
@@ -42,7 +38,7 @@ public class Cursor : MonoBehaviour
     {
         pointer = new PointerEventData(EventSystem.current);
 
-        pointer.position = m_cursor.transform.position;
+        pointer.position = transform.position;
 
         List<RaycastResult> raycastResults = new List<RaycastResult>();
 
