@@ -1,0 +1,7 @@
+Tank_01 animation timings
+
+Frame 0-30 Shoot animation
+Frame 40-80 Idle/move animation
+Frame 90-131 flip
+Frame 140-170 impact
+Frame 181-220 dance
