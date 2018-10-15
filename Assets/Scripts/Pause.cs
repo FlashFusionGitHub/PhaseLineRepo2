@@ -24,9 +24,16 @@ public class Pause : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        m_controller = InputManager.Devices[0];
+        try
+        {
+            m_controller = InputManager.Devices[0];
+        }
+        catch (System.Exception e)
+        {
+            return;
+        }
 
-        if(m_controller.MenuWasPressed)
+        if (m_controller.MenuWasPressed)
         {
             if (Time.timeScale == 1)
             {

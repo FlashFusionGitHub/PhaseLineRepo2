@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23696933524706486}
   - component: {fileID: 114779115048577670}
   - component: {fileID: 114688664091207554}
+  - component: {fileID: 114383830938798560}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548337209378300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -610.2, y: 52.06, z: -605.7}
   m_LocalScale: {x: 13.732631, y: 13.732634, z: 13.732634}
   m_Children:
   - {fileID: 4949083317400758}
@@ -184,6 +185,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114383830938798560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539687110993308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a637fbe790ace3e439e6a2e7928f93cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationSpeed: {x: 0, y: 10, z: 0}
 --- !u!114 &114549354604928240
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -30,7 +30,14 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	protected virtual void Update () {
 
-        m_controller = InputManager.Devices[m_playerIndex];
+        try
+        {
+            m_controller = InputManager.Devices[m_playerIndex];
+        }
+        catch (System.Exception e)
+        {
+            return;
+        }
 
         if (!changePosition)
         {

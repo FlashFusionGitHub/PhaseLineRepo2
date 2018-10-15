@@ -19,7 +19,14 @@ public class Cursor : MonoBehaviour
 
     void Update()
     {
-        m_controller = InputManager.Devices[0];
+        try
+        {
+            m_controller = InputManager.Devices[0];
+        }
+        catch (System.Exception e)
+        {
+            return;
+        }
 
         transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0) * Time.deltaTime * 1000;
 

@@ -49,7 +49,14 @@ public class TroopController : MonoBehaviour {
     // Update is called once per frame
     protected virtual void Update () {
 
-        m_controller = InputManager.Devices[playerIndex];
+        try
+        {
+            m_controller = InputManager.Devices[playerIndex];
+        }
+        catch (System.Exception e)
+        {
+            return;
+        }
 
         if (Input.GetKeyDown(KeyCode.A) && m_generals.Count > 0) {
             foreach (TroopActor gen in m_generals.ToArray()) {
