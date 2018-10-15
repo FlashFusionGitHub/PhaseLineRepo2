@@ -27,12 +27,12 @@ GameObject:
   - component: {fileID: 65449913078567576}
   - component: {fileID: 65472238942307376}
   - component: {fileID: 65645316048343488}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: water_tower_model.v2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4416740603224138
 Transform:
@@ -40,13 +40,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865455669389258}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 243.92998, y: -30.69489, z: -362.113}
-  m_LocalScale: {x: 0.70409995, y: 0.70409995, z: 0.70409995}
+  m_LocalRotation: {x: -0, y: -0.14937899, z: -0, w: 0.98878}
+  m_LocalPosition: {x: -286.96997, y: -1.7599983, z: 2.2870102}
+  m_LocalScale: {x: 0.70410067, y: 0.70409995, z: 0.70410067}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -17.182001, z: 0}
 --- !u!23 &23146257509588694
 MeshRenderer:
   m_ObjectHideFlags: 1
