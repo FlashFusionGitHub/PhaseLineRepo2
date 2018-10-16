@@ -151,11 +151,33 @@ public class TroopActor : MonoBehaviour
     [Header("Important Optimisation List")]
     public ObjectPool op;
 
+    [Header("Renderer")]
+    public new Renderer renderer;
+
+    [Header("Chosen Factions")]
+    public SelectedFactions selectedFactions;
+
+    public void Awake()
+    {
+    }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      / START FUNCTION BELOW \
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
+        selectedFactions = FindObjectOfType<SelectedFactions>();
+
+        if (team == Team.TEAM1)
+        {
+            renderer.material.SetColor(Shader.PropertyToID("_Color"), selectedFactions.team1.colour);
+            Debug.Log(selectedFactions.team1.colour);
+        }
+        else
+        {
+            renderer.material.SetColor(Shader.PropertyToID("_Color"), selectedFactions.team2.colour);
+            Debug.Log(selectedFactions.team2.colour);
+        }
+
         op = FindObjectOfType<ObjectPool>();
         SetHealth(maxHealth);
         NameUnit();

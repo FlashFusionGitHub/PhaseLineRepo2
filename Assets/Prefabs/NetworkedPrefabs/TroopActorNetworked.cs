@@ -58,8 +58,7 @@ public class TroopActorNetworked : NetworkBehaviour
     float killMeAfter = 0.5f;
 
     [Header("Movement Settings")]
-    [SerializeField]
-    bool moving;
+    [SerializeField] bool moving;
     [SerializeField] UnityEvent OnMove;
     public GameObject moveTarget;
     [SerializeField] MovementTypes movementType;
@@ -131,6 +130,11 @@ public class TroopActorNetworked : NetworkBehaviour
         {
             Move();
             AttackClosestEnemy();
+
+            if(Input.GetKeyDown(KeyCode.H))
+            {
+                TakeDamage(10);
+            }
         }
     }
 
@@ -376,11 +380,6 @@ public class TroopActorNetworked : NetworkBehaviour
                 }
             }
         }
-    }
-
-    public void SetHealth(int health)
-    {
-
     }
 
     void ResetGunTimer(GunSettingsNetworked gun)

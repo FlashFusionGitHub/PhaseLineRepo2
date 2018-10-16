@@ -25,7 +25,15 @@ public class NavigationMarkerNetworked : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        m_controller = InputManager.Devices[0];
+
+        try
+        {
+            m_controller = InputManager.Devices[0];
+        }
+        catch(System.Exception)
+        {
+            return;
+        }
 
         float markerXPos = Mathf.Clamp(m_currentMarker.transform.position.x, m_minXPos, maxXPos);
         float markerZPos = Mathf.Clamp(m_currentMarker.transform.position.z, m_minZPos, maxZPos);
