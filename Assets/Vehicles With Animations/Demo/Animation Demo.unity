@@ -1219,6 +1219,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 586537829}
+--- !u!198 &588392238 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198025194915854584, guid: 5d91096469a87684ab71d0832e480e56,
+    type: 2}
+  m_PrefabInternal: {fileID: 832113759}
 --- !u!1 &596574531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,11 +1704,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114948911768359246, guid: 5d91096469a87684ab71d0832e480e56,
-        type: 2}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d91096469a87684ab71d0832e480e56, type: 2}
   m_IsPrefabParent: 0
@@ -1814,6 +1814,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Shoot
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1790078742}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2393,9 +2404,9 @@ MonoBehaviour:
           m_StringArgument: Shoot
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetTrigger
-        m_Mode: 5
+      - m_Target: {fileID: 588392238}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2770,26 +2781,6 @@ Prefab:
     - target: {fileID: 4276755826099614, guid: 43ee4ba2c82da5e40a933c31e38400ea, type: 2}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 23713911483740682, guid: 43ee4ba2c82da5e40a933c31e38400ea,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2a6cc89347465bc4499df38e5c934f35, type: 2}
-    - target: {fileID: 198598193248504476, guid: 43ee4ba2c82da5e40a933c31e38400ea,
-        type: 2}
-      propertyPath: randomSeed
-      value: -1595043654
-      objectReference: {fileID: 0}
-    - target: {fileID: 198278600215973846, guid: 43ee4ba2c82da5e40a933c31e38400ea,
-        type: 2}
-      propertyPath: randomSeed
-      value: 1154676216
-      objectReference: {fileID: 0}
-    - target: {fileID: 198529479234210622, guid: 43ee4ba2c82da5e40a933c31e38400ea,
-        type: 2}
-      propertyPath: randomSeed
-      value: -973597771
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43ee4ba2c82da5e40a933c31e38400ea, type: 2}
@@ -3259,6 +3250,16 @@ RectTransform:
   m_AnchoredPosition: {x: 0.021160882, y: 0.7258148}
   m_SizeDelta: {x: 1197.2571, y: 400.91638}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!198 &1769596279 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198579441356982786, guid: 39ba0b444d07c2c4c95afb370985e1b1,
+    type: 2}
+  m_PrefabInternal: {fileID: 92159183}
+--- !u!198 &1790078742 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198408063465614582, guid: 21fe49271ad6e8e4ba5540053585f384,
+    type: 2}
+  m_PrefabInternal: {fileID: 1981254290}
 --- !u!1 &1798394085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,11 +3909,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnBecomeGeneral.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1549349656298378, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}
       propertyPath: m_Name
       value: Tank - Team 1
@@ -4029,6 +4025,28 @@ MonoBehaviour:
           m_StringArgument: Shoot
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2017266512}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1769596279}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2005101295
@@ -4064,6 +4082,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2005101292}
+--- !u!198 &2017266512 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198756932203414758, guid: 39ba0b444d07c2c4c95afb370985e1b1,
+    type: 2}
+  m_PrefabInternal: {fileID: 92159183}
 --- !u!1 &2021735459
 GameObject:
   m_ObjectHideFlags: 0
