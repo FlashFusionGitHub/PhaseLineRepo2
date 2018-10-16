@@ -68435,66 +68435,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: OnGainExperience.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 942458201}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: OnPromotion.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 942458201}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: OnBecomeGeneral.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 942458201}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 942458201}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 942458201}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: OnMove.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 942458201}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: OnGainExperience.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReactPositively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: OnPromotion.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReactPositively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: OnBecomeGeneral.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReactPositively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReactNegatively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ReactNegatively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
-        type: 2}
-      propertyPath: OnMove.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ReactPositively
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd03ec4186ef83441a76f853939d9bae, type: 2}
   m_IsPrefabParent: 0

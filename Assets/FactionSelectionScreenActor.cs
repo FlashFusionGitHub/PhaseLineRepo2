@@ -19,6 +19,10 @@ public class FactionSelectionScreenActor : MonoBehaviour
 
     public float pos = -112.7f;
 
+    public SelectedFactions selected_Factions;
+
+    public SceneLoader sceneLoader;
+
     // Use this for initialization
     void Start()
     {
@@ -28,9 +32,13 @@ public class FactionSelectionScreenActor : MonoBehaviour
     void Update()
     {
         if (!playerChosen)
+        {
             player = Player.player1;
+        }
         else
+        {
             player = Player.player2;
+        }
     }
 
     public void OnPointerEnter(int num)
@@ -63,9 +71,16 @@ public class FactionSelectionScreenActor : MonoBehaviour
         masks[num].rectTransform.sizeDelta = new Vector2(110, 300);
 
         if (player == Player.player1)
+        {
             masks[num].color = Color.green;
+            selected_Factions.SetFactionElement(0, masks[num].GetComponent<FactionElements>());
+        }
         if (player == Player.player2)
+        {
             masks[num].color = Color.red;
+            selected_Factions.SetFactionElement(1, masks[num].GetComponent<FactionElements>());
+            sceneLoader.LoadScene(2);
+        }
 
         playerChosen = true;
     }

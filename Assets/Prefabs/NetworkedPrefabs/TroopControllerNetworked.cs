@@ -38,7 +38,14 @@ public class TroopControllerNetworked : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        m_controller = InputManager.Devices[0];
+        try
+        {
+            m_controller = InputManager.Devices[0];
+        }
+        catch (System.Exception)
+        {
+            return;
+        }
 
         if (m_generals.Count == 0)
             Destroy(currentSelectionCircle);

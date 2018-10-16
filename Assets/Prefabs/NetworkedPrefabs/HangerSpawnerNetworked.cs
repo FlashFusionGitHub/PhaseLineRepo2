@@ -185,5 +185,4 @@ public class HangerSpawnerNetworked : MonoBehaviour {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(spawnPoint.position, disBeforeNextSpawn);
     }
-
 }
