@@ -357,7 +357,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272410556806254}
   m_LocalRotation: {x: -0, y: -0.9174253, z: -0, w: -0.39790824}
-  m_LocalPosition: {x: -6.48, y: 0.57079756, z: 14.25}
+  m_LocalPosition: {x: -582.9, y: 62.378735, z: -513.2}
   m_LocalScale: {x: 4.0000267, y: 4, z: 4.0000267}
   m_Children:
   - {fileID: 224494173360387022}
@@ -1220,6 +1220,13 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     barrelAimSpeed: 8
   op: {fileID: 0}
+  renderer:
+  - {fileID: 23579406981727390}
+  - {fileID: 23141464384706190}
+  - {fileID: 23786864829027952}
+  - {fileID: 23919851847332666}
+  - {fileID: 23927154213048792}
+  selectedFactions: {fileID: 0}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114952977572829788
 MonoBehaviour:

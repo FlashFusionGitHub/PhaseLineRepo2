@@ -506,7 +506,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1216272378857494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92, y: 3.91, z: 20.73}
+  m_LocalPosition: {x: -591.35, y: 76.6, z: -539.97}
   m_LocalScale: {x: 4.9460196, y: 4.9460196, z: 4.9460196}
   m_Children:
   - {fileID: 224537081806597798}
@@ -886,7 +886,7 @@ MonoBehaviour:
   team: 1
   strengths: 000000000100000002000000
   vulnerabilities: 000000000100000002000000
-  rankState: 2
+  rankState: 3
   myGeneral: {fileID: 0}
   placementDirection: 1
   numOfRows: 0
@@ -1117,6 +1117,9 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     barrelAimSpeed: 8
   op: {fileID: 0}
+  renderer:
+  - {fileID: 23058525471087894}
+  selectedFactions: {fileID: 0}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114388677349434430
 MonoBehaviour:

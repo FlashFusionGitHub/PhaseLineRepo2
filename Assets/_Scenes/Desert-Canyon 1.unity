@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43668348, g: 0.4842807, b: 0.56452984, a: 1}
+  m_IndirectSpecularColor: {r: 0.43668413, g: 0.48428118, b: 0.564533, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -207,15 +207,6 @@ Prefab:
     - target: {fileID: 4223703882857374, guid: ca1b6bb1556e79a46a76255ae0ba92c2, type: 2}
       propertyPath: m_RootOrder
       value: 58
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223703882857374, guid: ca1b6bb1556e79a46a76255ae0ba92c2, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 114882803729297372, guid: ca1b6bb1556e79a46a76255ae0ba92c2,
-        type: 2}
-      propertyPath: rankState
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca1b6bb1556e79a46a76255ae0ba92c2, type: 2}
@@ -4659,11 +4650,6 @@ Prefab:
     - target: {fileID: 4056783061181596, guid: 5d91096469a87684ab71d0832e480e56, type: 2}
       propertyPath: m_RootOrder
       value: 38
-      objectReference: {fileID: 0}
-    - target: {fileID: 198888365231520852, guid: 5d91096469a87684ab71d0832e480e56,
-        type: 2}
-      propertyPath: SubModule.subEmitters.Array.data[0].emitter
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d91096469a87684ab71d0832e480e56, type: 2}
@@ -59357,11 +59343,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 58
       objectReference: {fileID: 0}
-    - target: {fileID: 114263657246487314, guid: 39ba0b444d07c2c4c95afb370985e1b1,
-        type: 2}
-      propertyPath: rankState
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39ba0b444d07c2c4c95afb370985e1b1, type: 2}
   m_IsPrefabParent: 0
@@ -76847,112 +76828,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4625649285276136, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 4.0000334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625649285276136, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 4.0000334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549349656298378, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}
-      propertyPath: m_Name
-      value: Tank - Team 3 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: rankState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnGainExperience.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1394895780}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnPromotion.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1394895780}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnBecomeGeneral.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1394895780}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1394895780}
     - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
         type: 2}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1394895780}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnGainExperience.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReactPositively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnGainExperience.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnBecomeGeneral.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReactPositively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnBecomeGeneral.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnPromotion.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReactPositively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnPromotion.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReactNegatively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ReactNegatively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnMove.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 1394895780}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnMove.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ReactPositively
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
-        type: 2}
-      propertyPath: OnMove.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 1549349656298378, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}
+      propertyPath: m_Name
+      value: Tank - Team 3 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}
