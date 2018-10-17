@@ -1220,9 +1220,10 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     barrelAimSpeed: 8
   op: {fileID: 0}
-  renderer:
+  primaryRenderers:
   - {fileID: 23579406981727390}
   - {fileID: 23141464384706190}
+  secondaryRenderers:
   - {fileID: 23786864829027952}
   - {fileID: 23919851847332666}
   - {fileID: 23927154213048792}
@@ -1326,7 +1327,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1041322467
+  randomSeed: 1218393574
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4771,7 +4772,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1275463204
+  randomSeed: 621458006
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8216,7 +8217,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1815365526
+  randomSeed: 197104322
   InitialModule:
     serializedVersion: 3
     enabled: 1

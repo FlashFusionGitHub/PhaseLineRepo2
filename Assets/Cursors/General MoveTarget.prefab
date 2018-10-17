@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4032130447359170}
   - component: {fileID: 114277572221351244}
+  - component: {fileID: 114723919674145610}
   m_Layer: 0
   m_Name: General MoveTarget
   m_TagString: Untagged
@@ -185,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420119947695036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.6375194, y: -43.110928, z: -102.598274}
+  m_LocalPosition: {x: -500.36, y: 90.3, z: -583.8075}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4177387608926708}
@@ -715,3 +716,23 @@ MonoBehaviour:
     bobIntensity: 0
     movingUp: 1
   speedModifier: 1
+--- !u!114 &114723919674145610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1420119947695036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cba1eac9d4af54ebf6b73853fa71c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stars:
+  - {fileID: 1070815267836566}
+  - {fileID: 1419011871740028}
+  - {fileID: 1882271742945752}
+  - {fileID: 1235842044077924}
+  - {fileID: 1378960942661782}
+  - {fileID: 1756732281132018}
+  - {fileID: 1355489459847058}
+  team: 1

@@ -152,7 +152,8 @@ public class TroopActor : MonoBehaviour
     public ObjectPool op;
 
     [Header("Renderer")]
-    public new Renderer[] renderer;
+    public Renderer[] primaryRenderers;
+    public Renderer[] secondaryRenderers;
 
     [Header("Chosen Factions")]
     public SelectedFactions selectedFactions;
@@ -161,17 +162,34 @@ public class TroopActor : MonoBehaviour
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        selectedFactions = FindObjectOfType<SelectedFactions>();
+        try
+        {
+            selectedFactions = FindObjectOfType<SelectedFactions>();
 
-        if (team == Team.TEAM1)
-        {
-            for(int i = 0; i < renderer.Length; i++)
-                renderer[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team1.colour);
+            if (team == Team.TEAM1)
+            {
+                for (int i = 0; i < primaryRenderers.Length; i++)
+                    primaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team1.primaryColour);
+
+                for (int i = 0; i < secondaryRenderers.Length; i++)
+                    secondaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team1.secondaryColour);
+            }
+            else
+            {
+                for (int i = 0; i < primaryRenderers.Length; i++)
+                    primaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team2.primaryColour);
+
+                for (int i = 0; i < secondaryRenderers.Length; i++)
+                    secondaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team2.secondaryColour);
+            }
         }
-        else
+        catch(System.Exception)
         {
-            for (int i = 0; i < renderer.Length; i++)
-                renderer[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team2.colour);
+            for (int i = 0; i < primaryRenderers.Length; i++)
+                primaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), Color.black);
+
+            for (int i = 0; i < secondaryRenderers.Length; i++)
+                secondaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), Color.black);
         }
 
         op = FindObjectOfType<ObjectPool>();

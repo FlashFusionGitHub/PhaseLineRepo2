@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/FactionSelection.unity
     guid: e41e1189be504054f9490d08cf4cff85
   - enabled: 1
+    path: Assets/_Scenes/ControllerScene.unity
+    guid: d41504555805dea44aae1d311c6fc8ea
+  - enabled: 1
     path: Assets/_Scenes/Desert-Canyon 1.unity
     guid: 1ca198a9045aa5c4daf154e6bdaa23fb
   - enabled: 0

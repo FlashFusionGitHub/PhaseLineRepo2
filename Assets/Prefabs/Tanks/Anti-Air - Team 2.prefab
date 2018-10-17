@@ -1278,7 +1278,7 @@ MonoBehaviour:
   turnSpeed: 12
   moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
     type: 2}
-  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: fd78f79bfb5d53742882a2348c6df90e,
+  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: 14e89b401e13db245860f91654ce7fd0,
     type: 2}
   hoverHeight: 3
   verticleSpeed: 5
@@ -1340,9 +1340,10 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     barrelAimSpeed: 8
   op: {fileID: 0}
-  renderer:
+  primaryRenderers:
   - {fileID: 23258156428346638}
   - {fileID: 23713911483740682}
+  secondaryRenderers:
   - {fileID: 23527107501274262}
   - {fileID: 23874031752260314}
   - {fileID: 23302958702435064}
