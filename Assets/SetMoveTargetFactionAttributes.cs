@@ -11,17 +11,24 @@ public class SetMoveTargetFactionAttributes : MonoBehaviour {
     SelectedFactions selectedFactions;
     private void Awake()
     {
-        selectedFactions = FindObjectOfType<SelectedFactions>();
+        try
+        {
+            selectedFactions = FindObjectOfType<SelectedFactions>();
 
-        if(team == Team.TEAM1)
-        {
-            for (int i = 0; i < Stars.Length; i++)
-                Stars[i].GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_Color"), selectedFactions.team1.primaryColour);
+            if (team == Team.TEAM1)
+            {
+                for (int i = 0; i < Stars.Length; i++)
+                    Stars[i].GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_Color"), selectedFactions.team1.primaryColour);
+            }
+            else
+            {
+                for (int i = 0; i < Stars.Length; i++)
+                    Stars[i].GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_Color"), selectedFactions.team2.primaryColour);
+            }
         }
-        else
+        catch(System.Exception)
         {
-            for (int i = 0; i < Stars.Length; i++)
-                Stars[i].GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_Color"), selectedFactions.team2.primaryColour);
+            return;
         }
     }
 }

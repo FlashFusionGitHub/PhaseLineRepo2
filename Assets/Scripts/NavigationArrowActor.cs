@@ -46,7 +46,7 @@ public class NavigationArrowActor : MonoBehaviour
         {
             m_controller = InputManager.Devices[playerIndex];
         }
-        catch(System.Exception e)
+        catch(System.Exception)
         {
             return;
         }

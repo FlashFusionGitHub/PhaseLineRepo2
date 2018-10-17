@@ -23,7 +23,7 @@ public class Cursor : MonoBehaviour
         {
             m_controller = InputManager.Devices[0];
         }
-        catch (System.Exception e)
+        catch (System.Exception)
         {
             return;
         }

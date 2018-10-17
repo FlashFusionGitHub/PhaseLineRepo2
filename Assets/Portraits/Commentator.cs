@@ -141,7 +141,6 @@ public class Commentator : MonoBehaviour {
         }
     }
 
-    int attempts;
     void ChooseAReaction(ReactionType rt, ReactionCategory rc)
     {
         VoiceLine tempReaction = reactions[Random.Range(0, reactions.Length)];
@@ -178,7 +177,6 @@ public class Commentator : MonoBehaviour {
         // If a speaking event is not currently active, choose a random postive reaction
         if (speakingState != SpeakingState.Speaking)
         {
-            attempts = reactions.Length;
             ChooseAReaction(ReactionType.Event, ReactionCategory.Positive);
             idleState = ReactionCategory.Positive;
         }
@@ -190,7 +188,6 @@ public class Commentator : MonoBehaviour {
         // If a speaking event is not currently active, choose a random negative reaction
         if (speakingState != SpeakingState.Speaking)
         {
-            attempts = reactions.Length;
             ChooseAReaction(ReactionType.Event, ReactionCategory.Negative);
             idleState = ReactionCategory.Negative;
         }
