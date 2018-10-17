@@ -720,7 +720,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 1818351021}
-  colour: {r: 0, g: 1, b: 0.91724133, a: 0}
+  primaryColour: {r: 0, g: 1, b: 0.8758622, a: 0}
+  secondaryColour: {r: 0.18030927, g: 0.8455882, b: 0.6804156, a: 0}
 --- !u!1 &656659105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 1781210262}
-  colour: {r: 0.8206897, g: 0, b: 1, a: 0}
+  primaryColour: {r: 0.8206897, g: 0, b: 1, a: 1}
+  secondaryColour: {r: 0.66176474, g: 0.10218428, b: 0.57686275, a: 1}
 --- !u!1 &943510911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 1910516023}
-  colour: {r: 0, g: 0.048275948, b: 1, a: 0}
+  primaryColour: {r: 0.034482956, g: 0, b: 1, a: 1}
+  secondaryColour: {r: 0.22145328, g: 0.3157621, b: 0.9411765, a: 1}
 --- !u!1 &1337369404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,7 +1749,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 2021515781}
-  colour: {r: 0, g: 1, b: 0.25517225, a: 0}
+  primaryColour: {r: 0.11724126, g: 1, b: 0, a: 1}
+  secondaryColour: {r: 0.66435087, g: 0.9705882, b: 0.6066176, a: 1}
 --- !u!1 &1618517730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,7 +2577,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 2102498858}
-  colour: {r: 1, g: 0, b: 0, a: 0}
+  primaryColour: {r: 1, g: 0, b: 0, a: 1}
+  secondaryColour: {r: 1, g: 0, b: 0.35172415, a: 1}
 --- !u!1 &1818351019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,7 +2999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 1703926776}
-  colour: {r: 0.94482756, g: 1, b: 0, a: 0}
+  primaryColour: {r: 1, g: 0.93103456, b: 0, a: 1}
+  secondaryColour: {r: 0.89705884, g: 0.87613356, b: 0.5936419, a: 1}
 --- !u!1 &1910516021
 GameObject:
   m_ObjectHideFlags: 0

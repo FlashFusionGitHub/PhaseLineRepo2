@@ -6,6 +6,6 @@ public class FactionElements : MonoBehaviour{
 
     [Header("Faction Elements")]
     public Commentator commentator;
-    public Color colour;
-
+    public Color primaryColour;
+    public Color secondaryColour;
 }
