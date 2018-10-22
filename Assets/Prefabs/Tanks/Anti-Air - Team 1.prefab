@@ -1222,13 +1222,7 @@ MonoBehaviour:
   - audioTag: Shoot
     aSource: {fileID: 82064671433890058}
     audioClips:
-    - {fileID: 8300000, guid: 94db46df98d3b5c41b4b136ed14f3534, type: 3}
-    - {fileID: 8300000, guid: 8018a943e13078048bf8eaac8c768f01, type: 3}
-    - {fileID: 8300000, guid: c551643c9aeb10d4287585d4b0ac36a9, type: 3}
-    - {fileID: 8300000, guid: a310e921dd7502c429b8d4d96f2e6073, type: 3}
-    - {fileID: 8300000, guid: 1bc5dc0b0a0548943adfc4ab3e381695, type: 3}
-    - {fileID: 8300000, guid: 340c1d369691d2b48a2c9f665ef9725a, type: 3}
-    - {fileID: 8300000, guid: 2e776623ef0f3f642930a36bc65adcbd, type: 3}
+    - {fileID: 8300000, guid: 04ec127305110ec4ab39dc15ce0cd382, type: 3}
     minPitch: 1
     maxPitch: 2
   - audioTag: Hit
