@@ -15,6 +15,11 @@ public class IndicatorPanel : MonoBehaviour {
     public bool player1;
     public bool player2;
 
+    // TODO read these off parent panel
+    public float width = 1920;
+    public float startheight = 540;
+    public float endHeight = 1080;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -23,11 +28,59 @@ public class IndicatorPanel : MonoBehaviour {
 	void Update () {
         Vector3 screenPos = m_camera.WorldToScreenPoint(m_navMarker.m_currentMarker.transform.position);
 
-        if (player1)
-            TopScreen(screenPos);
-        if (player2)
-            BottomScreen(screenPos);
-	}
+        screenPos.z = 0;
+
+        clampX(screenPos);
+        clampY(screenPos);
+        Rotate(screenPos);
+
+        m_arrow.gameObject.SetActive(true);
+        //m_arrow.transform.position = screenPos;
+    }
+
+
+    void clampX(Vector3 screenPos)
+    {
+        if (screenPos.x < 0)
+        {
+            screenPos.y = (0 - width / 2) / (screenPos.x - width / 2) * screenPos.y;
+            screenPos.x = 0;
+        }
+
+        if (screenPos.x > width)
+        {
+            screenPos.y = (width - width / 2) / (screenPos.x - width / 2) * screenPos.y;
+            screenPos.x = width;
+        }
+
+        m_arrow.transform.position = screenPos;
+    }
+
+    void clampY(Vector3 screenPos)
+    {
+        if (screenPos.y < startheight)
+        {
+            screenPos.x = (startheight - endHeight) / (screenPos.y - endHeight) * screenPos.x;
+            screenPos.y = startheight;
+        }
+
+        if (screenPos.y > endHeight)
+        {
+            screenPos.x = (startheight * 2 - endHeight) / (screenPos.y - endHeight) * screenPos.x;
+            screenPos.y = startheight * 2;
+        }
+
+        m_arrow.transform.position = screenPos;
+    }
+
+    void Rotate(Vector3 screenPos)
+    {
+        float angle = Mathf.Atan2(screenPos.y, screenPos.x);
+
+        angle -= 90 * Mathf.Deg2Rad;
+
+        m_arrow.transform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+    }
 
     void TopScreen(Vector3 screenPos)
     {

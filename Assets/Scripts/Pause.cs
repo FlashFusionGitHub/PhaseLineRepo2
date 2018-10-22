@@ -17,6 +17,10 @@ public class Pause : MonoBehaviour {
 
     UnityEvent pauseEvent;
 
+    bool waitForUnPause;
+
+
+    float wait = 2;
 	// Use this for initialization
 	void Start () {
 		
@@ -44,6 +48,19 @@ public class Pause : MonoBehaviour {
                 UnpauseGame();
             }
         }
+
+        /*if(waitForUnPause)
+        {
+            wait -= Time.deltaTime;
+
+            if (wait <= 0)
+            {
+                m_pausePanel.SetActive(false);
+                Time.timeScale = 1;
+                wait = 2f;
+                waitForUnPause = false;
+            }
+        }*/
 	}
 
     void PauseGame()
@@ -54,12 +71,14 @@ public class Pause : MonoBehaviour {
 
         m_title.text = "Player " + playerIndex + " Paused";
 
+        m_pausePanel.SetActive(true);
+
     }
 
     public void UnpauseGame()
     {
         m_pausePanel.GetComponent<TweenAnimator>().ToggleInOut();
 
-        Time.timeScale = 1;
+        waitForUnPause = true;
     }
 }
