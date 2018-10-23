@@ -129,7 +129,7 @@ public class NavigationArrowActor : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        // if (other.gameObject.GetComponent<TroopActor>().team == Team.TEAM2)
+        //if (other.gameObject.GetComponent<TroopActor>().team == Team.TEAM2)
         //{
         //    m_tank = other.GetComponent<TroopActor>();
         // }

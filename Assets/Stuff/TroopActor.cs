@@ -291,7 +291,7 @@ public class TroopActor : MonoBehaviour
         FormationPosition newFP = new FormationPosition();
         {
             GameObject newFormPos = new GameObject("dad");
-            GameObject trackedFormPos = Instantiate(newFormPos, NextFormPos() + positionOffset, transform.rotation);
+            GameObject trackedFormPos = Instantiate(moveTargetPrefab, NextFormPos() + positionOffset, transform.rotation);
             Destroy(newFormPos);
             trackedFormPos.name = "Formation Position " + formationPositions.Count + 1;
             if (!moveTarget)
@@ -327,7 +327,6 @@ public class TroopActor : MonoBehaviour
             count = 0;
             return oldPos.position;
         }
-
 
         if (count < maxNumOfColumns / 2)
         {
@@ -511,7 +510,6 @@ public class TroopActor : MonoBehaviour
                 Debug.DrawLine(transform.position, moveTarget.position, Color.red);
                 m_navAgent.SetDestination(moveTarget.position);
                 if (Vector3.Distance(new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z), transform.position) > moveSpeed * Time.deltaTime)
-
                     moving = true;
 
                 else
@@ -545,26 +543,18 @@ public class TroopActor : MonoBehaviour
 
     void CreateMoveTarget()
     {
-        if (!moveTargetPrefab && !generalMoveTargetPrefab)
-        {
-            GameObject killMePls = new GameObject("Kill me pls");
-            killMePls.name = gameObject.name + "'s MoveTarget";
-            killMePls.transform.position = transform.position;
-            killMePls.transform.rotation = transform.rotation;
-            moveTarget = killMePls.transform;
-        }
-        else if (generalMoveTargetPrefab)
-        {
-            GameObject keepThisAlive = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
-            keepThisAlive.name = gameObject.name + "'s MoveTarget";
-            moveTarget = keepThisAlive.transform;
-        }
-        else if (!generalMoveTargetPrefab && moveTargetPrefab)
-        {
-            GameObject keepThisAlive = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
-            keepThisAlive.name = gameObject.name + "'s MoveTarget";
-            moveTarget = keepThisAlive.transform;
-        }
+         if (rankState == RankState.IsGeneral)
+         {
+             GameObject keepThisAlive = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
+             keepThisAlive.name = gameObject.name + "'s MoveTarget";
+             moveTarget = keepThisAlive.transform;
+         }
+         else
+         {
+             GameObject keepThisAlive = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
+             keepThisAlive.name = gameObject.name + "'s MoveTarget";
+             moveTarget = keepThisAlive.transform;
+         }
     }
 
     bool ClearLineOfSight()

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33846971450822414}
   - component: {fileID: 136780036909932082}
   - component: {fileID: 23673338911318096}
+  - component: {fileID: 114946589449947402}
   m_Layer: 8
   m_Name: Nav Marker - Player 1
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615208005501130}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114946589449947402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1615208005501130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e37909340b0284791fe11b712555d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
 --- !u!136 &136780036909932082
 CapsuleCollider:
   m_ObjectHideFlags: 1

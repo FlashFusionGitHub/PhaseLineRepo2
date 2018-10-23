@@ -30,8 +30,6 @@ public class TroopController : MonoBehaviour {
 
     public float paddingX, paddingZ;
 
-    bool moveToSwitch;
-
     // Use this for initialization
     protected virtual void Start () {
 
@@ -67,13 +65,10 @@ public class TroopController : MonoBehaviour {
         if (m_generals.Count == 0)
             Destroy(m_currentSelectionCircle);
 
-        if (m_controller.RightStickButton.WasPressed)
-        {
-            QuickSelect();
-        }
+        QuickSelect();
 
         if (m_controller.DPadLeft.WasPressed && m_generals.Count > 1) {
-            //destory the currect circle
+            //destroy the currect circle
             if (m_currentSelectionCircle != null)
                 Destroy(m_currentSelectionCircle);
 
@@ -90,16 +85,8 @@ public class TroopController : MonoBehaviour {
 
         if (m_controller.Action1.WasPressed && !m_navigationArrowActor.m_airStrikeState)
         {
-            foreach(TroopActor tank in m_generals)
-            {
-                if(Vector3.Distance(m_generals[index].moveTarget.transform.position, tank.transform.position) < tankSize)
-                {
-                    Debug.Log("Space Occupied");
-                    return;
-                }
-            }
-
             m_generals[index].moveTarget.transform.position = m_navigationArrowActor.m_currentMarker.transform.position;
+            m_generals[index].moveTarget.transform.rotation = m_navigationArrowActor.m_currentMarker.transform.rotation;
         }
 
         if (m_currentSelectionCircle != null && index >= 0 && m_generals.Count > 0)
@@ -108,15 +95,14 @@ public class TroopController : MonoBehaviour {
 
     void QuickSelect()
     {
-        if (moveToSwitch)
+        if (m_controller.RightStickButton.WasPressed)
         {
-            moveToSwitch = false;
-            cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z);
-        }
-        else
-        {
-            moveToSwitch = true;
             cameraController.MoveCameraTo(m_navigationArrowActor.m_currentMarker.transform.position.x, m_navigationArrowActor.m_currentMarker.transform.position.z);
+        }
+
+        if (m_controller.LeftStickButton.WasPressed)
+        {
+            cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z);
         }
     }
 
