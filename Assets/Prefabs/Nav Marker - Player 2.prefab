@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e37909340b0284791fe11b712555d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 2
+  playerIndex: 1
 --- !u!136 &136657438491101214
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -7,7 +7,7 @@ public class RotateArrow : MonoBehaviour {
 
     public InputDevice m_controller;
 
-    public Team team;
+    public int playerIndex;
 
     // Use this for initialization
     void Start () {
@@ -17,10 +17,14 @@ public class RotateArrow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (team == Team.TEAM1)
-            m_controller = InputManager.Devices[0];
-        if (team == Team.TEAM2)
-            m_controller = InputManager.Devices[1];
+        try
+        {
+            m_controller = InputManager.Devices[playerIndex];
+        }
+        catch (System.Exception)
+        {
+            return;
+        }
 
         if (m_controller.LeftBumper.IsPressed)
             transform.Rotate(Vector3.down * 50 * Time.deltaTime);
