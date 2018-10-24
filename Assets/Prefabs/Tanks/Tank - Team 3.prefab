@@ -441,7 +441,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549349656298378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.59, y: 0, z: -17.22}
+  m_LocalPosition: {x: -24.1, y: 0, z: 16.7}
   m_LocalScale: {x: 4.0000334, y: 4, z: 4.0000334}
   m_Children:
   - {fileID: 224968002587950636}
@@ -1190,7 +1190,7 @@ MonoBehaviour:
     minPitch: 1
     maxPitch: 2
   - audioTag: Death
-    aSource: {fileID: 82198317433322094}
+    aSource: {fileID: 82202234211101804}
     audioClips:
     - {fileID: 8300000, guid: 16ff64f4371c87a47a79f3b4481d2aa8, type: 3}
     - {fileID: 8300000, guid: 17b8d7eb5f890f24e99e9aca3bee2587, type: 3}
@@ -1502,17 +1502,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114435615270635950}
-        m_MethodName: PlayAudioTag
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Death
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_healthBar: {fileID: 114636872012831516}
@@ -1606,6 +1595,17 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: KillShot
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114435615270635950}
+          m_MethodName: PlayAudioTag
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Death
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
