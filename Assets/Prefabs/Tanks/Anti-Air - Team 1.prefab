@@ -1728,12 +1728,14 @@ MonoBehaviour:
   audioSets:
   - audioTag: Shoot
     aSource: {fileID: 82064671433890058}
+    amg: {fileID: 243589560933652110, guid: 9e282b4677f66c446800baa3580aa8f5, type: 2}
     audioClips:
     - {fileID: 8300000, guid: 04ec127305110ec4ab39dc15ce0cd382, type: 3}
     minPitch: 1
     maxPitch: 2
   - audioTag: Hit
     aSource: {fileID: 82931807620666950}
+    amg: {fileID: 243744104649178524, guid: 9e282b4677f66c446800baa3580aa8f5, type: 2}
     audioClips:
     - {fileID: 8300000, guid: 31d43461da62d144c9d69404fe7999a1, type: 3}
     - {fileID: 8300000, guid: b534fb69c84719b498f3e35a259fd384, type: 3}
@@ -1748,31 +1750,17 @@ MonoBehaviour:
     maxPitch: 2
   - audioTag: Death
     aSource: {fileID: 82064671433890058}
+    amg: {fileID: 243374033859970192, guid: 9e282b4677f66c446800baa3580aa8f5, type: 2}
     audioClips:
-    - {fileID: 8300000, guid: 16ff64f4371c87a47a79f3b4481d2aa8, type: 3}
     - {fileID: 8300000, guid: 17b8d7eb5f890f24e99e9aca3bee2587, type: 3}
     - {fileID: 8300000, guid: e4b9da47652c87e4395f7129b45c1cf3, type: 3}
-    - {fileID: 8300000, guid: adaad0fd676c3aa4f90e28adf9776810, type: 3}
-    - {fileID: 8300000, guid: c2926f1054c59ab4a95a6b2997703608, type: 3}
     - {fileID: 8300000, guid: e6fa6f2811d49d24f9de8cb5e0f7cd82, type: 3}
-    - {fileID: 8300000, guid: 6e17d5177960013479b3f133da691622, type: 3}
     - {fileID: 8300000, guid: cca23acee9569e9498062c3e991ab843, type: 3}
-    - {fileID: 8300000, guid: 563009a5c70f45647aa2684cc9796381, type: 3}
-    - {fileID: 8300000, guid: 8f5d9b8d0ad82754cabf415b66ce95c7, type: 3}
-    - {fileID: 8300000, guid: 58c31083d81280d4aaa0aeb9e53eb86b, type: 3}
     - {fileID: 8300000, guid: f4d5bbbb7bf66f44c86b3f5984fe17d2, type: 3}
-    - {fileID: 8300000, guid: 1af7ee4b43761d04c91af1bcdc87a28f, type: 3}
-    - {fileID: 8300000, guid: 38b99a74808b51f488bb3fa04e8e781b, type: 3}
     - {fileID: 8300000, guid: e3f039c2811356d45abb77ab8ab7c002, type: 3}
     - {fileID: 8300000, guid: a89c3191c9db8d842923c4b31e3573e4, type: 3}
     - {fileID: 8300000, guid: 7e4717a08e26f874993a2fa7ef1ad307, type: 3}
-    - {fileID: 8300000, guid: 6c5ddebaee5ad574d8846ce6d81e7dfd, type: 3}
-    - {fileID: 8300000, guid: 62d7f879e7f88d944904e20636a3e316, type: 3}
-    - {fileID: 8300000, guid: 0ab788df8c8307c4ba1ceff8223eff94, type: 3}
     - {fileID: 8300000, guid: c51297dfa6fe54f4fa08917071955fb7, type: 3}
-    - {fileID: 8300000, guid: 9bef0eb0001399a49ace2a06dcba0a36, type: 3}
-    - {fileID: 8300000, guid: 8268f8ba00607a54e8359e33da331b40, type: 3}
-    - {fileID: 8300000, guid: 6fb5d095a5354e6478b49acc4dca679c, type: 3}
     minPitch: 1
     maxPitch: 2
 --- !u!114 &114948911768359246
