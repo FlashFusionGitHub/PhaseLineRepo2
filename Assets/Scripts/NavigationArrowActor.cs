@@ -64,12 +64,12 @@ public class NavigationArrowActor : MonoBehaviour
         {
             Debug.DrawLine(new Vector3(objPos.x, 500, objPos.z), hit.point);
             m_currentMarker.transform.Translate(0, (floatValue - hit.distance), 0);
-            m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * m_markerSpeed;
+            m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
             m_currentMarker.transform.position = new Vector3(m_currentMarker.transform.position.x, hit.point.y, m_currentMarker.transform.position.z);
         }
         else
         {
-            m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * m_markerSpeed;
+            m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
         }
 
         AirStrikeControls();

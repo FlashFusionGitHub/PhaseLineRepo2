@@ -6,42 +6,52 @@ using UnityEngine.UI;
 public class SettingsSceneActor : MonoBehaviour {
 
     public GameObject GameSettingsPanel;
-    public GameObject ScreenSettingsPanel;
     public GameObject SoundSettingsPanel;
+    public GameObject GeneralSettingsPanel;
 
-    public GameObject[] panels;
+    public Slider markerSpeedSlider;
+    public Slider cameraSpeedSlider;
+    public Slider cursorSpeedSlider;
 
-    public Slider markerSpeed;
-    public Slider cameraSpeed;
+    GameObject panel;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //PlayerPrefs.SetFloat("marker", );
-	}
+    void Start() {
+        markerSpeedSlider.value = PlayerPrefs.GetFloat("MarkerSpeedPlayer1");
+        cameraSpeedSlider.value = PlayerPrefs.GetFloat("CameraSpeedPlayer1");
+        cursorSpeedSlider.value = PlayerPrefs.GetFloat("CursorSpeed");
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
 
     public void OpenGameSettingsPanel()
     {
         GameSettingsPanel.SetActive(true);
-        ScreenSettingsPanel.SetActive(false);
         SoundSettingsPanel.SetActive(false);
-    }
-
-    public void OpenScreenSettingsPanel()
-    {
-        GameSettingsPanel.SetActive(false);
-        ScreenSettingsPanel.SetActive(true);
-        SoundSettingsPanel.SetActive(false);
+        GeneralSettingsPanel.SetActive(false);
     }
 
     public void OpenSoundSettingsPanel()
     {
         GameSettingsPanel.SetActive(false);
-        ScreenSettingsPanel.SetActive(false);
         SoundSettingsPanel.SetActive(true);
+        GeneralSettingsPanel.SetActive(false);
+    }
+
+    public void OpenGeneralSettingsPanel()
+    {
+        GameSettingsPanel.SetActive(false);
+        SoundSettingsPanel.SetActive(false);
+        GeneralSettingsPanel.SetActive(true);
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetFloat("MarkerSpeedPlayer1", markerSpeedSlider.value);
+        PlayerPrefs.SetFloat("CameraSpeedPlayer1", cameraSpeedSlider.value);
+        PlayerPrefs.SetFloat("CursorSpeed", cursorSpeedSlider.value);
     }
 }

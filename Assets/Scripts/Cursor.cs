@@ -11,24 +11,25 @@ public class Cursor : MonoBehaviour
 
     PointerEventData pointer;
 
+    public int playerIndex;
+
     // Use this for initialization
     void Start()
     {
-
     }
 
     void Update()
     {
         try
         {
-            m_controller = InputManager.Devices[0];
+            m_controller = InputManager.Devices[playerIndex];
         }
         catch (System.Exception)
         {
             return;
         }
 
-        transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0) * Time.deltaTime * 1000;
+        transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
 
         float markerXPos = Mathf.Clamp(transform.position.x, 0, Screen.width);
         float markerYPos = Mathf.Clamp(transform.position.y, 0, Screen.height);

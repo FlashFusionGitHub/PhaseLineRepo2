@@ -76,7 +76,7 @@ public class Chicken : MonoBehaviour {
                     move = true;
                     onMoveStart.Invoke();
                     elapsedTime = 0f;
-                    target = transform.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    target = transform.position + new Vector3(Random.Range(-20, 20), 0, Random.Range(-20, 20));
                 }
             }
         }

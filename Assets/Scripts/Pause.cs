@@ -11,74 +11,52 @@ public class Pause : MonoBehaviour {
 
     public GameObject m_pausePanel;
 
-    public Text m_title;
+    public GameObject cursor;
 
-    int playerIndex = 99;
+    public int playerIndex;
 
-    UnityEvent pauseEvent;
-
-    bool waitForUnPause;
-
-
-    float wait = 2;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        cursor.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
         try
         {
-            m_controller = InputManager.Devices[0];
+            m_controller = InputManager.Devices[playerIndex];
         }
         catch (System.Exception)
         {
             return;
         }
 
-        if (m_controller.MenuWasPressed)
+        if (Time.timeScale == 0)
+            return;
+        else
         {
-            if (Time.timeScale == 1)
+            if (m_controller.MenuWasPressed)
             {
                 PauseGame();
             }
-            else
-            {
-                UnpauseGame();
-            }
         }
-
-        /*if(waitForUnPause)
-        {
-            wait -= Time.deltaTime;
-
-            if (wait <= 0)
-            {
-                m_pausePanel.SetActive(false);
-                Time.timeScale = 1;
-                wait = 2f;
-                waitForUnPause = false;
-            }
-        }*/
 	}
 
     void PauseGame()
     {
-        m_pausePanel.GetComponent<TweenAnimator>().ToggleInOut();
+        m_pausePanel.GetComponent<TweenAnimator>().TweenToOutPos();
 
         Time.timeScale = 0;
 
-        m_title.text = "Player " + playerIndex + " Paused";
-
-        m_pausePanel.SetActive(true);
-
+        cursor.SetActive(true);
     }
 
     public void UnpauseGame()
     {
-        m_pausePanel.GetComponent<TweenAnimator>().ToggleInOut();
+        m_pausePanel.GetComponent<TweenAnimator>().TweenToInPos();
 
-        waitForUnPause = true;
+        Time.timeScale = 1;
+
+        cursor.SetActive(false);
     }
 }

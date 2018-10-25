@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour {
         {
             m_controller = InputManager.Devices[m_playerIndex];
         }
-        catch (System.Exception e)
+        catch (System.Exception)
         {
             return;
         }
@@ -46,7 +46,7 @@ public class CameraController : MonoBehaviour {
 
             if (m_controller.RightTrigger.IsPressed)
             {
-				transform.position += new Vector3(0, -m_controller.RightStickY * Time.deltaTime  * cameraSpeed, m_controller.RightStickY * Time.deltaTime * cameraSpeed);
+				transform.position += new Vector3(0, -m_controller.RightStickY * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000), m_controller.RightStickY * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
 
                 float zoomY = Mathf.Clamp(transform.position.y, m_MinZoomY, m_MaxZoomY);
 
@@ -54,7 +54,7 @@ public class CameraController : MonoBehaviour {
             }
             else
             {
-				this.transform.position += new Vector3(m_controller.RightStickX * Time.deltaTime * cameraSpeed, 0, m_controller.RightStickY * Time.deltaTime * cameraSpeed);
+				this.transform.position += new Vector3(m_controller.RightStickX * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000), 0, m_controller.RightStickY * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
 
                 float panX = Mathf.Clamp(transform.position.x, m_MinPanX, m_MaxPanX);
                 float panZ = Mathf.Clamp(transform.position.z, m_MinPanZ, m_MaxPanZ);
