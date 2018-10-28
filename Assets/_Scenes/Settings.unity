@@ -996,6 +996,7 @@ MonoBehaviour:
   markerSpeedSlider: {fileID: 1058311624}
   cameraSpeedSlider: {fileID: 1006995427}
   cursorSpeedSlider: {fileID: 822929662}
+  sfxVolumeSlider: {fileID: 679813281}
 --- !u!1 &229125758
 GameObject:
   m_ObjectHideFlags: 0

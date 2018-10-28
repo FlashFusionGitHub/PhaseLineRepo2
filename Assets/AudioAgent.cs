@@ -5,6 +5,11 @@ using UnityEngine.Audio;
 
 public class AudioAgent : MonoBehaviour {
 
+    public void Start()
+    {
+        GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("SoundEffects");
+    }
+
     [System.Serializable]
     public class AudioSet
     {

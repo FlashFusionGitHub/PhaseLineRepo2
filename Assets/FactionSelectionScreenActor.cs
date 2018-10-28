@@ -10,6 +10,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
     public Image[] masks;
 
     public Cursor cursor;
+    public Text cursorText;
 
     enum Player { player1, player2 };
 
@@ -26,6 +27,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -64,8 +66,6 @@ public class FactionSelectionScreenActor : MonoBehaviour
         if (masks[num].color != Color.white)
             return;
 
-        Debug.Log("Faction " + num + " Selected");
-
         images[num].transform.localScale = new Vector3(1, 1, 0);
 
         masks[num].rectTransform.sizeDelta = new Vector2(110, 300);
@@ -74,6 +74,8 @@ public class FactionSelectionScreenActor : MonoBehaviour
         {
             masks[num].color = Color.green;
             selected_Factions.SetFactionElement(0, masks[num].GetComponent<FactionElements>());
+            cursor.playerIndex = 1;
+            cursorText.text = "P2";
         }
         if (player == Player.player2)
         {
