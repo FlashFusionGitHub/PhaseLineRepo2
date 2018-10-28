@@ -350,6 +350,19 @@ public class TroopActor : MonoBehaviour
         return oldPos.position;
     }
 
+    bool IsAttackableUnit(TroopActor t)
+    {
+        foreach (UnitClasses unitclass in strengths)
+        {
+            if (t.unitClass == unitclass)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     void AttackClosestEnemy()
     {
         foreach (GunSettings gun in guns)
@@ -432,7 +445,7 @@ public class TroopActor : MonoBehaviour
         TroopActor closestEnemy = null;
         foreach (TroopActor ta in op.allTroopActors)
         {
-            if (ta.rankState != RankState.dead)
+            if (ta.rankState != RankState.dead && IsAttackableUnit(ta))
             {
                 if ((dis == 0f || Vector3.Distance(ta.transform.position, transform.position) < dis) && EnemyInRange(ta.transform, gun) && ta != this && ta.team != team)
                 {
