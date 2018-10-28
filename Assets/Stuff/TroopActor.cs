@@ -20,7 +20,8 @@ public enum RankState
     LookingForGeneral,
     FollowingGeneral,
     IsGeneral,
-    dead
+    dead,
+    Base
 }
 
 [System.Serializable]
@@ -224,7 +225,7 @@ public class TroopActor : MonoBehaviour
     void Update()
     {
         RankAction();
-        if (rankState != RankState.dead)
+        if (rankState != RankState.dead || rankState != RankState.Base) 
         {
             Move();
             AttackClosestEnemy();
