@@ -26,7 +26,7 @@ GameObject:
   m_Name: tractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4486030927197882
@@ -35,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1570090296969414}
-  m_LocalRotation: {x: -0, y: -0.23017682, z: -0, w: 0.9731488}
-  m_LocalPosition: {x: -386, y: 30.96, z: -540.67}
+  m_LocalRotation: {x: -0, y: 0.97145706, z: -0, w: 0.23721564}
+  m_LocalPosition: {x: -227.7, y: -23.4, z: -520.2}
   m_LocalScale: {x: 0.97585785, y: 0.97585785, z: 0.97585785}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -26.615002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 152.55501, z: 0}
 --- !u!23 &23803263680299788
 MeshRenderer:
   m_ObjectHideFlags: 1
