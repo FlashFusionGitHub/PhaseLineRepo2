@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: ea0b1150ecb0da74a9bf2b7bc65150ac
+timeCreated: 1540790610
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Orabiella_Prop_01
+    100004: Orabiella_Prop_02
+    100006: Orabiella_Prop_03
+    100008: Orabiella_Prop_04
+    100010: Orabiella_Sat_01
+    100012: Orabiella_Sat_02
+    100014: Orabiella_Sat_03
+    100016: Orabiella_Sat_04
+    100018: Orabiella_Sat_05
+    100020: Oribella_Body
+    100022: pasted__pasted__Plane_01_Low
+    100024: pasted__pasted__Plane_01_Low 1
+    100026: pasted__pasted__Plane_01_Low 2
+    100028: pasted__pasted__Plane_01_Low 3
+    100030: pasted__pasted__Plane_01_Low 4
+    100032: pasted__pasted__pSphere4
+    100034: pasted__pasted__pSphere4 1
+    100036: pasted__pasted__pSphere4 2
+    100038: pasted__pasted__pSphere4 3
+    100040: pasted__pasted__pSphere4 4
+    100042: Plane_01
+    100044: Plane_02
+    100046: Plane_03
+    100048: Plane_04
+    100050: Plane_05
+    100052: Plane_06
+    100054: plane_with_propella:Plane_01_Low
+    100056: plane_with_propella:pSphere4
+    100058: Planes
+    100060: Rail_Gun_01
+    100062: Rail_Gun_02
+    100064: Rail_Gun_03
+    400000: //RootNode
+    400002: Orabiella_Prop_01
+    400004: Orabiella_Prop_02
+    400006: Orabiella_Prop_03
+    400008: Orabiella_Prop_04
+    400010: Orabiella_Sat_01
+    400012: Orabiella_Sat_02
+    400014: Orabiella_Sat_03
+    400016: Orabiella_Sat_04
+    400018: Orabiella_Sat_05
+    400020: Oribella_Body
+    400022: pasted__pasted__Plane_01_Low
+    400024: pasted__pasted__Plane_01_Low 1
+    400026: pasted__pasted__Plane_01_Low 2
+    400028: pasted__pasted__Plane_01_Low 3
+    400030: pasted__pasted__Plane_01_Low 4
+    400032: pasted__pasted__pSphere4
+    400034: pasted__pasted__pSphere4 1
+    400036: pasted__pasted__pSphere4 2
+    400038: pasted__pasted__pSphere4 3
+    400040: pasted__pasted__pSphere4 4
+    400042: Plane_01
+    400044: Plane_02
+    400046: Plane_03
+    400048: Plane_04
+    400050: Plane_05
+    400052: Plane_06
+    400054: plane_with_propella:Plane_01_Low
+    400056: plane_with_propella:pSphere4
+    400058: Planes
+    400060: Rail_Gun_01
+    400062: Rail_Gun_02
+    400064: Rail_Gun_03
+    2100000: lambert1
+    2300000: Orabiella_Prop_01
+    2300002: Orabiella_Prop_02
+    2300004: Orabiella_Prop_03
+    2300006: Orabiella_Prop_04
+    2300008: Orabiella_Sat_01
+    2300010: Orabiella_Sat_02
+    2300012: Orabiella_Sat_03
+    2300014: Orabiella_Sat_04
+    2300016: Orabiella_Sat_05
+    2300018: Oribella_Body
+    2300020: pasted__pasted__Plane_01_Low
+    2300022: pasted__pasted__Plane_01_Low 1
+    2300024: pasted__pasted__Plane_01_Low 2
+    2300026: pasted__pasted__Plane_01_Low 3
+    2300028: pasted__pasted__Plane_01_Low 4
+    2300030: pasted__pasted__pSphere4
+    2300032: pasted__pasted__pSphere4 1
+    2300034: pasted__pasted__pSphere4 2
+    2300036: pasted__pasted__pSphere4 3
+    2300038: pasted__pasted__pSphere4 4
+    2300040: plane_with_propella:Plane_01_Low
+    2300042: plane_with_propella:pSphere4
+    2300044: Rail_Gun_01
+    2300046: Rail_Gun_02
+    2300048: Rail_Gun_03
+    3300000: Orabiella_Prop_01
+    3300002: Orabiella_Prop_02
+    3300004: Orabiella_Prop_03
+    3300006: Orabiella_Prop_04
+    3300008: Orabiella_Sat_01
+    3300010: Orabiella_Sat_02
+    3300012: Orabiella_Sat_03
+    3300014: Orabiella_Sat_04
+    3300016: Orabiella_Sat_05
+    3300018: Oribella_Body
+    3300020: pasted__pasted__Plane_01_Low
+    3300022: pasted__pasted__Plane_01_Low 1
+    3300024: pasted__pasted__Plane_01_Low 2
+    3300026: pasted__pasted__Plane_01_Low 3
+    3300028: pasted__pasted__Plane_01_Low 4
+    3300030: pasted__pasted__pSphere4
+    3300032: pasted__pasted__pSphere4 1
+    3300034: pasted__pasted__pSphere4 2
+    3300036: pasted__pasted__pSphere4 3
+    3300038: pasted__pasted__pSphere4 4
+    3300040: plane_with_propella:Plane_01_Low
+    3300042: plane_with_propella:pSphere4
+    3300044: Rail_Gun_01
+    3300046: Rail_Gun_02
+    3300048: Rail_Gun_03
+    4300000: Orabiella_Prop_01
+    4300002: Orabiella_Prop_02
+    4300004: Orabiella_Prop_03
+    4300006: Orabiella_Prop_04
+    4300008: Orabiella_Sat_05
+    4300010: Orabiella_Sat_04
+    4300012: Orabiella_Sat_03
+    4300014: Orabiella_Sat_02
+    4300016: Orabiella_Sat_01
+    4300018: Oribella_Body
+    4300020: Rail_Gun_01
+    4300022: Rail_Gun_02
+    4300024: Rail_Gun_03
+    4300026: plane_with_propella:pSphere4
+    4300028: plane_with_propella:Plane_01_Low
+    4300030: pasted__pasted__pSphere4
+    4300032: pasted__pasted__Plane_01_Low
+    4300034: pasted__pasted__pSphere4
+    4300036: pasted__pasted__Plane_01_Low
+    4300038: pasted__pasted__pSphere4
+    4300040: pasted__pasted__Plane_01_Low
+    4300042: pasted__pasted__pSphere4
+    4300044: pasted__pasted__Plane_01_Low
+    4300046: pasted__pasted__pSphere4
+    4300048: pasted__pasted__Plane_01_Low
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 250
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
