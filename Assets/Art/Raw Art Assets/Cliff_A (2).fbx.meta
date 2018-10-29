@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 340be4d0a7cf55b4e8ce08c2efb1d651
-timeCreated: 1540771972
+guid: 2a4e939c86f537d44b71d38b8ff07ae4
+timeCreated: 1540792360
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cliff_Side_B
+    4300000: Cliff_side_A
     9500000: //RootNode
   externalObjects: {}
   materials:
