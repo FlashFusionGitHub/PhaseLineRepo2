@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 136780036909932082}
   - component: {fileID: 23673338911318096}
   - component: {fileID: 114946589449947402}
+  - component: {fileID: 114497067737748152}
   m_Layer: 8
   m_Name: Nav Marker - Player 1
   m_TagString: Untagged
@@ -192,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615208005501130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.6, y: 0, z: 0}
+  m_LocalPosition: {x: 820.97217, y: 1172.6974, z: -1914.1233}
   m_LocalScale: {x: 6, y: 12, z: 6}
   m_Children:
   - {fileID: 4751646229712752}
@@ -469,6 +470,22 @@ MonoBehaviour:
     bobIntensity: 0
     movingUp: 1
   speedModifier: 1
+--- !u!114 &114497067737748152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1615208005501130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0cd607bbc049de4c97044a1e2bbe6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 23953676040878096}
+  - {fileID: 23167938686931670}
+  - {fileID: 23334585542168746}
+  m_team: 1
 --- !u!114 &114605105232530036
 MonoBehaviour:
   m_ObjectHideFlags: 1

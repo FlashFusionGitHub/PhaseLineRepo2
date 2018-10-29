@@ -641,8 +641,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 1818351021}
-  primaryColour: {r: 0, g: 1, b: 0.8758622, a: 0}
-  secondaryColour: {r: 0.18030927, g: 0.8455882, b: 0.6804156, a: 0}
+  primaryColour: {r: 0, g: 1, b: 0.8758622, a: 1}
+  secondaryColour: {r: 0.18030927, g: 0.8455882, b: 0.6804156, a: 1}
 --- !u!1 &656659105
 GameObject:
   m_ObjectHideFlags: 0
