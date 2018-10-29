@@ -66,9 +66,9 @@ public class Chicken : MonoBehaviour {
                 }
                 else
                 {
-                    Debug.LogWarning("move ended at: " + Time.time);
+
                     //do not move and start waiting for random time
-                    
+                    wait = Random.Range(wait + wait * 0.05f, wait - wait * 0.05f);
                     waitTime = 0f;
                     onMoveEnd.Invoke();
                     move = false;
@@ -84,7 +84,6 @@ public class Chicken : MonoBehaviour {
                 {
                     move = true;
                     onMoveStart.Invoke();
-                    Debug.LogWarning("move started at: " + Time.time);
                     elapsedTime = 0f;
                     target = transform.position + new Vector3(Random.Range(-20, 20), 0, Random.Range(-20, 20));
                 }
