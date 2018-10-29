@@ -1385,7 +1385,7 @@ MonoBehaviour:
   unitClass: 2
   team: 2
   strengths: 000000000100000002000000
-  vulnerabilities: 000000000100000002000000
+  vulnerabilities: 0200000001000000
   rankState: 2
   myGeneral: {fileID: 0}
   placementDirection: 1
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   avoidanceRange: 2
   guns:
   - damage: 2.5
-    TimeBetweenShots: 1.5
+    TimeBetweenShots: 3
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 8

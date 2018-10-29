@@ -1776,8 +1776,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitClass: 1
   team: 1
-  strengths: 000000000100000002000000
-  vulnerabilities: 000000000100000002000000
+  strengths: 02000000
+  vulnerabilities: 0000000002000000
   rankState: 2
   myGeneral: {fileID: 0}
   placementDirection: 1
@@ -1932,12 +1932,12 @@ MonoBehaviour:
   m_navAgent: {fileID: 0}
   avoidanceRange: 2
   guns:
-  - damage: 5
-    TimeBetweenShots: 1.5
+  - damage: 10
+    TimeBetweenShots: 2
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 8
-    attackRangeMax: 40
+    attackRangeMax: 100
     attackTarget: {fileID: 0}
     turret: {fileID: 4771444643778062}
     turretAimSpeed: 2
@@ -65076,7 +65076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.00000010372843, y: 1.821}
+  m_AnchoredPosition: {x: 0.00000010372843, y: 2.7000284}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224679380192105338
