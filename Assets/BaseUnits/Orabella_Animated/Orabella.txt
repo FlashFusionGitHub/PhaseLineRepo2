@@ -1,0 +1,5 @@
+Orabella timing
+
+Frame 0 - 240 Plane deploy idle
+Frame 250 - 450 Roll up to her crib
+Frame 450 - 640 Idle
