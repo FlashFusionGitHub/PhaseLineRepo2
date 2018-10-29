@@ -8,4 +8,5 @@ public class FactionElements : MonoBehaviour{
     public Commentator commentator;
     public Color primaryColour;
     public Color secondaryColour;
+    public GameObject bigBase;
 }

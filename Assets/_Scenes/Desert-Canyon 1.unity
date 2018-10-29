@@ -6324,6 +6324,14 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 26.12
       objectReference: {fileID: 0}
+    - target: {fileID: 1087335995402762, guid: d4221766039585f46ab0000e15e9c0e5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360214036073382, guid: d4221766039585f46ab0000e15e9c0e5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4221766039585f46ab0000e15e9c0e5, type: 2}
   m_IsPrefabParent: 0
@@ -22115,11 +22123,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 598683890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 441559c116b94914d89e5d91bd44fb33, type: 3}
+  m_Script: {fileID: 11500000, guid: de4e4a251e799a747b6c2c03879e75b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
   wait: 0
+  tank: {fileID: 0}
   chickenSpeed: 5
   chickenChaseSpeed: 20
   chaseTimeout: 0
@@ -22144,6 +22153,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  friendZone: 50
 --- !u!23 &598683892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69961,11 +69971,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802550586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 441559c116b94914d89e5d91bd44fb33, type: 3}
+  m_Script: {fileID: 11500000, guid: de4e4a251e799a747b6c2c03879e75b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
   wait: 0
+  tank: {fileID: 0}
   chickenSpeed: 5
   chickenChaseSpeed: 20
   chaseTimeout: 0
@@ -69990,6 +70001,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  friendZone: 50
 --- !u!23 &1802550590
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75978,6 +75990,14 @@ Prefab:
     - target: {fileID: 4475201762138910, guid: b635a0c407b421d4aad0d987d2bcc9bb, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359653148505124, guid: b635a0c407b421d4aad0d987d2bcc9bb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520928173751086, guid: b635a0c407b421d4aad0d987d2bcc9bb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b635a0c407b421d4aad0d987d2bcc9bb, type: 2}

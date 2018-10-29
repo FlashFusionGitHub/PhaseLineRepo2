@@ -74,6 +74,8 @@ public class FactionSelectionScreenActor : MonoBehaviour
         {
             masks[num].color = Color.green;
             selected_Factions.SetFactionElement(0, masks[num].GetComponent<FactionElements>());
+            DontDestroyOnLoad(masks[num].GetComponent<FactionElements>().commentator);
+            DontDestroyOnLoad(masks[num].GetComponent<FactionElements>().bigBase);
             cursor.playerIndex = 1;
             cursorText.text = "P2";
         }
@@ -81,6 +83,8 @@ public class FactionSelectionScreenActor : MonoBehaviour
         {
             masks[num].color = Color.red;
             selected_Factions.SetFactionElement(1, masks[num].GetComponent<FactionElements>());
+            DontDestroyOnLoad(masks[num].GetComponent<FactionElements>().commentator);
+            DontDestroyOnLoad(masks[num].GetComponent<FactionElements>().bigBase);
             sceneLoader.LoadScene(2);
         }
 

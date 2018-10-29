@@ -11,11 +11,11 @@ public class Chicken : MonoBehaviour {
     public float wait = 0f; //wait this much time
     float waitTime = 0f; //waited this much time
 
-    bool move = true; //start moving
+    bool move = false; //start moving
 
     bool angered; //the chickens angered state
 
-    GameObject tank; //the object to chase
+    public GameObject tank; //the object to chase
 
     public int chickenSpeed; // chickens happy speed (set to five)
     public int chickenChaseSpeed; // chickens angry speed (set to twenty)
@@ -32,8 +32,11 @@ public class Chicken : MonoBehaviour {
 
     Vector3 target; //The next target the chicken will translate too
 
+    Chicken[] myFriends;
+
     void Start()
     {
+        myFriends = FindObjectsOfType<Chicken>();
         target = transform.position;
         chaseTimer = chaseTime;
     }
@@ -53,16 +56,22 @@ public class Chicken : MonoBehaviour {
                 {
                     //move to the target location, look at the target location, increment time
                     transform.position = Vector3.MoveTowards(transform.position, target, chickenSpeed * Time.deltaTime);
+                    if (Vector3.Distance(transform.position, target) <= chickenSpeed * Time.deltaTime)
+                    {
+                        elapsedTime = duration;
+
+                    }
                     transform.LookAt(target);
                     elapsedTime += Time.deltaTime;
                 }
                 else
                 {
+                    Debug.LogWarning("move ended at: " + Time.time);
                     //do not move and start waiting for random time
-                    wait = Random.Range(2, 4);
+                    
                     waitTime = 0f;
-                    move = false;
                     onMoveEnd.Invoke();
+                    move = false;
                 }
             }
 
@@ -75,6 +84,7 @@ public class Chicken : MonoBehaviour {
                 {
                     move = true;
                     onMoveStart.Invoke();
+                    Debug.LogWarning("move started at: " + Time.time);
                     elapsedTime = 0f;
                     target = transform.position + new Vector3(Random.Range(-20, 20), 0, Random.Range(-20, 20));
                 }
@@ -109,6 +119,21 @@ public class Chicken : MonoBehaviour {
             //set tank to the collision entity and invoke MakeAngry()
             tank = collider.gameObject.GetComponent<TroopActor>().gameObject;
             Invoke("MakeAngry", chaseTimeout);
+            TriggerMyFriends();
+        }
+    }
+
+    public float friendZone = 50f;
+    void TriggerMyFriends()
+    {
+        Transform me = this.transform;
+        foreach (Chicken myFriend in myFriends)
+        {
+            if (Vector3.Distance(me.position, myFriend.transform.position) < friendZone)
+            {
+                myFriend.tank = tank;
+                myFriend.Invoke("MakeAngry", myFriend.chaseTimeout);
+            }
         }
     }
 
