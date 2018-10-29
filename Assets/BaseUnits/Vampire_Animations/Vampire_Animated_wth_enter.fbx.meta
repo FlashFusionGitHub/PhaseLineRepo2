@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: acfc26c3badc31d429b238ce88de0b3f
+timeCreated: 1540770390
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Plane_01
+    100002: Plane_02
+    100004: Plane_03
+    100006: Plane_04
+    100008: Plane_05
+    100010: Plane_06
+    100012: Plane_Body
+    100014: Plane_Body 1
+    100016: Plane_Body 2
+    100018: Plane_Body 3
+    100020: Plane_Body 4
+    100022: Plane_Body 5
+    100024: Propella
+    100026: Propella 1
+    100028: Propella 2
+    100030: Propella 3
+    100032: Propella 4
+    100034: Propella 5
+    100036: //RootNode
+    100038: Vampire_GEO
+    100040: Vampire_GRP
+    100042: Vampire_Helicopter_Door_01_GEO
+    100044: Vampire_Helicopter_Door_01_GEO1
+    100046: Vampire_Left_Gun_03_GEO
+    100048: Vampire_Left_Gun_03_GEO1
+    100050: Vampire_Left_Gun_03_GEO2
+    100052: Vampire_Left_Gun_03_GEO3
+    100054: Vampire_Main_GunGEO
+    100056: Vampire_Main_GunGEO1
+    100058: Vampire_Main_GunGEO2
+    100060: Vampire_Main_GunGEO3
+    100062: Vampire_Main_GunGEO4
+    100064: Vampire_Pivot_Gun_02_GEO
+    100066: Vampire_Pivot_Gun_02_GEO1
+    100068: Vampire_Pivot_Gun_02_GEO2
+    100070: Vampire_Pivot_Gun_02_GEO3
+    100072: Vampire_Pivot_Gun_02_GEO4
+    100074: Vampire_Pivot_Gun_02_GEO5
+    400000: Plane_01
+    400002: Plane_02
+    400004: Plane_03
+    400006: Plane_04
+    400008: Plane_05
+    400010: Plane_06
+    400012: Plane_Body
+    400014: Plane_Body 1
+    400016: Plane_Body 2
+    400018: Plane_Body 3
+    400020: Plane_Body 4
+    400022: Plane_Body 5
+    400024: Propella
+    400026: Propella 1
+    400028: Propella 2
+    400030: Propella 3
+    400032: Propella 4
+    400034: Propella 5
+    400036: //RootNode
+    400038: Vampire_GEO
+    400040: Vampire_GRP
+    400042: Vampire_Helicopter_Door_01_GEO
+    400044: Vampire_Helicopter_Door_01_GEO1
+    400046: Vampire_Left_Gun_03_GEO
+    400048: Vampire_Left_Gun_03_GEO1
+    400050: Vampire_Left_Gun_03_GEO2
+    400052: Vampire_Left_Gun_03_GEO3
+    400054: Vampire_Main_GunGEO
+    400056: Vampire_Main_GunGEO1
+    400058: Vampire_Main_GunGEO2
+    400060: Vampire_Main_GunGEO3
+    400062: Vampire_Main_GunGEO4
+    400064: Vampire_Pivot_Gun_02_GEO
+    400066: Vampire_Pivot_Gun_02_GEO1
+    400068: Vampire_Pivot_Gun_02_GEO2
+    400070: Vampire_Pivot_Gun_02_GEO3
+    400072: Vampire_Pivot_Gun_02_GEO4
+    400074: Vampire_Pivot_Gun_02_GEO5
+    2100000: lambert8
+    2100002: lambert9
+    2300000: Plane_Body
+    2300002: Plane_Body 1
+    2300004: Plane_Body 2
+    2300006: Plane_Body 3
+    2300008: Plane_Body 4
+    2300010: Plane_Body 5
+    2300012: Propella
+    2300014: Propella 1
+    2300016: Propella 2
+    2300018: Propella 3
+    2300020: Propella 4
+    2300022: Propella 5
+    2300024: Vampire_GEO
+    2300026: Vampire_Helicopter_Door_01_GEO
+    2300028: Vampire_Helicopter_Door_01_GEO1
+    2300030: Vampire_Left_Gun_03_GEO
+    2300032: Vampire_Left_Gun_03_GEO1
+    2300034: Vampire_Left_Gun_03_GEO2
+    2300036: Vampire_Left_Gun_03_GEO3
+    2300038: Vampire_Main_GunGEO
+    2300040: Vampire_Main_GunGEO1
+    2300042: Vampire_Main_GunGEO2
+    2300044: Vampire_Main_GunGEO3
+    2300046: Vampire_Main_GunGEO4
+    2300048: Vampire_Pivot_Gun_02_GEO
+    2300050: Vampire_Pivot_Gun_02_GEO1
+    2300052: Vampire_Pivot_Gun_02_GEO2
+    2300054: Vampire_Pivot_Gun_02_GEO3
+    2300056: Vampire_Pivot_Gun_02_GEO4
+    2300058: Vampire_Pivot_Gun_02_GEO5
+    3300000: Plane_Body
+    3300002: Plane_Body 1
+    3300004: Plane_Body 2
+    3300006: Plane_Body 3
+    3300008: Plane_Body 4
+    3300010: Plane_Body 5
+    3300012: Propella
+    3300014: Propella 1
+    3300016: Propella 2
+    3300018: Propella 3
+    3300020: Propella 4
+    3300022: Propella 5
+    3300024: Vampire_GEO
+    3300026: Vampire_Helicopter_Door_01_GEO
+    3300028: Vampire_Helicopter_Door_01_GEO1
+    3300030: Vampire_Left_Gun_03_GEO
+    3300032: Vampire_Left_Gun_03_GEO1
+    3300034: Vampire_Left_Gun_03_GEO2
+    3300036: Vampire_Left_Gun_03_GEO3
+    3300038: Vampire_Main_GunGEO
+    3300040: Vampire_Main_GunGEO1
+    3300042: Vampire_Main_GunGEO2
+    3300044: Vampire_Main_GunGEO3
+    3300046: Vampire_Main_GunGEO4
+    3300048: Vampire_Pivot_Gun_02_GEO
+    3300050: Vampire_Pivot_Gun_02_GEO1
+    3300052: Vampire_Pivot_Gun_02_GEO2
+    3300054: Vampire_Pivot_Gun_02_GEO3
+    3300056: Vampire_Pivot_Gun_02_GEO4
+    3300058: Vampire_Pivot_Gun_02_GEO5
+    4300000: Vampire_GEO
+    4300002: Vampire_Main_GunGEO
+    4300004: Vampire_Helicopter_Door_01_GEO
+    4300006: Vampire_Left_Gun_03_GEO
+    4300008: Vampire_Pivot_Gun_02_GEO
+    4300010: Vampire_Main_GunGEO1
+    4300012: Vampire_Main_GunGEO2
+    4300014: Vampire_Main_GunGEO3
+    4300016: Vampire_Main_GunGEO4
+    4300018: Vampire_Left_Gun_03_GEO1
+    4300020: Vampire_Left_Gun_03_GEO2
+    4300022: Vampire_Left_Gun_03_GEO3
+    4300024: Vampire_Pivot_Gun_02_GEO1
+    4300026: Vampire_Pivot_Gun_02_GEO2
+    4300028: Vampire_Pivot_Gun_02_GEO3
+    4300030: Vampire_Pivot_Gun_02_GEO4
+    4300032: Vampire_Pivot_Gun_02_GEO5
+    4300034: Vampire_Helicopter_Door_01_GEO1
+    4300036: Plane_Body
+    4300038: Propella
+    4300040: Plane_Body
+    4300042: Propella
+    4300044: Plane_Body
+    4300046: Propella
+    4300048: Plane_Body
+    4300050: Propella
+    4300052: Plane_Body
+    4300054: Propella
+    4300056: Plane_Body
+    4300058: Propella
+    7400000: IDle
+    7400002: Entrance
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: IDle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 230
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Entrance
+      takeName: Take 001
+      firstFrame: 250
+      lastFrame: 445
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 250
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 9a384b03254091847a71ad050e67f24f
+timeCreated: 1540770402
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Big_Bazz_Body_GEO
+    100002: Big_Bazz_Cannon_GEO
+    100004: Big_Bazz_Front_Ramp_Door_02_GEO1
+    100006: Big_Bazz_Front_Ramp_Door_02_GEO2
+    100008: Big_Bazz_Front_Ramp_Door_02_GEO3
+    100010: Big_Bazz_Front_Ramp_Door_02_GEO4
+    100012: Big_Bazz_Left_Gun_GEO
+    100014: Big_Bazz_Left_Rear_Gun_GEO
+    100016: Big_Bazz_Lower_Left_Gun_Housing_GEO
+    100018: Big_Bazz_Lower_Left_Left_Gun_GEO
+    100020: Big_Bazz_Lower_Left_Right_Gun_GEO
+    100022: Big_Bazz_Lower_Right_Gun_Housing_GEO
+    100024: Big_Bazz_Lower_Right_Left_Gun_GEO
+    100026: Big_Bazz_Lower_Right_Right_Gun_GEO
+    100028: Big_Bazz_Main_Gun_GEO
+    100030: Big_Bazz_Main_Gun_Housing_GEO
+    100032: Big_Bazz_Rear_Gun_Housing_GEO
+    100034: Big_Bazz_Right_Gun_GEO
+    100036: Big_Bazz_Right_Rear_Gun_GEO
+    100038: //RootNode
+    100040: Helicopter_Bay_Door_01_GEO
+    100042: Helicopter_Bay_Door_01_GEO1
+    100044: Left_Anker_01_GEO
+    100046: Left_Anker_02_GEO
+    100048: Left_Anker_03_GEO
+    100050: Left_Anker_04_GEO
+    100052: Left_Deck_Gun
+    100054: Main_Gun
+    100056: Plane_01
+    100058: Plane_02
+    100060: Plane_03
+    100062: Plane_04
+    100064: Plane_05
+    100066: Plane_06
+    100068: Plane_Body
+    100070: Plane_Body 1
+    100072: Plane_Body 2
+    100074: Plane_Body 3
+    100076: Plane_Body 4
+    100078: Plane_Body 5
+    100080: Propella
+    100082: Propella 1
+    100084: Propella 2
+    100086: Propella 3
+    100088: Propella 4
+    100090: Propella 5
+    100092: Righ_Anker_01_GEO
+    100094: Righ_Anker_02_GEO
+    100096: Righ_Anker_03_GEO
+    100098: Righ_Anker_04_GEO
+    100100: Right_Deck_Gun
+    100102: Spikes
+    400000: Big_Bazz_Body_GEO
+    400002: Big_Bazz_Cannon_GEO
+    400004: Big_Bazz_Front_Ramp_Door_02_GEO1
+    400006: Big_Bazz_Front_Ramp_Door_02_GEO2
+    400008: Big_Bazz_Front_Ramp_Door_02_GEO3
+    400010: Big_Bazz_Front_Ramp_Door_02_GEO4
+    400012: Big_Bazz_Left_Gun_GEO
+    400014: Big_Bazz_Left_Rear_Gun_GEO
+    400016: Big_Bazz_Lower_Left_Gun_Housing_GEO
+    400018: Big_Bazz_Lower_Left_Left_Gun_GEO
+    400020: Big_Bazz_Lower_Left_Right_Gun_GEO
+    400022: Big_Bazz_Lower_Right_Gun_Housing_GEO
+    400024: Big_Bazz_Lower_Right_Left_Gun_GEO
+    400026: Big_Bazz_Lower_Right_Right_Gun_GEO
+    400028: Big_Bazz_Main_Gun_GEO
+    400030: Big_Bazz_Main_Gun_Housing_GEO
+    400032: Big_Bazz_Rear_Gun_Housing_GEO
+    400034: Big_Bazz_Right_Gun_GEO
+    400036: Big_Bazz_Right_Rear_Gun_GEO
+    400038: //RootNode
+    400040: Helicopter_Bay_Door_01_GEO
+    400042: Helicopter_Bay_Door_01_GEO1
+    400044: Left_Anker_01_GEO
+    400046: Left_Anker_02_GEO
+    400048: Left_Anker_03_GEO
+    400050: Left_Anker_04_GEO
+    400052: Left_Deck_Gun
+    400054: Main_Gun
+    400056: Plane_01
+    400058: Plane_02
+    400060: Plane_03
+    400062: Plane_04
+    400064: Plane_05
+    400066: Plane_06
+    400068: Plane_Body
+    400070: Plane_Body 1
+    400072: Plane_Body 2
+    400074: Plane_Body 3
+    400076: Plane_Body 4
+    400078: Plane_Body 5
+    400080: Propella
+    400082: Propella 1
+    400084: Propella 2
+    400086: Propella 3
+    400088: Propella 4
+    400090: Propella 5
+    400092: Righ_Anker_01_GEO
+    400094: Righ_Anker_02_GEO
+    400096: Righ_Anker_03_GEO
+    400098: Righ_Anker_04_GEO
+    400100: Right_Deck_Gun
+    400102: Spikes
+    2100000: lambert12
+    2100002: lambert13
+    2300000: Big_Bazz_Body_GEO
+    2300002: Big_Bazz_Cannon_GEO
+    2300004: Big_Bazz_Front_Ramp_Door_02_GEO1
+    2300006: Big_Bazz_Front_Ramp_Door_02_GEO2
+    2300008: Big_Bazz_Front_Ramp_Door_02_GEO3
+    2300010: Big_Bazz_Front_Ramp_Door_02_GEO4
+    2300012: Big_Bazz_Left_Gun_GEO
+    2300014: Big_Bazz_Left_Rear_Gun_GEO
+    2300016: Big_Bazz_Lower_Left_Gun_Housing_GEO
+    2300018: Big_Bazz_Lower_Left_Left_Gun_GEO
+    2300020: Big_Bazz_Lower_Left_Right_Gun_GEO
+    2300022: Big_Bazz_Lower_Right_Gun_Housing_GEO
+    2300024: Big_Bazz_Lower_Right_Left_Gun_GEO
+    2300026: Big_Bazz_Lower_Right_Right_Gun_GEO
+    2300028: Big_Bazz_Main_Gun_GEO
+    2300030: Big_Bazz_Main_Gun_Housing_GEO
+    2300032: Big_Bazz_Rear_Gun_Housing_GEO
+    2300034: Big_Bazz_Right_Gun_GEO
+    2300036: Big_Bazz_Right_Rear_Gun_GEO
+    2300038: Helicopter_Bay_Door_01_GEO
+    2300040: Helicopter_Bay_Door_01_GEO1
+    2300042: Left_Anker_01_GEO
+    2300044: Left_Anker_02_GEO
+    2300046: Left_Anker_03_GEO
+    2300048: Left_Anker_04_GEO
+    2300050: Plane_Body
+    2300052: Plane_Body 1
+    2300054: Plane_Body 2
+    2300056: Plane_Body 3
+    2300058: Plane_Body 4
+    2300060: Plane_Body 5
+    2300062: Propella
+    2300064: Propella 1
+    2300066: Propella 2
+    2300068: Propella 3
+    2300070: Propella 4
+    2300072: Propella 5
+    2300074: Righ_Anker_01_GEO
+    2300076: Righ_Anker_02_GEO
+    2300078: Righ_Anker_03_GEO
+    2300080: Righ_Anker_04_GEO
+    3300000: Big_Bazz_Body_GEO
+    3300002: Big_Bazz_Cannon_GEO
+    3300004: Big_Bazz_Front_Ramp_Door_02_GEO1
+    3300006: Big_Bazz_Front_Ramp_Door_02_GEO2
+    3300008: Big_Bazz_Front_Ramp_Door_02_GEO3
+    3300010: Big_Bazz_Front_Ramp_Door_02_GEO4
+    3300012: Big_Bazz_Left_Gun_GEO
+    3300014: Big_Bazz_Left_Rear_Gun_GEO
+    3300016: Big_Bazz_Lower_Left_Gun_Housing_GEO
+    3300018: Big_Bazz_Lower_Left_Left_Gun_GEO
+    3300020: Big_Bazz_Lower_Left_Right_Gun_GEO
+    3300022: Big_Bazz_Lower_Right_Gun_Housing_GEO
+    3300024: Big_Bazz_Lower_Right_Left_Gun_GEO
+    3300026: Big_Bazz_Lower_Right_Right_Gun_GEO
+    3300028: Big_Bazz_Main_Gun_GEO
+    3300030: Big_Bazz_Main_Gun_Housing_GEO
+    3300032: Big_Bazz_Rear_Gun_Housing_GEO
+    3300034: Big_Bazz_Right_Gun_GEO
+    3300036: Big_Bazz_Right_Rear_Gun_GEO
+    3300038: Helicopter_Bay_Door_01_GEO
+    3300040: Helicopter_Bay_Door_01_GEO1
+    3300042: Left_Anker_01_GEO
+    3300044: Left_Anker_02_GEO
+    3300046: Left_Anker_03_GEO
+    3300048: Left_Anker_04_GEO
+    3300050: Plane_Body
+    3300052: Plane_Body 1
+    3300054: Plane_Body 2
+    3300056: Plane_Body 3
+    3300058: Plane_Body 4
+    3300060: Plane_Body 5
+    3300062: Propella
+    3300064: Propella 1
+    3300066: Propella 2
+    3300068: Propella 3
+    3300070: Propella 4
+    3300072: Propella 5
+    3300074: Righ_Anker_01_GEO
+    3300076: Righ_Anker_02_GEO
+    3300078: Righ_Anker_03_GEO
+    3300080: Righ_Anker_04_GEO
+    4300000: Big_Bazz_Front_Ramp_Door_02_GEO4
+    4300002: Big_Bazz_Front_Ramp_Door_02_GEO2
+    4300004: Big_Bazz_Rear_Gun_Housing_GEO
+    4300006: Big_Bazz_Cannon_GEO
+    4300008: Big_Bazz_Front_Ramp_Door_02_GEO1
+    4300010: Helicopter_Bay_Door_01_GEO
+    4300012: Helicopter_Bay_Door_01_GEO1
+    4300014: Big_Bazz_Front_Ramp_Door_02_GEO3
+    4300016: Big_Bazz_Right_Rear_Gun_GEO
+    4300018: Big_Bazz_Left_Rear_Gun_GEO
+    4300020: Big_Bazz_Body_GEO
+    4300022: Big_Bazz_Left_Gun_GEO
+    4300024: Big_Bazz_Right_Gun_GEO
+    4300026: Big_Bazz_Main_Gun_GEO
+    4300028: Big_Bazz_Main_Gun_Housing_GEO
+    4300030: Propella
+    4300032: Plane_Body
+    4300034: Propella
+    4300036: Plane_Body
+    4300038: Propella
+    4300040: Plane_Body
+    4300042: Propella
+    4300044: Plane_Body
+    4300046: Propella
+    4300048: Plane_Body
+    4300050: Propella
+    4300052: Plane_Body
+    4300054: Left_Anker_01_GEO
+    4300056: Left_Anker_02_GEO
+    4300058: Left_Anker_03_GEO
+    4300060: Left_Anker_04_GEO
+    4300062: Righ_Anker_01_GEO
+    4300064: Righ_Anker_02_GEO
+    4300066: Righ_Anker_03_GEO
+    4300068: Righ_Anker_04_GEO
+    4300070: Big_Bazz_Lower_Left_Left_Gun_GEO
+    4300072: Big_Bazz_Lower_Left_Right_Gun_GEO
+    4300074: Big_Bazz_Lower_Left_Gun_Housing_GEO
+    4300076: Big_Bazz_Lower_Right_Gun_Housing_GEO
+    4300078: Big_Bazz_Lower_Right_Right_Gun_GEO
+    4300080: Big_Bazz_Lower_Right_Left_Gun_GEO
+    7400000: Idle
+    7400002: Entrance
+    7400004: Planes
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 600
+      lastFrame: 700
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Entrance
+      takeName: Take 001
+      firstFrame: 260
+      lastFrame: 550
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Planes
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 250
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

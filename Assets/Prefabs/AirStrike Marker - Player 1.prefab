@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4592248189121600}
   - component: {fileID: 114386608852548508}
+  - component: {fileID: 114269745993773996}
   m_Layer: 8
   m_Name: AirStrike Marker - Player 1
   m_TagString: Untagged
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372107763564542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 246.5168, y: 1722, z: -3598.8582}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4612699869781490}
@@ -295,6 +296,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114269745993773996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1372107763564542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0cd607bbc049de4c97044a1e2bbe6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 23505599281821538}
+  - {fileID: 23160831730357124}
+  - {fileID: 23477770602734420}
+  m_team: 1
 --- !u!114 &114386608852548508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,4 +323,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e37909340b0284791fe11b712555d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  playerIndex: 0

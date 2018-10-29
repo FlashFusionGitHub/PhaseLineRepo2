@@ -18,10 +18,12 @@ public class ZoneController : MonoBehaviour {
 
     public float amount;
 
+    public Team winner, loser;
+
     // Use this for initialization
     void Start () {
-        zones = GetComponentsInChildren<CaptureZoneActor>().ToList();
 
+        zones = GetComponentsInChildren<CaptureZoneActor>().ToList();
         m_percentage = m_startPercentage / 2;
 	}
 	
@@ -32,7 +34,17 @@ public class ZoneController : MonoBehaviour {
         {
             progressTimer -= Time.deltaTime;
             
-            if(progressTimer <= 0)
+            if(progressBar.fillAmount >= 1.0f)
+            {
+                winner = Team.TEAM2;
+                loser = Team.TEAM1;
+            }
+            else if(progressBar.fillAmount <= 0.0f)
+            {
+                winner = Team.TEAM1;
+                loser = Team.TEAM2;
+            }
+            else if(progressTimer <= 0)
             {
                 if (zone.owner == CaptureZoneActor.Owner.NONE)
                     return;
@@ -41,7 +53,7 @@ public class ZoneController : MonoBehaviour {
                 {
                     m_percentage -= amount;
 
-                    progressBar.fillAmount = m_percentage / m_startPercentage;
+                    progressBar.fillAmount = m_percentage / m_startPercentage;              
                 }
 
                 if (zone.owner == CaptureZoneActor.Owner.TEAM2)
@@ -54,5 +66,5 @@ public class ZoneController : MonoBehaviour {
                 progressTimer = progressTime;
             }
         }
-	}
+    }
 }
