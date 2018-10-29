@@ -1,7 +1,0 @@
-Helicopter_02 animation timings
-Frame 0 - 200 Idle and move
-Frame 420 - 470 Shoot
-Frame 471 - 530 Killshot
-Frame 536 - 631 Killshot 2
-Frame 640 - 720 Victory dance
-Frame 725 - 750 Hit

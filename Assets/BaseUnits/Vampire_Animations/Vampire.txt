@@ -1,5 +1,0 @@
-Vampire animation timings
-
-Frame 0 - 230 plane deployment and idle
-
-Frame 250 - 445 Enter
