@@ -1,0 +1,5 @@
+Crusaderanimation timings
+
+0-240 plane deploy idle
+250-528 roll up to club
+538-618 idle
