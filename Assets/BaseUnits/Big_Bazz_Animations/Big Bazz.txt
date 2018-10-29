@@ -1,0 +1,4 @@
+Big Bazz animation timings
+Frame 0 - 240 plane deployment and idle
+Frame 250 - 580 Enter
+Frame 600 - 700 idle 
