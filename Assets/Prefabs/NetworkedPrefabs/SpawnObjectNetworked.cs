@@ -15,10 +15,15 @@ public class SpawnObjectNetworked : NetworkBehaviour {
 		
 	}
 
-    [Command]
-    public void CmdSpawn(GameObject spawnThis)
+    //[Command]
+    //public void CmdSpawn(GameObject spawnThis)
+    //{
+    //   var go = (GameObject)Instantiate(spawnThis, transform.position, spawnThis.transform.rotation);
+    //   NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
+    //}
+
+    public void Spawn(GameObject spawnThis)
     {
-        var go = (GameObject)Instantiate(spawnThis, transform.position, spawnThis.transform.rotation);
-        NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
+        Instantiate(spawnThis, transform.position, spawnThis.transform.rotation);
     }
 }

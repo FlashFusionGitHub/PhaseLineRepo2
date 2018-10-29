@@ -384,7 +384,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702955134259948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4652281047441868}
@@ -411,7 +411,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188358325753606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4198758839095124}
@@ -563,11 +563,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1702955134259948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 441559c116b94914d89e5d91bd44fb33, type: 3}
+  m_Script: {fileID: 11500000, guid: de4e4a251e799a747b6c2c03879e75b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
-  wait: 0
+  wait: 2
+  tank: {fileID: 0}
   chickenSpeed: 5
   chickenChaseSpeed: 20
   chaseTimeout: 0
@@ -636,6 +637,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  friendZone: 50
 --- !u!137 &137039008315144374
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
