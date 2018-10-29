@@ -22,7 +22,7 @@ public class BaseAttributes : MonoBehaviour {
         if (team == Team.TEAM1)
         {
             selectedFactions.team1.bigBase.transform.position = new Vector3(398.8f, 87.8f, 407.5f);
-            selectedFactions.team1.bigBase.transform.Rotate(0f, -123.525f, 0f);
+            selectedFactions.team1.bigBase.transform.eulerAngles = new Vector3(0f, -123.525f, 0f);
 
             for (int i = 0; i < primaryRenderers.Length; i++)
                 primaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team1.primaryColour);
@@ -33,7 +33,7 @@ public class BaseAttributes : MonoBehaviour {
         else
         {
             selectedFactions.team2.bigBase.transform.position = new Vector3(-630.5f, 85.4f, -619.2f);
-            selectedFactions.team1.bigBase.transform.Rotate(0f, 47.225f, 0f);
+            selectedFactions.team2.bigBase.transform.eulerAngles = new Vector3(0f, -123.525f, 0f);
 
             for (int i = 0; i < primaryRenderers.Length; i++)
                 primaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team2.primaryColour);
