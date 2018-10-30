@@ -154,13 +154,15 @@ public class HangerSpawner : MonoBehaviour {
     {
         TroopActor ta = ObjectToSpawnAvaliable();
         lastSpawnedObject = ta.gameObject;
+        
+        ta.SetHealth(ta.maxHealth);
+        ta.killMeAfter = 0.5f;
+        ta.rankState = RankState.LookingForGeneral;
+        ta.transform.position = spawnPoint.position;
         if (ta.gameObject.activeInHierarchy == false)
         {
             ta.gameObject.SetActive(true);
         }
-        ta.SetHealth(ta.maxHealth);
-        ta.rankState = RankState.LookingForGeneral;
-        ta.transform.position = spawnPoint.position;
 
     }
     bool safeToClose()

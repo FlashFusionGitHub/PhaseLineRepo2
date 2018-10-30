@@ -17,11 +17,13 @@ public class SelectedFactions : MonoBehaviour {
         if(i == 0)
         {
             team1 = Instantiate(factionElement);
+            team1.SetTeam(Team.TEAM1);
             DontDestroyOnLoad(team1);
         }
         else
         {
             team2 = Instantiate(factionElement);
+            team2.SetTeam(Team.TEAM2);
             DontDestroyOnLoad(team2);
         }
     }

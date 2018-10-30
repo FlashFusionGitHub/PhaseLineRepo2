@@ -82,7 +82,7 @@ public class TroopActor : MonoBehaviour
     [SerializeField]
     public RankState rankState;
     [SerializeField] public TroopActor myGeneral;
-    float killMeAfter = 0.5f;
+    public float killMeAfter = 0.5f;
 
     [Header("Formation Settings")]
     [SerializeField]
@@ -204,6 +204,7 @@ public class TroopActor : MonoBehaviour
     {
         currentHealth = newHealth;
 
+        if (m_healthBar)
         m_healthBar.fillAmount = currentHealth / maxHealth;
     }
 
@@ -225,7 +226,7 @@ public class TroopActor : MonoBehaviour
     void Update()
     {
         RankAction();
-        if (rankState != RankState.dead || rankState != RankState.Base) 
+        if (rankState != RankState.dead && rankState != RankState.Base) 
         {
             Move();
             AttackClosestEnemy();
@@ -259,10 +260,15 @@ public class TroopActor : MonoBehaviour
                 killMeAfter -= Time.deltaTime;
             }
         }
-        if (rankState == RankState.dead && gameObject.activeInHierarchy)
+        if (rankState == RankState.dead)
         {
-            moveTarget.gameObject.SetActive(false);
+            if (moveTarget)
+                moveTarget.gameObject.SetActive(false);
             gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
         }
     }
 
@@ -558,18 +564,22 @@ public class TroopActor : MonoBehaviour
 
     void CreateMoveTarget()
     {
-         if (rankState == RankState.IsGeneral)
-         {
-             GameObject keepThisAlive = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
-             keepThisAlive.name = gameObject.name + "'s MoveTarget";
-             moveTarget = keepThisAlive.transform;
-         }
-         else
-         {
-             GameObject keepThisAlive = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
-             keepThisAlive.name = gameObject.name + "'s MoveTarget";
-             moveTarget = keepThisAlive.transform;
-         }
+        if (rankState == RankState.IsGeneral)
+        {
+            GameObject keepThisAlive = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
+            keepThisAlive.name = gameObject.name + "'s MoveTarget";
+            moveTarget = keepThisAlive.transform;
+        }
+        else if (rankState != RankState.dead && rankState != RankState.Base)
+        {
+            GameObject keepThisAlive = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
+            keepThisAlive.name = gameObject.name + "'s MoveTarget";
+            moveTarget = keepThisAlive.transform;
+        }
+        else
+        {
+
+        }
     }
 
     bool ClearLineOfSight()
@@ -662,7 +672,6 @@ public class TroopActor : MonoBehaviour
         if (ta.team == Team.TEAM2)
             op.team2Generals.Remove(ta);
 
-        gameObject.SetActive(false);
     }
 
     private void OnDrawGizmosSelected()
