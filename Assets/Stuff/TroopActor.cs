@@ -494,6 +494,18 @@ public class TroopActor : MonoBehaviour
         }
         return closestAlly;
     }
+
+    bool GeneralsRemaining()
+    {
+        foreach (TroopActor ta in op.allTroopActors)
+        {
+            if (ta != this && ta.team == team && ta.rankState == RankState.IsGeneral)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     bool EnemyInRange(Transform enemy, GunSettings gun)
     {
         if (Vector3.Distance(enemy.position, transform.position) > gun.attackRangeMin && Vector3.Distance(enemy.position, transform.position) < gun.attackRangeMax)
@@ -671,6 +683,14 @@ public class TroopActor : MonoBehaviour
 
         if (ta.team == Team.TEAM2)
             op.team2Generals.Remove(ta);
+
+        if (!GeneralsRemaining())
+        {
+            if (team == Team.TEAM1)
+                FindObjectOfType<FindWinner>().TriggerTeam2Win();
+            else
+                FindObjectOfType<FindWinner>().TriggerTeam1Win();
+        }
 
     }
 
