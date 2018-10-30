@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 114416249623719136}
   - component: {fileID: 114135683933073038}
   - component: {fileID: 82887525401435798}
+  - component: {fileID: 114223797219701092}
   m_Layer: 0
   m_Name: Tank - Team 2
   m_TagString: Untagged
@@ -1203,6 +1204,20 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c51297dfa6fe54f4fa08917071955fb7, type: 3}
     minPitch: 1
     maxPitch: 2
+--- !u!114 &114223797219701092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549349656298378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToGrow: 0.75
+  cursorParts: []
+  speedModifier: 0
 --- !u!114 &114416249623719136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1319,8 +1334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitClass: 0
   team: 2
-  strengths: 000000000100000002000000
-  vulnerabilities: 000000000100000002000000
+  strengths: 0000000001000000
+  vulnerabilities: 0000000002000000
   rankState: 2
   myGeneral: {fileID: 0}
   placementDirection: 1
@@ -1530,8 +1545,8 @@ MonoBehaviour:
   m_navAgent: {fileID: 0}
   avoidanceRange: 2
   guns:
-  - damage: 5
-    TimeBetweenShots: 1.5
+  - damage: 10
+    TimeBetweenShots: 4
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 8

@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 114728370764587786}
   - component: {fileID: 114435615270635950}
   - component: {fileID: 82198317433322094}
+  - component: {fileID: 114358704233068906}
   m_Layer: 0
   m_Name: Tank - Team 3
   m_TagString: Untagged
@@ -1151,6 +1152,20 @@ MonoBehaviour:
   method: 1
   generateOnAwake: 1
   generateNow: 0
+--- !u!114 &114358704233068906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549349656298378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToGrow: 0.75
+  cursorParts: []
+  speedModifier: 0
 --- !u!114 &114435615270635950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1323,8 +1338,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitClass: 0
   team: 1
-  strengths: 000000000100000002000000
-  vulnerabilities: 000000000100000002000000
+  strengths: 0000000001000000
+  vulnerabilities: 0000000002000000
   rankState: 2
   myGeneral: {fileID: 0}
   placementDirection: 1
@@ -1512,8 +1527,8 @@ MonoBehaviour:
   m_navAgent: {fileID: 0}
   avoidanceRange: 2
   guns:
-  - damage: 5
-    TimeBetweenShots: 1.5
+  - damage: 10
+    TimeBetweenShots: 4
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 8
