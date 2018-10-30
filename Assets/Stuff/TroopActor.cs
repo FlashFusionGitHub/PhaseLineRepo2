@@ -667,7 +667,6 @@ public class TroopActor : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-
         foreach (GunSettings gun in guns)
         {
             Gizmos.color = Color.grey;

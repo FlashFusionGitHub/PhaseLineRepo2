@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FindWinner : MonoBehaviour {
 
     public Text team1, team2;
-    public TweenAnimator tweenAnimator1, tweenAnimator2;
+    public TweenAnimator tweenAnimator1, tweenAnimator2, tweenAnimator3;
 
     ZoneController zoneController;
 
@@ -21,6 +21,8 @@ public class FindWinner : MonoBehaviour {
     public GameTimer gameTimer;
 
     int team1Score, team2Score;
+
+    bool isDraw;
 
     // Use this for initialization
     void Start () {
@@ -56,8 +58,7 @@ public class FindWinner : MonoBehaviour {
 
                 quitToMenuScreen.SetActive(true);
             }
-
-            if (winner == Team.TEAM2)
+            else if (winner == Team.TEAM2)
             {
                 team1.color = Color.red;
                 team1.text = "LOSER";
@@ -67,6 +68,21 @@ public class FindWinner : MonoBehaviour {
 
                 tweenAnimator1.TweenToInPos();
                 tweenAnimator2.TweenToInPos();
+
+                winnerFound = true;
+
+                for (int i = 0; i < componentsToDisable.Length; i++)
+                {
+                    componentsToDisable[i].SetActive(false);
+                }
+
+                Time.timeScale = 0;
+
+                quitToMenuScreen.SetActive(true);
+            }
+            else if(isDraw)
+            {
+                tweenAnimator3.TweenToInPos();
 
                 winnerFound = true;
 
@@ -94,9 +110,13 @@ public class FindWinner : MonoBehaviour {
             {
                 TriggerTeam1Win();
             }
-            else
+            else if(team2Score > team1Score)
             {
                 TriggerTeam2Win();
+            }
+            else
+            {
+                TriggerDraw();
             }
         }
     }
@@ -111,5 +131,11 @@ public class FindWinner : MonoBehaviour {
     {
         winnerFound = true;
         winner = Team.TEAM2;
+    }
+
+    public void TriggerDraw()
+    {
+        isDraw = true;
+        winnerFound = true;
     }
 }
