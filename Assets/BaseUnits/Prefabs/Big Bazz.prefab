@@ -158,6 +158,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4956482781398528}
+  - component: {fileID: 114970922915021254}
   m_Layer: 0
   m_Name: Big Bazz
   m_TagString: Untagged
@@ -4819,11 +4820,11 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376072016184044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 9a384b03254091847a71ad050e67f24f, type: 3}
   m_Controller: {fileID: 9100000, guid: c77e453ed706d06438b25ccdc387105a, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -5204,6 +5205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fab5e3a413c194492bc03a81ab5431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnStartDelay: 5
   spawnClass: 0
   team: 0
   spawnPoint: {fileID: 4972260898035796}
@@ -5400,6 +5402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fab5e3a413c194492bc03a81ab5431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnStartDelay: 5
   spawnClass: 2
   team: 0
   spawnPoint: {fileID: 4380431934799562}
@@ -5453,6 +5456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fab5e3a413c194492bc03a81ab5431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnStartDelay: 5
   spawnClass: 2
   team: 0
   spawnPoint: {fileID: 4543257761603574}
@@ -5579,6 +5583,23 @@ MonoBehaviour:
   method: 1
   generateOnAwake: 1
   generateNow: 0
+--- !u!114 &114970922915021254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1076353880644320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0ad14ecd0602142ac2b59e08f3bfc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerState: 0
+  spawnPoints: []
+  delayPerSpawnPoint: 2
+  timeBeforeSpawnStart: 5
+  timeBetweenSpawns: 4
+  timeStackPercent: 10
 --- !u!114 &114982029397518924
 MonoBehaviour:
   m_ObjectHideFlags: 1

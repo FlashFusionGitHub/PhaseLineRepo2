@@ -22,6 +22,8 @@ public class HangerSpawner : MonoBehaviour {
 
     }
 
+    public float SpawnStartDelay = 5f;
+    bool rdy = false;
     [Header("Spawn Stuff")]
     public UnitClasses spawnClass;
     public Team team;
@@ -42,11 +44,18 @@ public class HangerSpawner : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Invoke("makeReady", SpawnStartDelay);
         objectPool = FindObjectOfType<ObjectPool>();
 	}
-	
+
+    void makeReady()
+    {
+        rdy = true;
+    }
 	// Update is called once per frame
 	void Update () {
+        if (!rdy)
+            return;
         if (spawnWaiting)
         {
             CheckSpawn();

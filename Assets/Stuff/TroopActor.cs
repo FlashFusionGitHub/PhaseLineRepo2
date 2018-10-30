@@ -261,6 +261,7 @@ public class TroopActor : MonoBehaviour
         }
         if (rankState == RankState.dead && gameObject.activeInHierarchy)
         {
+            moveTarget.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
     }

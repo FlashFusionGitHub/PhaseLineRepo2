@@ -21,8 +21,7 @@ public class BaseAttributes : MonoBehaviour {
     void Start () {
         selectedFactions = FindObjectOfType<SelectedFactions>();
 
-        selectedFactions.team1.bigBase.SetActive(true);
-        selectedFactions.team2.bigBase.SetActive(true);
+      
 
         if (team == Team.TEAM1)
         {

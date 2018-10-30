@@ -15,6 +15,7 @@ public class GameStartCountDown : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        SAanim();
         countDownTimer = countDownTime;
         Time.timeScale = 0;
 
@@ -23,7 +24,21 @@ public class GameStartCountDown : MonoBehaviour {
             componentsToDisable[i].SetActive(false);
         }
 	}
-	
+
+    void SAanim()
+    {
+        GameObject b1 = FindObjectOfType<SelectedFactions>().team1.bigBase;
+        GameObject b2 = FindObjectOfType<SelectedFactions>().team2.bigBase;
+        
+        b1.SetActive(true);
+        b2.SetActive(true);
+      // Animator b1anim = b1.GetComponentInChildren<Animator>();
+      // Animator b2anim = b2.GetComponentInChildren<Animator>();
+      // b1anim.updateMode = AnimatorUpdateMode.UnscaledTime;
+      // b2anim.updateMode = AnimatorUpdateMode.UnscaledTime;
+       // Debug.Log("B1 =" + b1.name + ", " + b1anim.gameObject.name + ", b2 = " + b2.name + ", " + b2anim.gameObject.name);
+    }
+
 	// Update is called once per frame
 	void Update () {
 

@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 114682686798091202}
   - component: {fileID: 114892418884875850}
   - component: {fileID: 82671652486324034}
+  - component: {fileID: 114844797565031342}
   m_Layer: 0
   m_Name: Helicopter - Team 1
   m_TagString: Untagged
@@ -1230,7 +1231,7 @@ MonoBehaviour:
   team: 1
   strengths: 000000000100000002000000
   vulnerabilities: 0200000001000000
-  rankState: 2
+  rankState: 3
   myGeneral: {fileID: 0}
   placementDirection: 1
   numOfRows: 0
@@ -1472,7 +1473,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     barrelAimSpeed: 8
   - damage: 2.5
-    TimeBetweenShots: 1.5
+    TimeBetweenShots: 3
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 8
@@ -1732,6 +1733,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114844797565031342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216272378857494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToGrow: 0.75
+  cursorParts: []
+  speedModifier: 0
 --- !u!114 &114849906945443874
 MonoBehaviour:
   m_ObjectHideFlags: 1

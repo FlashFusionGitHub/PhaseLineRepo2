@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4471793048342926}
   - component: {fileID: 95109823791937520}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: oil_rig_hammeranimated_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4774073189282696}
   - component: {fileID: 33905524395213438}
   - component: {fileID: 23467616778214182}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pCube24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4612745907356298}
   - component: {fileID: 33095152365685878}
   - component: {fileID: 23697356835365738}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: polySurface5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4844052519559950}
   - component: {fileID: 33274437058270030}
   - component: {fileID: 23132558782685244}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,9 +84,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1453809885137972}
-  m_LocalRotation: {x: -0, y: 0.27232137, z: -0, w: 0.96220636}
-  m_LocalPosition: {x: 210.04602, y: -30.2, z: -315.24774}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.27232134, z: -0, w: 0.9622064}
+  m_LocalPosition: {x: -2.4206543, y: -204.11792, z: -7.8807983}
+  m_LocalScale: {x: 1.0029565, y: 1, z: 1.0029566}
   m_Children:
   - {fileID: 4774073189282696}
   - {fileID: 4844052519559950}

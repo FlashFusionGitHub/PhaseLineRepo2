@@ -23,7 +23,7 @@ public class SpawnAfterTime : MonoBehaviour {
 	void Start () {
         spawnerState = SpawnerStates.waiting;
         m_timer = timeBetweenSpawns;
-        spawnPoints = FindObjectsOfType<HangerSpawner>();
+        spawnPoints = GetComponentsInChildren<HangerSpawner>();
 	}
     void ResetSpawnTimer()
     {
