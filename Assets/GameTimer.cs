@@ -12,6 +12,8 @@ public class GameTimer : MonoBehaviour {
 
     public Image timerSlider;
 
+    public bool gameEnd;
+
     // Use this for initialization
     void Start () {
         matchTime *= 60;
@@ -24,10 +26,16 @@ public class GameTimer : MonoBehaviour {
 
 
     void UpdateTimer() {
+
         currentTime += Time.deltaTime;
 
         float percentage = currentTime / matchTime * 100;
 
         timerSlider.fillAmount = percentage / 100;
+
+        if(timerSlider.fillAmount >= 1.0f)
+        {
+            gameEnd = true;
+        }
     }
 }

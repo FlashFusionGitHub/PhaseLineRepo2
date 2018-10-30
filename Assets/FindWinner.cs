@@ -16,6 +16,12 @@ public class FindWinner : MonoBehaviour {
 
     public GameObject quitToMenuScreen;
 
+    Team winner;
+
+    public GameTimer gameTimer;
+
+    int team1Score, team2Score;
+
     // Use this for initialization
     void Start () {
         zoneController = FindObjectOfType<ZoneController>();
@@ -26,7 +32,9 @@ public class FindWinner : MonoBehaviour {
 
         if(!winnerFound)
         {
-            if (zoneController.winner == Team.TEAM1 && zoneController.loser == Team.TEAM2)
+            CalculateWinnerFromScore();
+
+            if (winner == Team.TEAM1)
             {
                 team1.color = Color.green;
                 team1.text = "WINNER";
@@ -49,7 +57,7 @@ public class FindWinner : MonoBehaviour {
                 quitToMenuScreen.SetActive(true);
             }
 
-            if (zoneController.winner == Team.TEAM2 && zoneController.loser == Team.TEAM1)
+            if (winner == Team.TEAM2)
             {
                 team1.color = Color.red;
                 team1.text = "LOSER";
@@ -78,13 +86,30 @@ public class FindWinner : MonoBehaviour {
         }
     }
 
-    void CalculateScore()
+    void CalculateWinnerFromScore()
     {
-
+        if(gameTimer.gameEnd)
+        {
+            if (team1Score > team2Score)
+            {
+                TriggerTeam1Win();
+            }
+            else
+            {
+                TriggerTeam2Win();
+            }
+        }
     }
 
-    public void TriggerWin()
+    public void TriggerTeam1Win()
     {
+        winnerFound = true;
+        winner = Team.TEAM1;
+    }
 
+    public void TriggerTeam2Win()
+    {
+        winnerFound = true;
+        winner = Team.TEAM2;
     }
 }

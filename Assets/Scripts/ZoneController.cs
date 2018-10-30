@@ -11,18 +11,15 @@ public class ZoneController : MonoBehaviour {
     public float progressTimer;
     public float progressTime = 10;
 
-    public float m_startPercentage = 100;
-    private float m_percentage;
+    public int team1Score, team2Score;
+    public Text team1ScoreText, team2ScoreText;
 
-    public float amount;
-
-    public Team winner, loser;
+    public int scoreAmount;
 
     // Use this for initialization
     void Start () {
 
         zones = GetComponentsInChildren<CaptureZoneActor>().ToList();
-        m_percentage = m_startPercentage / 2;
 	}
 	
 	// Update is called once per frame
@@ -39,20 +36,27 @@ public class ZoneController : MonoBehaviour {
 
                 if (zone.owner == CaptureZoneActor.Owner.TEAM1)
                 {
-                    m_percentage -= amount;
-
                     //add points to team 1
+                    team1Score += scoreAmount;
                 }
 
                 if (zone.owner == CaptureZoneActor.Owner.TEAM2)
                 {
-                    m_percentage += amount;
-
                     //add points to team 2
+                    team2Score += scoreAmount;
                 }
 
                 progressTimer = progressTime;
             }
+
+            UpdateScore();
         }
+    }
+
+
+    void UpdateScore()
+    {
+        team1ScoreText.text = team1Score.ToString();
+        team1ScoreText.text = team2Score.ToString();
     }
 }
