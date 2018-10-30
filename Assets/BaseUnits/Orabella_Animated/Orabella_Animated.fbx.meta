@@ -38,6 +38,8 @@ ModelImporter:
     100060: Rail_Gun_01
     100062: Rail_Gun_02
     100064: Rail_Gun_03
+    100066: Orabella_Body
+    100068: Orabella_Helicopter_Doors
     400000: //RootNode
     400002: Orabiella_Prop_01
     400004: Orabiella_Prop_02
@@ -71,6 +73,8 @@ ModelImporter:
     400060: Rail_Gun_01
     400062: Rail_Gun_02
     400064: Rail_Gun_03
+    400066: Orabella_Body
+    400068: Orabella_Helicopter_Doors
     2100000: lambert1
     2300000: Orabiella_Prop_01
     2300002: Orabiella_Prop_02
@@ -97,6 +101,8 @@ ModelImporter:
     2300044: Rail_Gun_01
     2300046: Rail_Gun_02
     2300048: Rail_Gun_03
+    2300050: Orabella_Body
+    2300052: Orabella_Helicopter_Doors
     3300000: Orabiella_Prop_01
     3300002: Orabiella_Prop_02
     3300004: Orabiella_Prop_03
@@ -122,6 +128,8 @@ ModelImporter:
     3300044: Rail_Gun_01
     3300046: Rail_Gun_02
     3300048: Rail_Gun_03
+    3300050: Orabella_Body
+    3300052: Orabella_Helicopter_Doors
     4300000: Orabiella_Prop_01
     4300002: Orabiella_Prop_02
     4300004: Orabiella_Prop_03
@@ -147,7 +155,11 @@ ModelImporter:
     4300044: pasted__pasted__Plane_01_Low
     4300046: pasted__pasted__pSphere4
     4300048: pasted__pasted__Plane_01_Low
-    7400000: Take 001
+    4300050: Orabella_Helicopter_Doors
+    4300052: Orabella_Body
+    7400000: Appear
+    7400002: Plane Deploy
+    7400004: Idle
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -175,7 +187,91 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Plane Deploy
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Appear
+      takeName: Take 001
+      firstFrame: 250
+      lastFrame: 450
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 450
+      lastFrame: 640
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
