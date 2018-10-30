@@ -1401,7 +1401,7 @@ MonoBehaviour:
   team: 2
   strengths: 000000000100000002000000
   vulnerabilities: 0200000001000000
-  rankState: 2
+  rankState: 3
   myGeneral: {fileID: 0}
   placementDirection: 1
   numOfRows: 0
