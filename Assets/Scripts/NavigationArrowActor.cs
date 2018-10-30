@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using InControl;
+using System.Linq;
 
 public enum Team { NONE, TEAM1, TEAM2 };
 
@@ -37,6 +38,7 @@ public class NavigationArrowActor : MonoBehaviour
     protected virtual void Start()
     {
         m_currentMarker = Instantiate(m_navMarker, new Vector3(0, 4, 0), Quaternion.identity);
+        airstrikes = new List<AirStrike>();
     }
 
     // Update is called once per frame
@@ -78,7 +80,8 @@ public class NavigationArrowActor : MonoBehaviour
 
     public void AirStrikeControls()
     {
-        /*if (m_controller.Action3.WasPressed && !m_airStrikeState && AirStrikeCount > 0)
+
+        if (m_controller.Action3.WasPressed && !m_airStrikeState && airstrikes.Count > 0)
         {
             EnableAirStrikeMarker();
         }
@@ -87,12 +90,43 @@ public class NavigationArrowActor : MonoBehaviour
             EnableNavigationMarker();
         }
 
-        if (m_airStrikeState && m_controller.Action1.WasPressed)
+        CaptureZoneActor nearestCaptureZone = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        foreach(AirStrike a in airstrikes)
         {
-            AirStrikeCount--;
+            if(a.captureZone != null)
+            {
+                Vector3 directionToTarget = a.captureZone.transform.position - m_currentMarker.transform.position;
+                float sqrToTarget = directionToTarget.sqrMagnitude;
+
+                if (sqrToTarget < closestDistanceSqr)
+                {
+                    closestDistanceSqr = sqrToTarget;
+                    nearestCaptureZone = a.captureZone;
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.G) && !m_airStrikeState && airstrikes.Count > 0)
+        {
+            EnableAirStrikeMarker();
+
+            Destroy(nearestCaptureZone.gameObject);
+            airstrikes.Remove(nearestCaptureZone.GetComponent<AirStrike>());
+
             Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
             EnableNavigationMarker();
-        }*/
+        }
+
+        if (m_airStrikeState && m_controller.Action1.WasPressed)
+        {
+
+            Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
+            EnableNavigationMarker();
+
+            airstrikes.Remove(nearestCaptureZone.airStrike);
+            Destroy(nearestCaptureZone.gameObject);
+        }
     }
 
     void EnableAirStrikeMarker()

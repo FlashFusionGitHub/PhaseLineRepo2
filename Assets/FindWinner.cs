@@ -77,4 +77,14 @@ public class FindWinner : MonoBehaviour {
             quitToMenuScreen.SetActive(true);
         }
     }
+
+    void CalculateScore()
+    {
+
+    }
+
+    public void TriggerWin()
+    {
+
+    }
 }

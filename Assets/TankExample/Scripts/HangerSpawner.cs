@@ -106,12 +106,13 @@ public class HangerSpawner : MonoBehaviour {
     }
     void UpdateDoors()
     {
-        foreach (HangerDoorData hangerDoor in m_hangerDoors)
-        { 
-			hangerDoor.m_hangerDoor.localPosition = Vector3.Lerp(hangerDoor.m_closedPos.localPosition, hangerDoor.m_openPos.localPosition, progress);
-			hangerDoor.m_hangerDoor.localScale = Vector3.Lerp(hangerDoor.m_closedPos.localScale, hangerDoor.m_openPos.localScale, progress);
-			hangerDoor.m_hangerDoor.localEulerAngles = Vector3.Lerp(hangerDoor.m_closedPos.localEulerAngles, hangerDoor.m_openPos.localEulerAngles, progress);
-        }
+        if(m_hangerDoors.Length > 0)
+            foreach (HangerDoorData hangerDoor in m_hangerDoors)
+            { 
+			    hangerDoor.m_hangerDoor.localPosition = Vector3.Lerp(hangerDoor.m_closedPos.localPosition, hangerDoor.m_openPos.localPosition, progress);
+			    hangerDoor.m_hangerDoor.localScale = Vector3.Lerp(hangerDoor.m_closedPos.localScale, hangerDoor.m_openPos.localScale, progress);
+			    hangerDoor.m_hangerDoor.localEulerAngles = Vector3.Lerp(hangerDoor.m_closedPos.localEulerAngles, hangerDoor.m_openPos.localEulerAngles, progress);
+            }
     }
 
     //------------------------------------------------------------------Spawn Voids-------------------------------------------------------------

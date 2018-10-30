@@ -8,8 +8,6 @@ public class ZoneController : MonoBehaviour {
 
     public List<CaptureZoneActor> zones;
 
-    public Image progressBar;
-
     public float progressTimer;
     public float progressTime = 10;
 
@@ -33,18 +31,8 @@ public class ZoneController : MonoBehaviour {
         foreach (CaptureZoneActor zone in zones)
         {
             progressTimer -= Time.deltaTime;
-            
-            if(progressBar.fillAmount >= 1.0f)
-            {
-                winner = Team.TEAM2;
-                loser = Team.TEAM1;
-            }
-            else if(progressBar.fillAmount <= 0.0f)
-            {
-                winner = Team.TEAM1;
-                loser = Team.TEAM2;
-            }
-            else if(progressTimer <= 0)
+           
+            if(progressTimer <= 0)
             {
                 if (zone.owner == CaptureZoneActor.Owner.NONE)
                     return;
@@ -53,14 +41,14 @@ public class ZoneController : MonoBehaviour {
                 {
                     m_percentage -= amount;
 
-                    progressBar.fillAmount = m_percentage / m_startPercentage;              
+                    //add points to team 1
                 }
 
                 if (zone.owner == CaptureZoneActor.Owner.TEAM2)
                 {
                     m_percentage += amount;
 
-                    progressBar.fillAmount = m_percentage / m_startPercentage;
+                    //add points to team 2
                 }
 
                 progressTimer = progressTime;

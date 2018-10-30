@@ -37,7 +37,6 @@ public class SoftNormalsToVertexColor : MonoBehaviour {
 			return;
 		}
 		Generate(mf.sharedMesh);
-		Debug.Log("Vertex colors generated", gameObject);
 	}
 
 	void Generate(Mesh m) {

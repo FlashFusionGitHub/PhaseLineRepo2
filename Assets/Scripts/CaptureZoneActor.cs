@@ -8,11 +8,11 @@ using System.Linq;
  to the player to give them an airstrike*/
 public struct AirStrike
 {
-    CaptureZoneActor captureZone; /*The capture zone where this airstrike was earned*/
+    public CaptureZoneActor captureZone; /*The capture zone where this airstrike was earned*/
 
-    public AirStrike(CaptureZoneActor theCaptureZone)
+    public AirStrike(CaptureZoneActor captureZoneActor)
     {
-        captureZone = theCaptureZone;
+        captureZone = captureZoneActor;
     }
 }
 
@@ -45,9 +45,12 @@ public class CaptureZoneActor : MonoBehaviour {
     public NavigationArrowActor team1;
     public NavigationArrowActor team2;
 
+    public AirStrike airStrike;
+
     // Use this for initialization
     void Start () {
-	}
+        airStrike = new AirStrike(this);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -79,7 +82,7 @@ public class CaptureZoneActor : MonoBehaviour {
                     if (capturePercentage >= 100)
                     {
                         owner = Owner.TEAM1;
-                        team1.airstrikes.Add(new AirStrike(this));
+                        team1.airstrikes.Add(airStrike);
                         onCaptureTeam1.Invoke(); //added event to plug in effects and sounds
                     }
                 }
@@ -123,7 +126,7 @@ public class CaptureZoneActor : MonoBehaviour {
                     if (capturePercentage >= 100)
                     {
                         owner = Owner.TEAM2;
-                        team2.airstrikes.Add(new AirStrike(this));
+                        team2.airstrikes.Add(airStrike);
                         onCaptureTeam2.Invoke(); //added Event to plug in effects and sounds
                     }
                 }
