@@ -130,6 +130,7 @@ public class HangerSpawner : MonoBehaviour {
     {
         if (doorState == DoorState.closed && ObjectToSpawnAvaliable())
         {
+            Debug.Log(this.spawnClass);
             SpawnObject();
             spawnWaiting = false;
             StartOpeningDoors();
