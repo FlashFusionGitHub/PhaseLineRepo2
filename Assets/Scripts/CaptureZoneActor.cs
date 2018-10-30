@@ -4,6 +4,18 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
+/*All the airstrike variables will be held in this class, simply add a new instance of the airstrike class
+ to the player to give them an airstrike*/
+public struct AirStrike
+{
+    CaptureZoneActor captureZone; /*The capture zone where this airstrike was earned*/
+
+    public AirStrike(CaptureZoneActor theCaptureZone)
+    {
+        captureZone = theCaptureZone;
+    }
+}
+
 public class CaptureZoneActor : MonoBehaviour {
 
     public enum Owner { NONE, TEAM1, TEAM2};
@@ -67,7 +79,7 @@ public class CaptureZoneActor : MonoBehaviour {
                     if (capturePercentage >= 100)
                     {
                         owner = Owner.TEAM1;
-                        team1.AirStrikeCount++;
+                        team1.airstrikes.Add(new AirStrike(this));
                         onCaptureTeam1.Invoke(); //added event to plug in effects and sounds
                     }
                 }
@@ -111,7 +123,7 @@ public class CaptureZoneActor : MonoBehaviour {
                     if (capturePercentage >= 100)
                     {
                         owner = Owner.TEAM2;
-                        team2.AirStrikeCount++;
+                        team2.airstrikes.Add(new AirStrike(this));
                         onCaptureTeam2.Invoke(); //added Event to plug in effects and sounds
                     }
                 }

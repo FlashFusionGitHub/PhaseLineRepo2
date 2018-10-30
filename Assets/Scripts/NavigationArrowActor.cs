@@ -27,7 +27,7 @@ public class NavigationArrowActor : MonoBehaviour
 
     public int playerIndex;
 
-    public int AirStrikeCount;
+    public List<AirStrike> airstrikes;
 
     public float floatValue = 1f;
 
@@ -78,7 +78,7 @@ public class NavigationArrowActor : MonoBehaviour
 
     public void AirStrikeControls()
     {
-        if (m_controller.Action3.WasPressed && !m_airStrikeState && AirStrikeCount > 0)
+        /*if (m_controller.Action3.WasPressed && !m_airStrikeState && AirStrikeCount > 0)
         {
             EnableAirStrikeMarker();
         }
@@ -92,7 +92,7 @@ public class NavigationArrowActor : MonoBehaviour
             AirStrikeCount--;
             Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
             EnableNavigationMarker();
-        }
+        }*/
     }
 
     void EnableAirStrikeMarker()
