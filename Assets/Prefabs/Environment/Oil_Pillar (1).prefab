@@ -9,46 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1675387303448242}
+  m_RootGameObject: {fileID: 1476082007676214}
   m_IsPrefabParent: 1
---- !u!1 &1675387303448242
+--- !u!1 &1476082007676214
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4267467645618104}
-  - component: {fileID: 33936606343954422}
-  - component: {fileID: 23293994040208450}
-  - component: {fileID: 95334902842923860}
-  - component: {fileID: 65935401374215452}
+  - component: {fileID: 4164850410332376}
+  - component: {fileID: 33090513840261302}
+  - component: {fileID: 23432324491333834}
+  - component: {fileID: 95761455923375604}
   m_Layer: 0
-  m_Name: pull_cart
+  m_Name: Oil_Pillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4267467645618104
+--- !u!4 &4164850410332376
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1675387303448242}
-  m_LocalRotation: {x: -0, y: 0.12206532, z: -0, w: 0.9925221}
-  m_LocalPosition: {x: 5.3179703, y: 4.7100067, z: 201.26991}
-  m_LocalScale: {x: 0.88585806, y: 0.8858579, z: 0.88585806}
+  m_GameObject: {fileID: 1476082007676214}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.700012, y: -204.55, z: 1.8999939}
+  m_LocalScale: {x: 1, y: 26.89449, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 64.023, z: 0}
---- !u!23 &23293994040208450
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23432324491333834
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1675387303448242}
+  m_GameObject: {fileID: 1476082007676214}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,8 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fca062006c51aaa49b1206a0d7397b68, type: 2}
-  - {fileID: 2100000, guid: fca062006c51aaa49b1206a0d7397b68, type: 2}
+  - {fileID: 2100000, guid: 857d21099ea762f489b8adc855e76000, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,38 +76,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33936606343954422
+--- !u!33 &33090513840261302
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1675387303448242}
-  m_Mesh: {fileID: 4300000, guid: f3c9417a0d8d6e54491c29e2dfb5892d, type: 3}
---- !u!65 &65935401374215452
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1675387303448242}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 12.351633, y: 7.258922, z: 22.337183}
-  m_Center: {x: -0.00000023841858, y: 0, z: 0}
---- !u!95 &95334902842923860
+  m_GameObject: {fileID: 1476082007676214}
+  m_Mesh: {fileID: 4300000, guid: 3670f821e503d934093d15c53a40a11f, type: 3}
+--- !u!95 &95761455923375604
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1675387303448242}
+  m_GameObject: {fileID: 1476082007676214}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f3c9417a0d8d6e54491c29e2dfb5892d, type: 3}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 3670f821e503d934093d15c53a40a11f, type: 3}
+  m_Controller: {fileID: 9100000, guid: 3f20bfaa30f8a3641b883a6520cd2b6e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

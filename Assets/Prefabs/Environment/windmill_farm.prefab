@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 4837999692849226}
   - component: {fileID: 33528604036661814}
   - component: {fileID: 23218919388351750}
+  - component: {fileID: 114595335592681100}
   m_Layer: 0
   m_Name: pCube32
   m_TagString: Untagged
@@ -99,7 +100,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1971375500689844}
-  m_LocalRotation: {x: -0, y: 0.65573525, z: -0, w: 0.754991}
+  m_LocalRotation: {x: -0, y: 0.9450593, z: -0, w: -0.3268991}
   m_LocalPosition: {x: -0.6, y: 27.412888, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -107,7 +108,7 @@ Transform:
   - {fileID: 4837999692849226}
   m_Father: {fileID: 4943261901181346}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 81.951004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 218.161, z: 0}
 --- !u!4 &4321170845793378
 Transform:
   m_ObjectHideFlags: 1
@@ -140,15 +141,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1676816996135738}
-  m_LocalRotation: {x: -0, y: 0.64630365, z: -0, w: 0.7630803}
-  m_LocalPosition: {x: -643.3778, y: -0.79999924, z: -171.94965}
+  m_LocalRotation: {x: -0, y: 0.17398681, z: -0, w: 0.984748}
+  m_LocalPosition: {x: -331.42938, y: 256.8699, z: 84.17209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4026052101791690}
   - {fileID: 4949497929655166}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 80.527, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 20.039001, z: 0}
 --- !u!4 &4949497929655166
 Transform:
   m_ObjectHideFlags: 1
@@ -303,3 +304,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114595335592681100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803245175289408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a637fbe790ace3e439e6a2e7928f93cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationSpeed: {x: 0, y: 0, z: 1.36}
