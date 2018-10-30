@@ -9,4 +9,40 @@ public class FactionElements : MonoBehaviour{
     public Color primaryColour;
     public Color secondaryColour;
     public GameObject bigBase;
+
+
+    public void SetTeam(Team t)
+    {
+        TroopActor ta = bigBase.GetComponentInChildren<TroopActor>();
+        HangerSpawner[] hangers = bigBase.GetComponentsInChildren<HangerSpawner>();
+        TriggerWin tw = bigBase.GetComponent<TriggerWin>();
+
+        if (ta)
+        {
+            ta.team = t;
+        }
+        else
+        {
+            Debug.LogWarning("please assign a Troop Actor Component to " + bigBase.name);
+        }
+        if (hangers.Length > 0)
+        {
+            foreach (HangerSpawner hanger in hangers)
+            {
+                hanger.team = t;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("please assign at least one HangerSpawner Component to " + bigBase.name);
+        }
+        if (tw)
+        {
+            tw.team = t;
+        }
+        else
+        {
+            Debug.LogWarning("please assign a TriggerWin Component to " + bigBase.name);
+        }
+    }
 }
