@@ -1,0 +1,7 @@
+newmtl map_3_piece_1001_AlbedoTransparency
+map_Kd map_3_piece_1001_AlbedoTransparency.tga
+map_Pm map_3_piece_1001_MetallicSmoothness.tga
+bump map_3_piece_1001_Normal.tga
+Kd 1 1 1
+d 1
+
