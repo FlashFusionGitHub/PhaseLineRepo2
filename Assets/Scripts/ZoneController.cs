@@ -49,12 +49,23 @@ public class ZoneController : MonoBehaviour {
                 progressTimer = progressTime;
             }
 
-            UpdateScore();
+            UpdateScoreText();
         }
     }
 
+    public void UpdatePlayer1Score(int amount)
+    {
+        team1Score += amount;
+        UpdateScoreText();
+    }
 
-    void UpdateScore()
+    public void UpdatePlayer2Score(int amount)
+    {
+        team2Score += amount;
+        UpdateScoreText();
+    }
+
+    public void UpdateScoreText()
     {
         team1ScoreText.text = team1Score.ToString();
         team1ScoreText.text = team2Score.ToString();
