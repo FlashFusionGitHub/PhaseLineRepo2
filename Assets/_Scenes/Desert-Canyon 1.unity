@@ -21180,7 +21180,7 @@ Prefab:
     - target: {fileID: 224540295835309846, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
         type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114605185568065486, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
         type: 2}
@@ -21195,7 +21195,7 @@ Prefab:
     - target: {fileID: 224967938882476852, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
         type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1702856842275342, guid: 3f6b28b1ae16c6e41be1348e878f75dd, type: 2}
       propertyPath: m_Name
@@ -39895,13 +39895,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 942662138}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -324, z: -79}
+  m_LocalRotation: {x: 0.61566144, y: 0, z: 0, w: 0.7880108}
+  m_LocalPosition: {x: 0, y: -9, z: -22.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1650903308}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 76.264, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 76, y: 0, z: 0}
 --- !u!114 &942662144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57159,6 +57159,8 @@ MonoBehaviour:
   changePosition: 0
   m_playerIndex: 1
   cameraSpeed: 500
+  camera: {fileID: 0}
+  offset: 0
 --- !u!4 &1410679704
 Transform:
   m_ObjectHideFlags: 0
@@ -66092,14 +66094,16 @@ MonoBehaviour:
   changePosition: 0
   m_playerIndex: 0
   cameraSpeed: 500
+  camera: {fileID: 942662141}
+  offset: 5
 --- !u!4 &1650903308
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1650903306}
-  m_LocalRotation: {x: 0.6174778, y: -0, z: -0, w: 0.7865884}
-  m_LocalPosition: {x: 0, y: 1200, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 339.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 942662142}

@@ -41,7 +41,7 @@ public class TroopController : MonoBehaviour {
             m_generals = op.team2Generals;
 
         m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
-        cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z);
+        cameraController.MoveCameraTo(m_generals[index].transform.position);
     }
 
     // Update is called once per frame
@@ -97,12 +97,12 @@ public class TroopController : MonoBehaviour {
     {
         if (m_controller.RightStickButton.WasPressed)
         {
-            cameraController.MoveCameraTo(m_navigationArrowActor.m_currentMarker.transform.position.x, m_navigationArrowActor.m_currentMarker.transform.position.z);
+            cameraController.MoveCameraTo(m_navigationArrowActor.m_currentMarker.transform.position);
         }
 
         if (m_controller.LeftStickButton.WasPressed)
         {
-            cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z);
+            cameraController.MoveCameraTo(m_generals[index].transform.position);
         }
     }
 
@@ -113,7 +113,7 @@ public class TroopController : MonoBehaviour {
             if (index >= m_generals.Count)
                 index = 0;
 
-            cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z - 10);
+            cameraController.MoveCameraTo(m_generals[index].transform.position);
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
         }
@@ -123,7 +123,7 @@ public class TroopController : MonoBehaviour {
 
             index--;
 
-            cameraController.MoveCameraTo(m_generals[index].transform.position.x, m_generals[index].transform.position.z - 10);
+            cameraController.MoveCameraTo(m_generals[index].transform.position);
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
         }

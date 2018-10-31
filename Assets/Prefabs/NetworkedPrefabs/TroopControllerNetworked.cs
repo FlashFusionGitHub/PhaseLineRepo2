@@ -98,12 +98,12 @@ public class TroopControllerNetworked : NetworkBehaviour {
         if (moveToSwitch)
         {
             moveToSwitch = false;
-            cameraController.MoveCameraTo(m_generals[tankIndex].transform.position.x, m_generals[tankIndex].transform.position.z);
+            cameraController.MoveCameraTo(m_generals[tankIndex].transform.position);
         }
         else
         {
             moveToSwitch = true;
-            cameraController.MoveCameraTo(m_nmn.m_currentMarker.transform.position.x, m_nmn.m_currentMarker.transform.position.z);
+            cameraController.MoveCameraTo(m_nmn.m_currentMarker.transform.position);
         }
     }
 
@@ -116,7 +116,7 @@ public class TroopControllerNetworked : NetworkBehaviour {
             if (tankIndex >= m_generals.Count)
                 tankIndex = 0;
 
-            cameraController.MoveCameraTo(m_generals[tankIndex].transform.position.x, m_generals[tankIndex].transform.position.z - 10);
+            cameraController.MoveCameraTo(m_generals[tankIndex].transform.position);
 
             currentSelectionCircle = Instantiate(selectionCircle, m_generals[tankIndex].transform.position, Quaternion.Euler(-90, 0, 0));
         }
@@ -127,7 +127,7 @@ public class TroopControllerNetworked : NetworkBehaviour {
 
             tankIndex--;
 
-            cameraController.MoveCameraTo(m_generals[tankIndex].transform.position.x, m_generals[tankIndex].transform.position.z - 10);
+            cameraController.MoveCameraTo(m_generals[tankIndex].transform.position);
 
             currentSelectionCircle = Instantiate(selectionCircle, m_generals[tankIndex].transform.position, Quaternion.Euler(-90, 0, 0));
         }

@@ -22,13 +22,17 @@ public class CameraController : MonoBehaviour {
 
 	public float cameraSpeed;
 
+    public Camera camera;
+
+    public float offset;
+
     // Use this for initialization
-    protected virtual void Start () {
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	protected virtual void Update () {
+	void Update () {
 
         try
         {
@@ -73,9 +77,17 @@ public class CameraController : MonoBehaviour {
         }
     }
 
-    public void MoveCameraTo(float x, float z)
+
+    public void MoveCameraTo(Vector3 targetPos)
     {
         changePosition = true;
-        position = new Vector3(x, transform.position.y, z);
+
+        Vector3 oldPos = transform.position;
+        Vector3 fwd = camera.transform.forward;
+
+        position = new Vector3(
+            targetPos.x + fwd.x / fwd.y * (oldPos.y - targetPos.y),
+            oldPos.y,
+            targetPos.z + fwd.z / fwd.y * (oldPos.y - targetPos.y));
     }
 }
