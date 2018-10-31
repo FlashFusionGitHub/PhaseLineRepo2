@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4328234619697034}
   - component: {fileID: 95312891055109636}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capture_Zone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1202386118212914
 GameObject:
@@ -39,12 +39,12 @@ GameObject:
   - component: {fileID: 114722832837252226}
   - component: {fileID: 114510312713064294}
   - component: {fileID: 114637930943241648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CaptureZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1382803630772482
 GameObject:
@@ -56,12 +56,12 @@ GameObject:
   - component: {fileID: 4186778059112370}
   - component: {fileID: 198067348016761816}
   - component: {fileID: 199226002905323916}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CaptureParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!1 &1405290922472744
 GameObject:
@@ -73,12 +73,12 @@ GameObject:
   - component: {fileID: 4988496171488446}
   - component: {fileID: 33165425394436544}
   - component: {fileID: 23745933099192054}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ground_Sphere_GEO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 4294967287
   m_IsActive: 1
 --- !u!1 &1620018648792192
 GameObject:
@@ -92,12 +92,12 @@ GameObject:
   - component: {fileID: 23067615395065598}
   - component: {fileID: 208367322417624588}
   - component: {fileID: 136744354363592244}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flag_Pole_GEO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1768381050455860
 GameObject:
@@ -110,12 +110,12 @@ GameObject:
   - component: {fileID: 33836810915955960}
   - component: {fileID: 23200406371812376}
   - component: {fileID: 95247114439876470}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: capture_moretirs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1873904365859586
 GameObject:
@@ -127,12 +127,12 @@ GameObject:
   - component: {fileID: 4869719332724724}
   - component: {fileID: 33329451336005546}
   - component: {fileID: 23799789406365260}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flag_GEO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4186778059112370
 Transform:
@@ -167,7 +167,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202386118212914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 308, y: 22.28, z: 9}
+  m_LocalPosition: {x: 157.724, y: -29, z: -246.01878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4328234619697034}
