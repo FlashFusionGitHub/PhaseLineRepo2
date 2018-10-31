@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1145978143985122
 GameObject:
   m_ObjectHideFlags: 1
@@ -266,7 +266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1446288826004056
 GameObject:
   m_ObjectHideFlags: 1
@@ -354,6 +354,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1549823708649398
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4206072618932166}
+  - component: {fileID: 114595807282925474}
+  m_Layer: 0
+  m_Name: tankSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1618779067393702
 GameObject:
   m_ObjectHideFlags: 1
@@ -421,7 +437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1733974106289002
 GameObject:
   m_ObjectHideFlags: 1
@@ -432,7 +448,7 @@ GameObject:
   - component: {fileID: 4200582072451708}
   - component: {fileID: 114667512245088970}
   m_Layer: 0
-  m_Name: tankSpawner
+  m_Name: AATank Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1795291810426740
 GameObject:
   m_ObjectHideFlags: 1
@@ -471,7 +487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1805361932333660
 GameObject:
   m_ObjectHideFlags: 1
@@ -752,6 +768,19 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733974106289002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.4, z: 443.9}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 4911249572917130}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4206072618932166
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549823708649398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 9.4, z: 443.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -996,8 +1025,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4200582072451708}
+  - {fileID: 4206072618932166}
   - {fileID: 4594191240566398}
+  - {fileID: 4200582072451708}
   m_Father: {fileID: 4915209552523122}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2068,6 +2098,29 @@ MonoBehaviour:
   method: 1
   generateOnAwake: 1
   generateNow: 0
+--- !u!114 &114595807282925474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549823708649398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fab5e3a413c194492bc03a81ab5431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnStartDelay: 5
+  spawnClass: 0
+  team: 0
+  spawnPoint: {fileID: 4206072618932166}
+  lastSpawnedObject: {fileID: 0}
+  disBeforeNextSpawn: 25
+  spawnWaiting: 0
+  m_hangerDoors: []
+  doorState: 0
+  m_doorOpenTime: 0
+  m_doorCloseTime: 0
+  objectPool: {fileID: 0}
 --- !u!114 &114596869936367036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2122,7 +2175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnStartDelay: 5
-  spawnClass: 0
+  spawnClass: 1
   team: 0
   spawnPoint: {fileID: 4200582072451708}
   lastSpawnedObject: {fileID: 0}
@@ -2167,7 +2220,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1932333597723886}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af0ad14ecd0602142ac2b59e08f3bfc0, type: 3}
   m_Name: 
@@ -2178,6 +2231,8 @@ MonoBehaviour:
   timeBeforeSpawnStart: 5
   timeBetweenSpawns: 4
   timeStackPercent: 10
+  playerIndex: 0
+  unitTypeImage: {fileID: 0}
 --- !u!114 &114748967443737888
 MonoBehaviour:
   m_ObjectHideFlags: 1

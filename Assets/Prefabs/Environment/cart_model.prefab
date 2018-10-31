@@ -23,13 +23,13 @@ GameObject:
   - component: {fileID: 23082303134573396}
   - component: {fileID: 95913965073350138}
   - component: {fileID: 65811247555984224}
-  - component: {fileID: 65626658254544630}
-  m_Layer: 0
+  - component: {fileID: 208261357005261764}
+  m_Layer: 11
   m_Name: cart_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 58
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4743217461168688
 Transform:
@@ -37,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1789267540944086}
-  m_LocalRotation: {x: -0, y: -0.8152206, z: -0, w: 0.5791507}
-  m_LocalPosition: {x: 11.319103, y: -29.784, z: -13.893091}
-  m_LocalScale: {x: 0.67282057, y: 0.6728199, z: 0.67282057}
+  m_LocalRotation: {x: 0.0073558637, y: 0.98030686, z: 0.006969377, w: -0.19722033}
+  m_LocalPosition: {x: -8.822266, y: -199.88324, z: 62.14299}
+  m_LocalScale: {x: 0.91586035, y: 0.9158581, z: 0.9158608}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -6.689, y: -109.218, z: -6.0160003}
+  m_LocalEulerAnglesHint: {x: -0.94900006, y: -248.922, z: 0.669}
 --- !u!23 &23082303134573396
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -85,18 +85,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1789267540944086}
   m_Mesh: {fileID: 4300000, guid: f0564006fd94a824aa8590ca742a215e, type: 3}
---- !u!65 &65626658254544630
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1789267540944086}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 13.96785, y: 11.541797, z: 35.06857}
-  m_Center: {x: 0, y: 0, z: -0.0000019073486}
 --- !u!65 &65811247555984224
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -126,3 +114,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!208 &208261357005261764
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1789267540944086}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 6.984, y: 5.7710004, z: 17.534}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

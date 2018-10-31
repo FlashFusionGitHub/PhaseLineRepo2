@@ -686,14 +686,28 @@ public class TroopActor : MonoBehaviour
 
         if (!GeneralsRemaining())
         {
+            Invoke("Victory", 2f);
             if (team == Team.TEAM1)
                 FindObjectOfType<FindWinner>().TriggerTeam2Win();
             else
                 FindObjectOfType<FindWinner>().TriggerTeam1Win();
         }
 
-    }
 
+    }
+    void Victory()
+    {
+        foreach (TroopActor ta in op.allTroopActors)
+        {
+            if (ta.team == FindObjectOfType<FindWinner>().winner && ta.rankState != RankState.dead && ta.rankState != RankState.Base)
+            {
+                foreach (Animator anim in ta.gameObject.GetComponentsInChildren<Animator>())
+                {
+                    anim.SetTrigger("Win");
+                }
+            }
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         foreach (GunSettings gun in guns)

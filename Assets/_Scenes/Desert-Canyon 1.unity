@@ -15503,7 +15503,7 @@ Prefab:
     - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
         type: 2}
       propertyPath: rankState
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
         type: 2}
@@ -15760,7 +15760,7 @@ MonoBehaviour:
   team2Score: 0
   team1ScoreText: {fileID: 1742552784}
   team2ScoreText: {fileID: 1513626137}
-  scoreAmount: 0
+  scoreAmount: 10
 --- !u!4 &430850487
 Transform:
   m_ObjectHideFlags: 0
@@ -18731,7 +18731,7 @@ Prefab:
     - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
         type: 2}
       propertyPath: rankState
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
         type: 2}
@@ -21239,6 +21239,16 @@ Prefab:
     - target: {fileID: 224540295835309846, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
         type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82383717377145920, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82833154449254444, guid: 3f6b28b1ae16c6e41be1348e878f75dd,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -24368,7 +24378,7 @@ Prefab:
     - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
         type: 2}
       propertyPath: rankState
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
         type: 2}
@@ -33254,6 +33264,11 @@ Prefab:
     - target: {fileID: 1549349656298378, guid: bd03ec4186ef83441a76f853939d9bae, type: 2}
       propertyPath: m_Name
       value: Tank - Team 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114672209314383648, guid: bd03ec4186ef83441a76f853939d9bae,
+        type: 2}
+      propertyPath: rankState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd03ec4186ef83441a76f853939d9bae, type: 2}
@@ -43974,7 +43989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bd23048e2faf1e4491b4d1dcf6991de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matchTime: 30
+  matchTime: 10
   timerSlider: {fileID: 1901338340}
   gameEnd: 0
 --- !u!1001 &1046953297
@@ -69193,6 +69208,11 @@ Prefab:
     - target: {fileID: 1549349656298378, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}
       propertyPath: m_Name
       value: Tank - Team 3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114672209314383648, guid: 21fe49271ad6e8e4ba5540053585f384,
+        type: 2}
+      propertyPath: rankState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}

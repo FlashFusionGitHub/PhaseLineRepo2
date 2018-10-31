@@ -11,12 +11,13 @@ public class FindWinner : MonoBehaviour {
     ZoneController zoneController;
 
     bool winnerFound;
+    bool winnerCalled = false;
 
     public GameObject[] componentsToDisable;
 
     public GameObject quitToMenuScreen;
 
-    Team winner;
+    public Team winner;
 
     public GameTimer gameTimer;
 
@@ -32,8 +33,12 @@ public class FindWinner : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        if(!winnerFound)
+        if(!winnerFound || winnerCalled == true)
         {
+            if (winnerCalled)
+            {
+                winnerCalled = false;
+            }
             CalculateWinnerFromScore();
 
             if (winner == Team.TEAM1)
@@ -54,7 +59,7 @@ public class FindWinner : MonoBehaviour {
                     componentsToDisable[i].SetActive(false);
                 }
 
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
 
                 quitToMenuScreen.SetActive(true);
             }
@@ -76,7 +81,7 @@ public class FindWinner : MonoBehaviour {
                     componentsToDisable[i].SetActive(false);
                 }
 
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
 
                 quitToMenuScreen.SetActive(true);
             }
@@ -91,12 +96,12 @@ public class FindWinner : MonoBehaviour {
                     componentsToDisable[i].SetActive(false);
                 }
 
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
 
                 quitToMenuScreen.SetActive(true);
             }
         }
-        else
+        else if (winnerFound)
         {
             quitToMenuScreen.SetActive(true);
         }
@@ -123,14 +128,18 @@ public class FindWinner : MonoBehaviour {
 
     public void TriggerTeam1Win()
     {
-        winnerFound = true;
         winner = Team.TEAM1;
+        winnerFound = true;
+        winnerCalled = true;
+        
     }
 
     public void TriggerTeam2Win()
     {
-        winnerFound = true;
         winner = Team.TEAM2;
+        winnerFound = true;
+        winnerCalled = true;
+        
     }
 
     public void TriggerDraw()

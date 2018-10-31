@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 114906986293504656}
   - component: {fileID: 82878355142207504}
   - component: {fileID: 114665709982304332}
+  - component: {fileID: 114137471451608820}
   m_Layer: 0
   m_Name: Helicopter - Team 2
   m_TagString: Untagged
@@ -1202,6 +1203,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114137471451608820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549761659609668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba639afd6f6af9248965917464d4e3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zc: {fileID: 0}
 --- !u!114 &114219848056920174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1403,6 +1416,7 @@ MonoBehaviour:
   vulnerabilities: 0200000001000000
   rankState: 3
   myGeneral: {fileID: 0}
+  killMeAfter: 0.5
   placementDirection: 1
   numOfRows: 0
   maxNumOfColumns: 3
@@ -1536,10 +1550,21 @@ MonoBehaviour:
         m_MethodName: Spawn
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1834409643084570, guid: f776538b13c4a3d458e85caf99a8c118,
+          m_ObjectArgument: {fileID: 1378734515160750, guid: 70c418343841d4143a26d57d87ca5a81,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114137471451608820}
+        m_MethodName: UpdateScoreTeam2
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1657,8 +1682,8 @@ MonoBehaviour:
     TimeBetweenShots: 3
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
-    attackRangeMin: 8
-    attackRangeMax: 40
+    attackRangeMin: 10
+    attackRangeMax: 50
     attackTarget: {fileID: 0}
     turret: {fileID: 4149038935221614}
     turretAimSpeed: 2
