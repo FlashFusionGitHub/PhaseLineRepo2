@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class Pause : MonoBehaviour {
 
-    InputDevice m_controller;
+    Controller m_controller;
 
     public GameObject m_pausePanel;
 
@@ -22,20 +22,28 @@ public class Pause : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        try
+
+        if(m_controller == null)
         {
-            m_controller = InputManager.Devices[playerIndex];
-        }
-        catch (System.Exception)
-        {
-            return;
+            foreach (Controller c in FindObjectsOfType<Controller>())
+            {
+                if (playerIndex == 0 && c.m_playerIndex == 0)
+                {
+                    m_controller = c;
+                }
+
+                if (playerIndex == 1 && c.m_playerIndex == 1)
+                {
+                    m_controller = c;
+                }
+            }
         }
 
         if (Time.timeScale == 0)
             return;
         else
         {
-            if (m_controller.MenuWasPressed)
+            if (m_controller.MenuWasPress())
             {
                 PauseGame();
             }

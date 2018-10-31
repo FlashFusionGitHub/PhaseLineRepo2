@@ -76,7 +76,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
             selected_Factions.SetFactionElement(0, masks[num].GetComponent<FactionElements>());
             DontDestroyOnLoad(masks[num].GetComponent<FactionElements>().commentator);
             DontDestroyOnLoad(masks[num].GetComponent<FactionElements>().bigBase);
-            cursor.playerIndex = 1;
+            cursor.SwapController();
             cursorText.text = "P2";
         }
         if (player == Player.player2)

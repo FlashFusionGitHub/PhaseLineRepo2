@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InControl;
 
 public class TroopController : MonoBehaviour {
 
@@ -14,13 +13,13 @@ public class TroopController : MonoBehaviour {
 
     List<CaptureZoneActor> zonesCaptured;
 
-    protected InputDevice m_controller;
+    protected Controller m_controller;
 
     public NavigationArrowActor m_navigationArrowActor;
 
     public CameraController cameraController;
 
-    public int playerIndex;
+    public Team team;
 
     public ObjectPool op;
 
@@ -37,9 +36,9 @@ public class TroopController : MonoBehaviour {
 
         op = FindObjectOfType<ObjectPool>();
 
-        if (playerIndex == 0)
+        if (team == Team.TEAM1)
             m_generals = op.team1Generals;
-        if (playerIndex == 1)
+        if (team == Team.TEAM2)
             m_generals = op.team2Generals;
 
         m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
@@ -52,13 +51,20 @@ public class TroopController : MonoBehaviour {
     // Update is called once per frame
     protected virtual void Update () {
 
-        try
+        if(m_controller == null)
         {
-            m_controller = InputManager.Devices[playerIndex];
-        }
-        catch (System.Exception)
-        {
-            return;
+            foreach (Controller c in FindObjectsOfType<Controller>())
+            {
+                if (team == Team.TEAM1 && c.m_playerIndex == 0)
+                {
+                    m_controller = c;
+                }
+
+                if (team == Team.TEAM2 && c.m_playerIndex == 1)
+                {
+                    m_controller = c;
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.A) && m_generals.Count > 0) {
@@ -72,7 +78,7 @@ public class TroopController : MonoBehaviour {
 
         QuickSelect();
 
-        if (m_controller.DPadLeft.WasPressed && m_generals.Count > 1) {
+        if (m_controller.DpadLeftWasPress() && m_generals.Count > 1) {
             //destroy the currect circle
             if (m_currentSelectionCircle != null)
                 Destroy(m_currentSelectionCircle);
@@ -80,7 +86,7 @@ public class TroopController : MonoBehaviour {
             CheckGeneralState(false, true);
         }
 
-        if (m_controller.DPadRight.WasPressed && m_generals.Count > 1) {
+        if (m_controller.DpadRightWasPress() && m_generals.Count > 1) {
             //destory the currect circle
             if (m_currentSelectionCircle != null)
                 Destroy(m_currentSelectionCircle);
@@ -88,7 +94,7 @@ public class TroopController : MonoBehaviour {
             CheckGeneralState(true, false);
         }
 
-        if (m_controller.Action1.WasPressed && !m_navigationArrowActor.m_airStrikeState)
+        if (m_controller.Action1WasPress() && !m_navigationArrowActor.m_airStrikeState)
         {
             m_generals[index].moveTarget.transform.position = m_navigationArrowActor.m_currentMarker.transform.position;
             m_generals[index].moveTarget.transform.rotation = m_navigationArrowActor.m_currentMarker.transform.rotation;
@@ -100,12 +106,12 @@ public class TroopController : MonoBehaviour {
 
     void QuickSelect()
     {
-        if (m_controller.RightStickButton.WasPressed)
+        if (m_controller.RightStickButton())
         {
             cameraController.MoveCameraTo(m_navigationArrowActor.m_currentMarker.transform.position);
         }
 
-        if (m_controller.LeftStickButton.WasPressed)
+        if (m_controller.LeftStickButton())
         {
             cameraController.MoveCameraTo(m_generals[index].transform.position);
         }

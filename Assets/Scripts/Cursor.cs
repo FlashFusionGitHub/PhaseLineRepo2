@@ -1,35 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InControl;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Cursor : MonoBehaviour
 {
-    public InputDevice m_controller;
-
     PointerEventData pointer;
 
-    public int playerIndex;
+    Controller[] m_controllers;
+
+    Controller m_controller;
 
     // Use this for initialization
     void Start()
     {
+        m_controllers = FindObjectsOfType<Controller>();
+        m_controller = m_controllers[0];
     }
 
     void Update()
     {
-        try
-        {
-            m_controller = InputManager.Devices[playerIndex];
-        }
-        catch (System.Exception)
-        {
-            return;
-        }
 
-        transform.position += new Vector3(m_controller.LeftStickX, m_controller.LeftStickY, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
+       transform.position += new Vector3(m_controller.RightAnalogStick().X, m_controller.RightAnalogStick().Y, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
 
         float markerXPos = Mathf.Clamp(transform.position.x, 0, Screen.width);
         float markerYPos = Mathf.Clamp(transform.position.y, 0, Screen.height);
@@ -62,7 +55,7 @@ public class Cursor : MonoBehaviour
             raycasts.Add(cur.gameObject);
 
             // button presses
-            if (m_controller.Action1.WasPressed)
+            if (m_controller.Action1WasPress())
             {
                 ExecuteEvents.Execute(cur.gameObject, pointer, ExecuteEvents.pointerClickHandler);
             }
@@ -81,5 +74,17 @@ public class Cursor : MonoBehaviour
 
         // store this for comparison next frame
         oldRaycasts = raycasts;
+    }
+
+    public void SwapController()
+    {
+        if(m_controller == m_controllers[0])
+        {
+            m_controller = m_controllers[1];
+        }
+        else
+        {
+            m_controller = m_controllers[0];
+        }
     }
 }

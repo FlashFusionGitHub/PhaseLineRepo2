@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InControl;
 
 public class CameraController : MonoBehaviour {
 
@@ -16,7 +15,7 @@ public class CameraController : MonoBehaviour {
 
     public bool changePosition;
 
-    public InputDevice m_controller;
+    public Controller m_controller;
 
     public int m_playerIndex;
 
@@ -28,19 +27,25 @@ public class CameraController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        try
+        if(m_controller == null)
         {
-            m_controller = InputManager.Devices[m_playerIndex];
-        }
-        catch (System.Exception)
-        {
-            return;
+            foreach (Controller c in FindObjectsOfType<Controller>())
+            {
+                if (m_playerIndex == 0 && c.m_playerIndex == 0)
+                {
+                    m_controller = c;
+                }
+
+                if (m_playerIndex == 1 && c.m_playerIndex == 1)
+                {
+                    m_controller = c;
+                }
+            }
         }
 
         if (!changePosition)
@@ -48,9 +53,9 @@ public class CameraController : MonoBehaviour {
             float x = transform.position.x;
             float z = transform.position.z;
 
-            if (m_controller.RightTrigger.IsPressed)
+            if (m_controller.RightTriggerIsHeld())
             {
-				transform.position += new Vector3(0, -m_controller.RightStickY * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000), m_controller.RightStickY * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
+				transform.position += new Vector3(0, -m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000), m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
 
                 float zoomY = Mathf.Clamp(transform.position.y, m_MinZoomY, m_MaxZoomY);
 
@@ -58,7 +63,7 @@ public class CameraController : MonoBehaviour {
             }
             else
             {
-				this.transform.position += new Vector3(m_controller.RightStickX * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000), 0, m_controller.RightStickY * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
+				this.transform.position += new Vector3(m_controller.RightAnalogStick().X * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000), 0, m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
 
                 float panX = Mathf.Clamp(transform.position.x, m_MinPanX, m_MaxPanX);
                 float panZ = Mathf.Clamp(transform.position.z, m_MinPanZ, m_MaxPanZ);

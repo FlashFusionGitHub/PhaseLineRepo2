@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InControl;
 using System.Linq;
 
 public enum Team { NONE, TEAM1, TEAM2 };
@@ -20,13 +19,13 @@ public class NavigationArrowActor : MonoBehaviour
 
     public Team m_team;
 
+    public int playerIndex;
+
     public GameObject m_currentMarker;
 
     public bool m_airStrikeState;
 
-    protected InputDevice m_controller;
-
-    public int playerIndex;
+    protected Controller m_controller;
 
     public List<AirStrike> airstrikes;
 
@@ -54,13 +53,20 @@ public class NavigationArrowActor : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        try
+        if(m_controller == null)
         {
-            m_controller = InputManager.Devices[playerIndex];
-        }
-        catch(System.Exception)
-        {
-            return;
+            foreach (Controller c in FindObjectsOfType<Controller>())
+            {
+                if (playerIndex == 0 && c.m_playerIndex == 0)
+                {
+                    m_controller = c;
+                }
+
+                if (playerIndex == 1 && c.m_playerIndex == 1)
+                {
+                    m_controller = c;
+                }
+            }
         }
 
         if (prevPos.parent != troopController.currentSelectedUnit.transform)
@@ -85,12 +91,12 @@ public class NavigationArrowActor : MonoBehaviour
             {
                 Debug.DrawLine(new Vector3(objPos.x, 500, objPos.z), hit.point);
                 m_currentMarker.transform.Translate(0, (floatValue - hit.distance), 0);
-                m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
+                m_currentMarker.transform.position += new Vector3(m_controller.LeftAnalogStick().X, 0, m_controller.LeftAnalogStick().Y) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
                 m_currentMarker.transform.position = new Vector3(m_currentMarker.transform.position.x, hit.point.y, m_currentMarker.transform.position.z);
             }
             else
             {
-                m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
+                m_currentMarker.transform.position += new Vector3(m_controller.LeftAnalogStick().X, 0, m_controller.LeftAnalogStick().Y) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
             }
 
             prevPos.position = m_currentMarker.transform.position;
@@ -112,11 +118,11 @@ public class NavigationArrowActor : MonoBehaviour
     public void AirStrikeControls()
     {
 
-        if (m_controller.Action3.WasPressed && !m_airStrikeState && airstrikes.Count > 0)
+        if (m_controller.Action3WasPress() && !m_airStrikeState && airstrikes.Count > 0)
         {
             EnableAirStrikeMarker();
         }
-        else if (m_controller.Action3.WasPressed && m_airStrikeState)
+        else if (m_controller.Action3WasPress() && m_airStrikeState)
         {
             EnableNavigationMarker();
         }
@@ -149,7 +155,7 @@ public class NavigationArrowActor : MonoBehaviour
             EnableNavigationMarker();
         }
 
-        if (m_airStrikeState && m_controller.Action1.WasPressed)
+        if (m_airStrikeState && m_controller.Action1WasPress())
         {
 
             Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
@@ -202,6 +208,7 @@ public class NavigationArrowActor : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(troopController.currentSelectedUnit.transform.position, maxMarkerDistanceFromUnit);
+        if(troopController.currentSelectedUnit != null) 
+            Gizmos.DrawWireSphere(troopController.currentSelectedUnit.transform.position, maxMarkerDistanceFromUnit);
     }
 }
