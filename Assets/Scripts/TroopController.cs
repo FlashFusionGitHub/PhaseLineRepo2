@@ -30,6 +30,8 @@ public class TroopController : MonoBehaviour {
 
     public float paddingX, paddingZ;
 
+    public GameObject currentSelectedUnit;
+
     // Use this for initialization
     protected virtual void Start () {
 
@@ -41,6 +43,9 @@ public class TroopController : MonoBehaviour {
             m_generals = op.team2Generals;
 
         m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
+
+        currentSelectedUnit = m_generals[index].gameObject;
+
         cameraController.MoveCameraTo(m_generals[index].transform.position);
     }
 
@@ -115,6 +120,8 @@ public class TroopController : MonoBehaviour {
 
             cameraController.MoveCameraTo(m_generals[index].transform.position);
 
+            currentSelectedUnit = m_generals[index].gameObject;
+
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
         }
         if (decrease) {
@@ -124,6 +131,8 @@ public class TroopController : MonoBehaviour {
             index--;
 
             cameraController.MoveCameraTo(m_generals[index].transform.position);
+
+            currentSelectedUnit = m_generals[index].gameObject;
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
         }

@@ -34,11 +34,21 @@ public class NavigationArrowActor : MonoBehaviour
 
     public LayerMask terrainMask;
 
+    public float maxMarkerDistanceFromUnit = 500.0f;
+
+    public TroopController troopController;
+
+    Transform prevPos;
+
     // Use this for initialization
     protected virtual void Start()
     {
+        GameObject previousPos = new GameObject("previous Pos");
+        prevPos = previousPos.transform;
         m_currentMarker = Instantiate(m_navMarker, new Vector3(0, 4, 0), Quaternion.identity);
         airstrikes = new List<AirStrike>();
+
+        m_currentMarker.transform.position = troopController.currentSelectedUnit.transform.position;
     }
 
     // Update is called once per frame
@@ -53,25 +63,46 @@ public class NavigationArrowActor : MonoBehaviour
             return;
         }
 
+        if (prevPos.parent != troopController.currentSelectedUnit.transform)
+        {
+            prevPos.parent = troopController.currentSelectedUnit.transform;
+            prevPos.localPosition = Vector3.zero;
+            prevPos.localEulerAngles = Vector3.zero;
+        }
+
         float markerXPos = Mathf.Clamp(m_currentMarker.transform.position.x, m_minXPos, maxXPos);
         float markerZPos = Mathf.Clamp(m_currentMarker.transform.position.z, m_minZPos, maxZPos);
 
-        m_currentMarker.transform.position = new Vector3(markerXPos, m_currentMarker.transform.position.y, markerZPos);
-
-        var objPos = m_currentMarker.transform.position;
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(new Vector3(objPos.x, 500, objPos.z), Vector3.down, out hit, 800f, terrainMask))
+        if (Vector3.Distance(m_currentMarker.transform.position, troopController.currentSelectedUnit.transform.position) <= maxMarkerDistanceFromUnit)
         {
-            Debug.DrawLine(new Vector3(objPos.x, 500, objPos.z), hit.point);
-            m_currentMarker.transform.Translate(0, (floatValue - hit.distance), 0);
-            m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
-            m_currentMarker.transform.position = new Vector3(m_currentMarker.transform.position.x, hit.point.y, m_currentMarker.transform.position.z);
+            m_currentMarker.transform.position = new Vector3(markerXPos, m_currentMarker.transform.position.y, markerZPos);
+
+            var objPos = m_currentMarker.transform.position;
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(new Vector3(objPos.x, 500, objPos.z), Vector3.down, out hit, 800f, terrainMask))
+            {
+                Debug.DrawLine(new Vector3(objPos.x, 500, objPos.z), hit.point);
+                m_currentMarker.transform.Translate(0, (floatValue - hit.distance), 0);
+                m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
+                m_currentMarker.transform.position = new Vector3(m_currentMarker.transform.position.x, hit.point.y, m_currentMarker.transform.position.z);
+            }
+            else
+            {
+                m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
+            }
+
+            prevPos.position = m_currentMarker.transform.position;
         }
         else
         {
-            m_currentMarker.transform.position += new Vector3(m_controller.LeftStickX, 0, m_controller.LeftStickY) * Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex) * m_markerSpeed);
+            if (prevPos.position == Vector3.zero)
+            {
+                prevPos.position = troopController.currentSelectedUnit.transform.position;
+            }
+            
+            m_currentMarker.transform.position = prevPos.position - ((m_currentMarker.transform.position - troopController.currentSelectedUnit.transform.position).normalized * 10f);
         }
 
         AirStrikeControls();
@@ -167,5 +198,10 @@ public class NavigationArrowActor : MonoBehaviour
         //{
         //    m_tank = other.GetComponent<TroopActor>();
         // }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(troopController.currentSelectedUnit.transform.position, maxMarkerDistanceFromUnit);
     }
 }
