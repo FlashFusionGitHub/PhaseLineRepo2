@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
+    /*Max Min Zoom and Pan Values, used for clamping*/
     public float m_MinZoomY = 10.0f, m_MaxZoomY = 50.0f;
     public float m_MinZoomZ = 10.0f, m_MaxZoomZ = 50.0f;
     public float m_MinPanX = -50.0f, m_MaxPanX = 50.0f;
     public float m_MinPanZ = -50.0f, m_MaxPanZ = 50.0f;
 
-    public float slerpSpeed = 50;
+    public float slerpSpeed = 50; /* The speed the camera tranistions to newly selected targets*/
 
-    Vector3 position;
+    public bool changePosition; /*Used to check if the camera is Slerping to a new location*/
 
-    public bool changePosition;
+    public Controller m_controller; /*Reference to the Controller class*/
 
-    public Controller m_controller;
+    public int m_playerIndex; /*Players index, used for setting whihc player can control this script*/
 
-    public int m_playerIndex;
+    public float cameraSpeed; /*Setting the cameras speed*/
 
-	public float cameraSpeed;
+    public Camera camera; /*The players camera in the scene*/
 
-    public Camera camera;
-
-    public float offset;
+    Vector3 position; /*Used for storing the MoveCamera() targetPos*/
 
     // Use this for initialization
     void Start () {
@@ -55,7 +54,8 @@ public class CameraController : MonoBehaviour {
 
             if (m_controller.RightTriggerIsHeld())
             {
-				transform.position += new Vector3(0, -m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000), m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
+				transform.position += new Vector3(0, -m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000),
+                    m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
 
                 float zoomY = Mathf.Clamp(transform.position.y, m_MinZoomY, m_MaxZoomY);
 
@@ -63,7 +63,8 @@ public class CameraController : MonoBehaviour {
             }
             else
             {
-				this.transform.position += new Vector3(m_controller.RightAnalogStick().X * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000), 0, m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
+				this.transform.position += new Vector3(m_controller.RightAnalogStick().X * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000),
+                    0, m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
 
                 float panX = Mathf.Clamp(transform.position.x, m_MinPanX, m_MaxPanX);
                 float panZ = Mathf.Clamp(transform.position.z, m_MinPanZ, m_MaxPanZ);
@@ -81,7 +82,6 @@ public class CameraController : MonoBehaviour {
             }
         }
     }
-
 
     public void MoveCameraTo(Vector3 targetPos)
     {

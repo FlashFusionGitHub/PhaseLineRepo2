@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TroopController : MonoBehaviour {
 
+    /*Used for indexing through all available units*/
     int index = 0;
 
     [Header("Selection Circle")]
@@ -11,25 +12,22 @@ public class TroopController : MonoBehaviour {
     private GameObject m_selectionCircle;
     private GameObject m_currentSelectionCircle;
 
-    List<CaptureZoneActor> zonesCaptured;
+    List<CaptureZoneActor> zonesCaptured; /*A list of all the zones This player has captured*/
 
-    protected Controller m_controller;
+    protected Controller m_controller; /*reference to the Controller*/
 
-    public NavigationArrowActor m_navigationArrowActor;
+    public NavigationArrowActor m_navigationArrowActor; /*reference to the navigation marker*/
 
-    public CameraController cameraController;
+    public CameraController cameraController; /*reference to the cameraController*/
 
-    public Team team;
+    public Team team; /*What team does this script belong too*/
 
+    /*Referecne to the object pool game object*/
     public ObjectPool op;
 
-    public List<TroopActor> m_generals;
+    public List<TroopActor> m_generals; /*A list of all my available generals*/
 
-    public int tankSize;
-
-    public float paddingX, paddingZ;
-
-    public GameObject currentSelectedUnit;
+    public GameObject currentSelectedUnit; /*Reference to the currently selected unit*/
 
     // Use this for initialization
     protected virtual void Start () {
@@ -104,6 +102,7 @@ public class TroopController : MonoBehaviour {
             m_currentSelectionCircle.transform.position = m_generals[index].transform.position;
     }
 
+    /*Set cameras postion to be looking at the current unit, or the current marker*/
     void QuickSelect()
     {
         if (m_controller.RightStickButton())
@@ -117,7 +116,9 @@ public class TroopController : MonoBehaviour {
         }
     }
 
+    /*Toggle between Generals, decrement or increment the generals list, but setting true or false for the function parameters*/
     void CheckGeneralState(bool increase, bool decrease) {
+
         if (increase) {
             index++;
 

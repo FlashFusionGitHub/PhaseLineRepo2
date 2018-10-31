@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using InControl;
 
-/*One class to control them all*/
+/*Referencing InControl in multiple scripts was causing problems,
+this class fixed most issues*/
+
 public class Controller : MonoBehaviour {
 
     InputDevice m_controller;

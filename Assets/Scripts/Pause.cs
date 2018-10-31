@@ -39,10 +39,12 @@ public class Pause : MonoBehaviour {
             }
         }
 
+        /*If the timescale is ZERO, it means the game is already paused (This stops another player from overriding the pause screen)*/
         if (Time.timeScale == 0)
             return;
         else
         {
+            /*Menu button pressed, call PauseGame()*/
             if (m_controller.MenuWasPress())
             {
                 PauseGame();
@@ -52,19 +54,19 @@ public class Pause : MonoBehaviour {
 
     void PauseGame()
     {
-        m_pausePanel.GetComponent<TweenAnimator>().TweenToOutPos();
+        m_pausePanel.GetComponent<TweenAnimator>().TweenToOutPos(); /*Tween to out position*.
 
-        Time.timeScale = 0;
+        Time.timeScale = 0; /*Setting time scale to zero stops the game*/
 
-        cursor.SetActive(true);
+        cursor.SetActive(true); /*Enable the pause panel cursor, to navigate menus*/
     }
 
     public void UnpauseGame()
     {
-        m_pausePanel.GetComponent<TweenAnimator>().TweenToInPos();
+        m_pausePanel.GetComponent<TweenAnimator>().TweenToInPos(); /*Tween back to in position*/
 
-        Time.timeScale = 1;
+        Time.timeScale = 1; /*Set Time scale back to 1 to unpause*/
 
-        cursor.SetActive(false);
+        cursor.SetActive(false); /*Disable the pause panel cursor*/
     }
 }

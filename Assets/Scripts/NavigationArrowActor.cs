@@ -3,41 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+/*Global Team Enum, some scripts need to know what team an object belongs too*/
 public enum Team { NONE, TEAM1, TEAM2 };
 
 public class NavigationArrowActor : MonoBehaviour
 {
-    public TroopActor m_tank;
+    public TroopActor m_tank; /*Store Tank to attack*/
+
     public GameObject m_airStrikeMarker;
     public GameObject m_navMarker;
     public GameObject m_airStrike;
 
+    /*Min Max values used for clamping, navigation arrow within the map*/
     public float m_minXPos = -100, maxXPos = 100;
     public float m_minZPos = -100, maxZPos = 100;
 
-    public float m_markerSpeed = 2;
+    public float m_markerSpeed = 2; /*Speed of the marker*/
 
-    public Team m_team;
+    public Team m_team; /*The team this Component belongs too*/
 
-    public int playerIndex;
+    public int playerIndex; /*players controller index used for setting (InControl Device)*/
 
-    public GameObject m_currentMarker;
+    public GameObject m_currentMarker; /*The current marker, markers are created and destoryed, so the current marker is stored*/
 
-    public bool m_airStrikeState;
+    public bool m_airStrikeState; /*Are we currently doing an airstrike, if so stop the marker updating*/
 
-    protected Controller m_controller;
+    protected Controller m_controller; /*Reference to the controller class*/
 
-    public List<AirStrike> airstrikes;
+    public List<AirStrike> airstrikes; /*A list of avaiable airstrikes*/
 
     public float floatValue = 1f;
 
-    public LayerMask terrainMask;
+    public LayerMask terrainMask; /*Refernce to the terrain mask, used for raycasting to check ground level*/
 
-    public float maxMarkerDistanceFromUnit = 500.0f;
+    public float maxMarkerDistanceFromUnit = 500.0f; /*Max distance the current navigation marker can move from the selected unit*/
 
-    public TroopController troopController;
+    public TroopController troopController; /*Reference to THIS players the troop controoler*/
 
-    Transform prevPos;
+    Transform prevPos; /*The previous position of the current marker*/
 
     // Use this for initialization
     protected virtual void Start()
@@ -87,6 +90,7 @@ public class NavigationArrowActor : MonoBehaviour
 
             RaycastHit hit;
 
+            /*Cast a ray downward from the centre of the current marker, if the ray the terrain mask, set the current markers Y position the be on top of the terrain mask*/
             if (Physics.Raycast(new Vector3(objPos.x, 500, objPos.z), Vector3.down, out hit, 800f, terrainMask))
             {
                 Debug.DrawLine(new Vector3(objPos.x, 500, objPos.z), hit.point);
@@ -117,7 +121,6 @@ public class NavigationArrowActor : MonoBehaviour
 
     public void AirStrikeControls()
     {
-
         if (m_controller.Action3WasPress() && !m_airStrikeState && airstrikes.Count > 0)
         {
             EnableAirStrikeMarker();
@@ -166,6 +169,7 @@ public class NavigationArrowActor : MonoBehaviour
         }
     }
 
+    /*Enable the airstrike maker, set airstrike state to true which stops the navigation marker script to stop updating, adn the airstrike script to begin updating*/
     void EnableAirStrikeMarker()
     {
         m_airStrikeState = true;
@@ -174,6 +178,7 @@ public class NavigationArrowActor : MonoBehaviour
         Destroy(prevMarker);
     }
 
+    /*The reverse of EnableAirStrikeMarker()*/
     void EnableNavigationMarker()
     {
         m_airStrikeState = false;
@@ -182,6 +187,7 @@ public class NavigationArrowActor : MonoBehaviour
         Destroy(prevMarker);
     }
 
+    /*Which enemy do we attack, if tank is not null*/
     public TroopActor GetEnemyToAttack()
     {
         if (m_tank != null)
@@ -190,20 +196,20 @@ public class NavigationArrowActor : MonoBehaviour
             return null;
     }
 
+
+    /*set m_tank to which ever tank the current marker collides with*/
     void OnTriggerEnter(Collider other)
     {
-        // if (other.gameObject.GetComponent<TroopActor>().team == Team.TEAM2)
-        // {
-        //     m_tank = other.GetComponent<TroopActor>();
-        // }
+         if (other.gameObject.GetComponent<TroopActor>().team == Team.TEAM2)
+         {
+             m_tank = other.GetComponent<TroopActor>();
+         }
     }
 
+    /*When the marker leaves the tank, set m_tank to null*/
     void OnTriggerExit(Collider other)
     {
-        //if (other.gameObject.GetComponent<TroopActor>().team == Team.TEAM2)
-        //{
-        //    m_tank = other.GetComponent<TroopActor>();
-        // }
+        m_tank = null;
     }
 
     private void OnDrawGizmosSelected()

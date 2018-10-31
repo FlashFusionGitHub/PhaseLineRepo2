@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using InControl;
 using UnityEngine.UI;
 
+/*Simple Scene loader, pass scene build order INT to load it*/
+
 public class SceneLoader : MonoBehaviour {
 
     public GameObject lobby;
