@@ -520,6 +520,10 @@ public class TroopActor : MonoBehaviour
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                     MOVE STUFF
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    void NavON()
+    {
+        m_navAgent.enabled = true;
+    }
     void Move()
     {
         if (!moveTarget)
@@ -541,7 +545,20 @@ public class TroopActor : MonoBehaviour
             else if (m_navAgent && moveTarget)
             {
                 Debug.DrawLine(transform.position, moveTarget.position, Color.red);
-                m_navAgent.SetDestination(moveTarget.position);
+                if (m_navAgent.isOnNavMesh)
+                {
+                    m_navAgent.SetDestination(moveTarget.position);
+                }
+                else
+                {
+                    if (rankState != RankState.IsGeneral && myGeneral)
+                    {
+                        transform.position = moveTarget.position;
+
+                        m_navAgent.enabled = false;
+                        Invoke("NavOn", 0.1f);
+                    }
+                }
                 if (Vector3.Distance(new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z), transform.position) > moveSpeed * Time.deltaTime)
                     moving = true;
 
