@@ -7,6 +7,11 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 [System.Serializable]
+public enum AttackType {
+	SELECTED, AUTO
+}
+
+[System.Serializable]
 public enum UnitClasses
 {
     Tank,
@@ -74,6 +79,7 @@ public class TroopActor : MonoBehaviour
     [Header("Unit Settings")]
     [SerializeField]
     public UnitClasses unitClass;
+	public AttackType attackType;
     [SerializeField] public Team team;
     [SerializeField] private UnitClasses[] strengths;
     [SerializeField] private UnitClasses[] vulnerabilities;
@@ -116,7 +122,7 @@ public class TroopActor : MonoBehaviour
 
     [Header("Health Settings")]
     public float maxHealth;
-    [SerializeField] private float currentHealth;
+    [SerializeField] public float currentHealth;
     [SerializeField] private UnityEvent onTakeDamage;
     [SerializeField] private UnityEvent onDie;
     public Image m_healthBar;
@@ -158,11 +164,16 @@ public class TroopActor : MonoBehaviour
 
     [Header("Chosen Factions")]
     public SelectedFactions selectedFactions;
+
+	[Header("Target To Attack - Do not set this in inspector")]
+	public TroopActor targetToAttack;
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      / START FUNCTION BELOW \
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
+		attackType = AttackType.AUTO;
+
         try
         {
             selectedFactions = FindObjectOfType<SelectedFactions>();
@@ -226,16 +237,33 @@ public class TroopActor : MonoBehaviour
     void Update()
     {
         RankAction();
-        if (rankState != RankState.dead && rankState != RankState.Base) 
-        {
-            Move();
-            AttackClosestEnemy();
-        }
+
+		if (rankState != RankState.dead && rankState != RankState.Base) {
+			Move ();
+			if (attackType == AttackType.AUTO) {
+				AttackClosestEnemy ();
+			} else {
+				AttackTarget ();
+			}
+		}
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      \ UPDATE FUNCTION ABOVE /
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+	public void SetAttackType(AttackType type) {
+		attackType = type;
+	}
+
+	void AttackTarget() {
+		if (targetToAttack.rankState != RankState.dead)
+			AttackSelectedEnemy (targetToAttack);
+		else {
+			attackType = AttackType.AUTO;
+			Move ();
+			targetToAttack = null;
+		}
+	}
 
     void RankAction()
     {
@@ -371,6 +399,41 @@ public class TroopActor : MonoBehaviour
         return false;
     }
 
+	bool withinRange(GunSettings gun, TroopActor troop) {
+		if (Vector3.Distance (troop.transform.position, transform.position) > gun.attackRangeMin && Vector3.Distance (troop.transform.position, transform.position) < gun.attackRangeMax) 
+		{
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+	}
+
+	void AttackSelectedEnemy(TroopActor troopToAttack)
+	{
+		foreach (GunSettings gun in guns)
+		{
+			if (troopToAttack && withinRange(gun, troopToAttack))
+			{
+				gun.attackTarget = ClosestEnemy(gun);
+				gun.turret.rotation = Quaternion.Slerp(gun.turret.rotation, Quaternion.LookRotation(gun.attackTarget.transform.position - gun.turret.position), gun.turretAimSpeed * Time.deltaTime);
+				gun.turret.localEulerAngles = new Vector3(0, gun.turret.localEulerAngles.y, 0);
+
+
+				gun.barrel.rotation = Quaternion.Slerp(gun.barrel.rotation, Quaternion.LookRotation(gun.attackTarget.transform.position - gun.barrel.position), gun.barrelAimSpeed * Time.deltaTime);
+				gun.barrel.localEulerAngles = new Vector3(gun.barrel.localEulerAngles.x, 0, 0);
+				gun.m_gunTimer -= Time.deltaTime;
+				if (gun.m_gunTimer < Time.deltaTime)
+				{
+					ResetGunTimer(gun);
+					Fire(gun);
+				}
+			}
+		}
+	}
+
+
     void AttackClosestEnemy()
     {
         foreach (GunSettings gun in guns)
@@ -391,7 +454,6 @@ public class TroopActor : MonoBehaviour
                     Fire(gun);
                 }
             }
-
         }
     }
 
@@ -464,6 +526,7 @@ public class TroopActor : MonoBehaviour
         }
         return closestEnemy;
     }
+
     TroopActor ClosestAlly()
     {
         float dis = 0f;
@@ -547,13 +610,13 @@ public class TroopActor : MonoBehaviour
                 Debug.DrawLine(transform.position, moveTarget.position, Color.red);
                 if (m_navAgent.isOnNavMesh)
                 {
-                    m_navAgent.SetDestination(moveTarget.position);
+					m_navAgent.SetDestination((attackType == AttackType.AUTO) ? moveTarget.position : targetToAttack.transform.position);
                 }
                 else
                 {
                     if (rankState != RankState.IsGeneral && myGeneral)
                     {
-                        transform.position = moveTarget.position;
+                        	transform.position = moveTarget.position;
 
                         m_navAgent.enabled = false;
                         Invoke("NavOn", 0.1f);

@@ -181,7 +181,6 @@ public class CaptureZoneActor : MonoBehaviour {
             if (other.GetComponent<TroopActor>().team == Team.TEAM1)
             {
                 team1unitsInZone.Remove(other.GetComponent<TroopActor>());
-                Debug.Log(other.gameObject.name);
             }
 
             if (other.GetComponent<TroopActor>().team == Team.TEAM2)

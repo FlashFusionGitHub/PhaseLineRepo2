@@ -8,17 +8,24 @@ public class Cursor : MonoBehaviour
 {
     PointerEventData pointer;
 
-    Controller[] m_controllers;
+    public Controller[] m_controllers;
 
     Controller m_controller;
+
+	public bool Player1, Player2;
 
     // Use this for initialization
     void Start()
     {
-        m_controllers = FindObjectsOfType<Controller>();
-        m_controller = m_controllers[0];
-    }
 
+		m_controllers = FindObjectsOfType<Controller> ();
+
+		if (Player1)
+			m_controller = m_controllers [1];
+		if (Player2)
+			m_controller = m_controllers [0];
+    }
+		
     void Update()
     {
 
