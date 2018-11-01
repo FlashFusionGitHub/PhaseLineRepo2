@@ -8,7 +8,7 @@ public enum Team { NONE, TEAM1, TEAM2 };
 
 public class NavigationArrowActor : MonoBehaviour
 {
-    public TroopActor m_tank; /*Store Tank to attack*/
+    public TroopActor m_tank; /*Store Tank the marker is currently inside off*/
 
     public GameObject m_airStrikeMarker;
     public GameObject m_navMarker;
@@ -42,9 +42,13 @@ public class NavigationArrowActor : MonoBehaviour
 
     Transform prevPos; /*The previous position of the current marker*/
 
+	ObjectPool op;
+
     // Use this for initialization
     protected virtual void Start()
     {
+		op = FindObjectOfType<ObjectPool> ();
+
         GameObject previousPos = new GameObject("previous Pos");
         prevPos = previousPos.transform;
         m_currentMarker = Instantiate(m_navMarker, new Vector3(0, 4, 0), Quaternion.identity);
@@ -64,7 +68,6 @@ public class NavigationArrowActor : MonoBehaviour
                 {
                     m_controller = c;
                 }
-
                 if (playerIndex == 1 && c.m_playerIndex == 1)
                 {
                     m_controller = c;
@@ -112,12 +115,33 @@ public class NavigationArrowActor : MonoBehaviour
                 prevPos.position = troopController.currentSelectedUnit.transform.position;
             }
             
-            m_currentMarker.transform.position = prevPos.position - ((m_currentMarker.transform.position - troopController.currentSelectedUnit.transform.position).normalized * 10f);
+			m_currentMarker.transform.position = Vector3.Lerp(m_currentMarker.transform.position, troopController.currentSelectedUnit.transform.position, Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex)));
+            //m_currentMarker.transform.position = prevPos.position - ((m_currentMarker.transform.position - troopController.currentSelectedUnit.transform.position).normalized * 10f);
         }
 
         AirStrikeControls();
 
+		ClosestEnemyUnit ();
     }
+		
+	void ClosestEnemyUnit() {
+		float dis = 0;
+		foreach (TroopActor T in op.allTroopActors) {
+			if (m_tank == null && T.team != m_team && T.rankState != RankState.dead) {
+				if (Vector3.Distance (m_currentMarker.transform.position, T.transform.position) < 20f) {
+					if (dis == 0 || Vector3.Distance (m_currentMarker.transform.position, T.transform.position) < dis) {
+						dis = Vector3.Distance (m_currentMarker.transform.position, T.transform.position);
+						m_tank = T;
+					}
+				}
+			}
+		}
+
+		if (m_tank != null) {
+			if (Vector3.Distance (m_currentMarker.transform.position, m_tank.transform.position) > 20f)
+				m_tank = null;
+		}
+	}
 
     public void AirStrikeControls()
     {
@@ -145,17 +169,6 @@ public class NavigationArrowActor : MonoBehaviour
                     nearestCaptureZone = a.captureZone;
                 }
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.G) && !m_airStrikeState && airstrikes.Count > 0)
-        {
-            EnableAirStrikeMarker();
-
-            Destroy(nearestCaptureZone.gameObject);
-            airstrikes.Remove(nearestCaptureZone.GetComponent<AirStrike>());
-
-            Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
-            EnableNavigationMarker();
         }
 
         if (m_airStrikeState && m_controller.Action1WasPress())
@@ -196,25 +209,13 @@ public class NavigationArrowActor : MonoBehaviour
             return null;
     }
 
-
-    /*set m_tank to which ever tank the current marker collides with*/
-    void OnTriggerEnter(Collider other)
-    {
-         if (other.gameObject.GetComponent<TroopActor>().team == Team.TEAM2)
-         {
-             m_tank = other.GetComponent<TroopActor>();
-         }
-    }
-
-    /*When the marker leaves the tank, set m_tank to null*/
-    void OnTriggerExit(Collider other)
-    {
-        m_tank = null;
-    }
-
     private void OnDrawGizmosSelected()
     {
         if(troopController.currentSelectedUnit != null) 
             Gizmos.DrawWireSphere(troopController.currentSelectedUnit.transform.position, maxMarkerDistanceFromUnit);
+
+		Gizmos.color = Color.green;
+
+		Gizmos.DrawWireSphere (m_currentMarker.transform.position, 20.0f);
     }
 }

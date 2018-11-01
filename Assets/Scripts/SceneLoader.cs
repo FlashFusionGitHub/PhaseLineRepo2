@@ -20,4 +20,8 @@ public class SceneLoader : MonoBehaviour {
     {
         Destroy(lobby);
     }
+
+	public void CloseGame() {
+		Application.Quit ();
+	}
 }

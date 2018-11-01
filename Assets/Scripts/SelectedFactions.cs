@@ -7,8 +7,14 @@ public class SelectedFactions : MonoBehaviour {
     public FactionElements team1;
     public FactionElements team2;
 
+	public float lifeTime;
     void Awake()
     {
+		foreach (SelectedFactions sf in FindObjectsOfType<SelectedFactions>()) {
+			if (sf.lifeTime > lifeTime) {
+				Destroy (sf.gameObject);
+			}
+		}
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -27,4 +33,8 @@ public class SelectedFactions : MonoBehaviour {
             DontDestroyOnLoad(team2);
         }
     }
+
+	public void Update() {
+		lifeTime += Time.deltaTime;
+	}
 }

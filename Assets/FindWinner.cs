@@ -15,7 +15,8 @@ public class FindWinner : MonoBehaviour {
 
     public GameObject[] componentsToDisable;
 
-    public GameObject quitToMenuScreen;
+    public GameObject quitToMenuButton;
+	public GameObject rematchButton;
 
     public Team winner;
 
@@ -61,7 +62,8 @@ public class FindWinner : MonoBehaviour {
 
                 //Time.timeScale = 0;
 
-                quitToMenuScreen.SetActive(true);
+                quitToMenuButton.SetActive(true);
+				rematchButton.SetActive (true);
             }
             else if (winner == Team.TEAM2)
             {
@@ -83,7 +85,8 @@ public class FindWinner : MonoBehaviour {
 
                 //Time.timeScale = 0;
 
-                quitToMenuScreen.SetActive(true);
+                quitToMenuButton.SetActive(true);
+				rematchButton.SetActive (true);
             }
             else if(isDraw)
             {
@@ -98,12 +101,14 @@ public class FindWinner : MonoBehaviour {
 
                 //Time.timeScale = 0;
 
-                quitToMenuScreen.SetActive(true);
+                quitToMenuButton.SetActive(true);
+				rematchButton.SetActive (true);
             }
         }
         else if (winnerFound)
         {
-            quitToMenuScreen.SetActive(true);
+            quitToMenuButton.SetActive(true);
+			rematchButton.SetActive (true);
         }
     }
 

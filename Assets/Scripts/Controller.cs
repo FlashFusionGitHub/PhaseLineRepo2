@@ -12,13 +12,23 @@ public class Controller : MonoBehaviour {
 
     public int m_playerIndex;
 
+	public float lifeTime;
+
     private void Awake()
-    {
+    {		
+		foreach (Controller c in FindObjectsOfType<Controller>()) {
+			if (c.lifeTime > lifeTime) {
+				Destroy (this.gameObject);
+			}
+		}
+
         DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
     void Update() {
+
+		lifeTime += Time.deltaTime;
         try {
             m_controller = InputManager.Devices[m_playerIndex];
         }

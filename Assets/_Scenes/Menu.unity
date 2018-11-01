@@ -246,12 +246,12 @@ RectTransform:
   - {fileID: 1012779025}
   - {fileID: 707519570}
   - {fileID: 1224775731}
-  - {fileID: 1838802297}
   - {fileID: 1295571946}
   - {fileID: 1996132099}
   - {fileID: 755844767}
   - {fileID: 1650277352}
   - {fileID: 321199000}
+  - {fileID: 1838802297}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -299,7 +299,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 200110176}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -734,7 +734,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 200110176}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -779,7 +779,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 755844769}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 166947512}
+        m_MethodName: CloseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &755844769
@@ -1051,7 +1062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 203.7, y: -78}
+  m_AnchoredPosition: {x: 202.8, y: -78}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224775732
@@ -1168,7 +1179,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 200110176}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1362,6 +1373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerIndex: 1
+  lifeTime: 0
 --- !u!4 &1640587743
 Transform:
   m_ObjectHideFlags: 0
@@ -1403,7 +1415,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 200110176}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1586,7 +1598,7 @@ Prefab:
     - target: {fileID: 114613174719653128, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
         type: 2}
       propertyPath: m_controllers.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224902383352583974, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
         type: 2}
@@ -1626,7 +1638,7 @@ Prefab:
     - target: {fileID: 224902383352583974, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224902383352583974, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
         type: 2}
@@ -1708,6 +1720,11 @@ Prefab:
       propertyPath: m_controllers.Array.data[1]
       value: 
       objectReference: {fileID: 1640587742}
+    - target: {fileID: 114613174719653128, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
+        type: 2}
+      propertyPath: Player1
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3bd189fa93da6a4db3ae3bc5fa11c61, type: 2}
   m_IsPrefabParent: 0
@@ -2063,7 +2080,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 200110176}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -2183,6 +2200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerIndex: 0
+  lifeTime: 0
 --- !u!4 &2082637570
 Transform:
   m_ObjectHideFlags: 0

@@ -54,7 +54,7 @@ public class Pause : MonoBehaviour {
 
     void PauseGame()
     {
-        m_pausePanel.GetComponent<TweenAnimator>().TweenToOutPos(); /*Tween to out position*.
+        m_pausePanel.GetComponent<TweenAnimator>().TweenToOutPos(); /*Tween to out position*/
 
         Time.timeScale = 0; /*Setting time scale to zero stops the game*/
 
