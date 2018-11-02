@@ -277,8 +277,9 @@ public class TroopActor : MonoBehaviour
         }
         if (rankState == RankState.LookingForGeneral)
         {
-            if (ClosestGeneral())
-                AssignToGeneral(ClosestGeneral());
+            TroopActor AssignToMe = RandomGeneral();
+            if (AssignToMe)
+                AssignToGeneral(AssignToMe);
             if (killMeAfter <= 0)
             {
                 Die(this);
@@ -542,6 +543,22 @@ public class TroopActor : MonoBehaviour
         }
         return closestAlly;
     }
+
+    TroopActor RandomGeneral()
+    {
+        List<TroopActor> Generals = new List<TroopActor>();
+        foreach (TroopActor ta in op.allTroopActors)
+        {
+            if (ta.rankState != RankState.dead)
+                if (ta != this && ta.team == team && ta.rankState == RankState.IsGeneral)
+                {
+                    Generals.Add(ta);
+                }
+        }
+        return Generals[Random.Range(0, Generals.Count)];
+    }
+
+
     TroopActor ClosestGeneral()
     {
         float dis = 0f;
