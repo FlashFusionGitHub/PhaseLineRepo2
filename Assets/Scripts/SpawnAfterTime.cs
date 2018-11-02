@@ -20,7 +20,10 @@ public class SpawnAfterTime : MonoBehaviour {
     [SerializeField] float timeBeforeSpawnStart;
     [SerializeField] float timeBetweenSpawns;
     [SerializeField] float timeStackPercent;
-    float m_timer;
+
+    public int unitIndex;
+
+    public float m_timer;
 
 	void Start () {
         spawnerState = SpawnerStates.waiting;
@@ -30,9 +33,10 @@ public class SpawnAfterTime : MonoBehaviour {
 
     void ResetSpawnTimer()
     {
-        timeBetweenSpawns += timeBetweenSpawns * timeStackPercent/100;
+        timeBetweenSpawns += timeBetweenSpawns * timeStackPercent / 100;
         m_timer = timeBetweenSpawns;
     }
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -44,16 +48,27 @@ public class SpawnAfterTime : MonoBehaviour {
                 spawnerState = SpawnerStates.ready;
             }
         }
-        else if (spawnerState == SpawnerStates.ready)
+
+        if (spawnerState == SpawnerStates.ready)
         {
-            if (m_timer > 0)
+            m_timer -= Time.deltaTime;
+
+            if(m_timer <= 0)
             {
-                m_timer -= Time.deltaTime;
-            }
-            else
-            {
+                unitIndex++;
+
+                if (unitIndex > spawnPoints.Length - 1)
+                    unitIndex = 0;
+
+                SpawnUnits();
+
                 ResetSpawnTimer();
             }
         }
 	}
+
+    void SpawnUnits()
+    {
+        spawnPoints[unitIndex].CheckSpawn();
+    }
 }

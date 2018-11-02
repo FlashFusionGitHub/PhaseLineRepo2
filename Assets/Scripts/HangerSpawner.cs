@@ -45,22 +45,28 @@ public class HangerSpawner : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Invoke("makeReady", SpawnStartDelay);
+        makeReady();
         objectPool = FindObjectOfType<ObjectPool>();
 	}
 
-    void makeReady()
+    public void makeReady()
     {
         rdy = true;
     }
+
 	// Update is called once per frame
 	void Update () {
         if (!rdy)
+        {
+            Debug.Log("IM NOT READY");
             return;
+        }
+
         if (spawnWaiting)
         {
             CheckSpawn();
         }
-        if (safeToClose() && (doorState == DoorState.open))
+        if (doorState == DoorState.open)
         {
             StartClosingDoors();
         }
@@ -73,6 +79,7 @@ public class HangerSpawner : MonoBehaviour {
         {
             CloseDoors();
         }
+
         UpdateDoors();
     }
 
@@ -162,25 +169,6 @@ public class HangerSpawner : MonoBehaviour {
         if (ta.gameObject.activeInHierarchy == false)
         {
             ta.gameObject.SetActive(true);
-        }
-
-    }
-    bool safeToClose()
-    {
-        if (lastSpawnedObject)
-        {
-            if (Vector3.Distance(spawnPoint.position, lastSpawnedObject.transform.position) > disBeforeNextSpawn)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
-            return true;
         }
     }
 
