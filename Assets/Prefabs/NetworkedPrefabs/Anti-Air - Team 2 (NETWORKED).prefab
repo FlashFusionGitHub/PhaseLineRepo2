@@ -313,14 +313,17 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4705858714143550}
-  - component: {fileID: 114312948734125702}
-  - component: {fileID: 114382123416578762}
-  - component: {fileID: 114966833693531274}
   - component: {fileID: 65116182970522910}
   - component: {fileID: 54636119186896878}
   - component: {fileID: 114893352416486464}
   - component: {fileID: 114261664117970426}
   - component: {fileID: 82981117001352474}
+  - component: {fileID: 114342846508572516}
+  - component: {fileID: 114312583765671964}
+  - component: {fileID: 114260446478728036}
+  - component: {fileID: 114907780620571178}
+  - component: {fileID: 114666688316931034}
+  - component: {fileID: 114508128277837950}
   m_Layer: 0
   m_Name: Anti-Air - Team 2 (NETWORKED)
   m_TagString: Untagged
@@ -788,7 +791,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841010800377030}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00000034272668}
-  m_LocalPosition: {x: 4.6, y: 0, z: 28.9}
+  m_LocalPosition: {x: 97.24594, y: 0.5, z: -248.57132}
   m_LocalScale: {x: 4.00002, y: 4, z: 4.00002}
   m_Children:
   - {fileID: 224570097053297626}
@@ -1605,6 +1608,38 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114260446478728036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841010800377030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 184
+    i1: 204
+    i2: 137
+    i3: 229
+    i4: 144
+    i5: 78
+    i6: 82
+    i7: 20
+    i8: 88
+    i9: 75
+    i10: 235
+    i11: 238
+    i12: 222
+    i13: 146
+    i14: 206
+    i15: 94
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114261664117970426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1692,7 +1727,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114312948734125702
+--- !u!114 &114312583765671964
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1700,20 +1735,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1841010800377030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa9316fd2a4fd84d86c36f8264aaaa9, type: 3}
+  m_Script: {fileID: 11500000, guid: f7348475cfd95da47bee6dfa3e33a544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114342846508572516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841010800377030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd45f267ea075004ba1ba06ab4d1fb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unitClass: 1
+  attackType: 0
   team: 2
-  strengths: 000000000100000002000000
-  vulnerabilities: 000000000100000002000000
-  rankState: 2
+  strengths: 02000000
+  vulnerabilities: 0000000002000000
+  rankState: 3
   myGeneral: {fileID: 0}
+  killMeAfter: 0.5
   placementDirection: 1
   numOfRows: 0
   maxNumOfColumns: 3
   positionOffset: {x: 0, y: 0, z: 0}
-  distanceBetweenPoints: {x: 4, y: 4}
+  distanceBetweenPoints: {x: 10, y: 10}
   formationPositions: []
   oldPos: {fileID: 0}
   pd: 0
@@ -1722,7 +1770,7 @@ MonoBehaviour:
   OnGainExperience:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114382123416578762}
+      - m_Target: {fileID: 114312583765671964}
         m_MethodName: Spawn
         m_Mode: 2
         m_Arguments:
@@ -1739,7 +1787,7 @@ MonoBehaviour:
   OnPromotion:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114382123416578762}
+      - m_Target: {fileID: 114312583765671964}
         m_MethodName: Spawn
         m_Mode: 2
         m_Arguments:
@@ -1769,39 +1817,13 @@ MonoBehaviour:
   percentageIncreasePerRank: 50
   influenceRadius: 10
   unitName: 
-  possibleNames:
-  - baz
-  - Greg
-  - Scotsnova
-  - Alpha
-  - Bravo
-  - Charlie
-  - Delta
-  - Echo
-  - Fox
-  - Gustav
-  - Golf
-  - Hotel
-  - Indigo
-  - Jack
-  - Josh
-  - Jimmy
-  - Johnson
-  - Juliet
-  - Killer
-  - Kuck
-  - Buck
-  - Steve
-  - Candice
-  - Tim
-  - Bazly
-  maxHealth: 100
+  possibleNames: []
   currentHealth: 100
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114893352416486464}
-        m_MethodName: callTrigger
+      - m_Target: {fileID: 114261664117970426}
+        m_MethodName: PlayAudioTag
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1811,8 +1833,8 @@ MonoBehaviour:
           m_StringArgument: Hit
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114261664117970426}
-        m_MethodName: PlayAudioTag
+      - m_Target: {fileID: 114893352416486464}
+        m_MethodName: callTrigger
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1827,11 +1849,11 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114382123416578762}
+      - m_Target: {fileID: 114312583765671964}
         m_MethodName: Spawn
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1834409643084570, guid: f776538b13c4a3d458e85caf99a8c118,
+          m_ObjectArgument: {fileID: 1378734515160750, guid: 70c418343841d4143a26d57d87ca5a81,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -1839,9 +1861,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1841010800377030}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_healthBar: {fileID: 114710742331384558}
+  healthBar: {fileID: 224230383790613390}
   moving: 0
   OnMove:
     m_PersistentCalls:
@@ -1854,19 +1898,19 @@ MonoBehaviour:
   turnSpeed: 12
   moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
     type: 2}
-  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: 14e89b401e13db245860f91654ce7fd0,
+  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: fd78f79bfb5d53742882a2348c6df90e,
     type: 2}
   hoverHeight: 3
   verticleSpeed: 5
   m_navAgent: {fileID: 0}
   avoidanceRange: 2
   guns:
-  - damage: 5
-    TimeBetweenShots: 1.5
+  - damage: 10
+    TimeBetweenShots: 2
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 8
-    attackRangeMax: 40
+    attackRangeMax: 100
     attackTarget: {fileID: 0}
     turret: {fileID: 4727140074626070}
     turretAimSpeed: 2
@@ -1912,7 +1956,7 @@ MonoBehaviour:
     onKillShot:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114312948734125702}
+        - m_Target: {fileID: 114342846508572516}
           m_MethodName: grantExperience
           m_Mode: 4
           m_Arguments:
@@ -1949,14 +1993,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     barrelAimSpeed: 8
   op: {fileID: 0}
-  primaryRenderers:
-  - {fileID: 23836084391757068}
-  - {fileID: 23257716641842968}
-  secondaryRenderers:
-  - {fileID: 23558946115881054}
-  - {fileID: 23978287750877484}
-  - {fileID: 23251990870086432}
-  selectedFactions: {fileID: 0}
+  targetToAttack: {fileID: 0}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114351504560738060
 MonoBehaviour:
@@ -1974,17 +2011,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114382123416578762
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1841010800377030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b61ffc49899484bb751f9ef94b1603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114401388659711780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1996,6 +2022,27 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114508128277837950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841010800377030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114588822873201872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2007,6 +2054,20 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114666688316931034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841010800377030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToGrow: 0.75
+  cursorParts: []
+  speedModifier: 0
 --- !u!114 &114710742331384558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2050,7 +2111,7 @@ MonoBehaviour:
   - {fileID: 95092553833788638}
   - {fileID: 95154497193818724}
   findAnimatorsButton: 0
---- !u!114 &114966833693531274
+--- !u!114 &114907780620571178
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

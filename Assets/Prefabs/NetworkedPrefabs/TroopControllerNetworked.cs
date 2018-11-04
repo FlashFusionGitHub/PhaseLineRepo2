@@ -15,24 +15,32 @@ public class TroopControllerNetworked : NetworkBehaviour {
     [SerializeField] List<TroopActorNetworked> m_generals = new List<TroopActorNetworked>();
 
     int tankIndex = 0;
-    bool moveToSwitch;
 
     [SerializeField] GameObject selectionCircle;
     public GameObject currentSelectionCircle;
 
-    [SerializeField] CameraController cameraController;
+    [SerializeField] CameraControllerNetworked cameraController;
+
+    public GameObject currentSelectedUnit; /*Reference to the currently selected unit*/
+
+    public TroopActorNetworked UnitToAttack;
+
 
     // Use this for initialization
     void Start () {
          m_op = FindObjectOfType<ObjectPoolNetworked>();
          m_nmn = GetComponent<NavigationMarkerNetworked>();
 
-         if (isServer)
-             m_generals = m_op.team1Generals;
-         else
-             m_generals = m_op.team2Generals;
+        if (isServer)
+            m_generals = m_op.team1Generals;
+        else
+            m_generals = m_op.team2Generals;
 
-         currentSelectionCircle = Instantiate(selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
+        currentSelectedUnit = m_generals[tankIndex].gameObject;
+
+        cameraController.MoveCameraTo(m_generals[tankIndex].transform.position);
+
+        currentSelectionCircle = Instantiate(selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
     }
 	
 	// Update is called once per frame
@@ -50,10 +58,7 @@ public class TroopControllerNetworked : NetworkBehaviour {
         if (m_generals.Count == 0)
             Destroy(currentSelectionCircle);
 
-        if (m_controller.RightStickButton.WasPressed)
-        {
-            QuickSelect();
-        }
+        QuickSelect();
 
         if (isClient && !isServer)
         {
@@ -89,21 +94,75 @@ public class TroopControllerNetworked : NetworkBehaviour {
             CheckGeneralState(true, false);
         }
 
+        if (m_nmn.m_tank != null && m_controller.Action1.WasPressed && !m_nmn.m_airStrikeState)
+        {
+            UnitToAttack = m_nmn.m_tank;
+        }
+        else if (m_nmn.m_tank == null && m_controller.Action1.WasPressed && !m_nmn.m_airStrikeState)
+        {
+            UnitToAttack = null;
+
+            m_generals[tankIndex].targetToAttack = null;
+            m_generals[tankIndex].SetAttackType(AttackType.AUTO);
+            foreach (TroopActorNetworked T in m_op.allTroopActors)
+            {
+                if (T.myGeneral == m_generals[tankIndex])
+                {
+                    T.targetToAttack = null;
+                    T.SetAttackType(AttackType.AUTO);
+                }
+            }
+
+            m_generals[tankIndex].moveTarget.transform.position = m_nmn.m_currentMarker.transform.position;
+            m_generals[tankIndex].moveTarget.transform.rotation = m_nmn.m_currentMarker.transform.rotation;
+        }
+
+        SquadGangAttackSelectedUnit();
+
         if (currentSelectionCircle != null && tankIndex >= 0 && m_generals.Count > 0)
             currentSelectionCircle.transform.position = m_generals[tankIndex].transform.position;
     }
 
+    int underlingsCount;
+    void SquadGangAttackSelectedUnit()
+    {
+        //foreach Troopactor (T) under this generals control
+        //set (T) targetToAttack to the generals attackTarget
+        //attack until the targetToAttack is dead or the generals attackTarget != null
+
+        if (UnitToAttack != null)
+        {
+
+            m_generals[tankIndex].targetToAttack = UnitToAttack;
+            underlingsCount = 0;
+            foreach (TroopActorNetworked T in m_op.allTroopActors)
+            {
+                if (T.myGeneral == m_generals[tankIndex])
+                {
+                    Debug.Log(UnitToAttack);
+                    T.targetToAttack = UnitToAttack;
+                    T.SetAttackType(AttackType.SELECTED);
+                    underlingsCount++;
+                }
+            }
+
+            if (underlingsCount == 0)
+            {
+                m_generals[tankIndex].SetAttackType(AttackType.SELECTED);
+            }
+        }
+    }
+
     void QuickSelect()
     {
-        if (moveToSwitch)
+        if (m_controller.RightStickButton.WasPressed)
         {
-            moveToSwitch = false;
-            cameraController.MoveCameraTo(m_generals[tankIndex].transform.position);
-        }
-        else
-        {
-            moveToSwitch = true;
             cameraController.MoveCameraTo(m_nmn.m_currentMarker.transform.position);
+        }
+
+        if (m_controller.LeftStickButton.WasPressed)
+        {
+            cameraController.MoveCameraTo(m_generals[tankIndex].transform.position);
         }
     }
 
@@ -118,6 +177,8 @@ public class TroopControllerNetworked : NetworkBehaviour {
 
             cameraController.MoveCameraTo(m_generals[tankIndex].transform.position);
 
+            currentSelectedUnit = m_generals[tankIndex].gameObject;
+
             currentSelectionCircle = Instantiate(selectionCircle, m_generals[tankIndex].transform.position, Quaternion.Euler(-90, 0, 0));
         }
         if (decrease)
@@ -128,6 +189,8 @@ public class TroopControllerNetworked : NetworkBehaviour {
             tankIndex--;
 
             cameraController.MoveCameraTo(m_generals[tankIndex].transform.position);
+
+            currentSelectedUnit = m_generals[tankIndex].gameObject;
 
             currentSelectionCircle = Instantiate(selectionCircle, m_generals[tankIndex].transform.position, Quaternion.Euler(-90, 0, 0));
         }

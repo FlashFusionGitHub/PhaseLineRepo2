@@ -101,14 +101,17 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4702330261103610}
-  - component: {fileID: 114758469776129382}
-  - component: {fileID: 114521271465550746}
-  - component: {fileID: 114180614744767862}
   - component: {fileID: 65403098898179106}
   - component: {fileID: 54810645779850266}
   - component: {fileID: 114990669630507590}
   - component: {fileID: 114793164900699812}
   - component: {fileID: 82970644409157808}
+  - component: {fileID: 114249603303195194}
+  - component: {fileID: 114742895469953026}
+  - component: {fileID: 114975670154713176}
+  - component: {fileID: 114462996184749540}
+  - component: {fileID: 114090371491950218}
+  - component: {fileID: 114752312742537458}
   m_Layer: 0
   m_Name: Helicopter - Team 2 (NETWORKED)
   m_TagString: Untagged
@@ -552,7 +555,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1147978488760096}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.000008761882}
-  m_LocalPosition: {x: -10.3, y: 0, z: 25}
+  m_LocalPosition: {x: 83.05145, y: 0.5, z: -246.85858}
   m_LocalScale: {x: 4.9460196, y: 4.9460196, z: 4.9460196}
   m_Children:
   - {fileID: 224604471157051418}
@@ -1201,7 +1204,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114180614744767862
+--- !u!114 &114090371491950218
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1209,9 +1212,345 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147978488760096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e5d98fd208e6574d8408352e56cb556, type: 3}
+  m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToGrow: 0.75
+  cursorParts: []
+  speedModifier: 0
+--- !u!114 &114249603303195194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147978488760096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd45f267ea075004ba1ba06ab4d1fb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitClass: 2
+  attackType: 0
+  team: 2
+  strengths: 000000000100000002000000
+  vulnerabilities: 0000000001000000
+  rankState: 3
+  myGeneral: {fileID: 0}
+  killMeAfter: 0.5
+  placementDirection: 1
+  numOfRows: 0
+  maxNumOfColumns: 3
+  positionOffset: {x: 0, y: 0, z: 0}
+  distanceBetweenPoints: {x: 2, y: 2}
+  formationPositions: []
+  oldPos: {fileID: 0}
+  pd: 0
+  count: 0
+  rank: 0
+  OnGainExperience:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114742895469953026}
+        m_MethodName: Spawn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1481620279185138, guid: f9aaf133bc752334db2c5403b2c76451,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnPromotion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114742895469953026}
+        m_MethodName: Spawn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1481620279185138, guid: f9aaf133bc752334db2c5403b2c76451,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnBecomeGeneral:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  rankTitles:
+  - Big
+  - Bigger
+  - Biggest
+  - Most Massive
+  - Biggggggggggg
+  experienceRequiredForNextRank: 10
+  currentExperience: 0
+  percentageIncreasePerRank: 50
+  influenceRadius: 10
+  unitName: 
+  possibleNames: []
+  currentHealth: 100
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114990669630507590}
+        m_MethodName: callTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hit
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114793164900699812}
+        m_MethodName: PlayAudioTag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hit
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114742895469953026}
+        m_MethodName: Spawn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1378734515160750, guid: 70c418343841d4143a26d57d87ca5a81,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  healthBar: {fileID: 224533065652171364}
+  moving: 0
+  OnMove:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  moveTarget: {fileID: 0}
+  movementType: 0
+  moveSpeed: 25
+  turnSpeed: 12
+  moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
+    type: 2}
+  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: fd78f79bfb5d53742882a2348c6df90e,
+    type: 2}
+  hoverHeight: 8
+  verticleSpeed: 30
+  m_navAgent: {fileID: 0}
+  avoidanceRange: 2
+  guns:
+  - damage: 2
+    TimeBetweenShots: 3
+    m_gunTimerRandomiser: 0.1
+    m_gunTimer: 0
+    attackRangeMin: 8
+    attackRangeMax: 42
+    attackTarget: {fileID: 0}
+    turret: {fileID: 0}
+    turretAimSpeed: 2
+    barrel: {fileID: 0}
+    onShoot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114990669630507590}
+          m_MethodName: callTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 198797774702535596}
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114793164900699812}
+          m_MethodName: PlayAudioTag
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onKillShot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114249603303195194}
+          m_MethodName: grantExperience
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 20
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114990669630507590}
+          m_MethodName: callTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Killshot
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114793164900699812}
+          m_MethodName: PlayAudioTag
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Death
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    barrelAimSpeed: 8
+  - damage: 2
+    TimeBetweenShots: 3
+    m_gunTimerRandomiser: 0.1
+    m_gunTimer: 0
+    attackRangeMin: 10
+    attackRangeMax: 50
+    attackTarget: {fileID: 0}
+    turret: {fileID: 0}
+    turretAimSpeed: 2
+    barrel: {fileID: 0}
+    onShoot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114990669630507590}
+          m_MethodName: callTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 198104402750929978}
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114793164900699812}
+          m_MethodName: PlayAudioTag
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onKillShot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114249603303195194}
+          m_MethodName: grantExperience
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 20
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114990669630507590}
+          m_MethodName: callTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: KillShot
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    barrelAimSpeed: 8
+  op: {fileID: 0}
+  targetToAttack: {fileID: 0}
+  previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114328972712245082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1261,6 +1600,17 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114462996184749540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147978488760096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5d98fd208e6574d8408352e56cb556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114499557556881848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1277,17 +1627,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114521271465550746
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1147978488760096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b61ffc49899484bb751f9ef94b1603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114568298885197802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1320,7 +1659,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114758469776129382
+--- !u!114 &114742895469953026
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1328,347 +1667,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147978488760096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa9316fd2a4fd84d86c36f8264aaaa9, type: 3}
+  m_Script: {fileID: 11500000, guid: f7348475cfd95da47bee6dfa3e33a544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitClass: 2
-  team: 2
-  strengths: 000000000100000002000000
-  vulnerabilities: 000000000100000002000000
-  rankState: 2
-  myGeneral: {fileID: 0}
-  placementDirection: 1
-  numOfRows: 0
-  maxNumOfColumns: 3
-  positionOffset: {x: 0, y: 0, z: 0}
-  distanceBetweenPoints: {x: 4, y: 4}
-  formationPositions: []
-  oldPos: {fileID: 0}
-  pd: 0
-  count: 0
-  rank: 0
-  OnGainExperience:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114521271465550746}
-        m_MethodName: Spawn
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1481620279185138, guid: f9aaf133bc752334db2c5403b2c76451,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnPromotion:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114521271465550746}
-        m_MethodName: Spawn
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1481620279185138, guid: f9aaf133bc752334db2c5403b2c76451,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnBecomeGeneral:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  rankTitles:
-  - Big
-  - Bigger
-  - Biggest
-  - Most Massive
-  - Biggggggggggg
-  experienceRequiredForNextRank: 10
-  currentExperience: 0
-  percentageIncreasePerRank: 50
-  influenceRadius: 10
-  unitName: 
-  possibleNames:
-  - baz
-  - Greg
-  - Scotsnova
-  - Alpha
-  - Bravo
-  - Charlie
-  - Delta
-  - Echo
-  - Fox
-  - Gustav
-  - Golf
-  - Hotel
-  - Indigo
-  - Jack
-  - Josh
-  - Jimmy
-  - Johnson
-  - Juliet
-  - Killer
-  - Kuck
-  - Buck
-  - Steve
-  - Candice
-  - Tim
-  - Bazly
-  maxHealth: 100
-  currentHealth: 100
-  onTakeDamage:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114990669630507590}
-        m_MethodName: callTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Hit
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114793164900699812}
-        m_MethodName: PlayAudioTag
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Hit
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114521271465550746}
-        m_MethodName: Spawn
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1834409643084570, guid: f776538b13c4a3d458e85caf99a8c118,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_healthBar: {fileID: 114972756520393464}
-  moving: 0
-  OnMove:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  moveTarget: {fileID: 0}
-  movementType: 0
-  moveSpeed: 25
-  turnSpeed: 12
-  moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
-    type: 2}
-  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: 14e89b401e13db245860f91654ce7fd0,
-    type: 2}
-  hoverHeight: 8
-  verticleSpeed: 30
-  m_navAgent: {fileID: 0}
-  avoidanceRange: 2
-  guns:
-  - damage: 2.5
-    TimeBetweenShots: 1.5
-    m_gunTimerRandomiser: 0.1
-    m_gunTimer: 0
-    attackRangeMin: 8
-    attackRangeMax: 40
-    attackTarget: {fileID: 0}
-    turret: {fileID: 4384012161437426}
-    turretAimSpeed: 2
-    barrel: {fileID: 4602108842729342}
-    onShoot:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114990669630507590}
-          m_MethodName: callTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Shoot
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 114793164900699812}
-          m_MethodName: PlayAudioTag
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Shoot
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 198797774702535596}
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    onKillShot:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114758469776129382}
-          m_MethodName: grantExperience
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 20
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 114990669630507590}
-          m_MethodName: callTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: KillShot
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 114793164900699812}
-          m_MethodName: PlayAudioTag
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Death
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    barrelAimSpeed: 8
-  - damage: 2.5
-    TimeBetweenShots: 1.5
-    m_gunTimerRandomiser: 0.1
-    m_gunTimer: 0
-    attackRangeMin: 8
-    attackRangeMax: 40
-    attackTarget: {fileID: 0}
-    turret: {fileID: 4403451326794142}
-    turretAimSpeed: 2
-    barrel: {fileID: 4391818496940026}
-    onShoot:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114990669630507590}
-          m_MethodName: callTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Shoot
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 114793164900699812}
-          m_MethodName: PlayAudioTag
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Shoot
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 198104402750929978}
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    onKillShot:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114758469776129382}
-          m_MethodName: grantExperience
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 20
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 114990669630507590}
-          m_MethodName: callTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: KillShot
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    barrelAimSpeed: 8
-  op: {fileID: 0}
-  primaryRenderers:
-  - {fileID: 23797895668640228}
-  secondaryRenderers: []
-  selectedFactions: {fileID: 0}
-  previousPos: {x: 0, y: 0, z: 0}
+--- !u!114 &114752312742537458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147978488760096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114793164900699812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1769,6 +1791,38 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114975670154713176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147978488760096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 228
+    i1: 175
+    i2: 216
+    i3: 24
+    i4: 164
+    i5: 216
+    i6: 241
+    i7: 228
+    i8: 107
+    i9: 173
+    i10: 91
+    i11: 181
+    i12: 153
+    i13: 218
+    i14: 44
+    i15: 105
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114990669630507590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1941,7 +1995,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1701479179
+  randomSeed: 1646160065
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5386,7 +5440,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -896081085
+  randomSeed: 84455753
   InitialModule:
     serializedVersion: 3
     enabled: 1

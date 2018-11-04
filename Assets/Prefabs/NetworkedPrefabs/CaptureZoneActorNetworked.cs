@@ -4,6 +4,16 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
+public struct AirStrikeNetwork
+{
+    public CaptureZoneActorNetworked captureZone; /*The capture zone where this airstrike was earned*/
+
+    public AirStrikeNetwork(CaptureZoneActorNetworked captureZoneActor)
+    {
+        captureZone = captureZoneActor;
+    }
+}
+
 public class CaptureZoneActorNetworked : MonoBehaviour {
 
     public enum Owner { NONE, TEAM1, TEAM2 };
@@ -33,9 +43,12 @@ public class CaptureZoneActorNetworked : MonoBehaviour {
     public NavigationMarkerNetworked team1;
     public NavigationMarkerNetworked team2;
 
+    public AirStrikeNetwork airStrike;
+
     // Use this for initialization
     void Start()
     {
+        airStrike = new AirStrikeNetwork(this);
     }
 
     // Update is called once per frame
@@ -82,6 +95,7 @@ public class CaptureZoneActorNetworked : MonoBehaviour {
                 {
                     capturePercentage -= 10;
                     captureTimer = captureTime;
+                    team1.airstrikes.Add(airStrike);
                     onStartCaptureTeam1.Invoke(); //added event to plug in effects and sounds
                 }
             }
@@ -113,7 +127,7 @@ public class CaptureZoneActorNetworked : MonoBehaviour {
                     if (capturePercentage >= 100)
                     {
                         owner = Owner.TEAM2;
-                        //team2.AirStrikeCount++;
+                        team2.airstrikes.Add(airStrike);
                         onCaptureTeam2.Invoke(); //added Event to plug in effects and sounds
                     }
                 }

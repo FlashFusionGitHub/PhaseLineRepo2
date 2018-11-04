@@ -344,14 +344,17 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4168799010520608}
-  - component: {fileID: 114774110397404924}
-  - component: {fileID: 114367598615614840}
-  - component: {fileID: 114943210070128406}
   - component: {fileID: 65405100067236338}
   - component: {fileID: 54307111966534586}
   - component: {fileID: 114207127843232890}
   - component: {fileID: 114854241449662506}
   - component: {fileID: 82717177872348068}
+  - component: {fileID: 114661067159526068}
+  - component: {fileID: 114257524550697972}
+  - component: {fileID: 114359229808163138}
+  - component: {fileID: 114941814855129640}
+  - component: {fileID: 114192624230696216}
+  - component: {fileID: 114483258575781434}
   m_Layer: 0
   m_Name: Anti-Air - Team 1 (NETWORKED)
   m_TagString: Untagged
@@ -579,7 +582,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751583882122412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0.5, z: 1.2}
+  m_LocalPosition: {x: 111.8767, y: 0.5, z: -247.78961}
   m_LocalScale: {x: 4.0000267, y: 4, z: 4.0000267}
   m_Children:
   - {fileID: 224526710745249134}
@@ -1578,6 +1581,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114192624230696216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751583882122412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToGrow: 0.75
+  cursorParts: []
+  speedModifier: 0
 --- !u!114 &114207127843232890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1594,6 +1611,17 @@ MonoBehaviour:
   - {fileID: 95980115455110114}
   - {fileID: 95876027057700132}
   findAnimatorsButton: 0
+--- !u!114 &114257524550697972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751583882122412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7348475cfd95da47bee6dfa3e33a544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114274344489562990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1605,7 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114367598615614840
+--- !u!114 &114359229808163138
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1613,9 +1641,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1751583882122412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b61ffc49899484bb751f9ef94b1603, type: 3}
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 10
+    i1: 237
+    i2: 37
+    i3: 174
+    i4: 114
+    i5: 186
+    i6: 246
+    i7: 20
+    i8: 217
+    i9: 187
+    i10: 74
+    i11: 244
+    i12: 92
+    i13: 166
+    i14: 41
+    i15: 30
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114433880823458636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1644,6 +1693,27 @@ MonoBehaviour:
   method: 1
   generateOnAwake: 1
   generateNow: 0
+--- !u!114 &114483258575781434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751583882122412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114509167204568340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1706,7 +1776,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114774110397404924
+--- !u!114 &114661067159526068
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1714,15 +1784,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1751583882122412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa9316fd2a4fd84d86c36f8264aaaa9, type: 3}
+  m_Script: {fileID: 11500000, guid: fd45f267ea075004ba1ba06ab4d1fb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unitClass: 1
+  attackType: 0
   team: 1
-  strengths: 000000000100000002000000
-  vulnerabilities: 000000000100000002000000
-  rankState: 2
+  strengths: 02000000
+  vulnerabilities: 0000000002000000
+  rankState: 3
   myGeneral: {fileID: 0}
+  killMeAfter: 0.5
   placementDirection: 1
   numOfRows: 0
   maxNumOfColumns: 3
@@ -1736,7 +1808,7 @@ MonoBehaviour:
   OnGainExperience:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114367598615614840}
+      - m_Target: {fileID: 114257524550697972}
         m_MethodName: Spawn
         m_Mode: 2
         m_Arguments:
@@ -1753,7 +1825,7 @@ MonoBehaviour:
   OnPromotion:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114367598615614840}
+      - m_Target: {fileID: 114257524550697972}
         m_MethodName: Spawn
         m_Mode: 2
         m_Arguments:
@@ -1783,33 +1855,7 @@ MonoBehaviour:
   percentageIncreasePerRank: 50
   influenceRadius: 10
   unitName: 
-  possibleNames:
-  - baz
-  - Greg
-  - Scotsnova
-  - Alpha
-  - Bravo
-  - Charlie
-  - Delta
-  - Echo
-  - Fox
-  - Gustav
-  - Golf
-  - Hotel
-  - Indigo
-  - Jack
-  - Josh
-  - Jimmy
-  - Johnson
-  - Juliet
-  - Killer
-  - Kuck
-  - Buck
-  - Steve
-  - Candice
-  - Tim
-  - Bazly
-  maxHealth: 100
+  possibleNames: []
   currentHealth: 100
   onTakeDamage:
     m_PersistentCalls:
@@ -1841,11 +1887,11 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114367598615614840}
+      - m_Target: {fileID: 114257524550697972}
         m_MethodName: Spawn
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1834409643084570, guid: f776538b13c4a3d458e85caf99a8c118,
+          m_ObjectArgument: {fileID: 1378734515160750, guid: 70c418343841d4143a26d57d87ca5a81,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -1853,9 +1899,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1751583882122412}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_healthBar: {fileID: 114825720505740486}
+  healthBar: {fileID: 224896049510362142}
   moving: 0
   OnMove:
     m_PersistentCalls:
@@ -1868,19 +1936,19 @@ MonoBehaviour:
   turnSpeed: 12
   moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
     type: 2}
-  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: fd78f79bfb5d53742882a2348c6df90e,
+  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: 14e89b401e13db245860f91654ce7fd0,
     type: 2}
   hoverHeight: 3
   verticleSpeed: 5
   m_navAgent: {fileID: 0}
   avoidanceRange: 2
   guns:
-  - damage: 5
-    TimeBetweenShots: 1.5
+  - damage: 10
+    TimeBetweenShots: 2
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 8
-    attackRangeMax: 40
+    attackRangeMax: 100
     attackTarget: {fileID: 0}
     turret: {fileID: 4508660780336256}
     turretAimSpeed: 2
@@ -1926,7 +1994,7 @@ MonoBehaviour:
     onKillShot:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114774110397404924}
+        - m_Target: {fileID: 114661067159526068}
           m_MethodName: grantExperience
           m_Mode: 4
           m_Arguments:
@@ -1963,14 +2031,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     barrelAimSpeed: 8
   op: {fileID: 0}
-  primaryRenderers:
-  - {fileID: 23100444224388954}
-  - {fileID: 23232036517943516}
-  secondaryRenderers:
-  - {fileID: 23984845578306516}
-  - {fileID: 23011737981252998}
-  - {fileID: 23516831980365836}
-  selectedFactions: {fileID: 0}
+  targetToAttack: {fileID: 0}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114825720505740486
 MonoBehaviour:
@@ -2059,7 +2120,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c51297dfa6fe54f4fa08917071955fb7, type: 3}
     minPitch: 1
     maxPitch: 2
---- !u!114 &114943210070128406
+--- !u!114 &114941814855129640
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

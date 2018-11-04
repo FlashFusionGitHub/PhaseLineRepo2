@@ -5,23 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Menu Scenes/Menu.unity
     guid: cf65885248fe0af4c94dbd6ddaffb8f4
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Menu Scenes/FactionSelection.unity
     guid: e41e1189be504054f9490d08cf4cff85
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Menu Scenes/ControllerScene.unity
     guid: d41504555805dea44aae1d311c6fc8ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Levels/Desert-Canyon 1.unity
     guid: 1ca198a9045aa5c4daf154e6bdaa23fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Menu Scenes/Settings.unity
     guid: c79aef176ed025946a9127729fd8a127
-  - enabled: 1
-    path: Assets/_Scenes/Menu Scenes/Lobby.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/c4e51856575efaf40b90a17e49117a0b
     guid: c4e51856575efaf40b90a17e49117a0b
   - enabled: 1
     path: Assets/_Scenes/Test Scenes/PhaseLineOnline.unity

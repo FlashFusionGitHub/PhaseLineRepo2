@@ -16,14 +16,14 @@ public class PlayerSetup : NetworkBehaviour {
     // Use this for initialization
     void Start () {
 
-        if(!isLocalPlayer)
+        if(isClient && !isServer)
         {
             for(int i = 0; i < componentsToDisable.Length; i++)
             {
                 componentsToDisable[i].enabled = false;
             }
 
-            CmdSpawn();
+            CmdSpawnTeamTwo();
 
             FindObjectOfType<ObjectPoolNetworked>().FindAllTroopTargets();
             FindObjectOfType<ObjectPoolNetworked>().SplitTroops();
@@ -53,7 +53,7 @@ public class PlayerSetup : NetworkBehaviour {
     }
 
     [Command]
-    void CmdSpawn()
+    void CmdSpawnTeamTwo()
     {
         for (int i = 0; i < prefabs.Length; i++)
         {

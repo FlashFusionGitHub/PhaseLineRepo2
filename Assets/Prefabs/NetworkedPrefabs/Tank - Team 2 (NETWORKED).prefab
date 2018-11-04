@@ -194,6 +194,12 @@ GameObject:
   - component: {fileID: 114233617368687136}
   - component: {fileID: 114787361151110788}
   - component: {fileID: 82940974382955256}
+  - component: {fileID: 114634699294091740}
+  - component: {fileID: 114549630003109458}
+  - component: {fileID: 114746896153054488}
+  - component: {fileID: 114373850054764438}
+  - component: {fileID: 114868305629242228}
+  - component: {fileID: 114793195253806402}
   m_Layer: 0
   m_Name: Tank - Team 2 (NETWORKED)
   m_TagString: Untagged
@@ -451,7 +457,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706772436111240}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: -35.472908, y: 0.5, z: -241.11845}
+  m_LocalPosition: {x: 45.54573, y: 0.5, z: -247.41331}
   m_LocalScale: {x: 4.0000234, y: 4, z: 4.0000234}
   m_Children:
   - {fileID: 224696089192713114}
@@ -1129,6 +1135,49 @@ MonoBehaviour:
   - {fileID: 95425207742916706}
   - {fileID: 95564893007684674}
   findAnimatorsButton: 0
+--- !u!114 &114373850054764438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1706772436111240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 139
+    i1: 127
+    i2: 102
+    i3: 37
+    i4: 107
+    i5: 57
+    i6: 4
+    i7: 132
+    i8: 216
+    i9: 8
+    i10: 255
+    i11: 5
+    i12: 135
+    i13: 158
+    i14: 140
+    i15: 18
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114549630003109458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1706772436111240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7348475cfd95da47bee6dfa3e33a544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114622694356669116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1138,6 +1187,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114634699294091740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1706772436111240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d924bd4f3e7b2e34bae6cf64d7720bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114727445105781828
@@ -1151,6 +1211,285 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114746896153054488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1706772436111240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd45f267ea075004ba1ba06ab4d1fb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitClass: 0
+  attackType: 0
+  team: 2
+  strengths: 0000000001000000
+  vulnerabilities: 0000000002000000
+  rankState: 3
+  myGeneral: {fileID: 0}
+  killMeAfter: 0.5
+  placementDirection: 1
+  numOfRows: 0
+  maxNumOfColumns: 3
+  positionOffset: {x: 0, y: 0, z: 0}
+  distanceBetweenPoints: {x: 4, y: 4}
+  formationPositions: []
+  oldPos: {fileID: 0}
+  pd: 0
+  count: 0
+  rank: 0
+  OnGainExperience:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114549630003109458}
+        m_MethodName: Spawn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1481620279185138, guid: f9aaf133bc752334db2c5403b2c76451,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnPromotion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114549630003109458}
+        m_MethodName: Spawn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1481620279185138, guid: f9aaf133bc752334db2c5403b2c76451,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnBecomeGeneral:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114634699294091740}
+        m_MethodName: CallCmdEnableObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1853628866102148}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114233617368687136}
+        m_MethodName: callTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Win
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  rankTitles:
+  - Big
+  - Bigger
+  - Biggest
+  - Most Massive
+  - Biggggggggggg
+  experienceRequiredForNextRank: 10
+  currentExperience: 0
+  percentageIncreasePerRank: 50
+  influenceRadius: 10
+  unitName: 
+  possibleNames: []
+  currentHealth: 100
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114787361151110788}
+        m_MethodName: PlayAudioTag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hit
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114233617368687136}
+        m_MethodName: callTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hit
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114549630003109458}
+        m_MethodName: Spawn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1378734515160750, guid: 70c418343841d4143a26d57d87ca5a81,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114634699294091740}
+        m_MethodName: CallCmdDisableObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1853628866102148}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  healthBar: {fileID: 224535367108033710}
+  moving: 0
+  OnMove:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  moveTarget: {fileID: 0}
+  movementType: 1
+  moveSpeed: 50
+  turnSpeed: 12
+  moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
+    type: 2}
+  generalMoveTargetPrefab: {fileID: 1420119947695036, guid: fd78f79bfb5d53742882a2348c6df90e,
+    type: 2}
+  hoverHeight: 3
+  verticleSpeed: 5
+  m_navAgent: {fileID: 0}
+  avoidanceRange: 2
+  guns:
+  - damage: 10
+    TimeBetweenShots: 4
+    m_gunTimerRandomiser: 0.1
+    m_gunTimer: 0
+    attackRangeMin: 8
+    attackRangeMax: 40
+    attackTarget: {fileID: 0}
+    turret: {fileID: 4318680714396694}
+    turretAimSpeed: 2
+    barrel: {fileID: 4148211847844934}
+    onShoot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 198597999772909084}
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114233617368687136}
+          m_MethodName: callTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114787361151110788}
+          m_MethodName: PlayAudioTag
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onKillShot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114746896153054488}
+          m_MethodName: grantExperience
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 20
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114233617368687136}
+          m_MethodName: callTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: KillShot
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 114787361151110788}
+          m_MethodName: PlayAudioTag
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Death
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    barrelAimSpeed: 8
+  op: {fileID: 0}
+  targetToAttack: {fileID: 0}
+  previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114787361151110788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1206,6 +1545,27 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c51297dfa6fe54f4fa08917071955fb7, type: 3}
     minPitch: 1
     maxPitch: 2
+--- !u!114 &114793195253806402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1706772436111240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114811477547995170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1281,6 +1641,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114868305629242228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1706772436111240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToGrow: 0.75
+  cursorParts: []
+  speedModifier: 0
 --- !u!114 &114919880554435082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1368,7 +1742,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -2136206033
+  randomSeed: 2113620015
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4810,7 +5184,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -759591629
+  randomSeed: 301376120
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8252,7 +8626,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 850344525
+  randomSeed: -130783248
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11694,7 +12068,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -1637694523
+  randomSeed: -642067454
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15140,7 +15514,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 419027429
+  randomSeed: 1199337660
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -18582,7 +18956,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1627184187
+  randomSeed: 1891490981
   InitialModule:
     serializedVersion: 3
     enabled: 1
