@@ -13,8 +13,12 @@ public class PlayerSetup : NetworkBehaviour {
 
     [SerializeField] Vector3[] teamTwoSpawnPoints;
 
+    NavigationMarkerNetworked nmn;
+
     // Use this for initialization
     void Start () {
+
+        nmn = GetComponent<NavigationMarkerNetworked>();
 
         if(isClient && !isServer)
         {
@@ -22,6 +26,8 @@ public class PlayerSetup : NetworkBehaviour {
             {
                 componentsToDisable[i].enabled = false;
             }
+
+            nmn.m_team = Team.TEAM2;
 
             CmdSpawnTeamTwo();
 
@@ -37,6 +43,7 @@ public class PlayerSetup : NetworkBehaviour {
             {
                 sceneCamera.gameObject.SetActive(false);
             }
+            nmn.m_team = Team.TEAM1;
 
             FindObjectOfType<ObjectPoolNetworked>().FindAllTroopTargets();
             FindObjectOfType<ObjectPoolNetworked>().SplitTroops();

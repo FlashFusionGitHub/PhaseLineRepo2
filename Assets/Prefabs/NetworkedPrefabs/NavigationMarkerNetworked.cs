@@ -47,11 +47,6 @@ public class NavigationMarkerNetworked : NetworkBehaviour {
 
         op = FindObjectOfType<ObjectPoolNetworked>();
 
-        if (!isLocalPlayer)
-            m_team = Team.TEAM2;
-        else
-            m_team = Team.TEAM1;
-
         GameObject previousPos = new GameObject("previous Pos");
         prevPos = previousPos.transform;
 

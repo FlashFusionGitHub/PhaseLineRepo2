@@ -588,6 +588,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114133012024478378, guid: 1de45688b38625c44bb98fcbc9f55687,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4492695346207500, guid: 1de45688b38625c44bb98fcbc9f55687, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -636,6 +641,42 @@ Prefab:
       propertyPath: m_SpawnPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 1010804666414388, guid: f35ef198547c9604baefc2a13bdddff1,
+        type: 2}
+    - target: {fileID: 114133012024478378, guid: 1de45688b38625c44bb98fcbc9f55687,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1706772436111240, guid: 8b7f66256b390484d808ff05879e8c12,
+        type: 2}
+    - target: {fileID: 114133012024478378, guid: 1de45688b38625c44bb98fcbc9f55687,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1277759624303856, guid: 01a80b41b6e44ac4cb60393459395860,
+        type: 2}
+    - target: {fileID: 114133012024478378, guid: 1de45688b38625c44bb98fcbc9f55687,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1107339211533330, guid: 8843826e51e81a041b0daf132a648d32,
+        type: 2}
+    - target: {fileID: 114133012024478378, guid: 1de45688b38625c44bb98fcbc9f55687,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 1147978488760096, guid: e4afd818a4d8f1e46bad5bb599da2c69,
+        type: 2}
+    - target: {fileID: 114133012024478378, guid: 1de45688b38625c44bb98fcbc9f55687,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 1751583882122412, guid: 0aed25ae72baf614d9bb4af45ca6291e,
+        type: 2}
+    - target: {fileID: 114133012024478378, guid: 1de45688b38625c44bb98fcbc9f55687,
+        type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 1841010800377030, guid: b8cc89e5904e5214584bebeede92ce5e,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1de45688b38625c44bb98fcbc9f55687, type: 2}
@@ -3103,6 +3144,26 @@ MonoBehaviour:
   team2Troops: []
   team1Generals: []
   team2Generals: []
+  p1Group: {fileID: 1983384491}
+  p1Tanks:
+    prefab: {fileID: 1277759624303856, guid: 01a80b41b6e44ac4cb60393459395860, type: 2}
+    amount: 20
+  p1AATanks:
+    prefab: {fileID: 1751583882122412, guid: 0aed25ae72baf614d9bb4af45ca6291e, type: 2}
+    amount: 20
+  p1Helis:
+    prefab: {fileID: 1107339211533330, guid: 8843826e51e81a041b0daf132a648d32, type: 2}
+    amount: 20
+  p2Group: {fileID: 699869186}
+  p2Tanks:
+    prefab: {fileID: 1706772436111240, guid: 8b7f66256b390484d808ff05879e8c12, type: 2}
+    amount: 20
+  p2AATanks:
+    prefab: {fileID: 1841010800377030, guid: b8cc89e5904e5214584bebeede92ce5e, type: 2}
+    amount: 20
+  p2Helis:
+    prefab: {fileID: 1147978488760096, guid: e4afd818a4d8f1e46bad5bb599da2c69, type: 2}
+    amount: 20
 --- !u!4 &1425179837
 Transform:
   m_ObjectHideFlags: 0
