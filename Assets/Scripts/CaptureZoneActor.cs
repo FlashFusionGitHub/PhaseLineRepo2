@@ -50,11 +50,12 @@ public class CaptureZoneActor : MonoBehaviour {
     // Use this for initialization
     void Start () {
         airStrike = new AirStrike(this);
+        InvokeRepeating("PurgeTheLists", 5f, 5f);
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        //PurgeTheLists();
         if (capturePercentage == 0)
         {
             owner = Owner.NONE;
@@ -172,6 +173,25 @@ public class CaptureZoneActor : MonoBehaviour {
 
     }
 
+    void PurgeTheLists()
+    {
+        foreach (TroopActor ta in team1unitsInZone)
+        {
+            if (!ta.gameObject.activeInHierarchy)
+            {
+                team1unitsInZone.Remove(ta);
+            }
+        }
+
+        foreach (TroopActor ta in team2unitsInZone)
+        {
+            if (!ta.gameObject.activeInHierarchy)
+            {
+                team2unitsInZone.Remove(ta);
+            }
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
 
@@ -188,5 +208,9 @@ public class CaptureZoneActor : MonoBehaviour {
                 team2unitsInZone.Remove(other.GetComponent<TroopActor>());
             }
         }
+    }
+    private void OnDestroy()
+    {
+        CancelInvoke();
     }
 }
