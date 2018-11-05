@@ -73,7 +73,7 @@ public class TroopController : MonoBehaviour {
 
         QuickSelect();
 
-        if (m_controller.DpadLeftWasPress() && m_generals.Count > 1) {
+        if (m_controller.DpadLeftWasPress() && m_generals.Count > 0) {
             //destroy the currect circle
             if (m_currentSelectionCircle != null)
                 Destroy(m_currentSelectionCircle);
@@ -81,7 +81,7 @@ public class TroopController : MonoBehaviour {
             CheckGeneralState(false, true);
         }
 
-        if (m_controller.DpadRightWasPress() && m_generals.Count > 1) {
+        if (m_controller.DpadRightWasPress() && m_generals.Count > 0) {
             //destory the currect circle
             if (m_currentSelectionCircle != null)
                 Destroy(m_currentSelectionCircle);
@@ -136,7 +136,6 @@ public class TroopController : MonoBehaviour {
 			underlingsCount = 0;
 			foreach (TroopActor T in op.allTroopActors) {
 				if (T.myGeneral == m_generals [index]) {
-					Debug.Log (UnitToAttack);
 					T.targetToAttack = UnitToAttack;
 					T.SetAttackType (AttackType.SELECTED);
 					underlingsCount++;

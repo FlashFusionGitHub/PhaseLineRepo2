@@ -177,6 +177,7 @@ public class TroopActor : MonoBehaviour
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
+        m_navAgent = GetComponent<NavMeshAgent>();
 		attackType = AttackType.AUTO;
 
         try
@@ -637,12 +638,29 @@ public class TroopActor : MonoBehaviour
             else if (!m_navAgent.isActiveAndEnabled)
             {
                 m_navAgent.enabled = true;
+                if (m_navAgent.speed != moveSpeed)
+                {
+                    m_navAgent.speed = moveSpeed;
+                }
+                if (m_navAgent.angularSpeed != turnSpeed)
+                {
+                    m_navAgent.angularSpeed = turnSpeed;
+                }
             }
             else if (m_navAgent && moveTarget)
             {
+                if (m_navAgent.speed != moveSpeed)
+                {
+                    m_navAgent.speed = moveSpeed;
+                }
+                if (m_navAgent.angularSpeed != turnSpeed)
+                {
+                    m_navAgent.angularSpeed = turnSpeed;
+                }
                 Debug.DrawLine(transform.position, moveTarget.position, Color.red);
                 if (m_navAgent.isOnNavMesh)
                 {
+                    m_navAgent.stoppingDistance = (attackType == AttackType.AUTO) ? 0 : guns[0].attackRangeMin;
 					m_navAgent.SetDestination((attackType == AttackType.AUTO) ? moveTarget.position : targetToAttack.transform.position);
                 }
                 else
@@ -673,7 +691,17 @@ public class TroopActor : MonoBehaviour
             LookAtMoveTarget();
             if (ClearLineOfSight())
             {
-                MoveTowardsMoveTarget();
+                if (attackType == AttackType.AUTO)
+                {
+                    MoveTowardsMoveTarget();
+                }
+                else
+                {
+                    if (Vector3.Distance(moveTarget.position, transform.position) > guns[0].attackRangeMin)
+                    {
+                        MoveTowardsMoveTarget();
+                    }
+                }
             }
             else
             {
@@ -955,5 +983,18 @@ public class TroopActor : MonoBehaviour
 
         if(displayTime <= 0)
             imageHolder = image;
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

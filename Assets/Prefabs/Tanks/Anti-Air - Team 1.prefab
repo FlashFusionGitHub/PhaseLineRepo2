@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 82272582531257116}
   - component: {fileID: 114259615592921914}
   - component: {fileID: 114693514329132686}
+  - component: {fileID: 195989350389304180}
   m_Layer: 0
   m_Name: Anti-Air - Team 1
   m_TagString: Untagged
@@ -540,8 +541,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272410556806254}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: 0, z: 8.8}
+  m_LocalRotation: {x: -0, y: -0.9174253, z: -0, w: -0.39790824}
+  m_LocalPosition: {x: -582.9, y: 62.378735, z: -513.2}
   m_LocalScale: {x: 4.0000267, y: 4, z: 4.0000267}
   m_Children:
   - {fileID: 224494173360387022}
@@ -1803,6 +1804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitClass: 1
+  attackType: 0
   team: 1
   strengths: 02000000
   vulnerabilities: 0000000002000000
@@ -1950,6 +1952,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: UpdatePlayer2Score
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_healthBar: {fileID: 114422527757077368}
@@ -1962,7 +1975,7 @@ MonoBehaviour:
   moveTarget: {fileID: 0}
   movementType: 1
   moveSpeed: 25
-  turnSpeed: 12
+  turnSpeed: 100
   moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
     type: 2}
   generalMoveTargetPrefab: {fileID: 1420119947695036, guid: fd78f79bfb5d53742882a2348c6df90e,
@@ -1976,7 +1989,7 @@ MonoBehaviour:
     TimeBetweenShots: 2
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
-    attackRangeMin: 8
+    attackRangeMin: 25
     attackRangeMax: 100
     attackTarget: {fileID: 0}
     turret: {fileID: 4771444643778062}
@@ -2068,6 +2081,9 @@ MonoBehaviour:
   - {fileID: 23919851847332666}
   - {fileID: 23927154213048792}
   selectedFactions: {fileID: 0}
+  targetToAttack: {fileID: 0}
+  images: []
+  imageHolder: {fileID: 0}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114954374237003632
 MonoBehaviour:
@@ -2110,6 +2126,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!195 &195989350389304180
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1272410556806254}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 100
+  avoidancePriority: 50
+  m_AngularSpeed: 100
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!198 &198067635252444094
 ParticleSystem:
   m_ObjectHideFlags: 1

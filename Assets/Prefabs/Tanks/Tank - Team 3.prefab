@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 82198317433322094}
   - component: {fileID: 114358704233068906}
   - component: {fileID: 114334881729474678}
+  - component: {fileID: 195490821007418496}
   m_Layer: 0
   m_Name: Tank - Team 3
   m_TagString: Untagged
@@ -442,9 +443,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549349656298378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.3, y: 0, z: 16.7}
-  m_LocalScale: {x: 4.0000334, y: 4, z: 4.0000334}
+  m_LocalRotation: {x: -0, y: -0.9174253, z: -0, w: -0.39790824}
+  m_LocalPosition: {x: 244.20001, y: 62.378735, z: 387.1}
+  m_LocalScale: {x: 4.0000434, y: 4, z: 4.0000434}
   m_Children:
   - {fileID: 224968002587950636}
   - {fileID: 4052677811441530}
@@ -1350,6 +1351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitClass: 0
+  attackType: 0
   team: 1
   strengths: 0000000001000000
   vulnerabilities: 0000000002000000
@@ -1519,8 +1521,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114334881729474678}
-        m_MethodName: UpdateScoreTeam1
+      - m_Target: {fileID: 0}
+        m_MethodName: UpdatePlayer2Score
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1541,8 +1543,8 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   moveTarget: {fileID: 0}
   movementType: 1
-  moveSpeed: 25
-  turnSpeed: 12
+  moveSpeed: 50
+  turnSpeed: 100
   moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
     type: 2}
   generalMoveTargetPrefab: {fileID: 1420119947695036, guid: fd78f79bfb5d53742882a2348c6df90e,
@@ -1556,7 +1558,7 @@ MonoBehaviour:
     TimeBetweenShots: 4
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
-    attackRangeMin: 8
+    attackRangeMin: 25
     attackRangeMax: 40
     attackTarget: {fileID: 0}
     turret: {fileID: 4860995566227364}
@@ -1646,6 +1648,9 @@ MonoBehaviour:
   - {fileID: 23127573128019860}
   - {fileID: 23800321047940842}
   selectedFactions: {fileID: 0}
+  targetToAttack: {fileID: 0}
+  images: []
+  imageHolder: {fileID: 0}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114675988927092244
 MonoBehaviour:
@@ -1679,6 +1684,27 @@ MonoBehaviour:
   - {fileID: 95741792208321476}
   - {fileID: 95871231052111536}
   findAnimatorsButton: 0
+--- !u!195 &195490821007418496
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549349656298378}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 100
+  avoidancePriority: 50
+  m_AngularSpeed: 100
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!198 &198243882626513082
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -145,10 +145,13 @@ public class Chicken : MonoBehaviour {
         Transform me = this.transform;
         foreach (Chicken myFriend in myFriends)
         {
-            if (Vector3.Distance(me.position, myFriend.transform.position) < friendZone)
+            if(myFriend != null)
             {
-                myFriend.tank = tank;
-                myFriend.Invoke("MakeAngry", myFriend.chaseTimeout);
+                if (Vector3.Distance(me.position, myFriend.transform.position) < friendZone)
+                {
+                    myFriend.tank = tank;
+                    myFriend.Invoke("MakeAngry", myFriend.chaseTimeout);
+                }
             }
         }
     }
