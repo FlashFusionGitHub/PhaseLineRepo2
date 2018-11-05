@@ -218,4 +218,9 @@ public class NavigationArrowActor : MonoBehaviour
 
 		Gizmos.DrawWireSphere (m_currentMarker.transform.position, 20.0f);
     }
+
+    public void moveMarkerToMyBoy()
+    {
+        m_currentMarker.transform.position = troopController.currentSelectedUnit.transform.position;
+    }
 }

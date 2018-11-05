@@ -85,14 +85,6 @@ public class CameraController : MonoBehaviour {
 
     public void MoveCameraTo(Vector3 targetPos)
     {
-        changePosition = true;
-
-        Vector3 oldPos = transform.position;
-        Vector3 fwd = camera.transform.forward;
-
-        position = new Vector3(
-            targetPos.x + fwd.x / fwd.y * (oldPos.y - targetPos.y),
-            oldPos.y,
-            targetPos.z + fwd.z / fwd.y * (oldPos.y - targetPos.y));
+        transform.position = new Vector3(targetPos.x, transform.position.y, targetPos.z);
     }
 }
