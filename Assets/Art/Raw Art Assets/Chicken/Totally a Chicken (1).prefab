@@ -396,8 +396,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702955134259948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.4, y: 0.68, z: 22.900002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -275.2, y: 24.47, z: -451}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4652281047441868}
   m_Father: {fileID: 0}
@@ -691,6 +691,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  potentialColours:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.93103445, b: 0, a: 1}
+  - {r: 0.6544118, g: 0.48012322, b: 0.1684148, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  renderer: {fileID: 137957969921760954}
   friendZone: 50
 --- !u!114 &114115272510220716
 MonoBehaviour:

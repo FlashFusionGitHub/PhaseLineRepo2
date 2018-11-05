@@ -167,6 +167,11 @@ public class TroopActor : MonoBehaviour
 
 	[Header("Target To Attack - Do not set this in inspector")]
 	public TroopActor targetToAttack;
+
+    [Header("Images")]
+    public Sprite[] images;
+    public Image imageHolder;
+
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      / START FUNCTION BELOW \
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -940,5 +945,15 @@ public class TroopActor : MonoBehaviour
         {
             AddDamage(percentIncrease);
         }
+    }
+
+    float displayTime = 2.0f;
+    //float bor
+    void DisplayImage(Image image)
+    {
+        displayTime -= Time.deltaTime;
+
+        if(displayTime <= 0)
+            imageHolder = image;
     }
 }
