@@ -242,8 +242,14 @@ public class TroopActor : MonoBehaviour
 			Move ();
 			if (attackType == AttackType.AUTO) {
 				AttackClosestEnemy ();
-			} else {
-				AttackTarget ();
+			} else
+            {
+                if (moveTarget.gameObject.activeInHierarchy == true)
+                {
+                    moveTarget.gameObject.SetActive(false);
+                }
+
+                AttackTarget ();
 			}
 		}
     }
@@ -610,6 +616,11 @@ public class TroopActor : MonoBehaviour
         {
             CreateMoveTarget();
         }
+        else if(moveTarget.gameObject.activeInHierarchy == false)
+        {
+            moveTarget.gameObject.SetActive(true);
+        }
+
         if (movementType == MovementTypes.Ground)
         {
             if (!m_navAgent)
@@ -734,19 +745,39 @@ public class TroopActor : MonoBehaviour
 
     void MoveTowardsMoveTarget()
     {
-        if (Vector3.Distance(new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z), transform.position) > avoidanceRange)
+        if(attackType == AttackType.AUTO)
         {
-            transform.position += (new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z) - transform.position).normalized * moveSpeed * Time.deltaTime;
-            moving = true;
-        }
-        else if (Vector3.Distance(new Vector3(moveTarget.position.x, moveTarget.position.y + hoverHeight, moveTarget.position.z), transform.position) > moveSpeed * Time.deltaTime)
-        {
-            transform.position += (new Vector3(moveTarget.position.x, moveTarget.position.y + hoverHeight, moveTarget.position.z) - transform.position).normalized * verticleSpeed * Time.deltaTime;
-            moving = true;
+            if (Vector3.Distance(new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z), transform.position) > avoidanceRange)
+            {
+                transform.position += (new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z) - transform.position).normalized * moveSpeed * Time.deltaTime;
+                moving = true;
+            }
+            else if (Vector3.Distance(new Vector3(moveTarget.position.x, moveTarget.position.y + hoverHeight, moveTarget.position.z), transform.position) > moveSpeed * Time.deltaTime)
+            {
+                transform.position += (new Vector3(moveTarget.position.x, moveTarget.position.y + hoverHeight, moveTarget.position.z) - transform.position).normalized * verticleSpeed * Time.deltaTime;
+                moving = true;
+            }
+            else
+            {
+                moving = false;
+            }
         }
         else
         {
-            moving = false;
+            if (Vector3.Distance(new Vector3(targetToAttack.transform.position.x, transform.position.y, targetToAttack.transform.position.z), transform.position) > avoidanceRange)
+            {
+                transform.position += (new Vector3(targetToAttack.transform.position.x, transform.position.y, targetToAttack.transform.position.z) - transform.position).normalized * moveSpeed * Time.deltaTime;
+                moving = true;
+            }
+            else if (Vector3.Distance(new Vector3(targetToAttack.transform.position.x, targetToAttack.transform.position.y + hoverHeight, targetToAttack.transform.position.z), transform.position) > moveSpeed * Time.deltaTime)
+            {
+                transform.position += (new Vector3(targetToAttack.transform.position.x, targetToAttack.transform.position.y + hoverHeight, targetToAttack.transform.position.z) - transform.position).normalized * verticleSpeed * Time.deltaTime;
+                moving = true;
+            }
+            else
+            {
+                moving = false;
+            }
         }
     }
 

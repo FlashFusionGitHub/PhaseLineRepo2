@@ -29,7 +29,7 @@ public class Cursor : MonoBehaviour
     void Update()
     {
 
-       transform.position += new Vector3(m_controller.RightAnalogStick().X, m_controller.RightAnalogStick().Y, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
+       transform.position += new Vector3(m_controller.LeftAnalogStick().X, m_controller.LeftAnalogStick().Y, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
 
         float markerXPos = Mathf.Clamp(transform.position.x, 0, Screen.width);
         float markerYPos = Mathf.Clamp(transform.position.y, 0, Screen.height);
