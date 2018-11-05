@@ -590,6 +590,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1545973866231652, guid: c2b381ff340dbbb45b51d4ba3fce3fdc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b381ff340dbbb45b51d4ba3fce3fdc, type: 2}
   m_IsPrefabParent: 0
@@ -1250,8 +1254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 1781210262}
-  primaryColour: {r: 0.8206897, g: 0, b: 1, a: 1}
-  secondaryColour: {r: 0.66176474, g: 0.10218428, b: 0.57686275, a: 1}
+  primaryColour: {r: 0.9254902, g: 0.5294118, b: 0.96862745, a: 1}
+  secondaryColour: {r: 0.9254902, g: 0.5294118, b: 0.96862745, a: 1}
   bigBase: {fileID: 505183538}
 --- !u!1 &911262209
 GameObject:
@@ -2144,8 +2148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 2021515781}
-  primaryColour: {r: 0.11724126, g: 1, b: 0, a: 1}
-  secondaryColour: {r: 0.66435087, g: 0.9705882, b: 0.6066176, a: 1}
+  primaryColour: {r: 0.21568628, g: 0.96862745, b: 0.98039216, a: 1}
+  secondaryColour: {r: 0.21568628, g: 0.96862745, b: 0.98039216, a: 1}
   bigBase: {fileID: 166193376}
 --- !u!1 &1618517730
 GameObject:
@@ -2974,8 +2978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 2102498858}
-  primaryColour: {r: 1, g: 0, b: 0, a: 1}
-  secondaryColour: {r: 1, g: 0, b: 0.35172415, a: 1}
+  primaryColour: {r: 0.9764706, g: 0.21960784, b: 0.21960784, a: 1}
+  secondaryColour: {r: 0.9764706, g: 0.21960784, b: 0.21960784, a: 1}
   bigBase: {fileID: 616957246}
 --- !u!1 &1818351019
 GameObject:
@@ -3397,8 +3401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 1703926776}
-  primaryColour: {r: 1, g: 0.93103456, b: 0, a: 1}
-  secondaryColour: {r: 0.89705884, g: 0.87613356, b: 0.5936419, a: 1}
+  primaryColour: {r: 0.24900463, g: 0.77205884, b: 0.14192258, a: 1}
+  secondaryColour: {r: 0.3137255, g: 0.8117647, b: 0.21176471, a: 1}
   bigBase: {fileID: 495428950}
 --- !u!1 &1884066174
 GameObject:
