@@ -397,7 +397,7 @@ Transform:
   m_GameObject: {fileID: 1702955134259948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -275.2, y: 24.47, z: -451}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.940455, y: 1.9404551, z: 1.9404551}
   m_Children:
   - {fileID: 4652281047441868}
   m_Father: {fileID: 0}
@@ -696,7 +696,13 @@ MonoBehaviour:
   - {r: 1, g: 0.93103445, b: 0, a: 1}
   - {r: 0.6544118, g: 0.48012322, b: 0.1684148, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
-  renderer: {fileID: 137957969921760954}
+  renderer:
+  - {fileID: 137957969921760954}
+  - {fileID: 137053727348409498}
+  - {fileID: 137403642735353418}
+  - {fileID: 137039008315144374}
+  - {fileID: 137661419204053876}
+  - {fileID: 137547074560946000}
   friendZone: 50
 --- !u!114 &114115272510220716
 MonoBehaviour:
