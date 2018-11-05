@@ -44,6 +44,7 @@ public class TroopController : MonoBehaviour {
         m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
 
         currentSelectedUnit = m_generals[index].gameObject;
+        m_navigationArrowActor.moveMarkerToMyBoy();
 
         cameraController.MoveCameraTo(m_generals[index].transform.position);
     }
@@ -90,13 +91,18 @@ public class TroopController : MonoBehaviour {
 
 		if (m_navigationArrowActor.m_tank != null && m_controller.Action1WasPress() && !m_navigationArrowActor.m_airStrikeState)
         {
-			UnitToAttack = m_navigationArrowActor.m_tank;
-
+            if (UnitToAttack != m_navigationArrowActor.m_tank)
+            {
+                UnitToAttack = m_navigationArrowActor.m_tank;
+            }
+            
 		}
 		else if(m_navigationArrowActor.m_tank == null && m_controller.Action1WasPress() && !m_navigationArrowActor.m_airStrikeState) 
 		{
-			UnitToAttack = null;
-
+            if (UnitToAttack != null)
+            {
+                UnitToAttack = null;
+            }
 			m_generals [index].targetToAttack = null;
 			m_generals[index].SetAttackType (AttackType.AUTO);
 			foreach (TroopActor T in op.allTroopActors) {
@@ -169,6 +175,8 @@ public class TroopController : MonoBehaviour {
             cameraController.MoveCameraTo(m_generals[index].transform.position);
 
             currentSelectedUnit = m_generals[index].gameObject;
+            m_navigationArrowActor.moveMarkerToMyBoy();
+            m_navigationArrowActor.m_navMarker.transform.position = currentSelectedUnit.transform.position;
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
         }
@@ -181,8 +189,10 @@ public class TroopController : MonoBehaviour {
             cameraController.MoveCameraTo(m_generals[index].transform.position);
 
             currentSelectedUnit = m_generals[index].gameObject;
+            m_navigationArrowActor.moveMarkerToMyBoy();
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
         }
+        
     }
 }
