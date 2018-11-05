@@ -34,11 +34,25 @@ public class Chicken : MonoBehaviour {
 
     Chicken[] myFriends;
 
+    public Color[] potentialColours;
+    public Renderer renderer;
+
     void Start()
     {
+
+        ChickidyRandomiser();
+
         myFriends = FindObjectsOfType<Chicken>();
         target = transform.position;
         chaseTimer = chaseTime;
+    }
+
+    void ChickidyRandomiser()
+    {
+        float chickenSize = Random.Range(0.5f, 2.5f);
+        this.gameObject.transform.localScale = new Vector3(chickenSize, chickenSize, chickenSize);
+
+        renderer.material.SetColor(Shader.PropertyToID("_TeamColor"), potentialColours[Random.Range(0, 2)]);
     }
 
     void Update()
