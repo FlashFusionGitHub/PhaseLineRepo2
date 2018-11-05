@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 4032130447359170}
   - component: {fileID: 114277572221351244}
   - component: {fileID: 114723919674145610}
+  - component: {fileID: 114782641902640116}
   m_Layer: 0
   m_Name: General MoveTarget
   m_TagString: Untagged
@@ -736,3 +737,17 @@ MonoBehaviour:
   - {fileID: 1756732281132018}
   - {fileID: 1355489459847058}
   team: 1
+--- !u!114 &114782641902640116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1420119947695036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02718429e24f18742bccea5ef89d6977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lm:
+    serializedVersion: 2
+    m_Bits: 0
