@@ -172,13 +172,28 @@ public class TroopActor : MonoBehaviour
     public Sprite[] images;
     public Image imageHolder;
 
+    [Header("Line Renderer")]
+    public Gradient gradient;
+    LineRenderer lineRenderer;
+    ZoneController zc;
+
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      / START FUNCTION BELOW \
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
         m_navAgent = GetComponent<NavMeshAgent>();
 		attackType = AttackType.AUTO;
+
+        zc = FindObjectOfType<ZoneController>();
+
+        if (team == Team.TEAM1)
+            onDie.AddListener(zc.UpdatePlayer2KillScore);
+        if (team == Team.TEAM2)
+            onDie.AddListener(zc.UpdatePlayer1KillScore);
 
         try
         {
@@ -240,12 +255,24 @@ public class TroopActor : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                     /  UPDATE FUNCTION BELOW \
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    float timer = 1f;
     void Update()
     {
         RankAction();
 
-		if (rankState != RankState.dead && rankState != RankState.Base) {
-			Move ();
+        if (rankState != RankState.dead && rankState != RankState.Base) {
+
+            timer -= Time.deltaTime;
+            if (timer <= 0 && lineRenderer.enabled)
+            {
+                lineRenderer.enabled = false;
+                timer = 1f;
+            }
+
+            UpdateImage();
+
+            Move ();
+
 			if (attackType == AttackType.AUTO) {
 				AttackClosestEnemy ();
 			} else
@@ -433,13 +460,14 @@ public class TroopActor : MonoBehaviour
 				gun.turret.rotation = Quaternion.Slerp(gun.turret.rotation, Quaternion.LookRotation(gun.attackTarget.transform.position - gun.turret.position), gun.turretAimSpeed * Time.deltaTime);
 				gun.turret.localEulerAngles = new Vector3(0, gun.turret.localEulerAngles.y, 0);
 
-
-				gun.barrel.rotation = Quaternion.Slerp(gun.barrel.rotation, Quaternion.LookRotation(gun.attackTarget.transform.position - gun.barrel.position), gun.barrelAimSpeed * Time.deltaTime);
+                gun.barrel.rotation = Quaternion.Slerp(gun.barrel.rotation, Quaternion.LookRotation(gun.attackTarget.transform.position - gun.barrel.position), gun.barrelAimSpeed * Time.deltaTime);
 				gun.barrel.localEulerAngles = new Vector3(gun.barrel.localEulerAngles.x, 0, 0);
 				gun.m_gunTimer -= Time.deltaTime;
 				if (gun.m_gunTimer < Time.deltaTime)
 				{
-					ResetGunTimer(gun);
+                    DrawLineRender(gun.turret, troopToAttack.transform);
+
+                    ResetGunTimer(gun);
 					Fire(gun);
 				}
 			}
@@ -457,17 +485,34 @@ public class TroopActor : MonoBehaviour
                 gun.turret.rotation = Quaternion.Slerp(gun.turret.rotation, Quaternion.LookRotation(gun.attackTarget.transform.position - gun.turret.position), gun.turretAimSpeed * Time.deltaTime);
                 gun.turret.localEulerAngles = new Vector3(0, gun.turret.localEulerAngles.y, 0);
 
-
                 gun.barrel.rotation = Quaternion.Slerp(gun.barrel.rotation, Quaternion.LookRotation(gun.attackTarget.transform.position - gun.barrel.position), gun.barrelAimSpeed * Time.deltaTime);
                 gun.barrel.localEulerAngles = new Vector3(gun.barrel.localEulerAngles.x, 0, 0);
                 gun.m_gunTimer -= Time.deltaTime;
                 if (gun.m_gunTimer < Time.deltaTime)
                 {
+                    DrawLineRender(gun.turret, gun.attackTarget.transform);
+
                     ResetGunTimer(gun);
                     Fire(gun);
                 }
             }
         }
+    }
+
+    void DrawLineRender(Transform orgin, Transform target)
+    {
+        lineRenderer.colorGradient = gradient;
+        lineRenderer.enabled = true;
+        lineRenderer.SetPosition(0, orgin.position);
+        lineRenderer.startWidth = 0.5f;
+        lineRenderer.endWidth = 0.5f;
+        float dist = Vector3.Distance(orgin.position, target.position);
+
+        float x = Mathf.Lerp(0, dist, Time.deltaTime);
+
+        Vector3 pointAlongLine = x * Vector3.Normalize(orgin.position - target.position) + target.position;
+
+        lineRenderer.SetPosition(1, pointAlongLine);
     }
 
     void ResetGunTimer(GunSettings gun)
@@ -814,6 +859,22 @@ public class TroopActor : MonoBehaviour
         }
     }
 
+    void UpdateImage()
+    {
+        if (currentHealth > 70f)
+        {
+            imageHolder.sprite = images[0];
+        }
+        else if (currentHealth < 70f && currentHealth > 20f)
+        {
+            imageHolder.sprite = images[1];
+        }
+        else if (currentHealth < 20f)
+        {
+            imageHolder.sprite = images[2];
+        }
+    }
+
     public void TakeDamage(float damageToTake)
     {
         onTakeDamage.Invoke();
@@ -973,28 +1034,5 @@ public class TroopActor : MonoBehaviour
         {
             AddDamage(percentIncrease);
         }
-    }
-
-    float displayTime = 2.0f;
-    //float bor
-    void DisplayImage(Image image)
-    {
-        displayTime -= Time.deltaTime;
-
-        if(displayTime <= 0)
-            imageHolder = image;
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

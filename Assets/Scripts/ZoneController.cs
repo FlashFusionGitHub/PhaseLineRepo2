@@ -14,7 +14,8 @@ public class ZoneController : MonoBehaviour {
     public int team1Score, team2Score;
     public Text team1ScoreText, team2ScoreText;
 
-    public int scoreAmount;
+    public int captureZoneScoreAmount;
+    public int killScoreAmount;
 
     // Use this for initialization
     void Start () {
@@ -37,13 +38,13 @@ public class ZoneController : MonoBehaviour {
                 if (zone.owner == CaptureZoneActor.Owner.TEAM1)
                 {
                     //add points to team 1
-                    team1Score += scoreAmount;
+                    team1Score += captureZoneScoreAmount;
                 }
 
                 if (zone.owner == CaptureZoneActor.Owner.TEAM2)
                 {
                     //add points to team 2
-                    team2Score += scoreAmount;
+                    team2Score += captureZoneScoreAmount;
                 }
 
                 progressTimer = progressTime;
@@ -53,15 +54,15 @@ public class ZoneController : MonoBehaviour {
         }
     }
 
-    public void UpdatePlayer1Score(int amount)
+    public void UpdatePlayer1KillScore()
     {
-        team1Score += amount;
+        team1Score += killScoreAmount;
         UpdateScoreText();
     }
 
-    public void UpdatePlayer2Score(int amount)
+    public void UpdatePlayer2KillScore()
     {
-        team2Score += amount;
+        team2Score += killScoreAmount;
         UpdateScoreText();
     }
 
