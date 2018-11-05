@@ -174,6 +174,8 @@ public class TroopActor : MonoBehaviour
 
     [Header("Line Renderer")]
     public Gradient gradient;
+    public float TimeAlive;
+    float renderertimer;
     LineRenderer lineRenderer;
     ZoneController zc;
 
@@ -182,6 +184,7 @@ public class TroopActor : MonoBehaviour
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
+        renderertimer = TimeAlive;
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
 
@@ -262,11 +265,14 @@ public class TroopActor : MonoBehaviour
 
         if (rankState != RankState.dead && rankState != RankState.Base) {
 
-            timer -= Time.deltaTime;
-            if (timer <= 0 && lineRenderer.enabled)
+            if (lineRenderer.enabled)
             {
-                lineRenderer.enabled = false;
-                timer = 1f;
+                renderertimer -= Time.deltaTime;
+                if(renderertimer <= 0.0f)
+                {
+                    lineRenderer.enabled = false;
+                    renderertimer = TimeAlive;
+                }
             }
 
             UpdateImage();
