@@ -35,7 +35,7 @@ public class Chicken : MonoBehaviour {
     Chicken[] myFriends;
 
     public Color[] potentialColours;
-    public Renderer renderer;
+    public Renderer[] renderer;
 
     void Start()
     {
@@ -52,7 +52,10 @@ public class Chicken : MonoBehaviour {
         float chickenSize = Random.Range(0.5f, 2.5f);
         this.gameObject.transform.localScale = new Vector3(chickenSize, chickenSize, chickenSize);
 
-        renderer.material.SetColor(Shader.PropertyToID("_TeamColor"), potentialColours[Random.Range(0, 2)]);
+        Color colour = potentialColours[Random.Range(0, 3)];
+
+        for(int i = 0; i < renderer.Length; i++)
+            renderer[i].material.SetColor(Shader.PropertyToID("_TeamColor"), colour);
     }
 
     void Update()
