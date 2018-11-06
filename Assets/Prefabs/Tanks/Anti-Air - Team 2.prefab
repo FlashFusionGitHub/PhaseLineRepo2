@@ -699,7 +699,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1689719428568080}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -21.2, y: 62.378735, z: 289.3}
+  m_LocalPosition: {x: 258.92932, y: 128.31848, z: 315.29968}
   m_LocalScale: {x: 4.00002, y: 4, z: 4.00002}
   m_Children:
   - {fileID: 224298058579910182}
@@ -2030,7 +2030,7 @@ MonoBehaviour:
   movementType: 1
   moveSpeed: 25
   turnSpeed: 100
-  moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
+  moveTargetPrefab: {fileID: 1953959921899582, guid: 951935d8e28bc1845984e2494e375193,
     type: 2}
   generalMoveTargetPrefab: {fileID: 1420119947695036, guid: 14e89b401e13db245860f91654ce7fd0,
     type: 2}
@@ -2170,6 +2170,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  TimeAlive: 0
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114953972832962956
 MonoBehaviour:

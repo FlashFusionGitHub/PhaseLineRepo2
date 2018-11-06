@@ -44,10 +44,12 @@ public class NavigationArrowActor : MonoBehaviour
 
 	ObjectPool op;
 
+    public Transform camTransform;
+
     // Use this for initialization
     protected virtual void Start()
     {
-		op = FindObjectOfType<ObjectPool> ();
+        op = FindObjectOfType<ObjectPool> ();
 
         GameObject previousPos = new GameObject("previous Pos");
         prevPos = previousPos.transform;
@@ -85,7 +87,7 @@ public class NavigationArrowActor : MonoBehaviour
         float markerXPos = Mathf.Clamp(m_currentMarker.transform.position.x, m_minXPos, maxXPos);
         float markerZPos = Mathf.Clamp(m_currentMarker.transform.position.z, m_minZPos, maxZPos);
 
-        if (Vector3.Distance(m_currentMarker.transform.position, troopController.currentSelectedUnit.transform.position) <= maxMarkerDistanceFromUnit)
+        if (Vector3.Distance(m_currentMarker.transform.position, new Vector3(camTransform.position.x, m_currentMarker.transform.position.y, camTransform.position.z)) <= maxMarkerDistanceFromUnit)
         {
             m_currentMarker.transform.position = new Vector3(markerXPos, m_currentMarker.transform.position.y, markerZPos);
 
@@ -115,7 +117,7 @@ public class NavigationArrowActor : MonoBehaviour
                 prevPos.position = troopController.currentSelectedUnit.transform.position;
             }
             
-			m_currentMarker.transform.position = Vector3.Lerp(m_currentMarker.transform.position, troopController.currentSelectedUnit.transform.position, Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex)));
+			m_currentMarker.transform.position = Vector3.Lerp(m_currentMarker.transform.position, new Vector3(camTransform.position.x, m_currentMarker.transform.position.y, camTransform.position.z), Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex)));
             //m_currentMarker.transform.position = prevPos.position - ((m_currentMarker.transform.position - troopController.currentSelectedUnit.transform.position).normalized * 10f);
         }
 
@@ -123,8 +125,8 @@ public class NavigationArrowActor : MonoBehaviour
 
 		ClosestEnemyUnit ();
     }
-		
-	void ClosestEnemyUnit() {
+
+    void ClosestEnemyUnit() {
 		float dis = 0;
 		foreach (TroopActor T in op.allTroopActors) {
 			if (m_tank == null && T.team != m_team && T.rankState != RankState.dead) {
@@ -174,11 +176,14 @@ public class NavigationArrowActor : MonoBehaviour
         if (m_airStrikeState && m_controller.Action1WasPress())
         {
 
-            Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
-            EnableNavigationMarker();
+            GameObject temp = Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
 
             airstrikes.Remove(nearestCaptureZone.airStrike);
             Destroy(nearestCaptureZone.gameObject);
+
+            SetMoveTargetColour(temp);
+
+            EnableNavigationMarker();
         }
     }
 
@@ -189,6 +194,11 @@ public class NavigationArrowActor : MonoBehaviour
         GameObject prevMarker = m_currentMarker;
         m_currentMarker = Instantiate(m_airStrikeMarker, new Vector3(prevMarker.transform.position.x, 1, prevMarker.transform.position.z), Quaternion.identity);
         Destroy(prevMarker);
+    }
+
+    void SetMoveTargetColour(GameObject go)
+    {
+        go.GetComponent<SetMoveTargetFactionAttributes>().SetColor();
     }
 
     /*The reverse of EnableAirStrikeMarker()*/

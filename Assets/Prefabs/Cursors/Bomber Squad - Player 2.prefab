@@ -83,6 +83,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4226581232686836}
+  - component: {fileID: 114846115650083480}
   m_Layer: 9
   m_Name: Marker
   m_TagString: Untagged
@@ -214,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4785947782784674}
   - component: {fileID: 114320465867470170}
+  - component: {fileID: 114544917964851930}
   m_Layer: 9
   m_Name: Bomber Squad - Player 2
   m_TagString: Untagged
@@ -603,7 +605,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600409885509780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.364616, y: 1, z: -49.80157}
+  m_LocalPosition: {x: 3803.2231, y: 3330.3, z: -115.64219}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4066652714602560}
@@ -727,7 +729,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a03d83766a8ae5c4b83494dc760811cd, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -761,7 +763,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d2ec239a0febbdc4387e18f895da6797, type: 2}
+  - {fileID: 2100000, guid: d5436b6125319634fb17ef529d1c0df8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -795,7 +797,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d2ec239a0febbdc4387e18f895da6797, type: 2}
+  - {fileID: 2100000, guid: d5436b6125319634fb17ef529d1c0df8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -863,7 +865,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a03d83766a8ae5c4b83494dc760811cd, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -931,7 +933,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a03d83766a8ae5c4b83494dc760811cd, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -965,7 +967,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d2ec239a0febbdc4387e18f895da6797, type: 2}
+  - {fileID: 2100000, guid: d5436b6125319634fb17ef529d1c0df8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1175,6 +1177,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   damage: 50
+--- !u!114 &114544917964851930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600409885509780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cba1eac9d4af54ebf6b73853fa71c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stars:
+  - {fileID: 1523662718894440}
+  - {fileID: 1734020470316794}
+  - {fileID: 1547580190941428}
+  team: 2
+  selectedFactions: {fileID: 0}
 --- !u!114 &114664126280239814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1188,6 +1207,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 2
   damage: 50
+--- !u!114 &114846115650083480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247126890295716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0cd607bbc049de4c97044a1e2bbe6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 23709239929623720}
+  - {fileID: 23732470015070942}
+  - {fileID: 23987544557034168}
+  m_team: 2
 --- !u!135 &135157496918563204
 SphereCollider:
   m_ObjectHideFlags: 1

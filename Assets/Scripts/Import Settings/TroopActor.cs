@@ -353,6 +353,7 @@ public class TroopActor : MonoBehaviour
         if (moveTarget)
             Destroy(moveTarget.gameObject);
         moveTarget = ta.AllocateTarget(this);
+        SetMoveTargetColour(moveTarget.gameObject);
     }
 
     public Transform AllocateTarget(TroopActor ta)
@@ -766,24 +767,28 @@ public class TroopActor : MonoBehaviour
     }
 
 
+    GameObject keepThisAlive;
     void CreateMoveTarget()
     {
         if (rankState == RankState.IsGeneral)
         {
-            GameObject keepThisAlive = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
+            keepThisAlive = Instantiate(generalMoveTargetPrefab, transform.position, transform.rotation);
             keepThisAlive.name = gameObject.name + "'s MoveTarget";
             moveTarget = keepThisAlive.transform;
         }
         else if (rankState != RankState.dead && rankState != RankState.Base)
         {
-            GameObject keepThisAlive = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
+            keepThisAlive = Instantiate(moveTargetPrefab, transform.position, transform.rotation);
             keepThisAlive.name = gameObject.name + "'s MoveTarget";
             moveTarget = keepThisAlive.transform;
         }
-        else
-        {
 
-        }
+        SetMoveTargetColour(keepThisAlive);
+    }
+
+    void SetMoveTargetColour(GameObject go)
+    {
+        go.GetComponent<SetMoveTargetFactionAttributes>().SetColor();
     }
 
     bool ClearLineOfSight()

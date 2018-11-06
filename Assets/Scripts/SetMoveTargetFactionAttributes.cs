@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class SetMoveTargetFactionAttributes : MonoBehaviour {
 
-    public GameObject[] Stars = new GameObject[7];
+    public GameObject[] Stars;
 
     public Team team;
 
-    SelectedFactions selectedFactions;
-    private void Awake()
+    public SelectedFactions selectedFactions;
+
+    public void Awake()
+    {
+        selectedFactions = FindObjectOfType<SelectedFactions>();
+    }
+
+    public void SetColor()
     {
         try
         {
-            selectedFactions = FindObjectOfType<SelectedFactions>();
-
             if (team == Team.TEAM1)
             {
                 for (int i = 0; i < Stars.Length; i++)

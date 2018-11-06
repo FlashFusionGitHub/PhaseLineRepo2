@@ -1628,7 +1628,7 @@ MonoBehaviour:
   movementType: 0
   moveSpeed: 25
   turnSpeed: 100
-  moveTargetPrefab: {fileID: 1053660656746700, guid: 6f567f975f33d4f42af874fb965a0bfd,
+  moveTargetPrefab: {fileID: 1953959921899582, guid: 951935d8e28bc1845984e2494e375193,
     type: 2}
   generalMoveTargetPrefab: {fileID: 1420119947695036, guid: 14e89b401e13db245860f91654ce7fd0,
     type: 2}
@@ -1840,6 +1840,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  TimeAlive: 0
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114906986293504656
 MonoBehaviour:

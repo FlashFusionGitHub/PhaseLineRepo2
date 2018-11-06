@@ -47,6 +47,8 @@ public class TroopController : MonoBehaviour {
         m_navigationArrowActor.moveMarkerToMyBoy();
 
         cameraController.MoveCameraTo(m_generals[index].transform.position);
+
+        DisablesMoveTargets();
     }
 
     // Update is called once per frame
@@ -123,6 +125,70 @@ public class TroopController : MonoBehaviour {
 
     }
 
+    //Disable move targets for unselected general troops
+    void DisablesMoveTargets()
+    {
+        for(int i = 0; i < op.allTroopActors.Count; i++)
+        {
+           if(op.allTroopActors[i].rankState != RankState.IsGeneral && op.allTroopActors[i].team == team && op.allTroopActors[i].myGeneral != m_generals[index])
+           {
+                if(op.allTroopActors[i].unitClass == UnitClasses.Tank)
+                {
+                    if(op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>() == null)
+                    {
+                        Debug.Log("TANK NULL");
+                    }
+
+                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOff();
+                }
+
+                if (op.allTroopActors[i].unitClass == UnitClasses.AntAir)
+                {
+                    if (op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>() == null)
+                    {
+                        Debug.Log("ANT AIR NULL");
+                    }
+
+                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOff();
+                }
+
+                if (op.allTroopActors[i].unitClass == UnitClasses.Helicopter)
+                {
+                    if (op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>() == null)
+                    {
+                        Debug.Log("HELI NULL");
+                    }
+
+                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOff();
+                }
+           }
+        }
+    }
+
+    void EnableMoveTargetsForSelectedGeneral()
+    {
+        for(int i = 0; i < op.allTroopActors.Count; i++)
+        {
+            if(op.allTroopActors[i].myGeneral == m_generals[index])
+            {
+                if (op.allTroopActors[i].unitClass == UnitClasses.Tank)
+                {
+                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOn();
+                }
+
+                if (op.allTroopActors[i].unitClass == UnitClasses.AntAir)
+                {
+                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOn();
+                }
+
+                if (op.allTroopActors[i].unitClass == UnitClasses.Helicopter)
+                {
+                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOn();
+                }
+            } 
+        }
+    }
+
 	int underlingsCount;
 	void SquadGangAttackSelectedUnit() {
 		//foreach Troopactor (T) under this generals control
@@ -171,13 +237,15 @@ public class TroopController : MonoBehaviour {
             if (index >= m_generals.Count)
                 index = 0;
 
-            cameraController.MoveCameraTo(m_generals[index].transform.position);
-
             currentSelectedUnit = m_generals[index].gameObject;
-            m_navigationArrowActor.moveMarkerToMyBoy();
             m_navigationArrowActor.m_navMarker.transform.position = currentSelectedUnit.transform.position;
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
+
+            EnableMoveTargetsForSelectedGeneral();
+            DisablesMoveTargets();
+
+            SetMoveTargetColour(m_selectionCircle);
         }
         if (decrease) {
             if (index <= 0)
@@ -185,13 +253,19 @@ public class TroopController : MonoBehaviour {
 
             index--;
 
-            cameraController.MoveCameraTo(m_generals[index].transform.position);
-
             currentSelectedUnit = m_generals[index].gameObject;
-            m_navigationArrowActor.moveMarkerToMyBoy();
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
+
+            EnableMoveTargetsForSelectedGeneral();
+            DisablesMoveTargets();
+
+            SetMoveTargetColour(m_selectionCircle);
         }
         
+    }
+    void SetMoveTargetColour(GameObject go)
+    {
+        go.GetComponent<SetMoveTargetFactionAttributes>().SetColor();
     }
 }

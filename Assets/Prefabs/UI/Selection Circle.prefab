@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4121658043523024}
   - component: {fileID: 119894393276317228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4593827106274500}
   - component: {fileID: 114708376375932008}
-  m_Layer: 9
+  - component: {fileID: 114486480975014214}
+  m_Layer: 8
   m_Name: Selection Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,13 +64,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494287108557706}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -560.5, y: 59.865643, z: -470.3}
+  m_LocalPosition: {x: -221.53058, y: 43.45855, z: 344.91882}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 4121658043523024}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &114486480975014214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1494287108557706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb268d317ee8bd74a9fac906bec30127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  selectedFactions: {fileID: 0}
+  projector: {fileID: 119894393276317228}
 --- !u!114 &114708376375932008
 MonoBehaviour:
   m_ObjectHideFlags: 1
