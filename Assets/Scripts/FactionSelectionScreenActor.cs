@@ -49,7 +49,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
             return;
 
         images[num].transform.localScale = new Vector3(1.4f, 1.4f, 0);
-        masks[num].rectTransform.sizeDelta = new Vector2(95, 300);
+        masks[num].rectTransform.sizeDelta = new Vector2(95, 150);
     }
 
     public void OnPointerExit(int num)
@@ -58,7 +58,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
             return;
 
         images[num].transform.localScale = new Vector3(1, 1, 0);
-        masks[num].rectTransform.sizeDelta = new Vector2(95, 95);
+        masks[num].rectTransform.sizeDelta = new Vector2(50, 95);
     }
 
     public void SelectFaction(int num)
@@ -68,7 +68,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
 
         images[num].transform.localScale = new Vector3(1, 1, 0);
 
-        masks[num].rectTransform.sizeDelta = new Vector2(110, 300);
+        masks[num].rectTransform.sizeDelta = new Vector2(95, 120);
 
         if (player == Player.player1)
         {
