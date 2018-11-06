@@ -614,7 +614,7 @@ public class TroopActor : MonoBehaviour
         foreach (TroopActor ta in op.allTroopActors)
         {
             if (ta.rankState != RankState.dead)
-                if (ta != this && ta.team == team && ta.rankState == RankState.IsGeneral)
+                if (ta != this && ta.team == team && ta.rankState == RankState.IsGeneral && ta.unitClass == unitClass)
                 {
                     Generals.Add(ta);
                 }

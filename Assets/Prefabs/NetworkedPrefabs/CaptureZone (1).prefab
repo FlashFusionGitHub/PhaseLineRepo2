@@ -116,24 +116,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &1825597124018096
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4534102705765644}
-  - component: {fileID: 33618604579507420}
-  - component: {fileID: 23881258008806358}
-  - component: {fileID: 95795482001723534}
-  m_Layer: 0
-  m_Name: capture_moretirs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &4116037896736800
 Transform:
   m_ObjectHideFlags: 1
@@ -176,19 +158,6 @@ Transform:
   m_Father: {fileID: 4116037896736800}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4534102705765644
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1825597124018096}
-  m_LocalRotation: {x: -0.000000018626448, y: 0.8624448, z: 0.000000029802315, w: 0.50615114}
-  m_LocalPosition: {x: -1.2148799, y: 7.1801577, z: -0.58336097}
-  m_LocalScale: {x: 0.9773596, y: 1, z: 1.0226394}
-  m_Children: []
-  m_Father: {fileID: 4573866601670836}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 119.184006, z: 0}
 --- !u!4 &4573866601670836
 Transform:
   m_ObjectHideFlags: 1
@@ -196,12 +165,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507359168609940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -273.9, y: 34.93, z: 263.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -365.5, y: 36.5, z: 191.2}
+  m_LocalScale: {x: 1.967834, y: 1.9678338, z: 1.9678338}
   m_Children:
   - {fileID: 4116037896736800}
   - {fileID: 4824519147418392}
-  - {fileID: 4534102705765644}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -333,40 +301,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23881258008806358
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1825597124018096}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: d630ed48c78cde24aa9d5bdf0c506623, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!33 &33334445066547102
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -381,13 +315,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1227227991659634}
   m_Mesh: {fileID: 4300000, guid: 371829dc6ac6914478a45ee27c0a1cf8, type: 3}
---- !u!33 &33618604579507420
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1825597124018096}
-  m_Mesh: {fileID: 4300000, guid: 9c5026dfbf1d4e54c967f6cb263e5b88, type: 3}
 --- !u!33 &33915213674450368
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -412,23 +339,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95795482001723534
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1825597124018096}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9c5026dfbf1d4e54c967f6cb263e5b88, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114138939289661804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   captureTimer: 0
-  captureTime: 10
+  captureTime: 1
   capturePercentage: 0
   onStartCaptureTeam1:
     m_PersistentCalls:
