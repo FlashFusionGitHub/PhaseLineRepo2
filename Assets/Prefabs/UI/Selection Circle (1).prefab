@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb268d317ee8bd74a9fac906bec30127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
+  team: 2
   selectedFactions: {fileID: 0}
   projector: {fileID: 119388431586545830}
 --- !u!119 &119388431586545830

@@ -461,8 +461,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549349656298378}
   m_LocalRotation: {x: -0, y: -0.9174253, z: -0, w: -0.39790824}
-  m_LocalPosition: {x: 262.7419, y: 129.06012, z: 309.69437}
-  m_LocalScale: {x: 4.000064, y: 4, z: 4.000064}
+  m_LocalPosition: {x: 244.20001, y: 62.378735, z: 387.09998}
+  m_LocalScale: {x: 4.0000715, y: 4, z: 4.0000715}
   m_Children:
   - {fileID: 224968002587950636}
   - {fileID: 4052677811441530}
@@ -1716,7 +1716,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  TimeAlive: 0
+  TimeAlive: 0.85
+  canvas: {fileID: 223442173617032606}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114675988927092244
 MonoBehaviour:
@@ -22824,7 +22825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2236}
+  m_AnchoredPosition: {x: 0, y: 2556}
   m_SizeDelta: {x: 1000, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224968002587950636

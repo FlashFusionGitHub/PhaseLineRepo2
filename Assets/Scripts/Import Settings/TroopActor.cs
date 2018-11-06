@@ -179,11 +179,28 @@ public class TroopActor : MonoBehaviour
     LineRenderer lineRenderer;
     ZoneController zc;
 
+    [Header("Health Portrait")]
+    public Canvas canvas;
+    Camera camera;
+
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      / START FUNCTION BELOW \
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
+        foreach(CameraController cam in FindObjectsOfType<CameraController>())
+        {
+            if(cam.m_playerIndex == 0)
+            {
+                camera = cam.camera;
+            }
+            
+            if(cam.m_playerIndex == 1)
+            {
+                camera = cam.camera;
+            }
+        }
+
         renderertimer = TimeAlive;
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
@@ -262,6 +279,8 @@ public class TroopActor : MonoBehaviour
     void Update()
     {
         RankAction();
+
+        canvas.transform.rotation = camera.transform.rotation;
 
         if (rankState != RankState.dead && rankState != RankState.Base) {
 

@@ -146,6 +146,9 @@ public class TroopActorNetworked : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log(this.gameObject.name + " : movetarget = " + moveTarget);
+
         //Keep Troop state updated each frame 
         RankAction();
 

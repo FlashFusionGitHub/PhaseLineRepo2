@@ -15,14 +15,15 @@ public class GameStartCountDown : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        SAanim();
-        countDownTimer = countDownTime;
-        Time.timeScale = 0;
 
-        for(int i = 0; i < componentsToDisable.Length; i++)
+        for (int i = 0; i < componentsToDisable.Length; i++)
         {
             componentsToDisable[i].SetActive(false);
         }
+
+        SAanim();
+        countDownTimer = countDownTime;
+        Time.timeScale = 0;
 	}
 
     void SAanim()

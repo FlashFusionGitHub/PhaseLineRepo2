@@ -435,7 +435,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549349656298378}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: 254.50719, y: 128.57097, z: 317.5668}
+  m_LocalPosition: {x: 101.5, y: 62.378735, z: 291.6}
   m_LocalScale: {x: 4.0000234, y: 4, z: 4.0000234}
   m_Children:
   - {fileID: 224968002587950636}
@@ -1707,7 +1707,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  TimeAlive: 0
+  TimeAlive: 0.85
+  canvas: {fileID: 223442173617032606}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114675988927092244
 MonoBehaviour:
