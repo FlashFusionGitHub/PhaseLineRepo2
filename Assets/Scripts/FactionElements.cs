@@ -11,11 +11,23 @@ public class FactionElements : MonoBehaviour{
     public GameObject bigBase;
 
 
+
     public void SetTeam(Team t)
     {
         TroopActor ta = bigBase.GetComponentInChildren<TroopActor>();
         HangerSpawner[] hangers = bigBase.GetComponentsInChildren<HangerSpawner>();
         TriggerWin tw = bigBase.GetComponent<TriggerWin>();
+        PortraitData pd = bigBase.GetComponent<PortraitData>();
+
+        if (pd)
+        {
+            pd.team = t;
+            pd.TeamColor = primaryColour;
+        }
+        else
+        {
+            Debug.LogWarning("Please assign a PortraitData Component to " + bigBase.name);
+        }
 
         if (ta)
         {

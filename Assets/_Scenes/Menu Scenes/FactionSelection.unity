@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.24647538, g: 0.28234535, b: 0.3457032, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -288,6 +288,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1932333597723886, guid: 4c0dca41af15924419a091681903cf2d,
     type: 2}
   m_PrefabInternal: {fileID: 166193375}
+--- !u!114 &166193377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 166193376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c170bc1016e52747891bb24ef8b1ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseFace: {fileID: 21300000, guid: 45cc08d1c5087ea49bb1be16ee0c4cc2, type: 3}
+  TeamColor: {r: 0, g: 0, b: 0, a: 0}
+  team: 0
 --- !u!1 &206106324
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +701,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1510947336933788, guid: 8aae19a6852428342961624f0a4729a6,
     type: 2}
   m_PrefabInternal: {fileID: 495428949}
+--- !u!114 &495428951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 495428950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c170bc1016e52747891bb24ef8b1ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseFace: {fileID: 21300000, guid: f2d032a76a9dc0b418a18505894d915f, type: 3}
+  TeamColor: {r: 0, g: 0, b: 0, a: 0}
+  team: 0
 --- !u!1001 &505183537
 Prefab:
   m_ObjectHideFlags: 0
@@ -738,6 +766,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1545973866231652, guid: c2b381ff340dbbb45b51d4ba3fce3fdc,
     type: 2}
   m_PrefabInternal: {fileID: 505183537}
+--- !u!114 &505183539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505183538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c170bc1016e52747891bb24ef8b1ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseFace: {fileID: 21300000, guid: 2ca17fba94418ac4c9813264657c4006, type: 3}
+  TeamColor: {r: 0, g: 0, b: 0, a: 0}
+  team: 0
 --- !u!1 &557290879
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +944,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1076353880644320, guid: 829003fdf438f8844a96316238ce5be8,
     type: 2}
   m_PrefabInternal: {fileID: 616957245}
+--- !u!114 &616957247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616957246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c170bc1016e52747891bb24ef8b1ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseFace: {fileID: 21300000, guid: da158e6c49783d6428cbb294df1973d2, type: 3}
+  TeamColor: {r: 0, g: 0, b: 0, a: 0}
+  team: 0
 --- !u!1 &645246944
 GameObject:
   m_ObjectHideFlags: 0

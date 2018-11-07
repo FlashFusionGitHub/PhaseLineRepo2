@@ -1566,8 +1566,9 @@ GameObject:
   - component: {fileID: 224932997646139946}
   - component: {fileID: 222716004582091792}
   - component: {fileID: 114338839030547266}
+  - component: {fileID: 114017170863510680}
   m_Layer: 5
-  m_Name: Portrait - Player 2
+  m_Name: Portrait - Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1805,8 +1806,9 @@ GameObject:
   - component: {fileID: 224802164171135320}
   - component: {fileID: 222906322333784184}
   - component: {fileID: 114670827928029308}
+  - component: {fileID: 114142172766303416}
   m_Layer: 5
-  m_Name: Portrait - Player 1
+  m_Name: Portrait - Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2533,6 +2535,32 @@ MonoBehaviour:
   markerSpeedSlider: {fileID: 114062366082873538}
   cameraSpeedSlider: {fileID: 114818556763412554}
   playerIndex: 0
+--- !u!114 &114017170863510680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1648616436092534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5df79d34a135040a9a506df64e53eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionImages:
+  - unitClass: 2
+    img: {fileID: 114746411957762634}
+    selected: 0
+  - unitClass: 0
+    img: {fileID: 114461427296824930}
+    selected: 0
+  - unitClass: 1
+    img: {fileID: 114737490197048444}
+    selected: 0
+  uiStuff:
+    portrait: {fileID: 114338839030547266}
+    panel: {fileID: 114698883898926458}
+    panelColor: {r: 0, g: 0, b: 0, a: 0}
+  tc: {fileID: 0}
 --- !u!114 &114018327531140222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3367,6 +3395,32 @@ MonoBehaviour:
   markerSpeedSlider: {fileID: 114190797755959752}
   cameraSpeedSlider: {fileID: 114760100828592974}
   playerIndex: 1
+--- !u!114 &114142172766303416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749426081240242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5df79d34a135040a9a506df64e53eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionImages:
+  - unitClass: 2
+    img: {fileID: 114979626721416754}
+    selected: 0
+  - unitClass: 0
+    img: {fileID: 114254192133041602}
+    selected: 0
+  - unitClass: 1
+    img: {fileID: 114587048972240508}
+    selected: 0
+  uiStuff:
+    portrait: {fileID: 114670827928029308}
+    panel: {fileID: 114275492378277380}
+    panelColor: {r: 0, g: 0, b: 0, a: 0}
+  tc: {fileID: 0}
 --- !u!114 &114154946030238042
 MonoBehaviour:
   m_ObjectHideFlags: 1
