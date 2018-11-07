@@ -242,11 +242,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A: Move\n\nX: Attack\n\nY: Air\n\nRightJoyStick: Move Camera \n\nRightJoyStick
+  m_Text: "A: Move\n\nX: Attack\n\nY: Air Strike\n\nRightJoyStick: Move Camera \n\nRightJoyStick
     Pressed: Snap to Cursor \n\nLeftJoyStick: Move Cursor\n\nLeftJoyStick Pressed:
-    Snap to Unit Location.\n\n\n\nD-pad Left and Right: Selecting General.\n\nRight
-    Trigger: Zoom in\n\nLeft Trigger: Zoom out\n\nR1: Rotate Cursor Right.\n\nL1:
-    Rotate Cursor Left.\n\n\n"
+    Snap to Unit Location.\n\nD-pad Left and Right: Selecting General.\n\nRight Trigger:
+    Zoom in\n\nLeft Trigger: Zoom out\n\nR1: Rotate Cursor Right.\n\nL1: Rotate Cursor
+    Left.\n\n\n"
 --- !u!222 &146044022
 CanvasRenderer:
   m_ObjectHideFlags: 0
