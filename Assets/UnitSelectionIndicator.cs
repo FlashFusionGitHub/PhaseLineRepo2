@@ -68,11 +68,12 @@ public class UnitSelectionIndicator : MonoBehaviour {
         
         if (uiStuff.sldr && BaseTa)
         {
-            uiStuff.sldr.value = BaseTa.currentHealth;
             if (uiStuff.sldr.maxValue != BaseTa.maxHealth)
             {
                 uiStuff.sldr.maxValue = BaseTa.maxHealth;
             }
+            uiStuff.sldr.value = BaseTa.currentHealth;
+           
         }
         foreach (SelectionImage si in selectionImages)
         {
