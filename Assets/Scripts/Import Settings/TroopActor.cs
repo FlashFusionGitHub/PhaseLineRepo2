@@ -126,6 +126,8 @@ public class TroopActor : MonoBehaviour
     [SerializeField] private UnityEvent onTakeDamage;
     [SerializeField] private UnityEvent onDie;
     public Image m_healthBar;
+    public Canvas canvas;
+    Camera camera;
 
     [Header("Movement Settings")]
     [SerializeField]
@@ -179,16 +181,15 @@ public class TroopActor : MonoBehaviour
     LineRenderer lineRenderer;
     ZoneController zc;
 
-    [Header("Health Portrait")]
-    public Canvas canvas;
-    Camera camera;
+    [Header("Big Base Health Portrait")]
+    public Image image; 
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      / START FUNCTION BELOW \
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
-        foreach(CameraController cam in FindObjectsOfType<CameraController>())
+        foreach (CameraController cam in FindObjectsOfType<CameraController>())
         {
             if(cam.m_playerIndex == 0)
             {
@@ -445,10 +446,7 @@ public class TroopActor : MonoBehaviour
 
             pd = (pd == PlacementDirection.right) ? PlacementDirection.left : PlacementDirection.right;
             oldPos.localPosition = (pd == PlacementDirection.right) ? new Vector3(0, 0, oldPos.localPosition.z) : new Vector3(-distanceBetweenPoints.x, 0, oldPos.localPosition.z);
-
-
         }
-
         return oldPos.position;
     }
 
