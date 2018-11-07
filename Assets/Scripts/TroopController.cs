@@ -31,6 +31,8 @@ public class TroopController : MonoBehaviour {
 
 	public TroopActor UnitToAttack;
 
+    public TroopActor currentGeneral;
+
     // Use this for initialization
     protected virtual void Start () {
 
@@ -53,6 +55,8 @@ public class TroopController : MonoBehaviour {
 
     // Update is called once per frame
     protected virtual void Update () {
+
+        currentGeneral = m_generals[index];
 
         if(m_controller == null)
         {
@@ -125,41 +129,17 @@ public class TroopController : MonoBehaviour {
 
     }
 
+
     //Disable move targets for unselected general troops
-    void DisablesMoveTargets()
+    public void DisablesMoveTargets()
     {
         for(int i = 0; i < op.allTroopActors.Count; i++)
         {
-           if(op.allTroopActors[i].rankState != RankState.IsGeneral && op.allTroopActors[i].team == team && op.allTroopActors[i].myGeneral != m_generals[index])
+           if(op.allTroopActors[i].rankState == RankState.IsGeneral && op.allTroopActors[i].team == team && op.allTroopActors[i].myGeneral != m_generals[index])
            {
-                if(op.allTroopActors[i].unitClass == UnitClasses.Tank)
+                foreach(TurnThisOff tto in op.allTroopActors[i].moveTarget.GetComponentsInChildren<TurnThisOff>())
                 {
-                    if(op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>() == null)
-                    {
-                        Debug.Log("TANK NULL");
-                    }
-
-                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOff();
-                }
-
-                if (op.allTroopActors[i].unitClass == UnitClasses.AntAir)
-                {
-                    if (op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>() == null)
-                    {
-                        Debug.Log("ANT AIR NULL");
-                    }
-
-                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOff();
-                }
-
-                if (op.allTroopActors[i].unitClass == UnitClasses.Helicopter)
-                {
-                    if (op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>() == null)
-                    {
-                        Debug.Log("HELI NULL");
-                    }
-
-                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOff();
+                    tto.TurnOff();
                 }
            }
         }
@@ -171,19 +151,9 @@ public class TroopController : MonoBehaviour {
         {
             if(op.allTroopActors[i].myGeneral == m_generals[index])
             {
-                if (op.allTroopActors[i].unitClass == UnitClasses.Tank)
+                foreach (TurnThisOff tto in op.allTroopActors[i].moveTarget.GetComponentsInChildren<TurnThisOff>())
                 {
-                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOn();
-                }
-
-                if (op.allTroopActors[i].unitClass == UnitClasses.AntAir)
-                {
-                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOn();
-                }
-
-                if (op.allTroopActors[i].unitClass == UnitClasses.Helicopter)
-                {
-                    op.allTroopActors[i].moveTarget.GetComponent<TurnThisOff>().TurnOn();
+                    tto.TurnOn();
                 }
             } 
         }
