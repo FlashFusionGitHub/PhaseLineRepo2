@@ -295,8 +295,6 @@ public class TroopActor : MonoBehaviour
                 }
             }
 
-            UpdateImage();
-
             Move ();
 
 			if (attackType == AttackType.AUTO) {
@@ -884,22 +882,6 @@ public class TroopActor : MonoBehaviour
             {
                 moving = false;
             }
-        }
-    }
-
-    void UpdateImage()
-    {
-        if (currentHealth > 70f)
-        {
-            imageHolder.sprite = images[0];
-        }
-        else if (currentHealth < 70f && currentHealth > 20f)
-        {
-            imageHolder.sprite = images[1];
-        }
-        else if (currentHealth < 20f)
-        {
-            imageHolder.sprite = images[2];
         }
     }
 

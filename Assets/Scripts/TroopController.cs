@@ -50,13 +50,13 @@ public class TroopController : MonoBehaviour {
 
         cameraController.MoveCameraTo(m_generals[index].transform.position);
 
+        currentGeneral = m_generals[index];
+
         DisablesMoveTargets();
     }
 
     // Update is called once per frame
     protected virtual void Update () {
-
-        currentGeneral = m_generals[index];
 
         if(m_controller == null)
         {
@@ -133,25 +133,25 @@ public class TroopController : MonoBehaviour {
     //Disable move targets for unselected general troops
     public void DisablesMoveTargets()
     {
-        for(int i = 0; i < op.allTroopActors.Count; i++)
+        foreach(TroopActor ta in op.allTroopActors)
         {
-           if(op.allTroopActors[i].rankState == RankState.IsGeneral && op.allTroopActors[i].team == team && op.allTroopActors[i].myGeneral != m_generals[index])
-           {
-                foreach(TurnThisOff tto in op.allTroopActors[i].moveTarget.GetComponentsInChildren<TurnThisOff>())
+            if (ta.rankState == RankState.IsGeneral && ta != currentGeneral)
+            {
+                foreach (TurnThisOff tto in ta.moveTarget.GetComponentsInChildren<TurnThisOff>())
                 {
                     tto.TurnOff();
                 }
-           }
+            }
         }
     }
 
     void EnableMoveTargetsForSelectedGeneral()
     {
-        for(int i = 0; i < op.allTroopActors.Count; i++)
+        foreach (TroopActor ta in op.allTroopActors)
         {
-            if(op.allTroopActors[i].myGeneral == m_generals[index])
+            if (ta == currentGeneral)
             {
-                foreach (TurnThisOff tto in op.allTroopActors[i].moveTarget.GetComponentsInChildren<TurnThisOff>())
+                foreach (TurnThisOff tto in ta.moveTarget.GetComponentsInChildren<TurnThisOff>())
                 {
                     tto.TurnOn();
                 }
@@ -207,6 +207,9 @@ public class TroopController : MonoBehaviour {
             if (index >= m_generals.Count)
                 index = 0;
 
+
+            currentGeneral = m_generals[index];
+
             currentSelectedUnit = m_generals[index].gameObject;
             m_navigationArrowActor.m_navMarker.transform.position = currentSelectedUnit.transform.position;
 
@@ -224,6 +227,8 @@ public class TroopController : MonoBehaviour {
             index--;
 
             currentSelectedUnit = m_generals[index].gameObject;
+
+            currentGeneral = m_generals[index];
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
 
