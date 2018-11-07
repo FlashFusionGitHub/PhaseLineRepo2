@@ -175,13 +175,10 @@ public class NavigationArrowActor : MonoBehaviour
 
         if (m_airStrikeState && m_controller.Action1WasPress())
         {
-
             GameObject temp = Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
 
             airstrikes.Remove(nearestCaptureZone.airStrike);
             Destroy(nearestCaptureZone.gameObject);
-
-            SetMoveTargetColour(temp);
 
             EnableNavigationMarker();
         }
@@ -194,11 +191,6 @@ public class NavigationArrowActor : MonoBehaviour
         GameObject prevMarker = m_currentMarker;
         m_currentMarker = Instantiate(m_airStrikeMarker, new Vector3(prevMarker.transform.position.x, 1, prevMarker.transform.position.z), Quaternion.identity);
         Destroy(prevMarker);
-    }
-
-    void SetMoveTargetColour(GameObject go)
-    {
-        go.GetComponent<SetMoveTargetFactionAttributes>().SetColor();
     }
 
     /*The reverse of EnableAirStrikeMarker()*/

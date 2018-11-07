@@ -9,6 +9,8 @@ public class FactionElements : MonoBehaviour{
     public Color primaryColour;
     public Color secondaryColour;
     public GameObject bigBase;
+	public Sprite baseFace;
+	public string description;
 
 
 

@@ -58,6 +58,10 @@ public class TroopController : MonoBehaviour {
     // Update is called once per frame
     protected virtual void Update () {
 
+		if (m_generals [index].rankState == RankState.dead) {
+			m_generals.Remove (m_generals[index]);
+		}
+
         if(m_controller == null)
         {
             foreach (Controller c in FindObjectsOfType<Controller>())
