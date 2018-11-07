@@ -9,6 +9,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
     public Image[] images;
     public Image[] masks;
 
+
     public Cursor cursor;
     public Text cursorText;
 
