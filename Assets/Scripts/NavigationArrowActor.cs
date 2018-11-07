@@ -147,11 +147,11 @@ public class NavigationArrowActor : MonoBehaviour
 
     public void AirStrikeControls()
     {
-        if (m_controller.Action3WasPress() && !m_airStrikeState && airstrikes.Count > 0)
+        if (m_controller.Action4WasPress() && !m_airStrikeState && airstrikes.Count > 0)
         {
             EnableAirStrikeMarker();
         }
-        else if (m_controller.Action3WasPress() && m_airStrikeState)
+        else if (m_controller.Action4WasPress() && m_airStrikeState)
         {
             EnableNavigationMarker();
         }

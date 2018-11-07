@@ -54,23 +54,29 @@ public class CameraController : MonoBehaviour {
 
             if (m_controller.RightTriggerIsHeld())
             {
-				transform.position += new Vector3(0, -m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000),
-                    m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
+                transform.position += new Vector3(0, -PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * Time.deltaTime * 1000, 0);
 
                 float zoomY = Mathf.Clamp(transform.position.y, m_MinZoomY, m_MaxZoomY);
 
                 transform.position = new Vector3(x, zoomY, z);
             }
-            else
+
+            if(m_controller.LeftTriggerIsHeld())
             {
-				this.transform.position += new Vector3(m_controller.RightAnalogStick().X * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000),
-                    0, m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
+                transform.position += new Vector3(0, PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * Time.deltaTime * 1000, 0);
 
-                float panX = Mathf.Clamp(transform.position.x, m_MinPanX, m_MaxPanX);
-                float panZ = Mathf.Clamp(transform.position.z, m_MinPanZ, m_MaxPanZ);
+                float zoomY = Mathf.Clamp(transform.position.y, m_MinZoomY, m_MaxZoomY);
 
-                transform.position = new Vector3(panX, transform.position.y, panZ);
+                transform.position = new Vector3(x, zoomY, z);
             }
+
+			transform.position += new Vector3(m_controller.RightAnalogStick().X * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000),
+                0, m_controller.RightAnalogStick().Y * Time.deltaTime * (PlayerPrefs.GetFloat("CameraSpeedPlayer" + m_playerIndex) * 1000));
+
+            float panX = Mathf.Clamp(transform.position.x, m_MinPanX, m_MaxPanX);
+            float panZ = Mathf.Clamp(transform.position.z, m_MinPanZ, m_MaxPanZ);
+
+            transform.position = new Vector3(panX, transform.position.y, panZ);
         }
         else
         {

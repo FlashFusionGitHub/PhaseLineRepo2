@@ -194,7 +194,6 @@ public class CaptureZoneActor : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-
         TroopActor currentActor = other.GetComponent<TroopActor>();
         if (currentActor)
         {

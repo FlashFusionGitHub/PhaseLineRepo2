@@ -25,7 +25,7 @@ public class TroopController : MonoBehaviour {
     /*Referecne to the object pool game object*/
     public ObjectPool op;
 
-    public List<TroopActor> m_generals; /*A list of all my available generals*/
+    public List<TroopActor> m_generals = new List<TroopActor>(); /*A list of all my available generals*/
 
     public GameObject currentSelectedUnit; /*Reference to the currently selected unit*/
 
@@ -58,10 +58,6 @@ public class TroopController : MonoBehaviour {
     // Update is called once per frame
     protected virtual void Update () {
 
-		if (!m_generals[index].gameObject.activeInHierarchy || m_generals[index].rankState == RankState.dead) {
-			m_generals.Remove (m_generals[index]);
-		}
-
         if(m_controller == null)
         {
             foreach (Controller c in FindObjectsOfType<Controller>())
@@ -83,6 +79,14 @@ public class TroopController : MonoBehaviour {
 
         QuickSelect();
 
+        if(m_generals.Count > 0)
+        {
+            if (m_generals[index].rankState == RankState.dead)
+            {
+                m_generals.Remove(m_generals[index]);
+            }
+        }
+
         if (m_controller.DpadLeftWasPress() && m_generals.Count > 0) {
             //destroy the currect circle
             if (m_currentSelectionCircle != null)
@@ -99,7 +103,7 @@ public class TroopController : MonoBehaviour {
             CheckGeneralState(true, false);
         }
 
-		if (m_navigationArrowActor.m_tank != null && m_controller.Action1WasPress() && !m_navigationArrowActor.m_airStrikeState)
+		if (m_navigationArrowActor.m_tank != null && m_controller.Action3WasPress() && !m_navigationArrowActor.m_airStrikeState)
         {
             if (UnitToAttack != m_navigationArrowActor.m_tank)
             {
@@ -107,12 +111,13 @@ public class TroopController : MonoBehaviour {
             }
             
 		}
-		else if(m_navigationArrowActor.m_tank == null && m_controller.Action1WasPress() && !m_navigationArrowActor.m_airStrikeState) 
+		else if(m_controller.Action1WasPress() && !m_navigationArrowActor.m_airStrikeState) 
 		{
             if (UnitToAttack != null)
             {
                 UnitToAttack = null;
             }
+
 			m_generals [index].targetToAttack = null;
 			m_generals[index].SetAttackType (AttackType.AUTO);
 			foreach (TroopActor T in op.allTroopActors) {

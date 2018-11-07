@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114675536340441492}
   - component: {fileID: 114671077931881608}
   - component: {fileID: 114147790277536908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MoveTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4581534405533486}
   - component: {fileID: 33251831191895880}
   - component: {fileID: 23995135542837942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1053660656746700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 467.4611, y: 971.5362, z: -1235.9261}
+  m_LocalPosition: {x: 272.7843, y: 779.1674, z: 796.0341}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4581534405533486}

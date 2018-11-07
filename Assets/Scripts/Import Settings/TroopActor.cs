@@ -471,6 +471,7 @@ public class TroopActor : MonoBehaviour
 		}
 	}
 
+    float tempMoveSpeed;
 	void AttackSelectedEnemy(TroopActor troopToAttack)
 	{
 		foreach (GunSettings gun in guns)
@@ -483,7 +484,8 @@ public class TroopActor : MonoBehaviour
 
                 gun.barrel.rotation = Quaternion.Slerp(gun.barrel.rotation, Quaternion.LookRotation(gun.attackTarget.transform.position - gun.barrel.position), gun.barrelAimSpeed * Time.deltaTime);
 				gun.barrel.localEulerAngles = new Vector3(gun.barrel.localEulerAngles.x, 0, 0);
-				gun.m_gunTimer -= Time.deltaTime;
+                gun.m_gunTimer -= Time.deltaTime;
+
 				if (gun.m_gunTimer < Time.deltaTime)
 				{
                     DrawLineRender(gun.turret, troopToAttack.transform);

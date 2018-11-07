@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4875200631216692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cursor_point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 33198533886614256}
   - component: {fileID: 23953676040878096}
   - component: {fileID: 114605105232530036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 33860464943802572}
   - component: {fileID: 23334585542168746}
   - component: {fileID: 114444148858245148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4233105990510010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_indicator_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4891571110173874}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cursor_tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 33228707420332598}
   - component: {fileID: 23167938686931670}
   - component: {fileID: 114707330323493886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4751646229712752}
   - component: {fileID: 114447229825767432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615208005501130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -478.90695, y: 59.687824, z: -499.96014}
+  m_LocalPosition: {x: 272.4009, y: 573.6646, z: 608.3724}
   m_LocalScale: {x: 6, y: 12, z: 6}
   m_Children:
   - {fileID: 4751646229712752}
@@ -339,7 +339,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3b010320e394ce449948d49d1fa653e4, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4096476527087170}
   - component: {fileID: 114017923966210608}
   - component: {fileID: 114664762939042604}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AirStrike - Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 33607508189311928}
   - component: {fileID: 65864876954887632}
   - component: {fileID: 23548466032851632}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 33214977116136198}
   - component: {fileID: 65915066172653866}
   - component: {fileID: 23950331883172150}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 33679004389185544}
   - component: {fileID: 65485142677846814}
   - component: {fileID: 23689265382106542}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
