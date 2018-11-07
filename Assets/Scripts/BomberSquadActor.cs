@@ -5,9 +5,7 @@ using UnityEngine;
 using InControl;
 
 public class BomberSquadActor : MonoBehaviour {
-
-    public List<GameObject> m_planes;
-
+	
     public GameObject m_bombs;
 
     public GameObject m_marker;
@@ -24,10 +22,6 @@ public class BomberSquadActor : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
-        //Start Planes Fight
-        foreach (GameObject plane in m_planes)
-            plane.transform.Translate(Vector3.forward * 50 * Time.deltaTime);
         
         Destroy(gameObject, 15);
         

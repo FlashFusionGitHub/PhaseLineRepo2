@@ -484,15 +484,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1216272378857494}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -591.35, y: 76.6, z: -539.97}
+  m_LocalRotation: {x: -0, y: 0.49999917, z: -0, w: 0.8660259}
+  m_LocalPosition: {x: -567.3, y: 76.6, z: -472.2}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 224537081806597798}
   - {fileID: 4451670160341972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 60.000004, z: 0}
 --- !u!4 &4718252412539324
 Transform:
   m_ObjectHideFlags: 1
@@ -1381,6 +1381,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_healthBar: {fileID: 114742556405001962}
+  canvas: {fileID: 223095174651115730}
   moving: 0
   OnMove:
     m_PersistentCalls:
@@ -1405,7 +1406,7 @@ MonoBehaviour:
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 25
-    attackRangeMax: 42.64
+    attackRangeMax: 50
     attackTarget: {fileID: 0}
     turret: {fileID: 4731157043302332}
     turretAimSpeed: 2
@@ -1491,7 +1492,7 @@ MonoBehaviour:
     TimeBetweenShots: 3
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
-    attackRangeMin: 10
+    attackRangeMin: 25
     attackRangeMax: 50
     attackTarget: {fileID: 0}
     turret: {fileID: 4734028283702464}
@@ -1604,7 +1605,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   TimeAlive: 0.85
-  canvas: {fileID: 223095174651115730}
+  image: {fileID: 0}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114286954674119266
 MonoBehaviour:
@@ -2069,7 +2070,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1954663053
+  randomSeed: 1364170918
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5514,7 +5515,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -745694806
+  randomSeed: 762585329
   InitialModule:
     serializedVersion: 3
     enabled: 1

@@ -25,6 +25,12 @@ public class FactionSelectionScreenActor : MonoBehaviour
 
     public SceneLoader sceneLoader;
 
+	public Image previewImageTeam1;
+	public Image previewImageTeam2;
+
+	public Text previewTextBoxTeam1;
+	public Text previewTextBoxTeam2;
+
     // Use this for initialization
     void Start()
     {
@@ -51,6 +57,15 @@ public class FactionSelectionScreenActor : MonoBehaviour
 
         images[num].transform.localScale = new Vector3(1.4f, 1.4f, 0);
         masks[num].rectTransform.sizeDelta = new Vector2(95, 150);
+
+		if (player == Player.player1) {
+			previewImageTeam1.sprite = masks [num].GetComponent<FactionElements>().baseFace;
+			previewTextBoxTeam1.text = masks [num].GetComponent<FactionElements>().description;
+		}
+		if (player == Player.player2) {
+			previewImageTeam2.sprite = masks [num].GetComponent<FactionElements>().baseFace;
+			previewTextBoxTeam2.text = masks [num].GetComponent<FactionElements>().description;
+		}
     }
 
     public void OnPointerExit(int num)
