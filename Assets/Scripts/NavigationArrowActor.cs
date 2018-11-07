@@ -173,12 +173,15 @@ public class NavigationArrowActor : MonoBehaviour
             }
         }
 
-        if (m_airStrikeState && m_controller.Action1WasPress())
+		if (m_airStrikeState && m_controller.Action1WasPress() && airstrikes.Count > 0)
         {
-            GameObject temp = Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
+            Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
 
             airstrikes.Remove(nearestCaptureZone.airStrike);
-            Destroy(nearestCaptureZone.gameObject);
+
+			FindObjectOfType<ZoneController>().zones.Remove (nearestCaptureZone);
+			Destroy(nearestCaptureZone.gameObject, 0.1f);
+	
 
             EnableNavigationMarker();
         }

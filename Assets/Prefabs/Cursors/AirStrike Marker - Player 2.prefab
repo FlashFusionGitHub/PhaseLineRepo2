@@ -325,3 +325,4 @@ MonoBehaviour:
   - {fileID: 23566763576972468}
   - {fileID: 23949136365254784}
   m_team: 2
+  shader: {fileID: 4800000, guid: 2c770c2b621c2d540b6e17f803986a2c, type: 3}

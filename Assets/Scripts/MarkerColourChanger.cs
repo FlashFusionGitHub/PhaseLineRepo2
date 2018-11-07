@@ -32,9 +32,9 @@ public class MarkerColourChanger : MonoBehaviour {
             for (int i = 0; i < renderers.Length; i++)
             {
 				if (renderers [i].material.shader == shader) {
-					renderers [i].material.SetColor (Shader.PropertyToID ("_TeamColor"), selectedFactions.team1.primaryColour);
+					renderers [i].material.SetColor (Shader.PropertyToID ("_TeamColor"), selectedFactions.team2.primaryColour);
 				} else {
-					renderers [i].material.SetColor (Shader.PropertyToID ("_Color"), selectedFactions.team1.primaryColour);
+					renderers [i].material.SetColor (Shader.PropertyToID ("_Color"), selectedFactions.team2.primaryColour);
 				}
             }
         }

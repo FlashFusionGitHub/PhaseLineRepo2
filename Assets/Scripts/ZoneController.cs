@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ZoneController : MonoBehaviour {
 
-    public List<CaptureZoneActor> zones;
+	public List<CaptureZoneActor> zones = new List<CaptureZoneActor>();
 
     public float progressTimer;
     public float progressTime = 10;

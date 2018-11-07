@@ -312,6 +312,7 @@ MonoBehaviour:
   - {fileID: 23160831730357124}
   - {fileID: 23477770602734420}
   m_team: 1
+  shader: {fileID: 4800000, guid: 2c770c2b621c2d540b6e17f803986a2c, type: 3}
 --- !u!114 &114386608852548508
 MonoBehaviour:
   m_ObjectHideFlags: 1

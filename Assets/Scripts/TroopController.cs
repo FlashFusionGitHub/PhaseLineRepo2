@@ -58,7 +58,7 @@ public class TroopController : MonoBehaviour {
     // Update is called once per frame
     protected virtual void Update () {
 
-		if (m_generals [index].rankState == RankState.dead) {
+		if (!m_generals[index].gameObject.activeInHierarchy || m_generals[index].rankState == RankState.dead) {
 			m_generals.Remove (m_generals[index]);
 		}
 
@@ -170,8 +170,6 @@ public class TroopController : MonoBehaviour {
 		//attack until the targetToAttack is dead or the generals attackTarget != null
 
 		if (UnitToAttack != null) {
-
-
 			m_generals [index].targetToAttack = UnitToAttack;
 			underlingsCount = 0;
 			foreach (TroopActor T in op.allTroopActors) {
@@ -222,7 +220,7 @@ public class TroopController : MonoBehaviour {
             EnableMoveTargetsForSelectedGeneral();
             DisablesMoveTargets();
 
-            SetMoveTargetColour(m_selectionCircle);
+           
         }
         if (decrease) {
             if (index <= 0)
@@ -239,12 +237,7 @@ public class TroopController : MonoBehaviour {
             EnableMoveTargetsForSelectedGeneral();
             DisablesMoveTargets();
 
-            SetMoveTargetColour(m_selectionCircle);
         }
         
-    }
-    void SetMoveTargetColour(GameObject go)
-    {
-        go.GetComponent<SetMoveTargetFactionAttributes>().SetColor();
     }
 }

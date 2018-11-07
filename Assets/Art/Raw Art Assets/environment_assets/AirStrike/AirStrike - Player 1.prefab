@@ -36,7 +36,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4096476527087170}
-  - component: {fileID: 114121734956144954}
   - component: {fileID: 114017923966210608}
   - component: {fileID: 114664762939042604}
   m_Layer: 8
@@ -375,7 +374,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1201484937640174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -429.85846, y: 130.5847, z: -419.29694}
+  m_LocalPosition: {x: 276.9002, y: 830.0769, z: 387.28983}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4057795051830668}
@@ -951,19 +950,6 @@ MonoBehaviour:
   m_beginStrike: 0
   timer: 4
   team: 1
---- !u!114 &114121734956144954
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201484937640174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e37909340b0284791fe11b712555d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_controller: {fileID: 0}
-  playerIndex: 0
 --- !u!114 &114664762939042604
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -371,7 +371,6 @@ public class TroopActor : MonoBehaviour
         if (moveTarget)
             Destroy(moveTarget.gameObject);
         moveTarget = ta.AllocateTarget(this);
-        SetMoveTargetColour(moveTarget.gameObject);
     }
 
     public Transform AllocateTarget(TroopActor ta)
@@ -634,7 +633,27 @@ public class TroopActor : MonoBehaviour
                     Generals.Add(ta);
                 }
         }
-        return Generals[Random.Range(0, Generals.Count)];
+		if (Generals.Count > 0) {
+			return Generals [Random.Range (0, Generals.Count)];
+		} else 
+		{
+			foreach (TroopActor ta in op.allTroopActors)
+			{
+				if (ta.rankState != RankState.dead)
+				if (ta != this && ta.team == team && ta.rankState == RankState.IsGeneral)
+				{
+					Generals.Add(ta);
+				}
+			}
+			if (Generals.Count > 0) {
+				return Generals [Random.Range (0, Generals.Count)];
+			} else 
+			{
+				Die (this);
+				return null;
+			}
+		}
+       
     }
 
 
@@ -755,7 +774,10 @@ public class TroopActor : MonoBehaviour
             {
                 m_navAgent.enabled = false;
             }
-            LookAtMoveTarget();
+
+			if(moveTarget)
+            	LookAtMoveTarget();
+			
             if (ClearLineOfSight())
             {
                 if (attackType == AttackType.AUTO)
@@ -797,14 +819,9 @@ public class TroopActor : MonoBehaviour
             keepThisAlive.name = gameObject.name + "'s MoveTarget";
             moveTarget = keepThisAlive.transform;
         }
-
-        SetMoveTargetColour(keepThisAlive);
+			
     }
-
-    void SetMoveTargetColour(GameObject go)
-    {
-        go.GetComponent<SetMoveTargetFactionAttributes>().SetColor();
-    }
+		
 
     bool ClearLineOfSight()
     {

@@ -105,8 +105,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4032130447359170}
   - component: {fileID: 114277572221351244}
-  - component: {fileID: 114954226542542226}
   - component: {fileID: 114403563637285602}
+  - component: {fileID: 114700950781224714}
   m_Layer: 0
   m_Name: General MoveTarget 1
   m_TagString: Untagged
@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420119947695036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.9295, y: 15.52, z: -86.7804}
+  m_LocalPosition: {x: 425.27643, y: 788.1108, z: -1062.8254}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4177387608926708}
@@ -731,7 +731,7 @@ MonoBehaviour:
   lm:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &114954226542542226
+--- !u!114 &114700950781224714
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -739,15 +739,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1420119947695036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64cba1eac9d4af54ebf6b73853fa71c5, type: 3}
+  m_Script: {fileID: 11500000, guid: c0cd607bbc049de4c97044a1e2bbe6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stars:
-  - {fileID: 1070815267836566}
-  - {fileID: 1419011871740028}
-  - {fileID: 1882271742945752}
-  - {fileID: 1235842044077924}
-  - {fileID: 1378960942661782}
-  - {fileID: 1756732281132018}
-  - {fileID: 1355489459847058}
-  team: 2
+  renderers:
+  - {fileID: 23971969077241242}
+  - {fileID: 23965086138208788}
+  - {fileID: 23262068020799950}
+  - {fileID: 23901429840254836}
+  - {fileID: 23900166226740462}
+  - {fileID: 23320859202637792}
+  - {fileID: 23802065909254216}
+  m_team: 2
+  shader: {fileID: 4800000, guid: 2c770c2b621c2d540b6e17f803986a2c, type: 3}
