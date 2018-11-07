@@ -279,7 +279,7 @@ public class TroopActor : MonoBehaviour
     void Update()
     {
         RankAction();
-
+        if (canvas)
         canvas.transform.rotation = camera.transform.rotation;
 
         if (rankState != RankState.dead && rankState != RankState.Base) {

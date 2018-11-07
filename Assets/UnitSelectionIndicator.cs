@@ -26,6 +26,7 @@ public class UnitSelectionIndicator : MonoBehaviour {
     public UIStuff uiStuff;
     public TroopController tc;
     public TroopActor BaseTa;
+    PortraitData pd; 
 	// Use this for initialization
 	void Start () {
         foreach (TroopController tci in FindObjectsOfType<TroopController>())
@@ -35,22 +36,44 @@ public class UnitSelectionIndicator : MonoBehaviour {
                 tc = tci;
             }
         }
-        foreach (PortraitData pd in FindObjectsOfType<PortraitData>())
+
+        foreach (PortraitData pdi in FindObjectsOfType<PortraitData>())
         {
-            if (pd.team == team)
+            if (pdi.team == team)
             {
-                uiStuff.portrait.sprite = pd.baseFace;
-                uiStuff.panel.color = pd.TeamColor;
-                BaseTa = pd.gameObject.GetComponentInChildren<TroopActor>();
-                uiStuff.sldr.maxValue = BaseTa.maxHealth;
-                uiStuff.sldr.value = BaseTa.currentHealth;
+                pd = pdi;
             }
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        uiStuff.sldr.value = BaseTa.currentHealth;
+
+        if (pd)
+        {
+            if (uiStuff.portrait.sprite != pd.baseFace)
+            {
+                uiStuff.portrait.sprite = pd.baseFace;
+            }
+            if (uiStuff.panel.color != pd.TeamColor)
+            {
+                uiStuff.panel.color = pd.TeamColor;
+            }
+
+            if (!BaseTa)
+            {
+                BaseTa = pd.gameObject.GetComponentInChildren<TroopActor>();
+            }
+        }
+        
+        if (uiStuff.sldr && BaseTa)
+        {
+            uiStuff.sldr.value = BaseTa.currentHealth;
+            if (uiStuff.sldr.maxValue != BaseTa.maxHealth)
+            {
+                uiStuff.sldr.maxValue = BaseTa.maxHealth;
+            }
+        }
         foreach (SelectionImage si in selectionImages)
         {
             if (tc.currentSelectedUnit.GetComponent<TroopActor>().unitClass == si.unitClass)

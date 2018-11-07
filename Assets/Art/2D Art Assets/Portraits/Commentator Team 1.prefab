@@ -178,7 +178,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -250,7 +250,7 @@ MonoBehaviour:
     tried: 0
     VoiceLineName: 
     reactionType: 0
-    reactionCatagory: 0
+    reactionCategory: 0
     text:
       subtitles: -Insert-Subtitles-Here-
       subtitleDisplayTime: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: Idol Nuetral ()
     reactionType: 1
-    reactionCatagory: 2
+    reactionCategory: 0
     text:
       subtitles: 
       subtitleDisplayTime: 5
@@ -290,7 +290,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: Idol Positive (HOORAH TO ASHES! KEE...)
     reactionType: 1
-    reactionCatagory: 1
+    reactionCategory: 0
     text:
       subtitles: HOORAH TO ASHES! KEEP FIGHTING BOYS!
       subtitleDisplayTime: 5
@@ -310,7 +310,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: Idol Negative (WHAT ARE YOU WAITING...)
     reactionType: 1
-    reactionCatagory: 3
+    reactionCategory: 0
     text:
       subtitles: WHAT ARE YOU WAITING FOR THE BATTLE IS OVER THERE!
       subtitleDisplayTime: 5
@@ -330,7 +330,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: Idol AFK (Zzz...)
     reactionType: 1
-    reactionCatagory: 4
+    reactionCategory: 0
     text:
       subtitles: Zzz...
       subtitleDisplayTime: 5
@@ -350,7 +350,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: Event Positive (HOORAH!)
     reactionType: 0
-    reactionCatagory: 1
+    reactionCategory: 0
     text:
       subtitles: HOORAH!
       subtitleDisplayTime: 5
@@ -370,7 +370,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: Event Negative (NOOOOOOOOOOOOOO)
     reactionType: 0
-    reactionCatagory: 3
+    reactionCategory: 0
     text:
       subtitles: NOOOOOOOOOOOOOO
       subtitleDisplayTime: 5
@@ -390,7 +390,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: Event Victory (I am doing a Win!)
     reactionType: 0
-    reactionCatagory: 0
+    reactionCategory: 0
     text:
       subtitles: I am doing a Win!
       subtitleDisplayTime: 5
@@ -409,7 +409,7 @@ MonoBehaviour:
   - tried: 0
     VoiceLineName: Event Defeat (I am doing A Lose!)
     reactionType: 0
-    reactionCatagory: 5
+    reactionCategory: 0
     text:
       subtitles: I am doing A Lose!
       subtitleDisplayTime: 5
@@ -425,11 +425,17 @@ MonoBehaviour:
       cycleSpeed: 0
       cycleTimer: 0
       animationFinished: 0
-  idolState: 1
+  idleState: 0
   timeUntilNextBoredumLevel: 5
   boredumLevelTimer: 5
   subtitleField: {fileID: 114890125300403380}
   portrait: {fileID: 114908469161827488}
+  tweenAnimator: {fileID: 0}
+  displaySubtitle:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114890125300403380
 MonoBehaviour:
   m_ObjectHideFlags: 1

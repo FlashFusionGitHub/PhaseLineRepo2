@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.24647538, g: 0.28234535, b: 0.3457032, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -819,20 +819,61 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1863049591646870, guid: 74e4d151aa5eb4a41880d3f3c242691d, type: 2}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
+    - target: {fileID: 114801469393715786, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: commentator
+      value: 
+      objectReference: {fileID: 1781210262}
+    - target: {fileID: 114801469393715786, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: bigBase
+      value: 
+      objectReference: {fileID: 505183538}
+    - target: {fileID: 114627965909550006, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: commentator
+      value: 
+      objectReference: {fileID: 2102498858}
+    - target: {fileID: 114627965909550006, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: bigBase
+      value: 
+      objectReference: {fileID: 616957246}
     - target: {fileID: 114170267982961062, guid: 74e4d151aa5eb4a41880d3f3c242691d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 305309928}
-    - target: {fileID: 114170267982961062, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+    - target: {fileID: 114124445361630924, guid: 74e4d151aa5eb4a41880d3f3c242691d,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
+      propertyPath: commentator
+      value: 
+      objectReference: {fileID: 1910516023}
+    - target: {fileID: 114124445361630924, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: bigBase
+      value: 
+      objectReference: {fileID: 166193376}
+    - target: {fileID: 114057658490859246, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: commentator
+      value: 
+      objectReference: {fileID: 1818351021}
+    - target: {fileID: 114057658490859246, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: bigBase
+      value: 
+      objectReference: {fileID: 495428950}
+    - target: {fileID: 114857850861699062, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: sceneLoader
+      value: 
+      objectReference: {fileID: 305309928}
+    - target: {fileID: 114857850861699062, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: selected_Factions
+      value: 
+      objectReference: {fileID: 557290880}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74e4d151aa5eb4a41880d3f3c242691d, type: 2}
   m_IsPrefabParent: 0
