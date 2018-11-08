@@ -445,7 +445,7 @@ Transform:
   m_GameObject: {fileID: 1549349656298378}
   m_LocalRotation: {x: -0, y: -0.9174253, z: -0, w: -0.39790824}
   m_LocalPosition: {x: -730.8, y: 62.378735, z: -378.3}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_Children:
   - {fileID: 224968002587950636}
   - {fileID: 4052677811441530}
@@ -1466,8 +1466,8 @@ MonoBehaviour:
   - Candice
   - Tim
   - Bazly
-  maxHealth: 200
-  currentHealth: 200
+  maxHealth: 100
+  currentHealth: 100
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:

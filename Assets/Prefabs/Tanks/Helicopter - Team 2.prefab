@@ -444,9 +444,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549761659609668}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 46.3, y: 65.61874, z: 208.2}
-  m_LocalScale: {x: 4.9460196, y: 4.9460196, z: 4.9460196}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -40.4, y: 65.61874, z: 325.2}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_Children:
   - {fileID: 224072119574330376}
   - {fileID: 4516125614802964}
@@ -1574,6 +1574,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_healthBar: {fileID: 114685704865889532}
+  canvas: {fileID: 223203829244866872}
   moving: 0
   OnMove:
     m_PersistentCalls:
@@ -1582,7 +1583,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   moveTarget: {fileID: 0}
   movementType: 0
-  moveSpeed: 25
+  moveSpeed: 75
   turnSpeed: 100
   moveTargetPrefab: {fileID: 1953959921899582, guid: 951935d8e28bc1845984e2494e375193,
     type: 2}
@@ -1797,7 +1798,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   TimeAlive: 0.85
-  canvas: {fileID: 223203829244866872}
+  image: {fileID: 0}
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114906986293504656
 MonoBehaviour:
