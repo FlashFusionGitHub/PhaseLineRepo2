@@ -46,6 +46,8 @@ public class NavigationArrowActor : MonoBehaviour
 
     public Transform camTransform;
 
+	public Renderer[] markerRenderers;
+
     // Use this for initialization
     protected virtual void Start()
     {
@@ -54,9 +56,11 @@ public class NavigationArrowActor : MonoBehaviour
         GameObject previousPos = new GameObject("previous Pos");
         prevPos = previousPos.transform;
         m_currentMarker = Instantiate(m_navMarker, new Vector3(0, 4, 0), Quaternion.identity);
+		markerRenderers = m_currentMarker.GetComponentsInChildren<Renderer> ();
         airstrikes = new List<AirStrike>();
 
         m_currentMarker.transform.position = troopController.currentSelectedUnit.transform.position;
+		cam = camTransform.GetComponent<CameraController> ().camera;
     }
 
     // Update is called once per frame
@@ -87,7 +91,7 @@ public class NavigationArrowActor : MonoBehaviour
         float markerXPos = Mathf.Clamp(m_currentMarker.transform.position.x, m_minXPos, maxXPos);
         float markerZPos = Mathf.Clamp(m_currentMarker.transform.position.z, m_minZPos, maxZPos);
 
-        if (Vector3.Distance(m_currentMarker.transform.position, new Vector3(camTransform.position.x, m_currentMarker.transform.position.y, camTransform.position.z)) <= maxMarkerDistanceFromUnit)
+		if (MarkerVisible())
         {
             m_currentMarker.transform.position = new Vector3(markerXPos, m_currentMarker.transform.position.y, markerZPos);
 
@@ -112,19 +116,46 @@ public class NavigationArrowActor : MonoBehaviour
         }
         else
         {
+			minMoveTimer = minMoveTime;
             if (prevPos.position == Vector3.zero)
             {
                 prevPos.position = troopController.currentSelectedUnit.transform.position;
             }
             
-			m_currentMarker.transform.position = Vector3.Lerp(m_currentMarker.transform.position, new Vector3(camTransform.position.x, m_currentMarker.transform.position.y, camTransform.position.z), Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex)));
+
             //m_currentMarker.transform.position = prevPos.position - ((m_currentMarker.transform.position - troopController.currentSelectedUnit.transform.position).normalized * 10f);
         }
+
+		if (minMoveTimer >= 0) 
+		{
+			camTransform.position = Vector3.Lerp(camTransform.position, new Vector3(m_currentMarker.transform.position.x, camTransform.position.y, m_currentMarker.transform.position.z), Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex)) *2);
+			m_currentMarker.transform.position = Vector3.Lerp(m_currentMarker.transform.position, new Vector3(camTransform.position.x, m_currentMarker.transform.position.y, camTransform.position.z), Time.deltaTime * (PlayerPrefs.GetFloat("MarkerSpeedPlayer" + playerIndex)));
+			minMoveTimer -= Time.deltaTime;
+		}
 
         AirStrikeControls();
 
 		ClosestEnemyUnit ();
     }
+	Camera cam;
+
+	float minMoveTime = 0.5f;
+	float minMoveTimer;
+	bool MarkerVisible()
+	{
+		
+		Vector3 viewPos = cam.WorldToViewportPoint(m_currentMarker.transform.position);
+		return viewPos.x > 0 && viewPos.x < 1 && viewPos.y > 0 && viewPos.y < 1;
+			
+		/*foreach (Renderer r in markerRenderers) 
+		{
+			if (r.isVisible) 
+			{
+				return true;
+			}
+		}
+		return false;*/
+	}
 
     void ClosestEnemyUnit() {
 		float dis = 0;
@@ -220,7 +251,7 @@ public class NavigationArrowActor : MonoBehaviour
             Gizmos.DrawWireSphere(troopController.currentSelectedUnit.transform.position, maxMarkerDistanceFromUnit);
 
 		Gizmos.color = Color.green;
-
+		if (m_currentMarker != null)
 		Gizmos.DrawWireSphere (m_currentMarker.transform.position, 20.0f);
     }
 

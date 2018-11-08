@@ -8,15 +8,20 @@ public class GeneralReader : MonoBehaviour {
 
     Text txt;
 
+	int GeneralCount;
+
     public ObjectPool op;
 	// Use this for initialization
 	void Start () {
         op = FindObjectOfType<ObjectPool>();
+		txt = GetComponent<Text> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-        //op.team1Generals.Count;
+			if (GeneralCount !=  ((team == Team.TEAM1) ? op.team1Generals.Count : op.team2Generals.Count)) {
+				GeneralCount = (team == Team.TEAM1) ? op.team1Generals.Count : op.team2Generals.Count;
+				txt.text = (GeneralCount.ToString());
+			}
 	}
 }
