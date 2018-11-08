@@ -105,7 +105,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4032130447359170}
   - component: {fileID: 114277572221351244}
-  - component: {fileID: 114782641902640116}
   - component: {fileID: 114772095360918094}
   m_Layer: 8
   m_Name: General MoveTarget
@@ -738,17 +737,3 @@ MonoBehaviour:
   - {fileID: 23802065909254216}
   m_team: 1
   shader: {fileID: 4800000, guid: 2c770c2b621c2d540b6e17f803986a2c, type: 3}
---- !u!114 &114782641902640116
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1420119947695036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02718429e24f18742bccea5ef89d6977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lm:
-    serializedVersion: 2
-    m_Bits: 0

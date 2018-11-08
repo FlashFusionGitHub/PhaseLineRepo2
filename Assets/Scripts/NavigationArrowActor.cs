@@ -60,7 +60,7 @@ public class NavigationArrowActor : MonoBehaviour
         airstrikes = new List<AirStrike>();
 
         m_currentMarker.transform.position = troopController.currentSelectedUnit.transform.position;
-		cam = camTransform.GetComponent<CameraController> ().camera;
+		
     }
 
     // Update is called once per frame
@@ -143,10 +143,16 @@ public class NavigationArrowActor : MonoBehaviour
 	float minMoveTimer;
 	bool MarkerVisible()
 	{
-		
-		Vector3 viewPos = cam.WorldToViewportPoint(m_currentMarker.transform.position);
-		return viewPos.x > 0 && viewPos.x < 1 && viewPos.y > 0 && viewPos.y < 1;
-			
+        if (cam)
+        {
+            Vector3 viewPos = cam.WorldToViewportPoint(m_currentMarker.transform.position);
+            return viewPos.x > 0 && viewPos.x < 1 && viewPos.y > 0 && viewPos.y < 1;
+        }
+        else
+        {
+            cam = camTransform.GetComponent<CameraController>().camera;
+            return false;
+        }
 		/*foreach (Renderer r in markerRenderers) 
 		{
 			if (r.isVisible) 
