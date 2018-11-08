@@ -207,6 +207,10 @@ public class TroopActor : MonoBehaviour
         lineRenderer.material = lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
 
         m_navAgent = GetComponent<NavMeshAgent>();
+        if (rankState == RankState.Base)
+        {
+            m_navAgent.enabled = false;
+        }
 		attackType = AttackType.AUTO;
 
         zc = FindObjectOfType<ZoneController>();
