@@ -9,6 +9,8 @@ public class CheckForGrounded : MonoBehaviour {
     Transform origin;
     public NavMeshAgent TempNma;
 
+    Vector3 prevPos;
+
 	// Use this for initialization
 	void Awake () {
         TempNma = GetComponent<NavMeshAgent>();
@@ -30,9 +32,13 @@ public class CheckForGrounded : MonoBehaviour {
             origin.localPosition = transform.localPosition;
         }
         NavMeshHit nHit;
-        if (NavMesh.SamplePosition(origin.position, out nHit, 2000f, TempNma.areaMask))
+        if (origin.position != prevPos)
         {
-            transform.position = nHit.position;
+            if (NavMesh.SamplePosition(origin.position, out nHit, 2000f, TempNma.areaMask))
+            {
+                transform.position = nHit.position;
+                prevPos = origin.position;
+            }
         }
     }
 }

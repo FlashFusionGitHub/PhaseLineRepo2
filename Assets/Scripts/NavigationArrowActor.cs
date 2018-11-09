@@ -30,7 +30,7 @@ public class NavigationArrowActor : MonoBehaviour
 
     protected Controller m_controller; /*Reference to the controller class*/
 
-    public List<AirStrike> airstrikes; /*A list of avaiable airstrikes*/
+    public List<AirStrike> airstrikes = new List<AirStrike>(); /*A list of avaiable airstrikes*/
 
     public float floatValue = 1f;
 
@@ -48,6 +48,10 @@ public class NavigationArrowActor : MonoBehaviour
 
 	public Renderer[] markerRenderers;
 
+    public int zoneSize = 50;
+
+    public CaptureZoneActor closestZone;
+
     // Use this for initialization
     protected virtual void Start()
     {
@@ -57,7 +61,6 @@ public class NavigationArrowActor : MonoBehaviour
         prevPos = previousPos.transform;
         m_currentMarker = Instantiate(m_navMarker, new Vector3(0, 4, 0), Quaternion.identity);
 		markerRenderers = m_currentMarker.GetComponentsInChildren<Renderer> ();
-        airstrikes = new List<AirStrike>();
 
         m_currentMarker.transform.position = troopController.currentSelectedUnit.transform.position;
 		
@@ -136,6 +139,7 @@ public class NavigationArrowActor : MonoBehaviour
         AirStrikeControls();
 
 		ClosestEnemyUnit ();
+        ClosestCaptureZone();
     }
 	Camera cam;
 
@@ -153,14 +157,6 @@ public class NavigationArrowActor : MonoBehaviour
             cam = camTransform.GetComponent<CameraController>().camera;
             return false;
         }
-		/*foreach (Renderer r in markerRenderers) 
-		{
-			if (r.isVisible) 
-			{
-				return true;
-			}
-		}
-		return false;*/
 	}
 
     void ClosestEnemyUnit() {
@@ -182,9 +178,37 @@ public class NavigationArrowActor : MonoBehaviour
 		}
 	}
 
+    void ClosestCaptureZone()
+    {
+        float dis = 0;
+
+        foreach (CaptureZoneActor T in FindObjectOfType<ZoneController>().zones)
+        {
+            if (T.owner == m_team && T.gameObject.activeInHierarchy)
+            {
+                if (Vector3.Distance(m_currentMarker.transform.position, T.transform.position) < zoneSize)
+                {
+                    if (dis == 0 || Vector3.Distance(m_currentMarker.transform.position, T.transform.position) < dis)
+                    {
+                        dis = Vector3.Distance(m_currentMarker.transform.position, T.transform.position);
+                        closestZone = T;
+                    }
+                }
+            }
+        }
+
+        if (m_tank != null)
+        {
+            if (Vector3.Distance(m_currentMarker.transform.position, m_tank.transform.position) > zoneSize)
+                closestZone = null;
+        }
+    }
+
+    CaptureZoneActor nearestCaptureZone = null;
+    float closestDistanceSqr = Mathf.Infinity;
     public void AirStrikeControls()
     {
-        if (m_controller.Action4WasPress() && !m_airStrikeState && airstrikes.Count > 0)
+        if (closestZone != null && m_controller.Action4WasPress() && !m_airStrikeState && airstrikes.Count > 0)
         {
             EnableAirStrikeMarker();
         }
@@ -193,35 +217,46 @@ public class NavigationArrowActor : MonoBehaviour
             EnableNavigationMarker();
         }
 
-        CaptureZoneActor nearestCaptureZone = null;
-        float closestDistanceSqr = Mathf.Infinity;
-        foreach(AirStrike a in airstrikes)
+		if (m_airStrikeState && m_controller.Action1WasPress())
         {
-            if(a.captureZone != null)
+            if (Vector3.Distance(nearestCaptureZone.transform.position, m_currentMarker.transform.position) < nearestCaptureZone.AirstrikeRange)
             {
-                Vector3 directionToTarget = a.captureZone.transform.position - m_currentMarker.transform.position;
-                float sqrToTarget = directionToTarget.sqrMagnitude;
+                Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
 
-                if (sqrToTarget < closestDistanceSqr)
-                {
-                    closestDistanceSqr = sqrToTarget;
-                    nearestCaptureZone = a.captureZone;
-                }
+                airstrikes.Remove(nearestCaptureZone.airStrike);
+
+                FindObjectOfType<ZoneController>().zones.Remove(nearestCaptureZone);
+
+                nearestCaptureZone.gameObject.SetActive(false);
+                EnableNavigationMarker();
             }
-        }
-
-		if (m_airStrikeState && m_controller.Action1WasPress() && airstrikes.Count > 0)
-        {
-            Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
-
-            airstrikes.Remove(nearestCaptureZone.airStrike);
-
-			FindObjectOfType<ZoneController>().zones.Remove (nearestCaptureZone);
-			Destroy(nearestCaptureZone.gameObject, 0.1f);
 	
-
-            EnableNavigationMarker();
+            
         }
+
+        if ((m_airStrikeState) && (Vector3.Distance(nearestCaptureZone.transform.position, m_currentMarker.transform.position) < nearestCaptureZone.AirstrikeRange))
+        {
+            if (colored)
+            ResetMyColor();
+        }
+        else
+        {
+            if (!colored)
+            ColorMeBoi(Color.grey);
+        }
+    }
+
+    bool colored;
+    void ColorMeBoi(Color c)
+    {
+        colored = true;
+        m_currentMarker.GetComponent<MarkerColourChanger>().ChangeColour(c);
+    }
+
+    void ResetMyColor()
+    {
+        colored = false;
+        m_currentMarker.GetComponent<MarkerColourChanger>().ResetColor();
     }
 
     /*Enable the airstrike maker, set airstrike state to true which stops the navigation marker script to stop updating, adn the airstrike script to begin updating*/

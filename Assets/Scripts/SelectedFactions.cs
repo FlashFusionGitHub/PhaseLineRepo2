@@ -15,6 +15,7 @@ public class SelectedFactions : MonoBehaviour {
 				Destroy (sf.gameObject);
 			}
 		}
+
         DontDestroyOnLoad(this.gameObject);
     }
 

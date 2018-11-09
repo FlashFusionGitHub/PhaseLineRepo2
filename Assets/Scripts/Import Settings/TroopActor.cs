@@ -475,7 +475,6 @@ public class TroopActor : MonoBehaviour
 		}
 	}
 
-    float tempMoveSpeed;
 	void AttackSelectedEnemy(TroopActor troopToAttack)
 	{
 		foreach (GunSettings gun in guns)
@@ -806,6 +805,18 @@ public class TroopActor : MonoBehaviour
         if (moving)
         {
             OnMove.Invoke();
+        }
+
+        if (attackType == AttackType.SELECTED && Vector3.Distance(transform.position, targetToAttack.transform.position) < guns[0].attackRangeMin)
+        {
+            if (movementType == MovementTypes.Ground)
+            {
+                m_navAgent.SetDestination(transform.position + (transform.position - targetToAttack.transform.position).normalized * guns[0].attackRangeMin);
+            }
+            else
+            {
+
+            }
         }
     }
 

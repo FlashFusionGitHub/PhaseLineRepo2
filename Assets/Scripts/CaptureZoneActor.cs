@@ -4,27 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
-/*All the airstrike variables will be held in this class, simply add a new instance of the airstrike class
- to the player to give them an airstrike*/
-public struct AirStrike
-{
-    public CaptureZoneActor captureZone; /*The capture zone where this airstrike was earned*/
-
-    public AirStrike(CaptureZoneActor captureZoneActor)
-    {
-        captureZone = captureZoneActor;
-    }
-}
-
 public class CaptureZoneActor : MonoBehaviour {
-
-    public enum Owner { NONE, TEAM1, TEAM2};
 
     bool partialCaptureTeam1;
     bool partialCaptureTeam2;
 
     [Header ("Owner")]
-    public Owner owner;
+    public Team owner;
 
     [Header ("Capture timer")]
     public float captureTimer = 0;
@@ -46,6 +32,7 @@ public class CaptureZoneActor : MonoBehaviour {
     public NavigationArrowActor team2;
 
     public AirStrike airStrike;
+    public float AirstrikeRange = 500f;
 
     // Use this for initialization
     void Start () {
@@ -58,7 +45,7 @@ public class CaptureZoneActor : MonoBehaviour {
         //PurgeTheLists();
         if (capturePercentage == 0)
         {
-            owner = Owner.NONE;
+            owner = Team.NONE;
         }
 
         if(team1unitsInZone.Count > 0 && team2unitsInZone.Count == 0)
@@ -68,7 +55,7 @@ public class CaptureZoneActor : MonoBehaviour {
                 capturePercentage = 0;
             }
 
-            if (owner == Owner.NONE)
+            if (owner == Team.NONE)
             {
                 captureTimer -= Time.deltaTime;
 
@@ -82,13 +69,13 @@ public class CaptureZoneActor : MonoBehaviour {
 
                     if (capturePercentage >= 100)
                     {
-                        owner = Owner.TEAM1;
+                        owner = Team.TEAM1;
                         team1.airstrikes.Add(airStrike);
                         onCaptureTeam1.Invoke(); //added event to plug in effects and sounds
                     }
                 }
             }
-            else if(owner == Owner.TEAM2)
+            else if(owner == Team.TEAM2)
             {
                 captureTimer -= Time.deltaTime;
 
@@ -112,7 +99,7 @@ public class CaptureZoneActor : MonoBehaviour {
                 capturePercentage = 0;
             }
 
-            if (owner == Owner.NONE)
+            if (owner == Team.NONE)
             {
                 captureTimer -= Time.deltaTime;
 
@@ -126,13 +113,13 @@ public class CaptureZoneActor : MonoBehaviour {
 
                     if (capturePercentage >= 100)
                     {
-                        owner = Owner.TEAM2;
+                        owner = Team.TEAM2;
                         team2.airstrikes.Add(airStrike);
                         onCaptureTeam2.Invoke(); //added Event to plug in effects and sounds
                     }
                 }
             }
-            else if (owner == Owner.TEAM1)
+            else if (owner == Team.TEAM1)
             {
                 captureTimer -= Time.deltaTime;
 
@@ -149,7 +136,7 @@ public class CaptureZoneActor : MonoBehaviour {
             }
         }
 
-        if(team1unitsInZone.Count == 0 && team2unitsInZone.Count == 0 && owner == Owner.NONE)
+        if(team1unitsInZone.Count == 0 && team2unitsInZone.Count == 0 && owner == Team.NONE)
         {
             capturePercentage = 0;
         }
@@ -208,7 +195,7 @@ public class CaptureZoneActor : MonoBehaviour {
             }
         }
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
         CancelInvoke();
     }

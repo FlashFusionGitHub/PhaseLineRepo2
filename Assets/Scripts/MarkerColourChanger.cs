@@ -16,32 +16,57 @@ public class MarkerColourChanger : MonoBehaviour {
         selectedFactions = FindObjectOfType<SelectedFactions>();
 
 
-        if(m_team == Team.TEAM1)
-        {
-            for(int i = 0; i < renderers.Length; i++)
-            {
-				if (renderers [i].material.shader == shader) {
-					renderers [i].material.SetColor (Shader.PropertyToID ("_TeamColor"), selectedFactions.team1.primaryColour);
-				} else {
-					renderers [i].material.SetColor (Shader.PropertyToID ("_Color"), selectedFactions.team1.primaryColour);
-				}
-            }
-        }
-        else
-        {
-            for (int i = 0; i < renderers.Length; i++)
-            {
-				if (renderers [i].material.shader == shader) {
-					renderers [i].material.SetColor (Shader.PropertyToID ("_TeamColor"), selectedFactions.team2.primaryColour);
-				} else {
-					renderers [i].material.SetColor (Shader.PropertyToID ("_Color"), selectedFactions.team2.primaryColour);
-				}
-            }
-        }
+        ResetColor();
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void ResetColor()
+    {
+        if (m_team == Team.TEAM1)
+        {
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                if (renderers[i].material.shader == shader)
+                {
+                    renderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team1.primaryColour);
+                }
+                else
+                {
+                    renderers[i].material.SetColor(Shader.PropertyToID("_Color"), selectedFactions.team1.primaryColour);
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                if (renderers[i].material.shader == shader)
+                {
+                    renderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), selectedFactions.team2.primaryColour);
+                }
+                else
+                {
+                    renderers[i].material.SetColor(Shader.PropertyToID("_Color"), selectedFactions.team2.primaryColour);
+                }
+            }
+        }
+    }
+    public void ChangeColour(Color colour)
+    {
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            if (renderers[i].material.shader == shader)
+            {
+                renderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), colour);
+            }
+            else
+            {
+                renderers[i].material.SetColor(Shader.PropertyToID("_Color"), colour);
+            }
+        }
+    }
 }

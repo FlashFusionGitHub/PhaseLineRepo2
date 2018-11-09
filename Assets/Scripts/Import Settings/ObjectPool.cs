@@ -76,12 +76,39 @@ public class ObjectPool : MonoBehaviour {
 	}
     private void Update()
     {
-
+        if (!WeHaveBases())
+        {
+            FindAllTroopTargets();
+        }
     }
 
     public void FindAllTroopTargets()
     {
         allTroopActors = FindObjectsOfType<TroopActor>().ToList();
+    }
+
+    bool WeHaveBases()
+    {
+        int baseNumber = 2;
+        foreach (TroopActor t in allTroopActors)
+        {
+            if (t.rankState == RankState.Base)
+            {
+                baseNumber--;
+                if (baseNumber <= 0)
+                {
+                    return true;
+                }
+            }
+        }
+        if (baseNumber <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void AddGeneralsToList()

@@ -12,14 +12,12 @@ public class FactionElements : MonoBehaviour{
 	public Sprite baseFace;
 	public string description;
 
-
-
     public void SetTeam(Team t)
     {
         TroopActor ta = bigBase.GetComponentInChildren<TroopActor>();
         HangerSpawner[] hangers = bigBase.GetComponentsInChildren<HangerSpawner>();
-        TriggerWin tw = bigBase.GetComponent<TriggerWin>();
-        PortraitData pd = bigBase.GetComponent<PortraitData>();
+        TriggerWin tw = bigBase.GetComponentInChildren<TriggerWin>();
+        PortraitData pd = bigBase.GetComponentInChildren<PortraitData>();
 
         if (pd)
         {

@@ -55,6 +55,7 @@ public class TroopController : MonoBehaviour {
         DisablesMoveTargets();
     }
 
+    TroopActor checkThisGeneral;
     // Update is called once per frame
     protected virtual void Update () {
 
@@ -74,68 +75,76 @@ public class TroopController : MonoBehaviour {
             }
         }
 
-        if (m_generals.Count == 0)
+        if(currentGeneral != m_generals[index])
+        {
             Destroy(m_currentSelectionCircle);
+        }
 
-        QuickSelect();
-
-        if(m_generals.Count > 0)
+        if(m_generals[index].rankState == RankState.dead)
         {
-            if (m_generals[index].rankState == RankState.dead)
-            {
-                m_generals.Remove(m_generals[index]);
-            }
+            currentSelectedUnit = null;
         }
 
-        if (m_controller.DpadLeftWasPress() && m_generals.Count > 0) {
-            //destroy the currect circle
-            if (m_currentSelectionCircle != null)
-                Destroy(m_currentSelectionCircle);
-
-            CheckGeneralState(false, true);
-        }
-
-        if (m_controller.DpadRightWasPress() && m_generals.Count > 0) {
-            //destory the currect circle
-            if (m_currentSelectionCircle != null)
-                Destroy(m_currentSelectionCircle);
-
-            CheckGeneralState(true, false);
-        }
-
-		if (m_navigationArrowActor.m_tank != null && m_controller.Action3WasPress() && !m_navigationArrowActor.m_airStrikeState)
+        if (m_generals.Count == 0)
         {
-            if (UnitToAttack != m_navigationArrowActor.m_tank)
+            Destroy(m_currentSelectionCircle);
+        }
+        else
+        {
+            QuickSelect();
+
+            if (m_controller.DpadLeftWasPress() && m_generals.Count > 0)
             {
-                UnitToAttack = m_navigationArrowActor.m_tank;
+                //destroy the currect circle
+                if (m_currentSelectionCircle != null)
+                    Destroy(m_currentSelectionCircle);
+
+                CheckGeneralState(false, true);
             }
-            
-		}
-		else if(m_controller.Action1WasPress() && !m_navigationArrowActor.m_airStrikeState) 
-		{
-            if (UnitToAttack != null)
+
+            if (m_controller.DpadRightWasPress() && m_generals.Count > 0)
             {
-                UnitToAttack = null;
+                //destory the currect circle
+                if (m_currentSelectionCircle != null)
+                    Destroy(m_currentSelectionCircle);
+
+                CheckGeneralState(true, false);
             }
 
-			m_generals [index].targetToAttack = null;
-			m_generals[index].SetAttackType (AttackType.AUTO);
-			foreach (TroopActor T in op.allTroopActors) {
-				if (T.myGeneral == m_generals [index]) {
-					T.targetToAttack = null;
-					T.SetAttackType (AttackType.AUTO);
-				}
-			}
+            if (m_navigationArrowActor.m_tank != null && m_controller.Action3WasPress() && !m_navigationArrowActor.m_airStrikeState)
+            {
+                if (UnitToAttack != m_navigationArrowActor.m_tank)
+                {
+                    UnitToAttack = m_navigationArrowActor.m_tank;
+                }
+            }
+            else if (m_controller.Action1WasPress() && !m_navigationArrowActor.m_airStrikeState)
+            {
+                if (UnitToAttack != null)
+                {
+                    UnitToAttack = null;
+                }
 
-			m_generals[index].moveTarget.transform.position = m_navigationArrowActor.m_currentMarker.transform.position;
-			m_generals[index].moveTarget.transform.rotation = m_navigationArrowActor.m_currentMarker.transform.rotation;
-		} 
+                m_generals[index].targetToAttack = null;
+                m_generals[index].SetAttackType(AttackType.AUTO);
+                foreach (TroopActor T in op.allTroopActors)
+                {
+                    if (T.myGeneral == m_generals[index])
+                    {
+                        T.targetToAttack = null;
+                        T.SetAttackType(AttackType.AUTO);
+                    }
+                }
 
-		SquadGangAttackSelectedUnit ();
+                m_generals[index].moveTarget.transform.position = m_navigationArrowActor.m_currentMarker.transform.position;
+                m_generals[index].moveTarget.transform.rotation = m_navigationArrowActor.m_currentMarker.transform.rotation;
+            }
 
-        if (m_currentSelectionCircle != null && index >= 0 && m_generals.Count > 0)
-            m_currentSelectionCircle.transform.position = m_generals[index].transform.position;
+            SquadGangAttackSelectedUnit();
 
+            if (m_currentSelectionCircle != null && index >= 0 && m_generals.Count > 0)
+                m_currentSelectionCircle.transform.position = m_generals[index].transform.position;
+        }
     }
 
 
@@ -202,6 +211,7 @@ public class TroopController : MonoBehaviour {
         if (m_controller.LeftStickButton())
         {
             cameraController.MoveCameraTo(m_generals[index].transform.position);
+            m_navigationArrowActor.moveMarkerToMyBoy();
         }
     }
 

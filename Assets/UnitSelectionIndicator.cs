@@ -65,6 +65,16 @@ public class UnitSelectionIndicator : MonoBehaviour {
                 BaseTa = pd.gameObject.GetComponentInChildren<TroopActor>();
             }
         }
+        else
+        {
+            foreach (PortraitData pdi in FindObjectsOfType<PortraitData>())
+            {
+                if (pdi.team == team)
+                {
+                    pd = pdi;
+                }
+            }
+        }
         
         if (uiStuff.sldr && BaseTa)
         {

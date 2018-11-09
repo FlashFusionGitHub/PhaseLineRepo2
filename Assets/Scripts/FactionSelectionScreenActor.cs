@@ -95,6 +95,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
             cursor.SwapController();
             cursorText.text = "P2";
         }
+
         if (player == Player.player2)
         {
             masks[num].color = Color.red;
