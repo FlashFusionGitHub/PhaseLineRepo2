@@ -52,11 +52,13 @@ public class NavigationArrowActor : MonoBehaviour
 
     public CaptureZoneActor closestZone;
 
+    ZoneController zone;
+
     // Use this for initialization
     protected virtual void Start()
     {
         op = FindObjectOfType<ObjectPool> ();
-
+        zone = FindObjectOfType<ZoneController>();
         GameObject previousPos = new GameObject("previous Pos");
         prevPos = previousPos.transform;
         m_currentMarker = Instantiate(m_navMarker, new Vector3(0, 4, 0), Quaternion.identity);
@@ -182,7 +184,7 @@ public class NavigationArrowActor : MonoBehaviour
     {
         float dis = 0;
 
-        foreach (CaptureZoneActor T in FindObjectOfType<ZoneController>().zones)
+        foreach (CaptureZoneActor T in zone.zones)
         {
             if (T.owner == m_team && T.gameObject.activeInHierarchy)
             {
@@ -208,16 +210,16 @@ public class NavigationArrowActor : MonoBehaviour
     float closestDistanceSqr = Mathf.Infinity;
     public void AirStrikeControls()
     {
-        if (closestZone != null && m_controller.Action4WasPress() && !m_airStrikeState && airstrikes.Count > 0)
+        /*if (closestZone != null && m_controller.Action4WasPress() && !m_airStrikeState && airstrikes.Count > 0)
         {
             EnableAirStrikeMarker();
         }
         else if (m_controller.Action4WasPress() && m_airStrikeState)
         {
             EnableNavigationMarker();
-        }
+        }*/
 
-		if (m_airStrikeState && m_controller.Action1WasPress())
+		/*if (m_airStrikeState && m_controller.Action1WasPress())
         {
             if (Vector3.Distance(nearestCaptureZone.transform.position, m_currentMarker.transform.position) < nearestCaptureZone.AirstrikeRange)
             {
@@ -230,11 +232,9 @@ public class NavigationArrowActor : MonoBehaviour
                 nearestCaptureZone.gameObject.SetActive(false);
                 EnableNavigationMarker();
             }
-	
-            
-        }
+        }*/
 
-        if ((m_airStrikeState) && (Vector3.Distance(nearestCaptureZone.transform.position, m_currentMarker.transform.position) < nearestCaptureZone.AirstrikeRange))
+        /*if ((m_airStrikeState) && (Vector3.Distance(nearestCaptureZone.transform.position, m_currentMarker.transform.position) < nearestCaptureZone.AirstrikeRange))
         {
             if (colored)
             ResetMyColor();
@@ -243,7 +243,7 @@ public class NavigationArrowActor : MonoBehaviour
         {
             if (!colored)
             ColorMeBoi(Color.grey);
-        }
+        }*/
     }
 
     bool colored;

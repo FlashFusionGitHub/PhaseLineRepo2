@@ -32,6 +32,8 @@ public class ObjectPool : MonoBehaviour {
 	public FactoryPrefab p2AATanks;
 	public FactoryPrefab p2Helis;
 
+    public List<Transform> pointsOfInterest;
+
     // Use this for initialization
     void Start () {
 		GenerateTroops ();

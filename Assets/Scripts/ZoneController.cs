@@ -46,19 +46,19 @@ public class ZoneController : MonoBehaviour {
 
                 if (progressTimer <= 0)
                 {
-                    if (zone.owner == Team.NONE)
-                        return;
-
-                    if (zone.owner == Team.TEAM1)
+                    if(zone.owner != Team.NONE)
                     {
-                        //add points to team 1
-                        team1Score += captureZoneScoreAmount;
-                    }
+                        if (zone.owner == Team.TEAM1)
+                        {
+                            //add points to team 1
+                            team1Score += captureZoneScoreAmount;
+                        }
 
-                    if (zone.owner == Team.TEAM2)
-                    {
-                        //add points to team 2
-                        team2Score += captureZoneScoreAmount;
+                        if (zone.owner == Team.TEAM2)
+                        {
+                            //add points to team 2
+                            team2Score += captureZoneScoreAmount;
+                        }
                     }
 
                     progressTimer = progressTime;
@@ -83,6 +83,7 @@ public class ZoneController : MonoBehaviour {
 
     public void UpdateScoreText()
     {
+        Debug.Log("This is being called " + team1Score);
         team1ScoreText.text = team1Score.ToString();
         team2ScoreText.text = team2Score.ToString();
     }

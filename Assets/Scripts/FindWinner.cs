@@ -22,14 +22,16 @@ public class FindWinner : MonoBehaviour {
 
     public GameTimer gameTimer;
 
-    int team1Score, team2Score;
-
     bool isDraw;
+
+    int player1Score, player2Score;
+
+
 
     // Use this for initialization
     void Start () {
         zoneController = FindObjectOfType<ZoneController>();
-	}
+    }
 
     // Update is called once per frame
     void Update() {
@@ -40,6 +42,7 @@ public class FindWinner : MonoBehaviour {
             {
                 winnerCalled = false;
             }
+
             CalculateWinnerFromScore();
 
             if (winner == Team.TEAM1)
@@ -116,11 +119,11 @@ public class FindWinner : MonoBehaviour {
     {
         if(gameTimer.gameEnd)
         {
-            if (team1Score > team2Score)
+            if (zoneController.team1Score > zoneController.team2Score)
             {
                 TriggerTeam1Win();
             }
-            else if(team2Score > team1Score)
+            else if(zoneController.team1Score < zoneController.team2Score)
             {
                 TriggerTeam2Win();
             }
