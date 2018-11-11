@@ -4,18 +4,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-/*All the airstrike variables will be held in this class, simply add a new instance of the airstrike class
-to the player to give them an airstrike*/
-public struct AirStrike
-{
-    public CaptureZoneActor captureZone; /*The capture zone where this airstrike was earned*/
-
-    public AirStrike(CaptureZoneActor captureZoneActor)
-    {
-        captureZone = captureZoneActor;
-    }
-}
-
 public class ZoneController : MonoBehaviour {
 
 	public List<CaptureZoneActor> zones = new List<CaptureZoneActor>();
@@ -83,7 +71,10 @@ public class ZoneController : MonoBehaviour {
 
     public void UpdateScoreText()
     {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3419aa02cca238970b4e128d65caa2d810b86b9e
         team1ScoreText.text = team1Score.ToString();
         team2ScoreText.text = team2Score.ToString();
     }

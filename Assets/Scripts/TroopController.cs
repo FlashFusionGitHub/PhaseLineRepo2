@@ -75,19 +75,21 @@ public class TroopController : MonoBehaviour {
             }
         }
 
-        if(currentGeneral != m_generals[index])
-        {
-            Destroy(m_currentSelectionCircle);
-        }
-
-        if(m_generals[index].rankState == RankState.dead)
-        {
-            currentSelectedUnit = null;
-        }
-
         if (m_generals.Count == 0)
         {
             Destroy(m_currentSelectionCircle);
+        }
+        else if(!currentSelectedUnit.activeInHierarchy || currentSelectedUnit.GetComponent<TroopActor>().rankState == RankState.dead)
+        {
+            currentGeneral = m_generals[0];
+
+            currentSelectedUnit = m_generals[0].gameObject;
+            m_navigationArrowActor.m_navMarker.transform.position = currentSelectedUnit.transform.position;
+
+            m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
+
+            EnableMoveTargetsForSelectedGeneral();
+            DisablesMoveTargets();
         }
         else
         {
