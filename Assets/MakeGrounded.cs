@@ -10,6 +10,11 @@ public class MakeGrounded : MonoBehaviour {
     public LayerMask lm;
 	// Use this for initialization
 	void Start () {
+        DoYourThing();
+    }
+
+    void DoYourThing()
+    {
         nma = GetComponent<NavMeshAgent>();
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 10000f, lm))
@@ -23,14 +28,18 @@ public class MakeGrounded : MonoBehaviour {
             }
             else
             {
-                Destroy(gameObject);
+                DestroyImmediate(gameObject);
             }
         }
         else
         {
-            Destroy(gameObject);
+            DestroyImmediate(gameObject);
         }
-        Destroy(nma);
-        Destroy(this);
-	}
+        DestroyImmediate (nma);
+        DestroyImmediate(this);
+    }
+    private void OnDrawGizmos()
+    {
+        DoYourThing();
+    }
 }
