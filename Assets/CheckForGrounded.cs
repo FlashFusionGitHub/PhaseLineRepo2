@@ -55,7 +55,7 @@ public class CheckForGrounded : MonoBehaviour {
                 myPoint = op.NearestPOI(attackTarget.position);
                 myPoint.assignMoveTarget(this);
                 transform.position = myPoint.transform.position;
-                prevPos = origin.position;
+                prevPosTarget = attackTarget.position;
             }
         }
         else
