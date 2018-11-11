@@ -83,7 +83,7 @@ public class ZoneController : MonoBehaviour {
 
     public void UpdateScoreText()
     {
-        Debug.Log("This is being called " + team1Score);
+
         team1ScoreText.text = team1Score.ToString();
         team2ScoreText.text = team2Score.ToString();
     }

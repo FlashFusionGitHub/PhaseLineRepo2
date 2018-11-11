@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4528994187482160}
   - component: {fileID: 114133262240181224}
+  - component: {fileID: 114448094678208454}
+  - component: {fileID: 195150684925130730}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -54,3 +56,37 @@ MonoBehaviour:
   lm:
     serializedVersion: 2
     m_Bits: 2048
+--- !u!114 &114448094678208454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871512950651798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a9700e0a7300242a76e599d2f50bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taken: 0
+  moveTarget: {fileID: 0}
+--- !u!195 &195150684925130730
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871512950651798}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 17
+  m_ObstacleAvoidanceType: 4

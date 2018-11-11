@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4193668359088048}
+  - component: {fileID: 114410800042768620}
   - component: {fileID: 114481753035130650}
   m_Layer: 0
   m_Name: Object pool
@@ -34,12 +35,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087382930227366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -971, y: 233, z: -952}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114410800042768620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087382930227366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1400c8ad9b1ab28408593f5f39badb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 1595
+  length: 1490
+  prefab: {fileID: 1871512950651798, guid: d68824521a860014cb26334c341a3aee, type: 2}
+  spacing: 30
 --- !u!114 &114481753035130650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58,21 +74,22 @@ MonoBehaviour:
   team2Generals: []
   p1Group: {fileID: 0}
   p1Tanks:
-    prefab: {fileID: 0}
+    prefab: {fileID: 1549349656298378, guid: 21fe49271ad6e8e4ba5540053585f384, type: 2}
     amount: 20
   p1AATanks:
-    prefab: {fileID: 0}
+    prefab: {fileID: 1272410556806254, guid: 5d91096469a87684ab71d0832e480e56, type: 2}
     amount: 20
   p1Helis:
-    prefab: {fileID: 0}
+    prefab: {fileID: 1216272378857494, guid: 39ba0b444d07c2c4c95afb370985e1b1, type: 2}
     amount: 20
   p2Group: {fileID: 0}
   p2Tanks:
-    prefab: {fileID: 0}
+    prefab: {fileID: 1549349656298378, guid: bd03ec4186ef83441a76f853939d9bae, type: 2}
     amount: 20
   p2AATanks:
-    prefab: {fileID: 0}
+    prefab: {fileID: 1689719428568080, guid: 43ee4ba2c82da5e40a933c31e38400ea, type: 2}
     amount: 20
   p2Helis:
-    prefab: {fileID: 0}
+    prefab: {fileID: 1549761659609668, guid: ca1b6bb1556e79a46a76255ae0ba92c2, type: 2}
     amount: 20
+  pointsOfInterest: []

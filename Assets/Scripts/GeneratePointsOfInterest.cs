@@ -5,7 +5,7 @@ using UnityEngine;
 public class GeneratePointsOfInterest : MonoBehaviour {
 
     public int width, length;
-    public GameObject prefab;
+    public PointOfInterest prefab;
 
     Transform spawner;
 
@@ -14,7 +14,7 @@ public class GeneratePointsOfInterest : MonoBehaviour {
     int numOfRows;
     public int spacing;
 
-    List<Transform> objs;
+    List<PointOfInterest> points  = new List<PointOfInterest>();
 
     ObjectPool op;
 	// Use this for initialization
@@ -38,14 +38,18 @@ public class GeneratePointsOfInterest : MonoBehaviour {
             MoveSpawnerUp();
         }
 
-        op.pointsOfInterest = objs;
+        op.pointsOfInterest = points;
     }
 
     void SpawnPrefab()
     {
-        GameObject obj = Instantiate(prefab, spawner);
+        GameObject obj = Instantiate(prefab.gameObject, spawner)as GameObject;
         obj.transform.parent = transform;
-        objs.Add(obj.transform);
+        PointOfInterest p = obj.GetComponent<PointOfInterest>();
+        if (p)
+        {
+            points.Add(p);
+        }
     }
 
     void MoveSpawnerRight()
