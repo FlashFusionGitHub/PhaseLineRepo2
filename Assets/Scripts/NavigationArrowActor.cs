@@ -30,7 +30,7 @@ public class NavigationArrowActor : MonoBehaviour
 
     protected Controller m_controller; /*Reference to the controller class*/
 
-    public List<AirStrike> airstrikes = new List<AirStrike>(); /*A list of avaiable airstrikes*/
+    public List<CaptureZoneActor> airstrikes; /*A list of available airstrikes / zones captured*/
 
     public float floatValue = 1f;
 
@@ -127,7 +127,6 @@ public class NavigationArrowActor : MonoBehaviour
                 prevPos.position = troopController.currentSelectedUnit.transform.position;
             }
             
-
             //m_currentMarker.transform.position = prevPos.position - ((m_currentMarker.transform.position - troopController.currentSelectedUnit.transform.position).normalized * 10f);
         }
 
@@ -138,13 +137,11 @@ public class NavigationArrowActor : MonoBehaviour
 			minMoveTimer -= Time.deltaTime;
 		}
 
+        ClosestEnemyUnit ();
         AirStrikeControls();
-
-		ClosestEnemyUnit ();
-        ClosestCaptureZone();
     }
-	Camera cam;
 
+	Camera cam;
 	float minMoveTime = 0.5f;
 	float minMoveTimer;
 	bool MarkerVisible()
@@ -161,39 +158,19 @@ public class NavigationArrowActor : MonoBehaviour
         }
 	}
 
-    void ClosestEnemyUnit() {
-		float dis = 0;
-		foreach (TroopActor T in op.allTroopActors) {
-			if (m_tank == null && T.team != m_team && T.rankState != RankState.dead) {
-				if (Vector3.Distance (m_currentMarker.transform.position, T.transform.position) < 20f) {
-					if (dis == 0 || Vector3.Distance (m_currentMarker.transform.position, T.transform.position) < dis) {
-						dis = Vector3.Distance (m_currentMarker.transform.position, T.transform.position);
-						m_tank = T;
-					}
-				}
-			}
-		}
-
-		if (m_tank != null) {
-			if (Vector3.Distance (m_currentMarker.transform.position, m_tank.transform.position) > 20f)
-				m_tank = null;
-		}
-	}
-
-    void ClosestCaptureZone()
+    void ClosestEnemyUnit()
     {
         float dis = 0;
-
-        foreach (CaptureZoneActor T in zone.zones)
+        foreach (TroopActor T in op.allTroopActors)
         {
-            if (T.owner == m_team && T.gameObject.activeInHierarchy)
+            if (m_tank == null && T.team != m_team && T.rankState != RankState.dead)
             {
-                if (Vector3.Distance(m_currentMarker.transform.position, T.transform.position) < zoneSize)
+                if (Vector3.Distance(m_currentMarker.transform.position, T.transform.position) < 20f)
                 {
                     if (dis == 0 || Vector3.Distance(m_currentMarker.transform.position, T.transform.position) < dis)
                     {
                         dis = Vector3.Distance(m_currentMarker.transform.position, T.transform.position);
-                        closestZone = T;
+                        m_tank = T;
                     }
                 }
             }
@@ -201,49 +178,34 @@ public class NavigationArrowActor : MonoBehaviour
 
         if (m_tank != null)
         {
-            if (Vector3.Distance(m_currentMarker.transform.position, m_tank.transform.position) > zoneSize)
-                closestZone = null;
+            if (Vector3.Distance(m_currentMarker.transform.position, m_tank.transform.position) > 20f)
+                m_tank = null;
         }
     }
 
-    CaptureZoneActor nearestCaptureZone = null;
     float closestDistanceSqr = Mathf.Infinity;
     public void AirStrikeControls()
     {
-        /*if (closestZone != null && m_controller.Action4WasPress() && !m_airStrikeState && airstrikes.Count > 0)
+        if (m_controller.Action4WasPress() && !m_airStrikeState && airstrikes.Count > 0)
         {
             EnableAirStrikeMarker();
         }
         else if (m_controller.Action4WasPress() && m_airStrikeState)
         {
             EnableNavigationMarker();
-        }*/
-
-		/*if (m_airStrikeState && m_controller.Action1WasPress())
-        {
-            if (Vector3.Distance(nearestCaptureZone.transform.position, m_currentMarker.transform.position) < nearestCaptureZone.AirstrikeRange)
-            {
-                Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
-
-                airstrikes.Remove(nearestCaptureZone.airStrike);
-
-                FindObjectOfType<ZoneController>().zones.Remove(nearestCaptureZone);
-
-                nearestCaptureZone.gameObject.SetActive(false);
-                EnableNavigationMarker();
-            }
-        }*/
-
-        /*if ((m_airStrikeState) && (Vector3.Distance(nearestCaptureZone.transform.position, m_currentMarker.transform.position) < nearestCaptureZone.AirstrikeRange))
-        {
-            if (colored)
-            ResetMyColor();
         }
-        else
+
+		if (m_airStrikeState && m_controller.Action1WasPress() && airstrikes.Count > 0)
         {
-            if (!colored)
-            ColorMeBoi(Color.grey);
-        }*/
+            Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
+
+            if(airstrikes[0].gameObject.activeInHierarchy)
+                airstrikes[0].gameObject.SetActive(false);
+
+            airstrikes.Remove(airstrikes[0]);
+
+            EnableNavigationMarker();
+        }
     }
 
     bool colored;

@@ -12,6 +12,7 @@ public class SettingsSceneActor : MonoBehaviour {
     public Slider markerSpeedSlider;
     public Slider cameraSpeedSlider;
     public Slider cursorSpeedSlider;
+    public Slider musicVolumeSlider;
     public Slider sfxVolumeSlider;
 
     GameObject panel;
@@ -21,6 +22,7 @@ public class SettingsSceneActor : MonoBehaviour {
         markerSpeedSlider.value = PlayerPrefs.GetFloat("MarkerSpeedPlayer1");
         cameraSpeedSlider.value = PlayerPrefs.GetFloat("CameraSpeedPlayer1");
         cursorSpeedSlider.value = PlayerPrefs.GetFloat("CursorSpeed");
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume");
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SoundEffects");
     }
 
@@ -55,6 +57,7 @@ public class SettingsSceneActor : MonoBehaviour {
         PlayerPrefs.SetFloat("MarkerSpeedPlayer1", markerSpeedSlider.value);
         PlayerPrefs.SetFloat("CameraSpeedPlayer1", cameraSpeedSlider.value);
         PlayerPrefs.SetFloat("CursorSpeed", cursorSpeedSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolumeSlider.value);
         PlayerPrefs.SetFloat("SoundEffects", sfxVolumeSlider.value);
     }
 }

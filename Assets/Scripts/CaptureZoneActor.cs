@@ -31,18 +31,15 @@ public class CaptureZoneActor : MonoBehaviour {
     public NavigationArrowActor team1;
     public NavigationArrowActor team2;
 
-    public AirStrike airStrike;
-    public float AirstrikeRange = 500f;
-
     // Use this for initialization
     void Start () {
-        airStrike = new AirStrike(this);
+        //airStrike = new AirStrike(this);
         InvokeRepeating("PurgeTheLists", 5f, 5f);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //PurgeTheLists();
+
         if (capturePercentage == 0)
         {
             owner = Team.NONE;
@@ -70,7 +67,7 @@ public class CaptureZoneActor : MonoBehaviour {
                     if (capturePercentage >= 100)
                     {
                         owner = Team.TEAM1;
-                        team1.airstrikes.Add(airStrike);
+                        team1.airstrikes.Add(this);
                         onCaptureTeam1.Invoke(); //added event to plug in effects and sounds
                     }
                 }
@@ -114,7 +111,7 @@ public class CaptureZoneActor : MonoBehaviour {
                     if (capturePercentage >= 100)
                     {
                         owner = Team.TEAM2;
-                        team2.airstrikes.Add(airStrike);
+                        team2.airstrikes.Add(this);
                         onCaptureTeam2.Invoke(); //added Event to plug in effects and sounds
                     }
                 }
