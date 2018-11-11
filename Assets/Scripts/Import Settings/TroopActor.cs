@@ -320,6 +320,11 @@ public class TroopActor : MonoBehaviour
 
 	public void SetAttackType(AttackType type) {
 		attackType = type;
+        CheckForGrounded mt = moveTarget.GetComponent<CheckForGrounded>();
+        if (mt && targetToAttack)
+        {
+            mt.AssignAttackTarget(targetToAttack.transform);
+        }
 	}
 
 	void AttackTarget() {
@@ -751,8 +756,8 @@ public class TroopActor : MonoBehaviour
                 Debug.DrawLine(transform.position, moveTarget.position, Color.red);
                 if (m_navAgent.isOnNavMesh)
                 {
-                    m_navAgent.stoppingDistance = (attackType == AttackType.AUTO) ? 0 : guns[0].attackRangeMin;
-					m_navAgent.SetDestination((attackType == AttackType.AUTO) ? moveTarget.position : targetToAttack.transform.position);
+                    m_navAgent.stoppingDistance =  0;
+					m_navAgent.SetDestination(moveTarget.position);
                 }
                 else
                 {
@@ -805,18 +810,6 @@ public class TroopActor : MonoBehaviour
         if (moving)
         {
             OnMove.Invoke();
-        }
-
-        if (attackType == AttackType.SELECTED && Vector3.Distance(transform.position, targetToAttack.transform.position) < guns[0].attackRangeMin)
-        {
-            if (movementType == MovementTypes.Ground)
-            {
-                m_navAgent.SetDestination(transform.position + (transform.position - targetToAttack.transform.position).normalized * guns[0].attackRangeMin);
-            }
-            else
-            {
-
-            }
         }
     }
 
@@ -883,8 +876,7 @@ public class TroopActor : MonoBehaviour
 
     void MoveTowardsMoveTarget()
     {
-        if(attackType == AttackType.AUTO)
-        {
+
             if (Vector3.Distance(new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z), transform.position) > avoidanceRange)
             {
                 transform.position += (new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z) - transform.position).normalized * moveSpeed * Time.deltaTime;
@@ -899,24 +891,7 @@ public class TroopActor : MonoBehaviour
             {
                 moving = false;
             }
-        }
-        else
-        {
-            if (Vector3.Distance(new Vector3(targetToAttack.transform.position.x, transform.position.y, targetToAttack.transform.position.z), transform.position) > avoidanceRange)
-            {
-                transform.position += (new Vector3(targetToAttack.transform.position.x, transform.position.y, targetToAttack.transform.position.z) - transform.position).normalized * moveSpeed * Time.deltaTime;
-                moving = true;
-            }
-            else if (Vector3.Distance(new Vector3(targetToAttack.transform.position.x, targetToAttack.transform.position.y + hoverHeight, targetToAttack.transform.position.z), transform.position) > moveSpeed * Time.deltaTime)
-            {
-                transform.position += (new Vector3(targetToAttack.transform.position.x, targetToAttack.transform.position.y + hoverHeight, targetToAttack.transform.position.z) - transform.position).normalized * verticleSpeed * Time.deltaTime;
-                moving = true;
-            }
-            else
-            {
-                moving = false;
-            }
-        }
+        
     }
 
     public void TakeDamage(float damageToTake)

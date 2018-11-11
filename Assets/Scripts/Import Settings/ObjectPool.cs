@@ -32,7 +32,29 @@ public class ObjectPool : MonoBehaviour {
 	public FactoryPrefab p2AATanks;
 	public FactoryPrefab p2Helis;
 
-    public List<Transform> pointsOfInterest;
+    public List<PointOfInterest> pointsOfInterest;
+
+
+    public PointOfInterest NearestPOI(Vector3 loc)
+    {
+        float dis = 0;
+        PointOfInterest nPoi = null;
+        foreach (PointOfInterest p in pointsOfInterest)
+        {
+            if (!p)
+            {
+                pointsOfInterest.Remove(p);
+                continue;
+            }
+            Transform t = p.transform;
+                if ((dis == 0 || Vector3.Distance(t.position, loc) < dis) && !p.taken)
+                {
+                    dis = Vector3.Distance(t.position, loc);
+                    nPoi = p;
+                }
+        }
+        return nPoi;
+    }
 
     // Use this for initialization
     void Start () {

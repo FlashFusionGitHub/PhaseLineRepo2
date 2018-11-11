@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class CheckForGrounded : MonoBehaviour {
 
     Transform origin;
-    public NavMeshAgent TempNma;
 
     Vector3 prevPos;
+    Vector3 prevPosTarget;
 
+    ObjectPool op;
+
+    PointOfInterest myPoint;
+
+    Transform attackTarget;
 	// Use this for initialization
 	void Awake () {
-        TempNma = GetComponent<NavMeshAgent>();
-        TempNma.enabled = false;
+        op = FindObjectOfType<ObjectPool>();
         origin = new GameObject(gameObject.name + "'s Origin").transform;
 
         origin.parent = transform.parent;
@@ -31,14 +34,54 @@ public class CheckForGrounded : MonoBehaviour {
             origin.parent = transform.parent;
             origin.localPosition = transform.localPosition;
         }
-        NavMeshHit nHit;
-        if (origin.position != prevPos)
+        if (!myPoint)
         {
-            if (NavMesh.SamplePosition(origin.position, out nHit, 2000f, TempNma.areaMask))
+            myPoint = op.NearestPOI(origin.position);
+            //Debug.Log("my Point = " + myPoint);
+            myPoint.assignMoveTarget(this);
+        }
+        if (!attackTarget || !attackTarget.gameObject.activeInHierarchy)
+            attacking = false;
+
+
+        if (attacking)
+        {
+            if (attackTarget.position != prevPosTarget)
             {
-                transform.position = nHit.position;
+                if (myPoint)
+                {
+                    myPoint.clearPoI();
+                }
+                myPoint = op.NearestPOI(attackTarget.position);
+                myPoint.assignMoveTarget(this);
+                transform.position = myPoint.transform.position;
                 prevPos = origin.position;
             }
         }
+        else
+        {
+            if (origin.position != prevPos)
+            {
+                if (attacking)
+                {
+                    attacking = false;
+                }
+                if (myPoint)
+                {
+                    myPoint.clearPoI();
+                }
+                myPoint = op.NearestPOI(origin.position);
+                myPoint.assignMoveTarget(this);
+                transform.position = myPoint.transform.position;
+                prevPos = origin.position;
+            }
+        }
+    }
+
+    bool attacking = false;
+    public void AssignAttackTarget(Transform aT)
+    {
+        attackTarget = aT;
+        attacking = true;
     }
 }
