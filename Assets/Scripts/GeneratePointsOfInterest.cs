@@ -16,10 +16,19 @@ public class GeneratePointsOfInterest : MonoBehaviour {
 
     List<PointOfInterest> points  = new List<PointOfInterest>();
 
+    public bool GenerateNow = false;
+
+    public bool KillAll = false;
+
     ObjectPool op;
 	// Use this for initialization
 	void Start () {
         op = GetComponent<ObjectPool>();
+        op.pointsOfInterest = points;
+    }
+
+    void GoThroughCuberty() //this naming convention was rowens idea
+    {
 
         spawner = new GameObject("Spawner").transform;
 
@@ -27,17 +36,17 @@ public class GeneratePointsOfInterest : MonoBehaviour {
 
         spawner.position = transform.position;
 
-        if(length / spacing > 0)
+        if (length / spacing > 0)
         {
             numOfRows = length / spacing;
         }
 
-        for(int i = 0; i < numOfRows; i++)
+        for (int i = 0; i < numOfRows; i++)
         {
             GenerateRow();
             MoveSpawnerUp();
         }
-
+        DestroyImmediate(spawner.gameObject);
         op.pointsOfInterest = points;
     }
 
@@ -81,5 +90,21 @@ public class GeneratePointsOfInterest : MonoBehaviour {
 	void OnDrawGizmosSelected () {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(new Vector3 (transform.position.x + (width/2), transform.position.y, transform.position.z + (length/2)), new Vector3(width, 0, length));
+
+        if (GenerateNow)
+        {
+            GenerateNow = false;
+            GoThroughCuberty();
+        }
+
+        if (KillAll)
+        {
+            KillAll = false;
+            foreach (PointOfInterest p in points)
+            {
+                points.Remove(p);
+                DestroyImmediate(p.gameObject);
+            }
+        }
 	}
 }
