@@ -615,7 +615,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -695,6 +695,10 @@ MonoBehaviour:
   primaryColour: {r: 0.24900463, g: 0.77205884, b: 0.14192258, a: 1}
   secondaryColour: {r: 0.3137255, g: 0.8117647, b: 0.21176471, a: 1}
   bigBase: {fileID: 0}
+  baseFace: {fileID: 21300000, guid: f2d032a76a9dc0b418a18505894d915f, type: 3}
+  description: 'Nolan Wheeler: Nolan is a war Veteran, once in charge of many tank
+    Squadrons, War has left him weary, but with his head held high and with the Guidance
+    of the Crystal he commands from his personal vehicle "The Crusader" with Faith.'
 --- !u!114 &114080455381885790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -813,6 +817,10 @@ MonoBehaviour:
   primaryColour: {r: 0.21568628, g: 0.96862745, b: 0.98039216, a: 1}
   secondaryColour: {r: 0.21568628, g: 0.96862745, b: 0.98039216, a: 1}
   bigBase: {fileID: 0}
+  baseFace: {fileID: 21300000, guid: 45cc08d1c5087ea49bb1be16ee0c4cc2, type: 3}
+  description: 'Clyde Snyder: Clyde was the radio Offier in charge of communications
+    on the frontlines of many of the worlds greatest battles, Now, commanding his
+    own units, he aims to prove that communication is the key to Victory'
 --- !u!114 &114136451123523170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1155,7 +1163,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -1462,6 +1470,8 @@ MonoBehaviour:
   primaryColour: {r: 0, g: 1, b: 0.8758622, a: 1}
   secondaryColour: {r: 0.18030927, g: 0.8455882, b: 0.6804156, a: 1}
   bigBase: {fileID: 0}
+  baseFace: {fileID: 0}
+  description: Description 1
 --- !u!114 &114480348168818352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1543,6 +1553,8 @@ MonoBehaviour:
   primaryColour: {r: 0.034482956, g: 0, b: 1, a: 1}
   secondaryColour: {r: 0.22145328, g: 0.3157621, b: 0.9411765, a: 1}
   bigBase: {fileID: 0}
+  baseFace: {fileID: 0}
+  description: Description 1
 --- !u!114 &114584033346957560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1643,6 +1655,10 @@ MonoBehaviour:
   primaryColour: {r: 0.9764706, g: 0.21960784, b: 0.21960784, a: 1}
   secondaryColour: {r: 0.9764706, g: 0.21960784, b: 0.21960784, a: 1}
   bigBase: {fileID: 0}
+  baseFace: {fileID: 21300000, guid: da158e6c49783d6428cbb294df1973d2, type: 3}
+  description: 'B. Bazz: B. Bazz, sometimes called the god of war, lives for battle,
+    rumor has it he once tore a tank in two with his bare hands because someone said
+    he couldn''t, pity to the fool who stands in his way!'
 --- !u!114 &114635289022555248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1863,6 +1879,10 @@ MonoBehaviour:
   primaryColour: {r: 0.9254902, g: 0.5294118, b: 0.96862745, a: 1}
   secondaryColour: {r: 0.9254902, g: 0.5294118, b: 0.96862745, a: 1}
   bigBase: {fileID: 0}
+  baseFace: {fileID: 21300000, guid: 2ca17fba94418ac4c9813264657c4006, type: 3}
+  description: 'Felix Barlett: Felix  was a freelance ''Jet pilot for hire'' during
+    many of the worlds wars. He Approaches battles like he apporoaches his lovers,
+    hard, fast, and with a grace unlike any seen before. '
 --- !u!114 &114804560236182900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2006,6 +2026,10 @@ MonoBehaviour:
   pos: -112.7
   selected_Factions: {fileID: 0}
   sceneLoader: {fileID: 0}
+  previewImageTeam1: {fileID: 114560880501781254}
+  previewImageTeam2: {fileID: 114635289022555248}
+  previewTextBoxTeam1: {fileID: 114321035136242480}
+  previewTextBoxTeam2: {fileID: 114027289409989182}
 --- !u!114 &114881583292215812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2973,7 +2997,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2, y: -28.61985}
+  m_AnchoredPosition: {x: 0.20000076, y: -28.61985}
   m_SizeDelta: {x: 640, y: 80.63971}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224883742601299036
