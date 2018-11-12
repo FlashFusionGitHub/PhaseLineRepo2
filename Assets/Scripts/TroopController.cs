@@ -75,6 +75,8 @@ public class TroopController : MonoBehaviour {
             }
         }
 
+        cameraController.currentUnit = currentSelectedUnit;
+
         if (m_generals.Count == 0)
         {
             Destroy(m_currentSelectionCircle);

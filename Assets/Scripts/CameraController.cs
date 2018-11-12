@@ -24,6 +24,8 @@ public class CameraController : MonoBehaviour {
 
     Vector3 position; /*Used for storing the MoveCamera() targetPos*/
 
+    public GameObject currentUnit;
+
     // Use this for initialization
     void Start () {
     }
@@ -51,6 +53,8 @@ public class CameraController : MonoBehaviour {
         {
             float x = transform.position.x;
             float z = transform.position.z;
+
+            m_MinZoomY = currentUnit.transform.position.y;
 
             if (m_controller.RightTriggerIsHeld())
             {
