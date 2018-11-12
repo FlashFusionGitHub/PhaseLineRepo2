@@ -57,33 +57,11 @@ public class CheckForGrounded : MonoBehaviour {
                 transform.position = myPoint.transform.position;
                 prevPosTarget = attackTarget.position;
             }
-            if (origin.position != prevPos)
-            {
-                if (origin.position != prevPos)
-                {
-                    if (attacking)
-                    {
-                        attacking = false;
-                    }
-                    if (myPoint)
-                    {
-                        myPoint.clearPoI();
-                    }
-                    myPoint = op.NearestPOI(origin.position);
-                    myPoint.assignMoveTarget(this);
-                    transform.position = myPoint.transform.position;
-                    prevPos = origin.position;
-                }
-            }
         }
         else
         {
             if (origin.position != prevPos)
             {
-                if (attacking)
-                {
-                    attacking = false;
-                }
                 if (myPoint)
                 {
                     myPoint.clearPoI();
@@ -101,5 +79,12 @@ public class CheckForGrounded : MonoBehaviour {
     {
         attackTarget = aT;
         attacking = true;
+        Debug.Log(gameObject.name + " is in attackPosition against " + attackTarget.name);
+        prevPosTarget = Vector3.zero;
+    }
+
+    public void StopAttacking()
+    {
+        attacking = false;
     }
 }

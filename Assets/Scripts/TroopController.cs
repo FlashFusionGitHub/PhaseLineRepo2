@@ -155,7 +155,7 @@ public class TroopController : MonoBehaviour {
     {
         foreach(TroopActor ta in op.allTroopActors)
         {
-            if (ta.rankState == RankState.IsGeneral && ta != currentGeneral)
+            if (ta.rankState == RankState.IsGeneral && ta != currentGeneral && ta.team == team)
             {
                 foreach (TurnThisOff tto in ta.moveTarget.GetComponentsInChildren<TurnThisOff>())
                 {

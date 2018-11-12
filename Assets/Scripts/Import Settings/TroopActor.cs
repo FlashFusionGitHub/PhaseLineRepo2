@@ -321,9 +321,14 @@ public class TroopActor : MonoBehaviour
 	public void SetAttackType(AttackType type) {
 		attackType = type;
         CheckForGrounded mt = moveTarget.GetComponent<CheckForGrounded>();
-        if (mt && targetToAttack)
+        if (mt && targetToAttack && attackType == AttackType.SELECTED)
         {
-            mt.AssignAttackTarget(targetToAttack.transform);
+            mt.AssignAttackTarget(targetToAttack.gameObject.transform);
+        }
+        else
+        {
+            if(mt)
+            mt.StopAttacking();
         }
 	}
 
