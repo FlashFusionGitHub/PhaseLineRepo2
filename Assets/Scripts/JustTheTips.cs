@@ -23,51 +23,43 @@ public class JustTheTips : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //Pick a tip to display
         tipText.text = tips[Random.Range(0, tips.Length)];
+        //set timer
         tipTimer = tipTime;
-        alpha = 1;
-        fading = true;
-    }
-
-	// Update is called once per frame
-	void Update () {
-       
-        if (tipTimer <= 0)
-        {
-
-            PickATip();
-        }
-        else
-        {
-            tipTimer -= Time.deltaTime;
-        }
+        displayTimer = displayTime;
     }
 
     float alpha = 0;
-    bool fading;
-    void PickATip()
-    {
-        if (fading)
+    bool fadingOut;
+	// Update is called once per frame
+	void Update () {
+        //Decrease timer
+        tipTimer -= Time.deltaTime;
+
+        if (tipTimer <= 0)
         {
-            alpha -= Time.deltaTime / fadeTime;
-            tipText.color = new Color(1, 1, 1, alpha);
-            if (alpha <= 0)
+            if(!fadingOut)
             {
-                fading = false;
+                if (alpha < 1)
+                    tipText.color = new Color(1, 1, 1, alpha += Time.deltaTime / fadeTime);
+                else
+                    displayTimer -= Time.deltaTime;
             }
-        }
-        else
-        { 
-            alpha += Time.deltaTime / fadeTime;
-            tipText.color = new Color(1, 1, 1, alpha);
 
-
-            if (alpha >= 1)
+            if(displayTimer <= 0)
             {
-                tipText.text = tips[Random.Range(0, tips.Length)];
-                tipTimer = tipTime;
-                fading = true;
-              
+                fadingOut = true;
+
+                tipText.color = new Color(1, 1, 1, alpha -= Time.deltaTime / fadeTime);
+                
+                if(alpha <= 0)
+                {
+                    tipText.text = tips[Random.Range(0, tips.Length)];
+                    tipTimer = tipTime;
+                    displayTimer = displayTime;
+                    fadingOut = false;
+                }
             }
         }
     }
