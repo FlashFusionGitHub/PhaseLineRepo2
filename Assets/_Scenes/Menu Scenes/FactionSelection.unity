@@ -310,6 +310,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1932333597723886, guid: 4c0dca41af15924419a091681903cf2d,
     type: 2}
   m_PrefabInternal: {fileID: 73170131}
+--- !u!114 &172414016 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114174686177389434, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1259056153}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &305309927
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +609,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998389016 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114804560236182900, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1259056153}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1157510417
 Prefab:
   m_ObjectHideFlags: 0
@@ -967,6 +979,71 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_MinSize
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114627965909550006, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: name
+      value: BIG BAZZ
+      objectReference: {fileID: 0}
+    - target: {fileID: 114801469393715786, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: name
+      value: FELIX BARLETT
+      objectReference: {fileID: 0}
+    - target: {fileID: 114124445361630924, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: name
+      value: CLYDE SNYDER
+      objectReference: {fileID: 0}
+    - target: {fileID: 114057658490859246, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: name
+      value: NOLAN WHEELER
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857850861699062, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: nameTeam1
+      value: 
+      objectReference: {fileID: 998389016}
+    - target: {fileID: 114857850861699062, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: nameTeam2
+      value: 
+      objectReference: {fileID: 172414016}
+    - target: {fileID: 224450982009246210, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000019073
+      objectReference: {fileID: 0}
+    - target: {fileID: 224450982009246210, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804560236182900, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224757466262239064, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030518022
+      objectReference: {fileID: 0}
+    - target: {fileID: 224757466262239064, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 224757466262239064, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -27.176933
+      objectReference: {fileID: 0}
+    - target: {fileID: 114174686177389434, guid: 74e4d151aa5eb4a41880d3f3c242691d,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74e4d151aa5eb4a41880d3f3c242691d, type: 2}

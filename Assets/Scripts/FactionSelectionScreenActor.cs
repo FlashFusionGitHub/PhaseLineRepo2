@@ -31,6 +31,9 @@ public class FactionSelectionScreenActor : MonoBehaviour
 	public Text previewTextBoxTeam1;
 	public Text previewTextBoxTeam2;
 
+    public Text nameTeam1;
+    public Text nameTeam2;
+
     // Use this for initialization
     void Start()
     {
@@ -61,10 +64,12 @@ public class FactionSelectionScreenActor : MonoBehaviour
 		if (player == Player.player1) {
 			previewImageTeam1.sprite = masks [num].GetComponent<FactionElements>().baseFace;
 			previewTextBoxTeam1.text = masks [num].GetComponent<FactionElements>().description;
+            nameTeam1.text = masks[num].GetComponent<FactionElements>().name;
 		}
 		if (player == Player.player2) {
 			previewImageTeam2.sprite = masks [num].GetComponent<FactionElements>().baseFace;
 			previewTextBoxTeam2.text = masks [num].GetComponent<FactionElements>().description;
+            nameTeam2.text = masks[num].GetComponent<FactionElements>().name;
 		}
     }
 

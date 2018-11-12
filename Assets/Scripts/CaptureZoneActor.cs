@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using UnityEngine.UI;
 
 public class CaptureZoneActor : MonoBehaviour {
 
@@ -30,6 +31,8 @@ public class CaptureZoneActor : MonoBehaviour {
 
     public NavigationArrowActor team1;
     public NavigationArrowActor team2;
+
+    public Text captureZoneText;
 
     // Use this for initialization
     void Start () {
@@ -67,6 +70,7 @@ public class CaptureZoneActor : MonoBehaviour {
                     {
                         owner = Team.TEAM1;
                         team1.airstrikes.Add(this);
+                        captureZoneText.text = DisplayText(FindObjectOfType<SelectedFactions>().team1.name);
                         onCaptureTeam1.Invoke(); //added event to plug in effects and sounds
                     }
                 }
@@ -111,6 +115,7 @@ public class CaptureZoneActor : MonoBehaviour {
                     {
                         owner = Team.TEAM2;
                         team2.airstrikes.Add(this);
+                        captureZoneText.text = DisplayText(FindObjectOfType<SelectedFactions>().team2.name);
                         onCaptureTeam2.Invoke(); //added Event to plug in effects and sounds
                     }
                 }
@@ -137,6 +142,22 @@ public class CaptureZoneActor : MonoBehaviour {
             capturePercentage = 0;
         }
 	}
+
+    float time = 3;
+    string DisplayText(string text)
+    {
+        time -= Time.deltaTime;
+
+        if(time >= 0.0)
+        {
+            return captureZoneText.text = "CAPTURED BY " + text;
+        }
+        else
+        {
+            time = 3;
+            return captureZoneText.text = "";
+        }
+    }
 
     private void OnTriggerEnter(Collider other) {
 

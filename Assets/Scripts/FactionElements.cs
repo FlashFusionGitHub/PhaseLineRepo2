@@ -6,6 +6,7 @@ public class FactionElements : MonoBehaviour{
 
     [Header("Faction Elements")]
     public Commentator commentator;
+    public string name;
     public Color primaryColour;
     public Color secondaryColour;
     public GameObject bigBase;
