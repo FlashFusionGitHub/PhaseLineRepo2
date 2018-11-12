@@ -33,6 +33,8 @@ public class CaptureZoneActor : MonoBehaviour {
     public NavigationArrowActor team2;
 
     public Text captureZoneText;
+    bool textDisplaying = false;
+    float time = 5;
 
     // Use this for initialization
     void Start () {
@@ -88,6 +90,7 @@ public class CaptureZoneActor : MonoBehaviour {
             }
             else
             {
+                TextActive();
                 return;
             }
         }
@@ -133,29 +136,36 @@ public class CaptureZoneActor : MonoBehaviour {
             }
             else
             {
+                TextActive();
                 return;
             }
         }
 
-        if(team1unitsInZone.Count == 0 && team2unitsInZone.Count == 0 && owner == Team.NONE)
+        if (team1unitsInZone.Count == 0 && team2unitsInZone.Count == 0 && owner == Team.NONE)
         {
             capturePercentage = 0;
         }
 	}
 
-    float time = 3;
     string DisplayText(string text)
     {
-        time -= Time.deltaTime;
+        textDisplaying = true;
+        return captureZoneText.text = "CAPTURED BY " + text;
+    }
 
-        if(time >= 0.0)
+
+    void TextActive()
+    {
+        if (textDisplaying)
         {
-            return captureZoneText.text = "CAPTURED BY " + text;
-        }
-        else
-        {
-            time = 3;
-            return captureZoneText.text = "";
+            time -= Time.deltaTime;
+
+            if (time <= 0.0f)
+            {
+                captureZoneText.text = "";
+                textDisplaying = false;
+                time = 5;
+            }
         }
     }
 
