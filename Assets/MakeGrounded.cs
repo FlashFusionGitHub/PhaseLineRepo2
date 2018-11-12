@@ -24,11 +24,11 @@ public class MakeGrounded : MonoBehaviour {
 
             if (NavMesh.SamplePosition(transform.position, out nmHit, 1000f, nma.areaMask))
             {
-                transform.position = nmHit.position;
+               // transform.position = nmHit.position;
             }
             else
             {
-                DestroyImmediate(gameObject);
+               // DestroyImmediate(gameObject);
             }
         }
         else
