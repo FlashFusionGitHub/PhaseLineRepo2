@@ -1758,7 +1758,7 @@ MonoBehaviour:
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
     attackRangeMin: 20
-    attackRangeMax: 40
+    attackRangeMax: 100
     attackTarget: {fileID: 0}
     turret: {fileID: 4860995566227364}
     turretAimSpeed: 2

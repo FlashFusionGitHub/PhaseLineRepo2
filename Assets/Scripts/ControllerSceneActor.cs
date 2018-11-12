@@ -14,6 +14,8 @@ public class ControllerSceneActor : MonoBehaviour {
 
     public Text readyTxt;
 
+    public GameObject cactus;
+
     // Use this for initialization
     void Start () {
 		
@@ -45,6 +47,7 @@ public class ControllerSceneActor : MonoBehaviour {
             if (playersReady[0] && playersReady[1])
             {
                 sceneLoader.LoadScene(3);
+                cactus.SetActive(true);
             }
         }
         catch (System.Exception)
@@ -52,6 +55,8 @@ public class ControllerSceneActor : MonoBehaviour {
             if (Input.anyKeyDown)
             {
                 sceneLoader.LoadScene(3);
+                DontDestroyOnLoad(cactus);
+                cactus.SetActive(true);
             }
         }
 	}

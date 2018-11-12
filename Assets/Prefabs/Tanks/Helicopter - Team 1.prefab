@@ -1614,8 +1614,8 @@ MonoBehaviour:
     TimeBetweenShots: 3
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
-    attackRangeMin: 25
-    attackRangeMax: 50
+    attackRangeMin: 20
+    attackRangeMax: 75
     attackTarget: {fileID: 0}
     turret: {fileID: 4731157043302332}
     turretAimSpeed: 2
@@ -1701,8 +1701,8 @@ MonoBehaviour:
     TimeBetweenShots: 3
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
-    attackRangeMin: 25
-    attackRangeMax: 50
+    attackRangeMin: 20
+    attackRangeMax: 75
     attackTarget: {fileID: 0}
     turret: {fileID: 4734028283702464}
     turretAimSpeed: 2
@@ -5685,7 +5685,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1613440139
+  randomSeed: 1546032990
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15970,7 +15970,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -307098862
+  randomSeed: 1394628
   InitialModule:
     serializedVersion: 3
     enabled: 1
