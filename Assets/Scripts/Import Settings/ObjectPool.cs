@@ -32,7 +32,7 @@ public class ObjectPool : MonoBehaviour {
 	public FactoryPrefab p2AATanks;
 	public FactoryPrefab p2Helis;
 
-    public List<PointOfInterest> pointsOfInterest;
+    public PointOfInterest[] pointsOfInterest;
 
 
     public PointOfInterest NearestPOI(Vector3 loc)
@@ -43,7 +43,6 @@ public class ObjectPool : MonoBehaviour {
         {
             if (!p)
             {
-                pointsOfInterest.Remove(p);
                 continue;
             }
             Transform t = p.transform;
@@ -61,6 +60,8 @@ public class ObjectPool : MonoBehaviour {
 		GenerateTroops ();
         FindAllTroopTargets();
         AddGeneralsToList();
+
+        pointsOfInterest = FindObjectsOfType<PointOfInterest>();
     }
 
 	void GenerateTroops()
