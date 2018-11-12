@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9274317d06a2480468aefbc3ca4c3141
-timeCreated: 1541480266
+guid: bb82abf685b3ab24bba524c34694d764
+timeCreated: 1542000773
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -28,7 +28,7 @@ ModelImporter:
     400018: Plane_Tail_JNt
     400020: Propella
     2100000: lambert1
-    2100002: lambert2
+    2100002: Colour
     2300000: Explosion_01
     2300002: Explosion_02
     2300004: Explosion_03
@@ -75,7 +75,7 @@ ModelImporter:
       name: Airstrike
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 230
+      lastFrame: 330
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -102,7 +102,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 500
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
