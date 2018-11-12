@@ -14,18 +14,11 @@ public class GeneratePointsOfInterest : MonoBehaviour {
     int numOfRows;
     public int spacing;
 
-    List<PointOfInterest> points  = new List<PointOfInterest>();
 
     public bool GenerateNow = false;
 
     public bool KillAll = false;
 
-    ObjectPool op;
-	// Use this for initialization
-	void Start () {
-        op = GetComponent<ObjectPool>();
-        op.pointsOfInterest = points;
-    }
 
     void GoThroughCuberty() //this naming convention was rowens idea
     {
@@ -47,7 +40,6 @@ public class GeneratePointsOfInterest : MonoBehaviour {
             MoveSpawnerUp();
         }
         DestroyImmediate(spawner.gameObject);
-        op.pointsOfInterest = points;
     }
 
     void SpawnPrefab()
@@ -55,10 +47,6 @@ public class GeneratePointsOfInterest : MonoBehaviour {
         GameObject obj = Instantiate(prefab.gameObject, spawner)as GameObject;
         obj.transform.parent = transform;
         PointOfInterest p = obj.GetComponent<PointOfInterest>();
-        if (p)
-        {
-            points.Add(p);
-        }
     }
 
     void MoveSpawnerRight()
@@ -100,10 +88,10 @@ public class GeneratePointsOfInterest : MonoBehaviour {
         if (KillAll)
         {
             KillAll = false;
-            foreach (PointOfInterest p in points)
+            foreach (PointOfInterest p in FindObjectsOfType<PointOfInterest>())
             {
-                points.Remove(p);
-                DestroyImmediate(p.gameObject);
+                if (p)
+                   DestroyImmediate(p.gameObject);
             }
         }
 	}
