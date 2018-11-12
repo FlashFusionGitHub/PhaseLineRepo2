@@ -523,36 +523,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114584031984420352, guid: 8aae19a6852428342961624f0a4729a6,
-        type: 2}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1957262824}
-    - target: {fileID: 114584031984420352, guid: 8aae19a6852428342961624f0a4729a6,
-        type: 2}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 114584031984420352, guid: 8aae19a6852428342961624f0a4729a6,
-        type: 2}
-      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1957262823}
-    - target: {fileID: 114584031984420352, guid: 8aae19a6852428342961624f0a4729a6,
-        type: 2}
-      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8aae19a6852428342961624f0a4729a6, type: 2}
   m_IsPrefabParent: 0
---- !u!198 &1957262823 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 198824578551433924, guid: 8aae19a6852428342961624f0a4729a6,
-    type: 2}
-  m_PrefabInternal: {fileID: 1957262822}
---- !u!198 &1957262824 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 198310696857261346, guid: 8aae19a6852428342961624f0a4729a6,
-    type: 2}
-  m_PrefabInternal: {fileID: 1957262822}
