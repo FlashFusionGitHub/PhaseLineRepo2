@@ -21,6 +21,7 @@ public class CaptureZoneActor : MonoBehaviour {
     [Header ("Capture Events Team 1")] // events for when team 1 starts capturing a zone
     public UnityEvent onStartCaptureTeam1;
     public UnityEvent onCaptureTeam1;
+    public UnityEvent onCaptureStop;
 
     [Header ("Capture Events Team 2")] // events for when team 2 starts capturing a zone
     public UnityEvent onStartCaptureTeam2;
@@ -47,6 +48,11 @@ public class CaptureZoneActor : MonoBehaviour {
         if (capturePercentage == 0)
         {
             owner = Team.NONE;
+        }
+
+        if ((team1unitsInZone.Count > 0 && team2unitsInZone.Count > 0) || (team1unitsInZone.Count == 0 && team2unitsInZone.Count == 0))
+        {
+            onCaptureStop.Invoke();
         }
 
         if(team1unitsInZone.Count > 0 && team2unitsInZone.Count == 0)

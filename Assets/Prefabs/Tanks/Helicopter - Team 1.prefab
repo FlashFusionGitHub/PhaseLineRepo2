@@ -1418,7 +1418,7 @@ MonoBehaviour:
   unitClass: 2
   attackType: 0
   team: 1
-  strengths: 000000000100000002000000
+  strengths: 00000000
   vulnerabilities: 0200000001000000
   rankState: 3
   myGeneral: {fileID: 0}

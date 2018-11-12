@@ -244,7 +244,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202386118212914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -160.1, y: -29, z: -598.4}
+  m_LocalPosition: {x: -33.8, y: -41.94, z: -159.6}
   m_LocalScale: {x: 1.00078, y: 1.00058, z: 1.00121}
   m_Children:
   - {fileID: 4328234619697034}
@@ -692,6 +692,33 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 198944038934555182}
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onCaptureStop:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 198944038934555182}
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 198765904173656224}
         m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
@@ -11118,7 +11145,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -982300041
+  randomSeed: -1553193810
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14524,7 +14551,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1631077686
+  randomSeed: -257580125
   InitialModule:
     serializedVersion: 3
     enabled: 1
