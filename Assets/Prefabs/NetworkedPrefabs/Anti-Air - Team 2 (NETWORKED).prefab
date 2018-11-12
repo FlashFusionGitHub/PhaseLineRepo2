@@ -1909,8 +1909,8 @@ MonoBehaviour:
     TimeBetweenShots: 2
     m_gunTimerRandomiser: 0.1
     m_gunTimer: 0
-    attackRangeMin: 8
-    attackRangeMax: 100
+    attackRangeMin: 25
+    attackRangeMax: 150
     attackTarget: {fileID: 0}
     turret: {fileID: 4727140074626070}
     turretAimSpeed: 2
