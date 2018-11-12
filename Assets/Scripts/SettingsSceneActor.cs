@@ -15,10 +15,13 @@ public class SettingsSceneActor : MonoBehaviour {
     public Slider musicVolumeSlider;
     public Slider sfxVolumeSlider;
 
+    public AudioController audioController;
+
     GameObject panel;
 
     // Use this for initialization
     void Start() {
+        audioController = FindObjectOfType<AudioController>();
         markerSpeedSlider.value = PlayerPrefs.GetFloat("MarkerSpeedPlayer1");
         cameraSpeedSlider.value = PlayerPrefs.GetFloat("CameraSpeedPlayer1");
         cursorSpeedSlider.value = PlayerPrefs.GetFloat("CursorSpeed");
