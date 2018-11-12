@@ -33,7 +33,6 @@ public class CaptureZoneActor : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //airStrike = new AirStrike(this);
         InvokeRepeating("PurgeTheLists", 5f, 5f);
     }
 	
