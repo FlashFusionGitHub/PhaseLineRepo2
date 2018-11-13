@@ -59,7 +59,7 @@ public class UnitSelectionIndicator : MonoBehaviour {
             {
                 foreach (Image panel in uiStuff.imagesToColor)
                 {
-                    if (panel.color != pd.TeamColor)
+                    if (panel.color.r != pd.TeamColor.r || panel.color.b != pd.TeamColor.b || panel.color.g != pd.TeamColor.g)
                         panel.color = pd.TeamColor;
                 }
             }
