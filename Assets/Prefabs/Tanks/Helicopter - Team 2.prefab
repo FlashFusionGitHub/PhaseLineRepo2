@@ -30,6 +30,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1105552873457620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4767055970426926}
+  - component: {fileID: 33845020851538592}
+  - component: {fileID: 23553467612360688}
+  - component: {fileID: 114281758712377552}
+  m_Layer: 14
+  m_Name: Minimap Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1111329992756580
 GameObject:
   m_ObjectHideFlags: 1
@@ -561,11 +579,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549761659609668}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.000008761882}
-  m_LocalPosition: {x: -10.3, y: 0, z: 25}
+  m_LocalPosition: {x: 11.3, y: 0, z: 26.6}
   m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_Children:
   - {fileID: 224072119574330376}
   - {fileID: 4516125614802964}
+  - {fileID: 4767055970426926}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -179.99901, z: 0}
@@ -748,6 +767,19 @@ Transform:
   m_Father: {fileID: 4183370041767722}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4767055970426926
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105552873457620}
+  m_LocalRotation: {x: -0.0000061955866, y: -0.7071068, z: 0.7071068, w: -0.0000061955866}
+  m_LocalPosition: {x: 0, y: 11.200001, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 4223703882857374}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4768922038172314
 Transform:
   m_ObjectHideFlags: 1
@@ -829,6 +861,40 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23553467612360688
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105552873457620}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: be010b62d5f32db4c9957dc8d5b3d5a6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -936,6 +1002,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1294998812131660}
   m_Mesh: {fileID: 4300000, guid: 7171c5a325e986547b2fd8d14c3dc4f8, type: 3}
+--- !u!33 &33845020851538592
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105552873457620}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33975455533439404
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1429,6 +1502,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114281758712377552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105552873457620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627cfa4ad7cc82b47ac811daec222082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: 2
 --- !u!114 &114331134857586174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1663,7 +1748,7 @@ MonoBehaviour:
   experienceRequiredForNextRank: 10
   currentExperience: 0
   percentageIncreasePerRank: 50
-  influenceRadius: 10
+  influenceRadius: 75
   unitName: 
   possibleNames:
   - baz
@@ -2008,6 +2093,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   TimeAlive: 0.85
   image: {fileID: 0}
+  timeSinceTakenDamage: 0
   previousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114906986293504656
 MonoBehaviour:
