@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class JustTheTips : MonoBehaviour {
 
+    public Image backgroundImage;
     public Text tipText;
 
     //All the Tips
@@ -26,7 +27,7 @@ public class JustTheTips : MonoBehaviour {
         //Pick a tip to display
         tipText.text = tips[Random.Range(0, tips.Length)];
         //set timer
-        tipTimer = tipTime;
+        tipTimer = 0;
         displayTimer = displayTime;
     }
 
@@ -42,7 +43,11 @@ public class JustTheTips : MonoBehaviour {
             if(!fadingOut)
             {
                 if (alpha < 1)
-                    tipText.color = new Color(1, 1, 1, alpha += Time.deltaTime / fadeTime);
+                {
+                    alpha += Time.deltaTime / fadeTime;
+                    tipText.color = new Color(tipText.color.r, tipText.color.g, tipText.color.b, alpha);
+                    backgroundImage.color = new Color(backgroundImage.color.r, backgroundImage.color.g, backgroundImage.color.b, alpha * 0.75f);
+                }
                 else
                     displayTimer -= Time.deltaTime;
             }
@@ -51,9 +56,11 @@ public class JustTheTips : MonoBehaviour {
             {
                 fadingOut = true;
 
-                tipText.color = new Color(1, 1, 1, alpha -= Time.deltaTime / fadeTime);
-                
-                if(alpha <= 0)
+                alpha -= Time.deltaTime / fadeTime;
+                tipText.color = new Color(tipText.color.r, tipText.color.g, tipText.color.b, alpha);
+                backgroundImage.color = new Color(backgroundImage.color.r, backgroundImage.color.g, backgroundImage.color.b, alpha * 0.75f);
+
+                if (alpha <= 0)
                 {
                     tipText.text = tips[Random.Range(0, tips.Length)];
                     tipTimer = tipTime;

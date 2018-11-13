@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 4184684152555838}
   - component: {fileID: 33925089228159584}
   - component: {fileID: 23403932812625732}
+  - component: {fileID: 114487726932415672}
   m_Layer: 13
   m_Name: Minimap Icon
   m_TagString: Untagged
@@ -184,7 +185,7 @@ Transform:
   m_GameObject: {fileID: 1323077641285090}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 7, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 4599379235341260}
   m_RootOrder: 1
@@ -223,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615208005501130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 333.52612, y: 20.865952, z: 62.878357}
+  m_LocalPosition: {x: -44.5, y: 0, z: -20}
   m_LocalScale: {x: 6, y: 12, z: 6}
   m_Children:
   - {fileID: 4751646229712752}
@@ -542,6 +543,18 @@ MonoBehaviour:
     bobIntensity: 0
     movingUp: 1
   speedModifier: 1
+--- !u!114 &114487726932415672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323077641285090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627cfa4ad7cc82b47ac811daec222082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: 1
 --- !u!114 &114497067737748152
 MonoBehaviour:
   m_ObjectHideFlags: 1

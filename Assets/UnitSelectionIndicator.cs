@@ -17,7 +17,7 @@ public class UnitSelectionIndicator : MonoBehaviour {
     public struct UIStuff
     {
         public Image portrait;
-        public Image panel;
+        public Image[] imagesToColor;
         public Slider sldr;
     }
 
@@ -55,9 +55,13 @@ public class UnitSelectionIndicator : MonoBehaviour {
             {
                 uiStuff.portrait.sprite = pd.baseFace;
             }
-            if (uiStuff.panel.color != pd.TeamColor)
+            if (uiStuff.imagesToColor.Length > 0)
             {
-                uiStuff.panel.color = pd.TeamColor;
+                foreach (Image panel in uiStuff.imagesToColor)
+                {
+                    if (panel.color.r != pd.TeamColor.r || panel.color.b != pd.TeamColor.b || panel.color.g != pd.TeamColor.g)
+                        panel.color = pd.TeamColor;
+                }
             }
 
             if (!BaseTa)
