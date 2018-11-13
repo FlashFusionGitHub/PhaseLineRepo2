@@ -182,7 +182,10 @@ public class TroopActor : MonoBehaviour
     ZoneController zc;
 
     [Header("Big Base Health Portrait")]
-    public Image image; 
+    public Image image;
+
+    [Header ("FOR UI")]
+    public float timeSinceTakenDamage;
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      / START FUNCTION BELOW \
@@ -354,6 +357,7 @@ public class TroopActor : MonoBehaviour
         }
         if (rankState == RankState.LookingForGeneral)
         {
+            SetAttackType(AttackType.AUTO);
             TroopActor AssignToMe = RandomGeneral();
             if (AssignToMe)
                 AssignToGeneral(AssignToMe);

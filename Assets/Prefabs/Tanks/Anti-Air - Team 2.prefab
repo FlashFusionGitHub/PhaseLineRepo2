@@ -2076,7 +2076,7 @@ MonoBehaviour:
   experienceRequiredForNextRank: 10
   currentExperience: 0
   percentageIncreasePerRank: 50
-  influenceRadius: 10
+  influenceRadius: 75
   unitName: 
   possibleNames:
   - baz
