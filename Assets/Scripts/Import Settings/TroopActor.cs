@@ -253,6 +253,11 @@ public class TroopActor : MonoBehaviour
                 secondaryRenderers[i].material.SetColor(Shader.PropertyToID("_TeamColor"), Color.black);
         }
 
+        if (rankState == RankState.IsGeneral)
+        {
+            OnBecomeGeneral.Invoke();
+        }
+
         op = FindObjectOfType<ObjectPool>();
         SetHealth(maxHealth);
         NameUnit();
@@ -383,6 +388,13 @@ public class TroopActor : MonoBehaviour
         else
         {
             gameObject.SetActive(true);
+        }
+        if (rankState == RankState.IsGeneral)
+        {
+            if (transform.localScale != originSize * 1.75f)
+            {
+                transform.localScale = originSize * 1.75f;
+            }
         }
     }
 
@@ -962,6 +974,19 @@ public class TroopActor : MonoBehaviour
             }
         }
     }
+
+    public bool OriginSizeSet = false;
+    Vector3 originSize;
+    private void OnDrawGizmos()
+    {
+        if (!OriginSizeSet)
+        {
+            originSize = transform.localScale;
+            OriginSizeSet = true;
+        }
+        
+    }
+
     private void OnDrawGizmosSelected()
     {
         foreach (GunSettings gun in guns)
