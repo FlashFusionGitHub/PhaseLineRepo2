@@ -37,6 +37,8 @@ public class Chicken : MonoBehaviour {
     public Color[] potentialColours;
     public Renderer[] renderer;
 
+    public bool randomiseMySize;
+
     void Start()
     {
 
@@ -49,8 +51,11 @@ public class Chicken : MonoBehaviour {
 
     void ChickidyRandomiser()
     {
-        float chickenSize = Random.Range(0.5f, 2.5f);
-        this.gameObject.transform.localScale = new Vector3(chickenSize, chickenSize, chickenSize);
+        if(randomiseMySize)
+        {
+            float chickenSize = Random.Range(0.5f, 2.5f);
+            this.gameObject.transform.localScale = new Vector3(chickenSize, chickenSize, chickenSize);
+        }
 
         Color colour = potentialColours[Random.Range(0, 3)];
 
