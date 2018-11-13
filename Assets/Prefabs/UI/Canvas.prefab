@@ -4624,11 +4624,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipText: {fileID: 114382760159139906}
   tips:
-  - Tip 1
-  - Tip 2
-  - Tip 3
-  - Tip 4
-  - Tip 5
+  - 'Tip: Press Y to switch to airstrike mode then A to deploy air strike '
+  - 'Tip: Helicopters can only Attack Tanks  '
+  - 'Tip: Tanks can only attack Anti-Air Tanks '
+  - 'Tip: Anti-Air Tanks can only attack Helicopters '
+  - 'Tip: Capturing bases give you an extra airstrike '
+  - 'Tip: Launching airstrikes renders a random captured base useless '
+  - 'Tip: Helicopters are fast, not only in speed but also in navigation heading straight
+    to the goal, at the expense of low health and a smaller attack range '
+  - 'Tip: Tanks have an average attack range but has to navigate on land '
+  - 'Tip: Anti-Air tank are slow though have a larger attack range striking the faster
+    helicopters at a further distance '
+  - 'Tip: Press RT and LT to zoom in and out '
+  - 'Tip: Holding onto bases gives you more points '
+  - 'Tip: Use LeftJoyStick to move your cursor '
+  - "Tip: Press A to move the selected-general to the cursor\u2019s coordinates "
+  - 'Tip: Remember to protect your base, it is strong but not invincible'
+  - 'Tip: If your are losing a battle it would be wise to flee back to base for reinforcements '
+  - "Rumour: Big Bazz doesn\u2019t walk rather move the entire planet under him "
+  - 'Rumour: Press the power button for increase framerate'
+  - "Fact: Due to lack of resources it has become custom for fallen soldiers\u2019
+    fat to be condensed into a candle to be given to loved ones "
+  - "Fact: Felix Barlett doesn\u2019t like cake, letting others eat it "
+  - "Fact: Clyde Snyder was once a talk show radio host of a show called Clyde Snyder\u2019s
+    News Sliders, giving that up when he was called for war."
+  - 'Fact: Nolan Wheeler is rumoured to make most of his decision based on what his
+    crystal tells him. '
+  - 'Fact: No one knows who made The Crusader only that it was obtained by Nolan shortly
+    after left he left the Army of Freemen. '
+  - "Fact: Big Bazz in not human, but a force of nature, or at least that what\u2019s
+    his men call him "
+  - "Fact: The Vampire was once a romantic \u201Ccruise\u201D plane, but repurposed
+    by Felix Barlett to be a machine of war, with a ball room. "
+  - 'Fact: Bazz in his spare time likes to drink black coffee with a sprinkle of uranium
+    dust '
+  - "\u201C\u2019Pew Pew Pew goes the gun \u2013 Abraham Franklin, 30 Feb 9999\u2019
+    - Probably\u201D \u2013 Radio Guy, 23rd August 2190 "
+  - "Fact: Nolan\u2019s surname isn\u2019t Wheeler rather it is a nickname describing
+    his ability to do \u201Cwheelies\u201D when driving tanks, both large and small."
   tipTime: 10
   displayTime: 5
   fadeTime: 2
@@ -5078,7 +5111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6599,7 +6632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7766,7 +7799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8859,7 +8892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8913,7 +8946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9362,11 +9395,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipText: {fileID: 114933865262633530}
   tips:
-  - Tip 1
-  - Tip 2
-  - Tip 3
-  - Tip 4
-  - Tip 5
+  - 'Tip: Press Y to switch to airstrike mode then A to deploy air strike '
+  - 'Tip: Helicopters can only Attack Tanks  '
+  - 'Tip: Tanks can only attack Anti-Air Tanks '
+  - 'Tip: Anti-Air Tanks can only attack Helicopters '
+  - 'Tip: Capturing bases give you an extra airstrike '
+  - 'Tip: Launching airstrikes renders a random captured base useless '
+  - 'Tip: Helicopters are fast, not only in speed but also in navigation heading straight
+    to the goal, at the expense of low health and a smaller attack range '
+  - 'Tip: Tanks have an average attack range but has to navigate on land '
+  - 'Tip: Anti-Air tank are slow though have a larger attack range striking the faster
+    helicopters at a further distance '
+  - 'Tip: Press RT and LT to zoom in and out '
+  - 'Tip: Holding onto bases gives you more points '
+  - 'Tip: Use LeftJoyStick to move your cursor '
+  - "Tip: Press A to move the selected-general to the cursor\u2019s coordinates "
+  - 'Tip: Remember to protect your base, it is strong but not invincible'
+  - 'Tip: If your are losing a battle it would be wise to flee back to base for reinforcements '
+  - "Rumour: Big Bazz doesn\u2019t walk rather move the entire planet under him "
+  - 'Rumour: Press the power button for increase framerate'
+  - "Fact: Due to lack of resources it has become custom for fallen soldiers\u2019
+    fat to be condensed into a candle to be given to loved ones "
+  - "Fact: Felix Barlett doesn\u2019t like cake, letting others eat it "
+  - "Fact: Clyde Snyder was once a talk show radio host of a show called Clyde Snyder\u2019s
+    News Sliders, giving that up when he was called for war."
+  - 'Fact: Nolan Wheeler is rumoured to make most of his decision based on what his
+    crystal tells him. '
+  - 'Fact: No one knows who made The Crusader only that it was obtained by Nolan shortly
+    after left he left the Army of Freemen. '
+  - "Fact: Big Bazz in not human, but a force of nature, or at least that what\u2019s
+    his men call him "
+  - "Fact: The Vampire was once a romantic \u201Ccruise\u201D plane, but repurposed
+    by Felix Barlett to be a machine of war, with a ball room. "
+  - 'Fact: Bazz in his spare time likes to drink black coffee with a sprinkle of uranium
+    dust '
+  - "\u201C\u2019Pew Pew Pew goes the gun \u2013 Abraham Franklin, 30 Feb 9999\u2019
+    - Probably\u201D \u2013 Radio Guy, 23rd August 2190 "
+  - "Fact: Nolan\u2019s surname isn\u2019t Wheeler rather it is a nickname describing
+    his ability to do \u201Cwheelies\u201D when driving tanks, both large and small."
   tipTime: 10
   displayTime: 5
   fadeTime: 2
@@ -10382,7 +10448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11650,7 +11716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.8, y: -0}
+  m_AnchoredPosition: {x: 70, y: 5.0000005}
   m_SizeDelta: {x: 17.26, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224040493412164010
@@ -13978,7 +14044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75000006}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -79.7, y: -5.2}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224750588562357716
