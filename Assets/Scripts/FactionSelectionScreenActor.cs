@@ -34,6 +34,11 @@ public class FactionSelectionScreenActor : MonoBehaviour
     public Text nameTeam1;
     public Text nameTeam2;
 
+    public GameObject spawnPointTeam1;
+    public GameObject spawnPointTeam2;
+
+    public GameObject[] bases;
+
     // Use this for initialization
     void Start()
     {
@@ -53,6 +58,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
         }
     }
 
+    GameObject base1, base2;
     public void OnPointerEnter(int num)
     {
         if (masks[num].color != Color.white)
@@ -65,12 +71,48 @@ public class FactionSelectionScreenActor : MonoBehaviour
 			previewImageTeam1.sprite = masks [num].GetComponent<FactionElements>().baseFace;
 			previewTextBoxTeam1.text = masks [num].GetComponent<FactionElements>().description;
             nameTeam1.text = masks[num].GetComponent<FactionElements>().name;
+
+            foreach(GameObject b in bases)
+            {
+                if(b.name.ToLower() == masks[num].GetComponent<FactionElements>().name.ToLower())
+                {
+                    base1 = b;
+                    b.transform.SetPositionAndRotation(spawnPointTeam1.transform.position, spawnPointTeam1.transform.rotation);
+                    b.SetActive(true);
+                }
+                else
+                {
+                    if (b.activeInHierarchy)
+                    {
+                        if (b != base2)
+                            b.SetActive(false);
+                    }
+                }
+            }
 		}
 		if (player == Player.player2) {
 			previewImageTeam2.sprite = masks [num].GetComponent<FactionElements>().baseFace;
 			previewTextBoxTeam2.text = masks [num].GetComponent<FactionElements>().description;
             nameTeam2.text = masks[num].GetComponent<FactionElements>().name;
-		}
+
+            foreach (GameObject b in bases)
+            {
+                if (b.name.ToLower() == masks[num].GetComponent<FactionElements>().name.ToLower())
+                {
+                    base2 = b;
+                    b.transform.SetPositionAndRotation(spawnPointTeam2.transform.position, spawnPointTeam2.transform.rotation);
+                    b.SetActive(true);
+                }
+                else
+                {
+                    if (b.activeInHierarchy)
+                    {
+                        if(b != base1)
+                            b.SetActive(false);
+                    }
+                }
+            }
+        }
     }
 
     public void OnPointerExit(int num)
@@ -93,6 +135,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
 
         if (player == Player.player1)
         {
+            base1.SetActive(true);
             masks[num].color = Color.green;
             selected_Factions.SetFactionElement(0, masks[num].GetComponent<FactionElements>());
             DontDestroyOnLoad(masks[num].GetComponent<FactionElements>().commentator);
@@ -103,6 +146,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
 
         if (player == Player.player2)
         {
+            base2.SetActive(true);
             masks[num].color = Color.red;
             selected_Factions.SetFactionElement(1, masks[num].GetComponent<FactionElements>());
             DontDestroyOnLoad(masks[num].GetComponent<FactionElements>().commentator);
