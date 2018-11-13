@@ -976,16 +976,7 @@ public class TroopActor : MonoBehaviour
     }
 
     public bool OriginSizeSet = false;
-    Vector3 originSize;
-    private void OnDrawGizmos()
-    {
-        if (!OriginSizeSet)
-        {
-            originSize = transform.localScale;
-            OriginSizeSet = true;
-        }
-        
-    }
+    public Vector3 originSize;
 
     private void OnDrawGizmosSelected()
     {
