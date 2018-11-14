@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33007508317147280}
   - component: {fileID: 23919851847332666}
   - component: {fileID: 114954374237003632}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: AA_Tank_01_Missle_Tube_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4636170346752472}
   - component: {fileID: 198039986749831070}
   - component: {fileID: 199720734524889856}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SubEmitter0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4589637236646860}
   - component: {fileID: 198128403289840428}
   - component: {fileID: 199205467037559232}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4907056072263628}
   - component: {fileID: 198102521931262342}
   - component: {fileID: 199548510045051198}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 33276228377240644}
   - component: {fileID: 23927154213048792}
   - component: {fileID: 114799914565253212}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: AA_Tank_01_Missle_Tube_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4185473706204300}
   - component: {fileID: 198406912075225520}
   - component: {fileID: 199915657564750730}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: POOF (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4543125194427162}
   - component: {fileID: 198670150719143942}
   - component: {fileID: 199587805001970148}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 4769219230424414}
   - component: {fileID: 198717523070467630}
   - component: {fileID: 199534352174702002}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 4598755244057404}
   - component: {fileID: 198573602482448998}
   - component: {fileID: 199460118667245094}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: The Big Deathpacito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 4596029775474056}
   - component: {fileID: 198664595511279922}
   - component: {fileID: 199213846379821316}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: POOF (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4533861879197284}
   - component: {fileID: 82064671433890058}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: MissileTubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 114259615592921914}
   - component: {fileID: 114693514329132686}
   - component: {fileID: 195467058494430322}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Anti-Air - Team 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 4143049380554892}
   - component: {fileID: 198463233754923974}
   - component: {fileID: 199799174102491982}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 4381304192161046}
   - component: {fileID: 198429999388008362}
   - component: {fileID: 199993618255559278}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Small Puffs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 224679380192105338}
   - component: {fileID: 222967131477058454}
   - component: {fileID: 114254523039643982}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4920582275653268}
   - component: {fileID: 95807699875234342}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: AA_Tank_01_Missle_Tubes_GRP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 4751076669802972}
   - component: {fileID: 198611002785742516}
   - component: {fileID: 199665682995981292}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 4447956487297920}
   - component: {fileID: 198772019834735256}
   - component: {fileID: 199160410659820658}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 33642535110162704}
   - component: {fileID: 23786864829027952}
   - component: {fileID: 114822117024830540}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: AA_Tank_01_Missle_Tube_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 224025206955726478}
   - component: {fileID: 222440293454430482}
   - component: {fileID: 114422527757077368}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 4487117971047706}
   - component: {fileID: 198387821504448034}
   - component: {fileID: 199712715420658140}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 4294558510327346}
   - component: {fileID: 198516084813157630}
   - component: {fileID: 199127070328767306}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 4480110387111238}
   - component: {fileID: 198814576712944862}
   - component: {fileID: 199381972857360222}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 23141464384706190}
   - component: {fileID: 95067225934520756}
   - component: {fileID: 114035333398053244}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tank_01_Turret_Animated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 4243027785001986}
   - component: {fileID: 198067635252444094}
   - component: {fileID: 199756312566567738}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 4296514081633984}
   - component: {fileID: 198779284542535012}
   - component: {fileID: 199207725817941210}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tank Impact 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 223363675719029432}
   - component: {fileID: 114275759860124798}
   - component: {fileID: 114970054823595194}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Troop Health Bar - Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 4651237937825348}
   - component: {fileID: 198268373900157966}
   - component: {fileID: 199202305793025404}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Small Puffs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 4003926213104514}
   - component: {fileID: 198556684640762824}
   - component: {fileID: 199757457151794212}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SubEmitter0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 4897335143076544}
   - component: {fileID: 198702065727132560}
   - component: {fileID: 199710151774908538}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 4745028680206748}
   - component: {fileID: 198766008169905682}
   - component: {fileID: 199508952945307408}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Small Puffs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 4968508628247836}
   - component: {fileID: 198109887680375670}
   - component: {fileID: 199840951623528402}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4771444643778062}
   - component: {fileID: 82931807620666950}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 4397151946810378}
   - component: {fileID: 198669230668030896}
   - component: {fileID: 199640125098905874}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Puff Layer 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 23579406981727390}
   - component: {fileID: 95300374480920082}
   - component: {fileID: 114691280284066334}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tank_01_Body_Animated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 4222008902258924}
   - component: {fileID: 198762912814919294}
   - component: {fileID: 199703911682905028}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: POOF (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2490,6 +2490,7 @@ MonoBehaviour:
   timeSinceTakenDamage: 0
   previousPos: {x: 0, y: 0, z: 0}
   OriginSizeSet: 1
+  originSize: {x: 7.5, y: 7.5, z: 7.5}
 --- !u!114 &114954374237003632
 MonoBehaviour:
   m_ObjectHideFlags: 1
