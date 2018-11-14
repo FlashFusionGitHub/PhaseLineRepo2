@@ -68645,6 +68645,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114613174719653128, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
         type: 2}
+      propertyPath: buttons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114613174719653128, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
+        type: 2}
       propertyPath: m_controllers.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -68773,6 +68778,21 @@ Prefab:
       propertyPath: Player1
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114613174719653128, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
+        type: 2}
+      propertyPath: buttons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1926232841}
+    - target: {fileID: 114613174719653128, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
+        type: 2}
+      propertyPath: buttons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1012779024}
+    - target: {fileID: 114613174719653128, guid: b3bd189fa93da6a4db3ae3bc5fa11c61,
+        type: 2}
+      propertyPath: buttons.Array.data[2]
+      value: 
+      objectReference: {fileID: 707519569}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3bd189fa93da6a4db3ae3bc5fa11c61, type: 2}
   m_IsPrefabParent: 0
