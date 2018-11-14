@@ -186,7 +186,7 @@ public class NavigationArrowActor : MonoBehaviour
     float closestDistanceSqr = Mathf.Infinity;
     public void AirStrikeControls()
     {
-        if (m_controller.Action4WasPress() && !m_airStrikeState && airstrikes.Count > 0)
+        if (m_controller.Action4WasPress() && !m_airStrikeState)
         {
             EnableAirStrikeMarker();
         }
@@ -200,7 +200,7 @@ public class NavigationArrowActor : MonoBehaviour
             Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
 
             if(airstrikes[0].gameObject.activeInHierarchy)
-                airstrikes[0].gameObject.SetActive(false);
+                airstrikes[0].owner = Team.NONE;
 
             airstrikes.Remove(airstrikes[0]);
 
