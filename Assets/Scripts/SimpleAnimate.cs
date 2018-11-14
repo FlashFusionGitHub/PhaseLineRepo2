@@ -15,7 +15,7 @@ public class SimpleAnimate : MonoBehaviour {
         public bool movingUp;
     }
 
-    Vector3 originSize;
+    public Vector3 originSize;
     float m_timer;
     public float timeToGrow = 0.5f;
     public CursorPart[] cursorParts;
@@ -23,7 +23,8 @@ public class SimpleAnimate : MonoBehaviour {
 
     private void Start()
     {
-        originSize = transform.localScale;
+		if (originSize == Vector3.zero)
+        	originSize = transform.localScale;
         transform.localScale = Vector3.zero;
         m_timer = 0;
     }

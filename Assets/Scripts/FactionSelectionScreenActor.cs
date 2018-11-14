@@ -59,6 +59,9 @@ public class FactionSelectionScreenActor : MonoBehaviour
     }
 
     GameObject base1, base2;
+
+
+	public Light previewLightTeam1, previewLightTeam2;
     public void OnPointerEnter(int num)
     {
         if (masks[num].color != Color.white)
@@ -70,6 +73,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
 		if (player == Player.player1) {
 			previewImageTeam1.sprite = masks [num].GetComponent<FactionElements>().baseFace;
 			previewTextBoxTeam1.text = masks [num].GetComponent<FactionElements>().description;
+			previewLightTeam1.color = masks [num].GetComponent<FactionElements> ().primaryColour;
             nameTeam1.text = masks[num].GetComponent<FactionElements>().name;
 
             foreach(GameObject b in bases)
@@ -93,6 +97,7 @@ public class FactionSelectionScreenActor : MonoBehaviour
 		if (player == Player.player2) {
 			previewImageTeam2.sprite = masks [num].GetComponent<FactionElements>().baseFace;
 			previewTextBoxTeam2.text = masks [num].GetComponent<FactionElements>().description;
+			previewLightTeam2.color = masks [num].GetComponent<FactionElements> ().primaryColour;
             nameTeam2.text = masks[num].GetComponent<FactionElements>().name;
 
             foreach (GameObject b in bases)
