@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rock
   - next
+  - light
   layers:
   - Default
   - TransparentFX
