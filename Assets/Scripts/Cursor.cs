@@ -14,6 +14,9 @@ public class Cursor : MonoBehaviour
 
 	public bool Player1, Player2;
 
+
+    public List<GameObject> buttons;
+
     // Use this for initialization
     void Start()
     {
@@ -28,6 +31,7 @@ public class Cursor : MonoBehaviour
 		
     void Update()
     {
+       ToggleButtons();
 
        transform.position += new Vector3(m_controller.LeftAnalogStick().X, m_controller.LeftAnalogStick().Y, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
 
@@ -81,6 +85,30 @@ public class Cursor : MonoBehaviour
 
         // store this for comparison next frame
         oldRaycasts = raycasts;
+    }
+
+    int index;
+    void ToggleButtons()
+    {
+        if(m_controller.DpadRightWasPress())
+        {
+            index++;
+
+            if (index >= buttons.Count)
+                index = 0;
+
+            transform.position = buttons[index].transform.position;
+        }
+
+        if (m_controller.DpadRightWasPress())
+        {
+            if (index <= 0)
+                index = buttons.Count;
+
+            index--;
+
+            transform.position = buttons[index].transform.position;
+        }
     }
 
     public void SwapController()
