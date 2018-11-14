@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 137565011684613560}
   - component: {fileID: 33609282647271542}
   - component: {fileID: 114515844355247428}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_Rocket_Pod_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4384111552491504}
   - component: {fileID: 198579441356982786}
   - component: {fileID: 199199572234567886}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tank Bang (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4454541370570784}
   - component: {fileID: 198474669128766752}
   - component: {fileID: 199073494468104906}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4255412678154570}
   - component: {fileID: 198277080725750018}
   - component: {fileID: 199518733914441024}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: The Big Deathpacito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 114716426274077822}
   - component: {fileID: 82425179219385374}
   - component: {fileID: 114633510769932214}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_02_Blades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 114844797565031342}
   - component: {fileID: 114379093152684702}
   - component: {fileID: 195305703364993706}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter - Team 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4740663026708274}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_Rocket_Pod_01_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 224890991468788416}
   - component: {fileID: 222884180775311278}
   - component: {fileID: 114621047922904778}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4887320491972696}
   - component: {fileID: 95320053881148316}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_Rocket_Pod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4625559649170248}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_Rocket_Pod_01_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 224628572578743242}
   - component: {fileID: 222540091175496036}
   - component: {fileID: 114742556405001962}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 4055189850735226}
   - component: {fileID: 198346739623532660}
   - component: {fileID: 199974738994747252}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SubEmitter0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 23496219557934500}
   - component: {fileID: 114211293612244326}
   - component: {fileID: 114637086542823360}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_02_Blades (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4919804431665422}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_Rocket_Pod_01_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 4279102762124514}
   - component: {fileID: 198376585118506162}
   - component: {fileID: 199807094074359336}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tank Impact 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4804886003699406}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Rocket Pod Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4731157043302332}
   - component: {fileID: 82552305466823258}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: RocketPod 1 TurretPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4734028283702464}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: RocketPod 1 TurretPivot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 4643373104341480}
   - component: {fileID: 198113922402359888}
   - component: {fileID: 199640454215843158}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4718252412539324}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Rocket Pod Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 23058525471087894}
   - component: {fileID: 95294466530900648}
   - component: {fileID: 114655914204131462}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_02_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 4666034288071832}
   - component: {fileID: 198756932203414758}
   - component: {fileID: 199641567033717092}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tank Bang (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4347001947092080}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_Rocket_Pod_01_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 223095174651115730}
   - component: {fileID: 114849906945443874}
   - component: {fileID: 114670918286455560}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Troop Health Bar - Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 137214349512020516}
   - component: {fileID: 33861544704815910}
   - component: {fileID: 114286954674119266}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_Rocket_Pod_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4845720205239904}
   - component: {fileID: 95233269574115842}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Helicopter_Rocket_Pod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 4248923611716792}
   - component: {fileID: 198768327458737366}
   - component: {fileID: 199408373821900836}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SubEmitter0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1963,6 +1963,7 @@ MonoBehaviour:
   timeSinceTakenDamage: 0
   previousPos: {x: 0, y: 0, z: 0}
   OriginSizeSet: 1
+  originSize: {x: 7.5, y: 7.5, z: 7.5}
 --- !u!114 &114286954674119266
 MonoBehaviour:
   m_ObjectHideFlags: 1

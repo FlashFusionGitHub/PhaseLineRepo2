@@ -14,6 +14,12 @@ public class Cursor : MonoBehaviour
 
 	public bool Player1, Player2;
 
+
+    public List<GameObject> buttons;
+
+    float markerXPos;
+    float markerYPos;
+
     // Use this for initialization
     void Start()
     {
@@ -28,11 +34,13 @@ public class Cursor : MonoBehaviour
 		
     void Update()
     {
+        if(!ToggleButtons())
+            transform.position += new Vector3(m_controller.LeftAnalogStick().X, m_controller.LeftAnalogStick().Y, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
+        else
+            ToggleButtons();
 
-       transform.position += new Vector3(m_controller.LeftAnalogStick().X, m_controller.LeftAnalogStick().Y, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
-
-        float markerXPos = Mathf.Clamp(transform.position.x, 0, Screen.width);
-        float markerYPos = Mathf.Clamp(transform.position.y, 0, Screen.height);
+        markerXPos = Mathf.Clamp(transform.position.x, 0, Screen.width);
+        markerYPos = Mathf.Clamp(transform.position.y, 0, Screen.height);
 
         transform.position = new Vector3(markerXPos, markerYPos, 0);
 
@@ -81,6 +89,36 @@ public class Cursor : MonoBehaviour
 
         // store this for comparison next frame
         oldRaycasts = raycasts;
+    }
+
+    public int index;
+    bool ToggleButtons()
+    {
+        if(m_controller.DpadLeftWasPress())
+        {
+            index++;
+
+            if (index >= buttons.Count)
+                index = 0;
+
+            transform.position = buttons[index].transform.position;
+
+            return true;
+        }
+
+        if (m_controller.DpadRightWasPress())
+        {
+            if (index <= 0)
+                index = buttons.Count;
+
+            index--;
+
+            transform.position = buttons[index].transform.position;
+
+            return true;
+        }
+
+        return false;
     }
 
     public void SwapController()

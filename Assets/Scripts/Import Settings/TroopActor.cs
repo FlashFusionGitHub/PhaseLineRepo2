@@ -393,7 +393,7 @@ public class TroopActor : MonoBehaviour
         {
             if (transform.localScale != originSize * 1.75f)
             {
-                transform.localScale = originSize * 1.75f;
+                transform.localScale = originSize * 1.2f;
             }
         }
     }
