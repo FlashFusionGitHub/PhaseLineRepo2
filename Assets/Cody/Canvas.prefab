@@ -142,23 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1173028126961116
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224578593557264362}
-  - component: {fileID: 222861962859162408}
-  - component: {fileID: 114925820354557112}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1185098856413456
 GameObject:
   m_ObjectHideFlags: 1
@@ -188,6 +171,23 @@ GameObject:
   - component: {fileID: 114284498025793400}
   m_Layer: 5
   m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1221605429039004
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224205240764625324}
+  - component: {fileID: 222105891400411506}
+  - component: {fileID: 114328165462340090}
+  m_Layer: 5
+  m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,6 +419,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1667356240086960
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224860619652330180}
+  - component: {fileID: 222433577678039222}
+  - component: {fileID: 114218839593172944}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1687235991141878
 GameObject:
   m_ObjectHideFlags: 1
@@ -616,16 +633,18 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 3
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 220
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Character
+
+    Descriptions'
 --- !u!114 &114043672704446316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -672,8 +691,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d787d3b40367c694d9710dc3e4917d61, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -692,11 +711,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 0}
+  name: NOLAN WHEELER
   primaryColour: {r: 0.24900463, g: 0.77205884, b: 0.14192258, a: 1}
   secondaryColour: {r: 0.3137255, g: 0.8117647, b: 0.21176471, a: 1}
   bigBase: {fileID: 0}
   baseFace: {fileID: 21300000, guid: f2d032a76a9dc0b418a18505894d915f, type: 3}
-  description: 'Nolan Wheeler: Nolan is a war Veteran, once in charge of many tank
+  description: 'Nolan Wheeler: Nolan is a war veteran, once in charge of many tank
     Squadrons, War has left him weary, but with his head held high and with the Guidance
     of the Crystal he commands from his personal vehicle "The Crusader" with Faith.'
 --- !u!114 &114080455381885790
@@ -814,11 +834,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 0}
+  name: CLYDE SNYDER
   primaryColour: {r: 0.21568628, g: 0.96862745, b: 0.98039216, a: 1}
   secondaryColour: {r: 0.21568628, g: 0.96862745, b: 0.98039216, a: 1}
   bigBase: {fileID: 0}
   baseFace: {fileID: 21300000, guid: 45cc08d1c5087ea49bb1be16ee0c4cc2, type: 3}
-  description: 'Clyde Snyder: Clyde was the radio Offier in charge of communications
+  description: 'Clyde Snyder: Clyde was the radio offier in charge of communications
     on the frontlines of many of the worlds greatest battles, Now, commanding his
     own units, he aims to prove that communication is the key to Victory'
 --- !u!114 &114136451123523170
@@ -833,14 +854,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 22d6e38587f4b8346b9aebf6c379c3a5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -950,7 +971,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c921a9eca64839b4c9026040cf4fe288, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
@@ -981,6 +1002,33 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: aeb2d0f7eb52a2a4c91813fa794bd6d7, type: 3}
   m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114218839593172944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667356240086960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.47450984, g: 0.4784314, b: 0.48627454, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1054,7 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1062,9 +1110,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c921a9eca64839b4c9026040cf4fe288, type: 3}
     m_FontSize: 40
-    m_FontStyle: 3
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 300
@@ -1074,7 +1122,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Faction Selection
+  m_Text: FACTION SELECTION
 --- !u!114 &114298857038004710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1164,16 +1212,45 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 3
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 220
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Character
+
+    Descriptions'
+--- !u!114 &114328165462340090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221605429039004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.57254905, g: 0.5764706, b: 0.58431375, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114343029792374226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1467,6 +1544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 0}
+  name: 
   primaryColour: {r: 0, g: 1, b: 0.8758622, a: 1}
   secondaryColour: {r: 0.18030927, g: 0.8455882, b: 0.6804156, a: 1}
   bigBase: {fileID: 0}
@@ -1530,7 +1608,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f2d032a76a9dc0b418a18505894d915f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1550,6 +1628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 0}
+  name: 
   primaryColour: {r: 0.034482956, g: 0, b: 1, a: 1}
   secondaryColour: {r: 0.22145328, g: 0.3157621, b: 0.9411765, a: 1}
   bigBase: {fileID: 0}
@@ -1652,12 +1731,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 0}
+  name: BIG BAZZ
   primaryColour: {r: 0.9764706, g: 0.21960784, b: 0.21960784, a: 1}
   secondaryColour: {r: 0.9764706, g: 0.21960784, b: 0.21960784, a: 1}
   bigBase: {fileID: 0}
   baseFace: {fileID: 21300000, guid: da158e6c49783d6428cbb294df1973d2, type: 3}
   description: 'B. Bazz: B. Bazz, sometimes called the god of war, lives for battle,
-    rumor has it he once tore a tank in two with his bare hands because someone said
+    rumour has it he once tore a tank in two with his bare hands because someone said
     he couldn''t, pity to the fool who stands in his way!'
 --- !u!114 &114635289022555248
 MonoBehaviour:
@@ -1678,7 +1758,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: da158e6c49783d6428cbb294df1973d2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1876,12 +1956,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentator: {fileID: 0}
+  name: FELIX BARLETT
   primaryColour: {r: 0.9254902, g: 0.5294118, b: 0.96862745, a: 1}
   secondaryColour: {r: 0.9254902, g: 0.5294118, b: 0.96862745, a: 1}
   bigBase: {fileID: 0}
   baseFace: {fileID: 21300000, guid: 2ca17fba94418ac4c9813264657c4006, type: 3}
   description: 'Felix Barlett: Felix  was a freelance ''Jet pilot for hire'' during
-    many of the worlds wars. He Approaches battles like he apporoaches his lovers,
+    many of the worlds wars. He approaches battles like he apporoaches his lovers,
     hard, fast, and with a grace unlike any seen before. '
 --- !u!114 &114804560236182900
 MonoBehaviour:
@@ -1906,7 +1987,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c921a9eca64839b4c9026040cf4fe288, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
@@ -1996,6 +2077,8 @@ MonoBehaviour:
   m_controllers: []
   Player1: 1
   Player2: 0
+  buttons: []
+  index: 0
 --- !u!114 &114857850861699062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2030,6 +2113,15 @@ MonoBehaviour:
   previewImageTeam2: {fileID: 114635289022555248}
   previewTextBoxTeam1: {fileID: 114321035136242480}
   previewTextBoxTeam2: {fileID: 114027289409989182}
+  nameTeam1: {fileID: 114804560236182900}
+  nameTeam2: {fileID: 114174686177389434}
+  spawnPointTeam1: {fileID: 0}
+  spawnPointTeam2: {fileID: 0}
+  bases:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114881583292215812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2094,39 +2186,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114925820354557112
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173028126961116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Back to Main Menu
 --- !u!114 &114954460505423502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2205,6 +2264,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037863532823434}
+--- !u!222 &222105891400411506
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221605429039004}
 --- !u!222 &222121559339376136
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2289,6 +2354,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533722710193224}
+--- !u!222 &222433577678039222
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667356240086960}
 --- !u!222 &222460272213429744
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2349,12 +2420,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690504960154170}
---- !u!222 &222861962859162408
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173028126961116}
 --- !u!222 &222894855489465724
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2405,11 +2470,11 @@ RectTransform:
   m_Children:
   - {fileID: 224528377440864904}
   m_Father: {fileID: 224460990355637878}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 431, y: 0}
+  m_AnchoredPosition: {x: 431, y: 14.6}
   m_SizeDelta: {x: 50, y: 95}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224024897858163646
@@ -2424,11 +2489,11 @@ RectTransform:
   m_Children:
   - {fileID: 224870225559041874}
   m_Father: {fileID: 224460990355637878}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 554.8, y: 0}
+  m_AnchoredPosition: {x: 554.8, y: 14.600002}
   m_SizeDelta: {x: 50, y: 95}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224031649445090700
@@ -2461,7 +2526,7 @@ RectTransform:
   m_Children:
   - {fileID: 224208800398752930}
   m_Father: {fileID: 224460990355637878}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2501,8 +2566,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -1.1, y: 0.9}
+  m_SizeDelta: {x: 138, y: 128.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224070503974152456
 RectTransform:
@@ -2521,7 +2586,7 @@ RectTransform:
   - {fileID: 224330828075954088}
   - {fileID: 224111128375011690}
   m_Father: {fileID: 224374535755521252}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2540,7 +2605,7 @@ RectTransform:
   m_Children:
   - {fileID: 224355152161867230}
   m_Father: {fileID: 224460990355637878}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2565,6 +2630,24 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 662.5, y: -262.51978}
   m_SizeDelta: {x: 640, y: 80.63971}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224205240764625324
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221605429039004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.73999673, y: 1.258794, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224460990355637878}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.8, y: 4.6}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224208800398752930
 RectTransform:
@@ -2599,7 +2682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.29999924, y: -4.399995}
+  m_AnchoredPosition: {x: -0.29999924, y: 7.7}
   m_SizeDelta: {x: 150, y: 300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224300673000733908
@@ -2611,15 +2694,14 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 224578593557264362}
+  m_Children: []
   m_Father: {fileID: 224560201518019564}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -297.1, y: -200.4}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.2, y: 28.7}
+  m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224330828075954088
 RectTransform:
@@ -2668,6 +2750,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224460990355637878}
+  - {fileID: 224860619652330180}
   - {fileID: 224822088968877488}
   - {fileID: 224671038828171860}
   - {fileID: 224070503974152456}
@@ -2714,8 +2797,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.3, y: -27.17693}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.0000019073, y: -27.17693}
+  m_SizeDelta: {x: 120, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224460990355637878
 RectTransform:
@@ -2727,6 +2810,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 224205240764625324}
   - {fileID: 224024897858163646}
   - {fileID: 224014720454745792}
   - {fileID: 224080497477354966}
@@ -2738,7 +2822,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: 54.68014}
+  m_AnchoredPosition: {x: -2, y: -150}
   m_SizeDelta: {x: -40, y: -309.3603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224514667322501376
@@ -2774,7 +2858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 3.1, y: -4.399994}
+  m_AnchoredPosition: {x: 3.1000004, y: 7.7000093}
   m_SizeDelta: {x: 150, y: 300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224560201518019564
@@ -2798,24 +2882,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!224 &224578593557264362
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173028126961116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224300673000733908}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224580539310060336
 RectTransform:
   m_ObjectHideFlags: 1
@@ -2828,11 +2894,11 @@ RectTransform:
   m_Children:
   - {fileID: 224854867435357178}
   m_Father: {fileID: 224460990355637878}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 271, y: 0}
+  m_AnchoredPosition: {x: 271, y: 14.600002}
   m_SizeDelta: {x: 50, y: 95}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224597252004170660
@@ -2847,11 +2913,11 @@ RectTransform:
   m_Children:
   - {fileID: 224216561996653196}
   m_Father: {fileID: 224460990355637878}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 149.69998, y: 0}
+  m_AnchoredPosition: {x: 149.69998, y: 14.600002}
   m_SizeDelta: {x: 50, y: 95}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224634095952304046
@@ -2867,7 +2933,7 @@ RectTransform:
   - {fileID: 224057020183131432}
   - {fileID: 224757466262239064}
   m_Father: {fileID: 224374535755521252}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2889,8 +2955,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.4, y: 3.7}
+  m_SizeDelta: {x: 128, y: 120.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224671038828171860
 RectTransform:
@@ -2903,7 +2969,7 @@ RectTransform:
   m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
   m_Children: []
   m_Father: {fileID: 224374535755521252}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2925,8 +2991,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5999374, y: -27.176931}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.000030518022, y: -27.176933}
+  m_SizeDelta: {x: 120, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224822088968877488
 RectTransform:
@@ -2939,7 +3005,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224374535755521252}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -2961,9 +3027,27 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 6.4, y: -4.399995}
+  m_AnchoredPosition: {x: 6.3999996, y: 7.7000084}
   m_SizeDelta: {x: 150, y: 300}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!224 &224860619652330180
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667356240086960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.5257878, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224374535755521252}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 175.2}
+  m_SizeDelta: {x: -400, y: -350}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224870225559041874
 RectTransform:
   m_ObjectHideFlags: 1
@@ -2979,7 +3063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 14.0000305, y: -4.4000015}
+  m_AnchoredPosition: {x: 14.0000305, y: 7.7000017}
   m_SizeDelta: {x: 150, y: 300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224879013407335596
