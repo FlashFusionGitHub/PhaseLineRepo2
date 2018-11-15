@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1722223839651924
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 33733264533084560}
   - component: {fileID: 23900486314413008}
   - component: {fileID: 95774766451156354}
-  - component: {fileID: 208988367124805054}
   m_Layer: 11
   m_Name: brocken_fence_WildWest
   m_TagString: Untagged
@@ -54,14 +53,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722223839651924}
-  m_LocalRotation: {x: 0.005164425, y: 0.040830653, z: 0.13956824, w: -0.9893569}
-  m_LocalPosition: {x: 226.15, y: -29.681, z: -142.9}
-  m_LocalScale: {x: 1.000001, y: 1.0000002, z: 1.000001}
+  m_LocalRotation: {x: -0.008010685, y: -0.44841716, z: 0.009263069, w: 0.89374053}
+  m_LocalPosition: {x: -30.150146, y: 197.34251, z: -97.70267}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 0.9999999}
   m_Children:
   - {fileID: 4818607767260486}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.2390001, y: 355.448, z: -16.01}
+  m_LocalEulerAnglesHint: {x: -0.344, y: 306.707, z: 1.36}
 --- !u!4 &4818607767260486
 Transform:
   m_ObjectHideFlags: 1
@@ -186,18 +185,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!208 &208988367124805054
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1722223839651924}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 2.8830001, y: 3.0760002, z: 0.23600002}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5

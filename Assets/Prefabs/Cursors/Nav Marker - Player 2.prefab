@@ -577,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originSize: {x: 0, y: 0, z: 0}
   timeToGrow: 0.5
   cursorParts:
   - part: {fileID: 4445327157039284}
