@@ -642,10 +642,9 @@ MonoBehaviour:
   secondaryColour: {r: 0.3137255, g: 0.8117647, b: 0.21176471, a: 1}
   bigBase: {fileID: 0}
   baseFace: {fileID: 21300000, guid: f2d032a76a9dc0b418a18505894d915f, type: 3}
-  description: 'Nolan Wheeler: Nolan is a war veteran, once a captain of a mighty
-    tank squadron, but war has left him weary, but with his head held high and with
-    the Guidance of the Crystal he commands from his personal vehicle "The Crusader"
-    with Faith. '
+  description: 'Nolan is a war veteran, once a captain of a mighty tank squadron,
+    but war has left him weary, but with his head held high and with the Guidance
+    of the Crystal he commands from his personal vehicle "The Crusader" with Faith. '
 --- !u!114 &114080455381885790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,10 +701,10 @@ MonoBehaviour:
   secondaryColour: {r: 0.21568628, g: 0.96862745, b: 0.98039216, a: 1}
   bigBase: {fileID: 0}
   baseFace: {fileID: 21300000, guid: 45cc08d1c5087ea49bb1be16ee0c4cc2, type: 3}
-  description: "Clyde Snyder: Clyde was the communication officer on the frontlines
-    of many of the world's finest battles, proving himself to be an excellent strategist
-    his was given the war ship \u201COrabella\u201D and promoted to general. Now commanding
-    his own army, he aims to prove that communication is the key to victory. "
+  description: "Clyde was the communication officer on the frontlines of many of the
+    world's finest battles, proving himself to be an excellent strategist he was given
+    the war ship \u201COrabella\u201D and promoted to general. Now commanding his
+    own army, he aims to prove that communication is the key to victory. "
 --- !u!114 &114136451123523170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1449,9 +1448,9 @@ MonoBehaviour:
   secondaryColour: {r: 0.9764706, g: 0.21960784, b: 0.21960784, a: 1}
   bigBase: {fileID: 0}
   baseFace: {fileID: 21300000, guid: da158e6c49783d6428cbb294df1973d2, type: 3}
-  description: "B. Bazz: B. Bazz, sometimes called the god of war, he lives for battle
-    never giving up till the day is won. He is so feared he was once rumoured to have
-    torn a tank in two with his bare hands and used it scrap to forge his war machine
+  description: "B. Bazz, sometimes called the god of war, he lives for battle never
+    giving up till the day is won. He is so feared he was once rumoured to have torn
+    a tank in two with his bare hands and used its scrap metal to forge his war machine
     \u201CBigg Bazz\u201D because someone said he couldn't.  Pity to any foolish enough
     to stands in his way!"
 --- !u!114 &114635289022555248
@@ -1649,11 +1648,11 @@ MonoBehaviour:
   secondaryColour: {r: 0.9254902, g: 0.5294118, b: 0.96862745, a: 1}
   bigBase: {fileID: 0}
   baseFace: {fileID: 21300000, guid: 2ca17fba94418ac4c9813264657c4006, type: 3}
-  description: "Felix Barlett: Felix was a freelance 'Jet pilot for hire' during many
-    wars in recent history, becoming so successful in his career he eventually purchased
-    and converted \u201CThe Vampire\u201D into his own warmachine. Now commanding
-    his own private army, he approaches battles like he approaches his lovers, hard,
-    fast, and with a grace unlike any seen before."
+  description: "Felix was a freelance 'Jet pilot for hire' during many wars in recent
+    history, becoming so successful in his career he eventually purchased and converted
+    \u201CThe Vampire\u201D into his own warmachine. Now commanding his own private
+    army, he approaches battles like he approaches his lovers, hard, fast, and with
+    a grace unlike any seen before."
 --- !u!114 &114804560236182900
 MonoBehaviour:
   m_ObjectHideFlags: 1
