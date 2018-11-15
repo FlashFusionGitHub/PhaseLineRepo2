@@ -56,7 +56,7 @@ public class GameStartCountDown : MonoBehaviour {
         }
         else
         {
-            countDownText.text = "GO!";
+            countDownText.text = "ATTACK!";
 
             if (countDownTimer <= 0.0f)
             {

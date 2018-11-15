@@ -367,9 +367,14 @@ public class TroopActor : MonoBehaviour
         if (rankState == RankState.LookingForGeneral)
         {
             SetAttackType(AttackType.AUTO);
+            
             TroopActor AssignToMe = RandomGeneral();
             if (AssignToMe)
                 AssignToGeneral(AssignToMe);
+            else
+            {
+                PromoteToGeneral(this);
+            }
             if (killMeAfter <= 0)
             {
                 Die(this);
@@ -672,21 +677,7 @@ public class TroopActor : MonoBehaviour
 			return Generals [Random.Range (0, Generals.Count)];
 		} else 
 		{
-			foreach (TroopActor ta in op.allTroopActors)
-			{
-				if (ta.rankState != RankState.dead)
-				if (ta != this && ta.team == team && ta.rankState == RankState.IsGeneral)
-				{
-					Generals.Add(ta);
-				}
-			}
-			if (Generals.Count > 0) {
-				return Generals [Random.Range (0, Generals.Count)];
-			} else 
-			{
-				Die (this);
-				return null;
-			}
+            return null;
 		}
        
     }
@@ -786,12 +777,22 @@ public class TroopActor : MonoBehaviour
                 }
                 else
                 {
-                    if (rankState != RankState.IsGeneral && myGeneral)
+                    NavMeshHit hit;
+                    if (NavMesh.SamplePosition(transform.position, out hit, 1000f, m_navAgent.areaMask))
                     {
-                        	transform.position = moveTarget.position;
-
                         m_navAgent.enabled = false;
+                        transform.position = hit.position;
                         Invoke("NavOn", 0.1f);
+                    }
+                    else
+                    {
+                        if (rankState != RankState.IsGeneral && myGeneral)
+
+                        {
+                            m_navAgent.enabled = false;
+                            transform.position = moveTarget.position;
+                            Invoke("NavOn", 0.1f);
+                        }
                     }
                 }
                 if (Vector3.Distance(new Vector3(moveTarget.position.x, transform.position.y, moveTarget.position.z), transform.position) > moveSpeed * Time.deltaTime)

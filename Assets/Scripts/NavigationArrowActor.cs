@@ -179,7 +179,22 @@ public class NavigationArrowActor : MonoBehaviour
         if (m_tank != null)
         {
             if (Vector3.Distance(m_currentMarker.transform.position, m_tank.transform.position) > 20f)
+            {
                 m_tank = null;
+                SimpleAnimate sa = m_currentMarker.GetComponent<SimpleAnimate>();
+                if (sa)
+                {
+                    sa.speedModifier = 1;
+                }
+            }
+            else
+            {
+                SimpleAnimate sa = m_currentMarker.GetComponent<SimpleAnimate>();
+                if (sa)
+                {
+                    sa.speedModifier = 2.5f;
+                }
+            }
         }
     }
 
@@ -199,9 +214,12 @@ public class NavigationArrowActor : MonoBehaviour
         {
             Instantiate(m_airStrike, m_currentMarker.transform.position, m_currentMarker.transform.rotation);
 
-            if(airstrikes[0].gameObject.activeInHierarchy)
+            if (airstrikes[0].gameObject.activeInHierarchy)
+            {
+                airstrikes[0].capturePercentage = 0;
                 airstrikes[0].owner = Team.NONE;
-
+                
+            }
             airstrikes.Remove(airstrikes[0]);
 
             EnableNavigationMarker();

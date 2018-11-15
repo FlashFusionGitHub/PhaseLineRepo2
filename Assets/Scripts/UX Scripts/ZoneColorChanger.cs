@@ -5,7 +5,10 @@ using UnityEngine;
 public class ZoneColorChanger : MonoBehaviour
 {
 
-    [SerializeField] private Color[] m_teamColors;
+    [SerializeField] private Color Team1Color;
+    PortraitData pdTeam1;
+    PortraitData pdTeam2;
+    [SerializeField] private Color Team2Color;
     [SerializeField] private CaptureZoneActor m_captureZoneActor;
     [SerializeField] private ChangeColor m_changeColor;
     [SerializeField] private float m_progress;
@@ -16,11 +19,6 @@ public class ZoneColorChanger : MonoBehaviour
         if (!m_captureZoneActor)
         {
             m_captureZoneActor = GetComponent<CaptureZoneActor>();
-            if (!m_captureZoneActor)
-            {
-                print("no CaptureZoneActor Found");
-                this.enabled = false;
-            }
         }
         if (!m_changeColor)
         {
@@ -37,21 +35,38 @@ public class ZoneColorChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!pdTeam1 || pdTeam2)
+        {
+            foreach (PortraitData pd in FindObjectsOfType<PortraitData>())
+            {
+                if (pd.team == Team.TEAM1)
+                {
+                    pdTeam1 = pd;
+                    Team1Color = pd.TeamColor;
+                }
+                else if (pd.team == Team.TEAM2)
+                {
+                    pdTeam2 = pd;
+                    Team2Color = pd.TeamColor;
+                }
+            }
+            return;
+        }
         if (m_captureZoneActor)
         {
             m_progress = m_captureZoneActor.capturePercentage / 100;
-            if (m_captureZoneActor.owner == Team.NONE)
+            if (m_captureZoneActor.team1unitsInZone.Count >= m_captureZoneActor.team2unitsInZone.Count)
             {
-                m_changeColor.ChangeColorTo(Color.Lerp(m_teamColors[0], m_teamColors[1], m_progress));
+                m_changeColor.ChangeColorTo(Color.Lerp(Color.white, Team1Color, m_progress));
             }
-            else if (m_captureZoneActor.owner == Team.TEAM1)
+            else
             {
-                m_changeColor.ChangeColorTo(Color.Lerp(m_teamColors[0], m_teamColors[2], m_progress));
+                m_changeColor.ChangeColorTo(Color.Lerp(Color.white, Team2Color, m_progress));
             }
-            else if (m_captureZoneActor.owner == Team.TEAM2)
-            {
-                m_changeColor.ChangeColorTo(Color.Lerp(m_teamColors[0], m_teamColors[3], m_progress));
-            }
+        }
+        else
+        {
+            m_captureZoneActor = GetComponent<CaptureZoneActor>();
         }
     }
 }
