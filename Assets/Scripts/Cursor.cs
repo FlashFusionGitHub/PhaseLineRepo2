@@ -49,7 +49,6 @@ public class Cursor : MonoBehaviour
 
     // objects that were under the cursor last frame
     List<GameObject> oldRaycasts = new List<GameObject>();
-
     void QuickUpdate()
     {
         pointer = new PointerEventData(EventSystem.current);

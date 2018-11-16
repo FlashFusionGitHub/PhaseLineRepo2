@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FactionElements : MonoBehaviour{
 
@@ -12,6 +13,7 @@ public class FactionElements : MonoBehaviour{
     public GameObject bigBase;
 	public Sprite baseFace;
 	public string description;
+    public Text crossText;
 
     public void SetTeam(Team t)
     {
