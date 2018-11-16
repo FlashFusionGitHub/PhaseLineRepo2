@@ -181,7 +181,7 @@ public class FactionSelectionCursor : MonoBehaviour {
         currentBase.SetActive(true);
         image.color = Color.green;
         image.GetComponent<FactionElements>().crossText.enabled = true;
-        selected_Factions.SetFactionElement(0, image.GetComponent<FactionElements>());
+        selected_Factions.SetFactionElement(playerIndex, image.GetComponent<FactionElements>());
         DontDestroyOnLoad(image.GetComponent<FactionElements>().commentator);
         DontDestroyOnLoad(image.GetComponent<FactionElements>().bigBase);
 

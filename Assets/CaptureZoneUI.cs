@@ -54,13 +54,20 @@ public class CaptureZoneUI : MonoBehaviour {
        if (CZA)
         {
 			Overlay.color = Color.Lerp(Color.white, (CZA.owner == Team.TEAM1 || CZA.team1unitsInZone.Count > CZA.team2unitsInZone.Count) ? pdTeam1.TeamColor : pdTeam2.TeamColor, CZA.capturePercentage /100f);
-			if (CZA.capturePercentage == 100f)
+            if (CZA.capturePercentage == 100f)
             {
                 if (Overlay.sprite != Captured)
                 {
                     Overlay.sprite = Captured;
                 }
-			}
+            }
+            else
+            {
+                if (Overlay.sprite == Captured)
+                {
+                    Overlay.sprite = Empty;
+                }
+            }
 
 			if (CZA.team1unitsInZone.Count > 0 && CZA.team2unitsInZone.Count > 0)
                 {
