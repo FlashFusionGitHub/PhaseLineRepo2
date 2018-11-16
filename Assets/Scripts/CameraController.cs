@@ -53,7 +53,7 @@ public class CameraController : MonoBehaviour {
         {
             float x = transform.position.x;
             float z = transform.position.z;
-
+			if (currentUnit)
             m_MinZoomY = currentUnit.transform.position.y;
 
             if (m_controller.RightTriggerIsHeld())

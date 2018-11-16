@@ -89,24 +89,20 @@ public class UnitSelectionIndicator : MonoBehaviour {
             uiStuff.sldr.value = BaseTa.currentHealth;
            
         }
-        foreach (SelectionImage si in selectionImages)
-        {
-            if (tc.currentSelectedUnit.GetComponent<TroopActor>().unitClass == si.unitClass)
-            {
-                if (!si.selected)
-                {
-                    si.selected = true;
-                    si.img.color = Color.white;
-                }
-            }
-            else
-            {
-                if (si.selected)
-                {
-                    si.selected = false;
-                    si.img.color = Color.black;
-                }
-            }
-        }
+		foreach (SelectionImage si in selectionImages) {
+			if (tc.currentSelectedUnit) {
+				if (tc.currentSelectedUnit.GetComponent<TroopActor> ().unitClass == si.unitClass) {
+					if (!si.selected) {
+						si.selected = true;
+						si.img.color = Color.white;
+					}
+				} else {
+					if (si.selected) {
+						si.selected = false;
+						si.img.color = Color.black;
+					}
+				}
+			}
+		}
 	}
 }

@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4593827106274500}
   - component: {fileID: 114708376375932008}
   - component: {fileID: 114486480975014214}
+  - component: {fileID: 114031270639626550}
   m_Layer: 8
   m_Name: Selection Circle
   m_TagString: Untagged
@@ -71,6 +72,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &114031270639626550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1494287108557706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8145814fb4494142b7bb1e0815c3288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114486480975014214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99412958845c6143b1901f365bc8f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originSize: {x: 0, y: 0, z: 0}
   timeToGrow: 0.5
   cursorParts: []
   speedModifier: 0

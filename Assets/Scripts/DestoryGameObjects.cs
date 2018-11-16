@@ -18,7 +18,8 @@ public class DestoryGameObjects : MonoBehaviour {
 
 	void ThanosSnap() {
 		for (int i = 0; i < gameObjectsToDestroy.Length; i++) {
-			Destroy (gameObjectsToDestroy [i].gameObject);
+			if (gameObjectsToDestroy [i].gameObject)
+				Destroy (gameObjectsToDestroy [i].gameObject);
 		}
 	}
 }

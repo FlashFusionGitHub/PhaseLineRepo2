@@ -805,7 +805,7 @@ Transform:
   m_GameObject: {fileID: 1105552873457620}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: 0, y: 11.200001, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4692869830278982}
   m_Father: {fileID: 4223703882857374}
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   unitClass: 2
   attackType: 0
   team: 2
-  strengths: 00000000
+  strengths: 0200000000000000
   vulnerabilities: 0200000001000000
   rankState: 3
   myGeneral: {fileID: 0}

@@ -139,6 +139,10 @@ public class NavigationArrowActor : MonoBehaviour
 
         ClosestEnemyUnit ();
         AirStrikeControls();
+		if (ChangeSate) 
+		{
+			ChangeSate = false;
+		}
     }
 
 	Camera cam;
@@ -181,7 +185,7 @@ public class NavigationArrowActor : MonoBehaviour
             if (Vector3.Distance(m_currentMarker.transform.position, m_tank.transform.position) > 20f)
             {
                 m_tank = null;
-                SimpleAnimate sa = m_currentMarker.GetComponent<SimpleAnimate>();
+                SimpleAnimate sa = m_currentMarker.GetComponentInChildren<SimpleAnimate>();
                 if (sa)
                 {
                     sa.speedModifier = 1;
@@ -189,10 +193,10 @@ public class NavigationArrowActor : MonoBehaviour
             }
             else
             {
-                SimpleAnimate sa = m_currentMarker.GetComponent<SimpleAnimate>();
+				SimpleAnimate sa = m_currentMarker.GetComponentInChildren <SimpleAnimate>();
                 if (sa)
                 {
-                    sa.speedModifier = 2.5f;
+                    sa.speedModifier = 5f;
                 }
             }
         }
@@ -218,6 +222,7 @@ public class NavigationArrowActor : MonoBehaviour
             {
                 airstrikes[0].capturePercentage = 0;
                 airstrikes[0].owner = Team.NONE;
+				airstrikes [0].captureZoneText.text = "";
                 
             }
             airstrikes.Remove(airstrikes[0]);
@@ -248,10 +253,12 @@ public class NavigationArrowActor : MonoBehaviour
         Destroy(prevMarker);
     }
 
+	public bool ChangeSate = false;
     /*The reverse of EnableAirStrikeMarker()*/
     void EnableNavigationMarker()
     {
-        m_airStrikeState = false;
+		ChangeSate = true;
+		m_airStrikeState = false;
         GameObject prevMarker = m_currentMarker;
         m_currentMarker = Instantiate(m_navMarker, new Vector3(prevMarker.transform.position.x, 4, prevMarker.transform.position.z), Quaternion.identity);
         Destroy(prevMarker);

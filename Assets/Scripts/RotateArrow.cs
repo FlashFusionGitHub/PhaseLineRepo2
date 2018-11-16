@@ -9,6 +9,8 @@ public class RotateArrow : MonoBehaviour {
     public Controller m_controller; /*Reference to the Controller Class*/
 
     public int playerIndex; /*players index*/
+
+	public float rotateSpeed = 100f;
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,8 +31,8 @@ public class RotateArrow : MonoBehaviour {
         }
 
         if (m_controller.LeftBumperIsHeld())
-            transform.Rotate(Vector3.down * 50 * Time.deltaTime);
+			transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
         if (m_controller.RightBumperIsHeld())
-            transform.Rotate(Vector3.up * 50 * Time.deltaTime);
+			transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
     }
 }

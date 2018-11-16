@@ -44,6 +44,7 @@ public class TroopController : MonoBehaviour {
             m_generals = op.team2Generals;
 
         m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
+		m_currentSelectionCircle.GetComponent<SelectionCircle> ().ta = m_generals [0];
 
         currentSelectedUnit = m_generals[index].gameObject;
         m_navigationArrowActor.moveMarkerToMyBoy();
@@ -90,6 +91,7 @@ public class TroopController : MonoBehaviour {
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[0].transform.position, Quaternion.Euler(-90, 0, 0));
 
+			m_currentSelectionCircle.GetComponent<SelectionCircle> ().ta = m_generals [0];
             EnableMoveTargetsForSelectedGeneral();
             DisablesMoveTargets();
         }
@@ -115,7 +117,7 @@ public class TroopController : MonoBehaviour {
                 CheckGeneralState(true, false);
             }
 
-            if (m_navigationArrowActor.m_tank != null && m_controller.Action3WasPress() && !m_navigationArrowActor.m_airStrikeState)
+			if (m_navigationArrowActor.m_tank != null && m_controller.Action3WasPress() && !m_navigationArrowActor.m_airStrikeState && !m_navigationArrowActor.ChangeSate)
             {
                 if (UnitToAttack != m_navigationArrowActor.m_tank)
                 {
@@ -235,6 +237,7 @@ public class TroopController : MonoBehaviour {
             m_navigationArrowActor.m_navMarker.transform.position = currentSelectedUnit.transform.position;
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
+			m_currentSelectionCircle.GetComponent<SelectionCircle> ().ta = m_generals [index];
 
             EnableMoveTargetsForSelectedGeneral();
             DisablesMoveTargets();
@@ -252,6 +255,7 @@ public class TroopController : MonoBehaviour {
             currentGeneral = m_generals[index];
 
             m_currentSelectionCircle = Instantiate(m_selectionCircle, m_generals[index].transform.position, Quaternion.Euler(-90, 0, 0));
+			m_currentSelectionCircle.GetComponent<SelectionCircle> ().ta = m_generals [index];
 
             EnableMoveTargetsForSelectedGeneral();
             DisablesMoveTargets();

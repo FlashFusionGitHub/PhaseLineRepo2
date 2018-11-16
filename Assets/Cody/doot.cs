@@ -24,7 +24,7 @@ public class doot : MonoBehaviour {
 	void OnTriggerEnter(Collider col)
 
 	{
-        Debug.Log("i hit this bitch");
+        //Debug.Log("i hit this bitch");
 		if (col.gameObject.tag == "next")
 		{
             play.SetActive(true);

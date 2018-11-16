@@ -290,38 +290,36 @@ public class TroopActor : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     float timer = 1f;
     void Update()
-    {
-        RankAction();
-        if (canvas)
-        canvas.transform.rotation = camera.transform.rotation;
+	{
+		if (rankState != RankState.Base) {
+			RankAction ();
+			if (canvas)
+				canvas.transform.rotation = camera.transform.rotation;
 
-        if (rankState != RankState.dead && rankState != RankState.Base) {
+			if (rankState != RankState.dead && rankState != RankState.Base) {
 
-            if (lineRenderer.enabled)
-            {
-                renderertimer -= Time.deltaTime;
-                if(renderertimer <= 0.0f)
-                {
-                    lineRenderer.enabled = false;
-                    renderertimer = TimeAlive;
-                }
-            }
+				if (lineRenderer.enabled) {
+					renderertimer -= Time.deltaTime;
+					if (renderertimer <= 0.0f) {
+						lineRenderer.enabled = false;
+						renderertimer = TimeAlive;
+					}
+				}
 
-            Move ();
+				Move ();
 
-			if (attackType == AttackType.AUTO) {
-				AttackClosestEnemy ();
-			} else
-            {
-                if (moveTarget.gameObject.activeInHierarchy == true)
-                {
-                    moveTarget.gameObject.SetActive(false);
-                }
+				if (attackType == AttackType.AUTO) {
+					AttackClosestEnemy ();
+				} else {
+					if (moveTarget.gameObject.activeInHierarchy == true) {
+						moveTarget.gameObject.SetActive (false);
+					}
 
-                AttackTarget ();
+					AttackTarget ();
+				}
 			}
 		}
-    }
+	}
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //                                                                      \ UPDATE FUNCTION ABOVE /
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -937,8 +935,6 @@ public class TroopActor : MonoBehaviour
         ta.onDie.Invoke();
         if (ta.rankState == RankState.IsGeneral)
         {
-            if (ClosestAlly())
-                ta.PromoteToGeneral(ClosestAlly());
             ta.rankState = RankState.dead;
             if (moveTarget)
                 Destroy(moveTarget.gameObject);
@@ -951,14 +947,6 @@ public class TroopActor : MonoBehaviour
         if (ta.team == Team.TEAM2)
             op.team2Generals.Remove(ta);
 
-        if (!GeneralsRemaining())
-        {
-            Invoke("Victory", 2f);
-            if (team == Team.TEAM1)
-                FindObjectOfType<FindWinner>().TriggerTeam2Win();
-            else
-                FindObjectOfType<FindWinner>().TriggerTeam1Win();
-        }
 
 
     }

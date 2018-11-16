@@ -35,7 +35,7 @@ public class ZoneColorChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pdTeam1 || pdTeam2)
+        if (!pdTeam1 || !pdTeam2)
         {
             foreach (PortraitData pd in FindObjectsOfType<PortraitData>())
             {
