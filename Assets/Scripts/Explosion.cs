@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour {
 
-    public Team team;
+    public Team team; /*The team the explosion can damage*/
 
-    public int damage;
-
-    // Use this for initialization
-    void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int damage; /*The amount of damage the explosion will do*/
 
     private void OnTriggerEnter(Collider other)
     {
+
+        /*If a gamobject with a Troopactor component is within the blast radius, then apply damage the the corresponding team*/
         if(other.gameObject.GetComponent<TroopActor>())
         {
             if (team == Team.TEAM2)
@@ -36,11 +29,6 @@ public class Explosion : MonoBehaviour {
                     other.gameObject.GetComponent<TroopActor>().TakeDamage(damage);
                 }
             }
-        }
-
-        if (team == Team.NONE)
-        {
-            //Damage objects in scene with explosions
         }
     }
 }

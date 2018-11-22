@@ -6,24 +6,24 @@ using UnityEngine.UI;
 
 public class Cursor : MonoBehaviour
 {
-    PointerEventData pointer;
+    PointerEventData pointer; /*reference to the point object*/
 
-    public Controller[] m_controllers;
+    public Controller[] m_controllers; /*reference to the available controllers*/
 
-    Controller m_controller;
+    Controller m_controller; /*referecne to the the current controller*/
 
-	public bool Player1, Player2;
+	public bool Player1, Player2; /*The current player using the cursor*/
 
+    public List<GameObject> buttons; /*reference to the avail button to toggle to*/
 
-    public List<GameObject> buttons;
-
+    /*private variable to store the cursors position*/
     float markerXPos;
     float markerYPos;
 
     // Use this for initialization
     void Start()
     {
-
+        /*set the cotroller*/
 		m_controllers = FindObjectsOfType<Controller> ();
 
 		if (Player1)
@@ -34,6 +34,7 @@ public class Cursor : MonoBehaviour
 		
     void Update()
     {
+        /*if we are not currently toogling buttons, the nallopw the mouse to move freely*/
         if(!ToggleButtons())
             transform.position += new Vector3(m_controller.LeftAnalogStick().X, m_controller.LeftAnalogStick().Y, 0) * Time.unscaledDeltaTime * (PlayerPrefs.GetFloat("CursorSpeed") * 1000);
         else
@@ -90,7 +91,7 @@ public class Cursor : MonoBehaviour
         oldRaycasts = raycasts;
     }
 
-    public int index;
+    public int index;/*index of the button we have toggle through*/
     bool ToggleButtons()
     {
         if(m_controller.DpadLeftWasPress())
@@ -120,6 +121,7 @@ public class Cursor : MonoBehaviour
         return false;
     }
 
+    /*allow the cursor to swap its current controller*/
     public void SwapController()
     {
         if(m_controller == m_controllers[0])

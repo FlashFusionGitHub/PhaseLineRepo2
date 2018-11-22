@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour {
 
+    /*The music mangager class, if the MusicBoc compnent doesnt exist then music wont play*/
     public int musicBoxIndex;
     private void Start()
     {

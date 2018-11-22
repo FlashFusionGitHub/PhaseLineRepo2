@@ -7,8 +7,8 @@ public class SelectedFactions : MonoBehaviour {
     public FactionElements team1;
     public FactionElements team2;
 
-
 	public float lifeTime;
+
     void Awake()
     {
 		foreach (SelectedFactions sf in FindObjectsOfType<SelectedFactions>()) {

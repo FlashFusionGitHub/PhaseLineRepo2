@@ -4,8 +4,10 @@ using UnityEngine;
 using InControl;
 using UnityEngine.UI;
 
+/*A class for spawning troops after a timer*/
 public class SpawnAfterTime : MonoBehaviour {
 
+    /*the available spawn states*/
     [System.Serializable]
     public enum SpawnerStates
     {
@@ -13,9 +15,9 @@ public class SpawnAfterTime : MonoBehaviour {
         ready
     }
 
-    [SerializeField] SpawnerStates spawnerState;
-    [SerializeField] HangerSpawner[] spawnPoints;
-    [SerializeField] float delayPerSpawnPoint;
+    [SerializeField] SpawnerStates spawnerState; /*The state of the Troop when it is spawned*/
+    [SerializeField] HangerSpawner[] spawnPoints; /*The available spawn points*/
+    [SerializeField] float delayPerSpawnPoint; /*The amount of delay added per each spawn*/
 
     [SerializeField] float timeBeforeSpawnStart;
     [SerializeField] float timeBetweenSpawns;
@@ -67,6 +69,7 @@ public class SpawnAfterTime : MonoBehaviour {
         }
 	}
 
+    /*Checks the spawn poinst is valid, before proceeding*/
     void SpawnUnits()
     {
         spawnPoints[unitIndex].CheckSpawn();

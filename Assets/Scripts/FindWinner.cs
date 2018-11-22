@@ -3,30 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*Simple class that will find the winner of the match*/
 public class FindWinner : MonoBehaviour {
 
-    public Text team1, team2;
-    public TweenAnimator tweenAnimator1, tweenAnimator2, tweenAnimator3;
+    public Text team1, team2; /*reference to the team1 and team2 text component*/
+    public TweenAnimator tweenAnimator1, tweenAnimator2, tweenAnimator3; /*reference to the available tween animators for (team1, team2, and Draw)*/
 
-    ZoneController zoneController;
+    ZoneController zoneController; /*reference to the zoneController, used for checking score*/
 
     bool winnerFound;
-    bool winnerCalled = false;
+    bool winnerCalled = false; /*used for stopping the update loop after the winner wass called*/
 
-    public GameObject[] componentsToDisable;
+    public GameObject[] componentsToDisable; /*list of canvas component to disable when a winner is found (reduces clutter)*/
 
-    public GameObject quitToMenuButton;
-	public GameObject rematchButton;
+    public GameObject quitToMenuButton; /*reference to the quit button*/
+	public GameObject rematchButton; /*reference to the restart button*/
 
-    public Team winner;
+    public Team winner; /*The winner*/
 
-    public GameTimer gameTimer;
+    public GameTimer gameTimer; /*The match timer*/
 
-    bool isDraw;
+    bool isDraw; /*was the game a draw*/
 
-    int player1Score, player2Score;
-
-
+    int player1Score, player2Score; /*The score of both players, use to determine a winner if time runs out*/
 
     // Use this for initialization
     void Start () {
